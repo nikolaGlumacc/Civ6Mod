@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leader icon atlases for Tito, Draža, Milošević -->
+<!-- Requires ICON_LEADER_*_NN.dds files in this Art folder -->
+<GameData>
+  <IconTextureAtlases>
+    <!-- TITO -->
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_48.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_TITO_256.dds"/>
+    <!-- DRAZA -->
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_48.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_DRAZA_256.dds"/>
+    <!-- MILOSEVIC -->
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_48.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_MILOSEVIC_256.dds"/>
+  </IconTextureAtlases>
+
+  <IconDefinitions>
+    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADER_TITO" Index="0"/>
+    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADER_DRAZA" Index="0"/>
+    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADER_MILOSEVIC" Index="0"/>
+  </IconDefinitions>
+</GameData>
