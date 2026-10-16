@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Serbia Civilization Pack - Unique Building: Manastir (replaces Temple) -->
 <GameData>
-
   <Types>
     <Row Type="BUILDING_MANASTIR" Kind="KIND_BUILDING"/>
   </Types>
@@ -15,34 +13,24 @@
          Cost="115"
          Maintenance="2"
          CitizenSlots="1"
-         Housing="0"
-         Entertainment="0"
-         RegionalRange="0"
          AdvisorType="ADVISOR_RELIGIOUS"
          TraitType="TRAIT_CIVILIZATION_SERBIA"/>
   </Buildings>
 
-  <!-- Yields -->
   <Building_YieldChanges>
-    <Row BuildingType="BUILDING_MANASTIR" YieldType="YIELD_FAITH"    Amount="3"/>
-    <Row BuildingType="BUILDING_MANASTIR" YieldType="YIELD_CULTURE" Amount="1"/>
+    <Row BuildingType="BUILDING_MANASTIR" YieldType="YIELD_FAITH" YieldChange="3"/>
+    <Row BuildingType="BUILDING_MANASTIR" YieldType="YIELD_CULTURE" YieldChange="1"/>
   </Building_YieldChanges>
 
-  <!-- Great Work slots (1 Relic) -->
   <Building_GreatWorks>
-    <Row BuildingType="BUILDING_MANASTIR"
-         GreatWorkSlotType="GREATWORKSLOT_RELIC"
-         NumSlots="1"/>
+    <Row BuildingType="BUILDING_MANASTIR" GreatWorkSlotType="GREATWORKSLOT_RELIC" NumSlots="1"/>
   </Building_GreatWorks>
 
-  <!-- Replace Temple -->
   <BuildingReplaces>
     <Row CivUniqueBuildingType="BUILDING_MANASTIR" ReplacesBuildingType="BUILDING_TEMPLE"/>
   </BuildingReplaces>
 
-  <!-- Same prereqs / unlock as Temple -->
   <BuildingPrereqs>
     <Row Building="BUILDING_MANASTIR" PrereqBuilding="BUILDING_SHRINE"/>
   </BuildingPrereqs>
-
 </GameData>
