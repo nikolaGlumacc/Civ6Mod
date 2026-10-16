@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Serbia Civilization Pack - Unique Improvement: Spomenik -->
+<!-- Serbia - Spomenik unique improvement (stable) -->
 <GameData>
 
   <Types>
@@ -32,42 +32,11 @@
 
   <Improvement_YieldChanges>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" Amount="2"/>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH"   Amount="1"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" Amount="1"/>
   </Improvement_YieldChanges>
 
   <Improvement_Tourism>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TourismSource="TOURISMSOURCE_CULTURE" PrereqTech="TECH_FLIGHT" ScalingFactor="100"/>
   </Improvement_Tourism>
-
-  <ImprovementModifiers>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" ModifierId="SPOMENIK_DEFENSIVE_COMBAT"/>
-  </ImprovementModifiers>
-
-  <Modifiers>
-    <Row ModifierId="SPOMENIK_DEFENSIVE_COMBAT"
-         ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH"
-         SubjectRequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT"
-         Permanent="true"/>
-  </Modifiers>
-
-  <ModifierArguments>
-    <Row ModifierId="SPOMENIK_DEFENSIVE_COMBAT" Name="Amount" Value="3"/>
-  </ModifierArguments>
-
-  <RequirementSets>
-    <Row RequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
-  </RequirementSets>
-
-  <RequirementSetRequirements>
-    <Row RequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT" RequirementId="REQ_UNIT_ON_SPOMENIK"/>
-  </RequirementSetRequirements>
-
-  <Requirements>
-    <Row RequirementId="REQ_UNIT_ON_SPOMENIK" RequirementType="REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES"/>
-  </Requirements>
-
-  <RequirementArguments>
-    <Row RequirementId="REQ_UNIT_ON_SPOMENIK" Name="ImprovementType" Value="IMPROVEMENT_SPOMENIK"/>
-  </RequirementArguments>
 
 </GameData>
