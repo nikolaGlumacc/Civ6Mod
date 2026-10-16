@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <Colors>
-    <!-- Primary / Secondary Schemes -->
-    <!-- Red and Blue / Gold -->
     <Row Type="COLOR_STANDARD_SERBIA_PRIMARY" Color="198,54,60,255"/>
     <Row Type="COLOR_STANDARD_SERBIA_SECONDARY" Color="12,64,118,255"/>
     <Row Type="COLOR_SERBIA_GOLD_PRIMARY" Color="212,175,55,255"/>
@@ -14,20 +12,25 @@
   </Colors>
 
   <PlayerColors>
-    <Row Type="LEADER_TITO" Usage="Unique" 
+    <Row Type="LEADER_TITO" Usage="Unique"
          PrimaryColor="COLOR_STANDARD_SERBIA_PRIMARY" SecondaryColor="COLOR_SERBIA_GOLD_PRIMARY"
          Alt1PrimaryColor="COLOR_SERBIA_BLUE_PRIMARY" Alt1SecondaryColor="COLOR_SERBIA_WHITE_PRIMARY"
          Alt2PrimaryColor="COLOR_SERBIA_GOLD_PRIMARY" Alt2SecondaryColor="COLOR_STANDARD_SERBIA_PRIMARY"
          Alt3PrimaryColor="COLOR_SERBIA_WHITE_PRIMARY" Alt3SecondaryColor="COLOR_SERBIA_BLUE_PRIMARY"/>
-    <Row Type="LEADER_DRAZA" Usage="Unique" 
+    <Row Type="LEADER_DRAZA" Usage="Unique"
          PrimaryColor="COLOR_SERBIA_BLUE_PRIMARY" SecondaryColor="COLOR_SERBIA_WHITE_PRIMARY"
          Alt1PrimaryColor="COLOR_STANDARD_SERBIA_PRIMARY" Alt1SecondaryColor="COLOR_SERBIA_BLUE_SECONDARY"
          Alt2PrimaryColor="COLOR_SERBIA_WHITE_PRIMARY" Alt2SecondaryColor="COLOR_STANDARD_SERBIA_PRIMARY"
          Alt3PrimaryColor="COLOR_SERBIA_GOLD_PRIMARY" Alt3SecondaryColor="COLOR_SERBIA_BLUE_PRIMARY"/>
-    <Row Type="LEADER_MILOSEVIC" Usage="Unique" 
+    <Row Type="LEADER_MILOSEVIC" Usage="Unique"
          PrimaryColor="COLOR_STANDARD_SERBIA_PRIMARY" SecondaryColor="COLOR_SERBIA_BLUE_PRIMARY"
          Alt1PrimaryColor="COLOR_SERBIA_GOLD_PRIMARY" Alt1SecondaryColor="COLOR_STANDARD_SERBIA_PRIMARY"
          Alt2PrimaryColor="COLOR_SERBIA_BLUE_PRIMARY" Alt2SecondaryColor="COLOR_SERBIA_GOLD_PRIMARY"
          Alt3PrimaryColor="COLOR_SERBIA_WHITE_PRIMARY" Alt3SecondaryColor="COLOR_STANDARD_SERBIA_PRIMARY"/>
+    <Row Type="LEADER_DUSAN" Usage="Unique"
+         PrimaryColor="COLOR_SERBIA_GOLD_PRIMARY" SecondaryColor="COLOR_STANDARD_SERBIA_PRIMARY"
+         Alt1PrimaryColor="COLOR_SERBIA_BLUE_PRIMARY" Alt1SecondaryColor="COLOR_SERBIA_GOLD_PRIMARY"
+         Alt2PrimaryColor="COLOR_STANDARD_SERBIA_PRIMARY" Alt2SecondaryColor="COLOR_SERBIA_WHITE_PRIMARY"
+         Alt3PrimaryColor="COLOR_SERBIA_WHITE_PRIMARY" Alt3SecondaryColor="COLOR_SERBIA_GOLD_PRIMARY"/>
   </PlayerColors>
 </GameData>
