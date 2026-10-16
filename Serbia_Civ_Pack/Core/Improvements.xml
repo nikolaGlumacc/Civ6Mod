@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Serbia - Spomenik unique improvement (stable) -->
 <GameData>
-
   <Types>
     <Row Type="IMPROVEMENT_SPOMENIK" Kind="KIND_IMPROVEMENT"/>
   </Types>
@@ -16,7 +14,6 @@
          Buildable="true"
          PrereqCivic="CIVIC_CIVIL_ENGINEERING"
          TraitType="TRAIT_CIVILIZATION_SERBIA"
-         Housing="0"
          TilesRequired="1"
          SameAdjacentValid="false"
          Appeal="1"/>
@@ -31,12 +28,11 @@
   </Improvement_ValidTerrains>
 
   <Improvement_YieldChanges>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" Amount="2"/>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" Amount="1"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" YieldChange="2"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" YieldChange="1"/>
   </Improvement_YieldChanges>
 
   <Improvement_Tourism>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TourismSource="TOURISMSOURCE_CULTURE" PrereqTech="TECH_FLIGHT" ScalingFactor="100"/>
   </Improvement_Tourism>
-
 </GameData>
