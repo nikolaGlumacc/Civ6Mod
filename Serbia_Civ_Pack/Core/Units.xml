@@ -1,111 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Serbia Civilization Pack - Unique Units (Merged Design) -->
 <GameData>
+
   <Types>
-    <Row Type="UNIT_PARTIZANI" Kind="KIND_UNIT"/>
-    <Row Type="UNIT_CETNICKI_ODRED" Kind="KIND_UNIT"/>
-    <Row Type="UNIT_GARDIJSKA_JEDINICA" Kind="KIND_UNIT"/>
-    <Row Type="ABILITY_PARTIZANI" Kind="KIND_ABILITY"/>
-    <Row Type="ABILITY_CETNICKI_ODRED" Kind="KIND_ABILITY"/>
-    <Row Type="ABILITY_GARDIJSKA_JEDINICA" Kind="KIND_ABILITY"/>
+    <Row Type="UNIT_PARTIZANI"          Kind="KIND_UNIT"/>
+    <Row Type="UNIT_CHETNIK"            Kind="KIND_UNIT"/>
+    <Row Type="UNIT_NEVA_M"             Kind="KIND_UNIT"/>
+    <Row Type="UNIT_ALEMANNIC_GUARD"    Kind="KIND_UNIT"/>
+    <Row Type="ABILITY_PARTIZANI"       Kind="KIND_ABILITY"/>
+    <Row Type="ABILITY_CHETNIK"         Kind="KIND_ABILITY"/>
+    <Row Type="ABILITY_NEVA_M"          Kind="KIND_ABILITY"/>
+    <Row Type="ABILITY_ALEMANNIC_GUARD" Kind="KIND_ABILITY"/>
   </Types>
 
   <TypeTags>
-    <Row Type="UNIT_PARTIZANI" Tag="CLASS_MELEE"/>
-    <Row Type="UNIT_CETNICKI_ODRED" Tag="CLASS_RECON"/>
-    <Row Type="UNIT_GARDIJSKA_JEDINICA" Tag="CLASS_MELEE"/>
-    <Row Type="ABILITY_PARTIZANI" Tag="CLASS_MELEE"/>
-    <Row Type="ABILITY_CETNICKI_ODRED" Tag="CLASS_RECON"/>
-    <Row Type="ABILITY_GARDIJSKA_JEDINICA" Tag="CLASS_MELEE"/>
+    <Row Type="UNIT_PARTIZANI"          Tag="CLASS_MELEE"/>
+    <Row Type="UNIT_CHETNIK"            Tag="CLASS_MELEE"/>
+    <Row Type="UNIT_NEVA_M"             Tag="CLASS_ANTI_AIR"/>
+    <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="CLASS_HEAVY_CAVALRY"/>
+    <Row Type="ABILITY_PARTIZANI"       Tag="CLASS_MELEE"/>
+    <Row Type="ABILITY_CHETNIK"         Tag="CLASS_MELEE"/>
+    <Row Type="ABILITY_NEVA_M"          Tag="CLASS_ANTI_AIR"/>
+    <Row Type="ABILITY_ALEMANNIC_GUARD" Tag="CLASS_HEAVY_CAVALRY"/>
   </TypeTags>
 
   <UnitAbilities>
-    <Row UnitAbilityType="ABILITY_PARTIZANI" Name="LOC_UNIT_PARTIZANI_NAME" Description="LOC_UNIT_PARTIZANI_DESCRIPTION"/>
-    <Row UnitAbilityType="ABILITY_CETNICKI_ODRED" Name="LOC_UNIT_CETNICKI_ODRED_NAME" Description="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION"/>
-    <Row UnitAbilityType="ABILITY_GARDIJSKA_JEDINICA" Name="LOC_UNIT_GARDIJSKA_JEDINICA_NAME" Description="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_PARTIZANI"       Name="LOC_UNIT_PARTIZANI_NAME"       Description="LOC_UNIT_PARTIZANI_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_CHETNIK"         Name="LOC_UNIT_CHETNIK_NAME"         Description="LOC_UNIT_CHETNIK_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_NEVA_M"          Name="LOC_UNIT_NEVA_M_NAME"          Description="LOC_UNIT_NEVA_M_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_ALEMANNIC_GUARD" Name="LOC_UNIT_ALEMANNIC_GUARD_NAME" Description="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"/>
   </UnitAbilities>
 
   <UnitAbilityModifiers>
     <Row UnitAbilityType="ABILITY_PARTIZANI" ModifierId="PARTIZANI_HILLS_COMBAT"/>
-    <Row UnitAbilityType="ABILITY_CETNICKI_ODRED" ModifierId="CETNICI_IGNORE_ZOC"/>
+    <Row UnitAbilityType="ABILITY_PARTIZANI" ModifierId="PARTIZANI_WOODS_COMBAT"/>
+    <Row UnitAbilityType="ABILITY_CHETNIK" ModifierId="CHETNIK_HILLS_MOVE"/>
+    <Row UnitAbilityType="ABILITY_CHETNIK" ModifierId="CHETNIK_DEFEND_HILLS"/>
+    <Row UnitAbilityType="ABILITY_NEVA_M" ModifierId="NEVA_M_VS_PLANES"/>
+    <Row UnitAbilityType="ABILITY_ALEMANNIC_GUARD" ModifierId="ALEMANNIC_FOREIGN_CS"/>
   </UnitAbilityModifiers>
 
   <Units>
-    <!-- Partizani: Replaces Infantry, Cost 344 (20% reduction from 430), Combat 75 (vs 70) -->
-    <Row UnitType="UNIT_PARTIZANI" 
-         Name="LOC_UNIT_PARTIZANI_NAME" 
-         Description="LOC_UNIT_PARTIZANI_DESCRIPTION" 
-         BaseMoves="2" 
-         Cost="344" 
-         Maintenance="6" 
-         BaseSightRange="2" 
-         Combat="75" 
-         Domain="DOMAIN_LAND" 
-         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
-         PromotionClass="PROMOTION_CLASS_MELEE" 
-         PrereqTech="TECH_REPLACEABLE_PARTS" 
+    <!-- Partizani (Tito) - replaces Infantry -->
+    <Row UnitType="UNIT_PARTIZANI"
+         Name="LOC_UNIT_PARTIZANI_NAME"
+         Description="LOC_UNIT_PARTIZANI_DESCRIPTION"
+         BaseMoves="2"
+         Cost="344"
+         Maintenance="6"
+         BaseSightRange="2"
+         Combat="75"
+         Domain="DOMAIN_LAND"
+         FormationClass="FORMATION_CLASS_LAND_COMBAT"
+         PromotionClass="PROMOTION_CLASS_MELEE"
+         PrereqTech="TECH_REPLACEABLE_PARTS"
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_PARTIZANI"/>
 
-    <!-- Četnički Odred: Replaces Skirmisher, Moves 4 (high mobility), Combat 35, Sight 3 -->
-    <Row UnitType="UNIT_CETNICKI_ODRED" 
-         Name="LOC_UNIT_CETNICKI_ODRED_NAME" 
-         Description="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION" 
-         BaseMoves="4" 
-         Cost="150" 
-         Maintenance="3" 
-         BaseSightRange="3" 
-         Combat="35" 
-         RangedCombat="35" 
-         Range="1" 
-         Domain="DOMAIN_LAND" 
-         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
-         PromotionClass="PROMOTION_CLASS_RECON" 
-         PrereqTech="TECH_GUNPOWDER" 
+    <!-- Chetnik (Draza) - replaces Musketman -->
+    <Row UnitType="UNIT_CHETNIK"
+         Name="LOC_UNIT_CHETNIK_NAME"
+         Description="LOC_UNIT_CHETNIK_DESCRIPTION"
+         BaseMoves="2"
+         Cost="240"
+         Maintenance="4"
+         BaseSightRange="2"
+         Combat="55"
+         Domain="DOMAIN_LAND"
+         FormationClass="FORMATION_CLASS_LAND_COMBAT"
+         PromotionClass="PROMOTION_CLASS_MELEE"
+         PrereqTech="TECH_GUNPOWDER"
          AdvisorType="ADVISOR_CONQUEST"
-         TraitType="TRAIT_LEADER_UNIT_CETNICKI_ODRED"/>
+         TraitType="TRAIT_LEADER_UNIT_CHETNIK"/>
 
-    <!-- Gardijska Jedinica: Replaces Mechanized Infantry, Combat 93 (vs 85) -->
-    <Row UnitType="UNIT_GARDIJSKA_JEDINICA" 
-         Name="LOC_UNIT_GARDIJSKA_JEDINICA_NAME" 
-         Description="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION" 
-         BaseMoves="3" 
-         Cost="650" 
-         Maintenance="8" 
-         BaseSightRange="3" 
-         Combat="93" 
-         Domain="DOMAIN_LAND" 
-         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
-         PromotionClass="PROMOTION_CLASS_MELEE" 
-         PrereqTech="TECH_GUIDANCE_SYSTEMS" 
+    <!-- Neva-M (Milosevic) - replaces Anti-Air Gun -->
+    <Row UnitType="UNIT_NEVA_M"
+         Name="LOC_UNIT_NEVA_M_NAME"
+         Description="LOC_UNIT_NEVA_M_DESCRIPTION"
+         BaseMoves="2"
+         Cost="500"
+         Maintenance="6"
+         BaseSightRange="2"
+         Combat="50"
+         AntiAirCombat="120"
+         Domain="DOMAIN_LAND"
+         FormationClass="FORMATION_CLASS_SUPPORT"
+         PromotionClass="PROMOTION_CLASS_SUPPORT"
+         PrereqTech="TECH_ADVANCED_BALLISTICS"
          AdvisorType="ADVISOR_CONQUEST"
-         TraitType="TRAIT_LEADER_UNIT_GARDIJSKA_JEDINICA"/>
+         TraitType="TRAIT_LEADER_UNIT_NEVA_M"/>
+
+    <!-- Alemannic Guard (Dusan) - replaces Knight -->
+    <Row UnitType="UNIT_ALEMANNIC_GUARD"
+         Name="LOC_UNIT_ALEMANNIC_GUARD_NAME"
+         Description="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"
+         BaseMoves="4"
+         Cost="180"
+         Maintenance="3"
+         BaseSightRange="2"
+         Combat="48"
+         Domain="DOMAIN_LAND"
+         FormationClass="FORMATION_CLASS_LAND_COMBAT"
+         PromotionClass="PROMOTION_CLASS_HEAVY_CAVALRY"
+         PrereqTech="TECH_STIRRUPS"
+         AdvisorType="ADVISOR_CONQUEST"
+         TraitType="TRAIT_LEADER_UNIT_ALEMANNIC_GUARD"/>
   </Units>
 
   <UnitReplaces>
-    <Row CivUniqueUnitType="UNIT_PARTIZANI" ReplacesUnitType="UNIT_INFANTRY"/>
-    <Row CivUniqueUnitType="UNIT_CETNICKI_ODRED" ReplacesUnitType="UNIT_SKIRMISHER"/>
-    <Row CivUniqueUnitType="UNIT_GARDIJSKA_JEDINICA" ReplacesUnitType="UNIT_MECHANIZED_INFANTRY"/>
+    <Row CivUniqueUnitType="UNIT_PARTIZANI"       ReplacesUnitType="UNIT_INFANTRY"/>
+    <Row CivUniqueUnitType="UNIT_CHETNIK"         ReplacesUnitType="UNIT_MUSKETMAN"/>
+    <Row CivUniqueUnitType="UNIT_NEVA_M"          ReplacesUnitType="UNIT_ANTIAIR_GUN"/>
+    <Row CivUniqueUnitType="UNIT_ALEMANNIC_GUARD" ReplacesUnitType="UNIT_KNIGHT"/>
   </UnitReplaces>
 
   <Modifiers>
-    <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RunOnce="0" Permanent="1"/>
-    <Row ModifierId="CETNICI_IGNORE_ZOC" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC" RunOnce="0" Permanent="1"/>
+    <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
+    <Row ModifierId="PARTIZANI_WOODS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_WOODS" Permanent="true"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE"   ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_DEFENDING_HILLS" Permanent="true"/>
+    <Row ModifierId="NEVA_M_VS_PLANES" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_OPPONENT_IS_AIR" Permanent="true"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_IN_FOREIGN_TERRITORY" Permanent="true"/>
   </Modifiers>
 
   <ModifierArguments>
     <Row ModifierId="PARTIZANI_HILLS_COMBAT" Name="Amount" Value="7"/>
-    <Row ModifierId="CETNICI_IGNORE_ZOC" Name="Ignore" Value="true"/>
+    <Row ModifierId="PARTIZANI_WOODS_COMBAT" Name="Amount" Value="7"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE"   Name="Amount" Value="2"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS" Name="Amount" Value="10"/>
+    <Row ModifierId="NEVA_M_VS_PLANES"     Name="Amount" Value="100"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS" Name="Amount" Value="5"/>
   </ModifierArguments>
 
   <RequirementSets>
-    <Row RequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
+    <Row RequirementSetId="REQSET_PLOT_IS_HILLS"        RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="REQSET_PLOT_IS_WOODS"        RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="REQSET_OPPONENT_IS_AIR"      RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="REQSET_IN_FOREIGN_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
   </RequirementSets>
 
   <RequirementSetRequirements>
-    <Row RequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RequirementId="REQ_IN_HILLS"/>
+    <Row RequirementSetId="REQSET_PLOT_IS_HILLS"        RequirementId="REQ_PLOT_IS_HILLS"/>
+    <Row RequirementSetId="REQSET_PLOT_IS_WOODS"        RequirementId="REQ_PLOT_IS_WOODS"/>
+    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementId="REQ_PLOT_IS_HILLS"/>
+    <Row RequirementSetId="REQSET_OPPONENT_IS_AIR"      RequirementId="REQ_OPPONENT_IS_AIR_UNIT"/>
+    <Row RequirementSetId="REQSET_IN_FOREIGN_TERRITORY" RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"/>
   </RequirementSetRequirements>
 
   <Requirements>
-    <Row RequirementId="REQ_IN_HILLS" RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
+    <Row RequirementId="REQ_PLOT_IS_HILLS"            RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
+    <Row RequirementId="REQ_PLOT_IS_WOODS"            RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
+    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT"     RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
+    <Row RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
   </Requirements>
+
+  <RequirementArguments>
+    <Row RequirementId="REQ_PLOT_IS_WOODS"        Name="FeatureType" Value="FEATURE_FOREST"/>
+    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT" Name="UnitDomain"  Value="DOMAIN_AIR"/>
+  </RequirementArguments>
+
 </GameData>
