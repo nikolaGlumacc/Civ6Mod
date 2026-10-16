@@ -13,7 +13,6 @@
     <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
   </Dependencies>
 
-  <!-- FrontEnd Actions (Setup / Main Menu) -->
   <FrontEndActions>
     <UpdateDatabase id="Serbia_Config_DB">
       <File>Config/Leader_Config.sql</File>
@@ -23,13 +22,13 @@
     </UpdateText>
     <UpdateIcons id="Serbia_Config_Icons">
       <File>Art/Icons.xml</File>
+      <File>Art/Leader_Icons_Addon.xml</File>
     </UpdateIcons>
     <UpdateColors id="Serbia_Config_Colors">
       <File>Art/Colors.xml</File>
     </UpdateColors>
   </FrontEndActions>
 
-  <!-- InGame Actions (Gameplay Database) -->
   <InGameActions>
     <UpdateDatabase id="Serbia_Gameplay_DB">
       <File>Core/Civilization.xml</File>
@@ -45,13 +44,13 @@
     </UpdateText>
     <UpdateIcons id="Serbia_Gameplay_Icons">
       <File>Art/Icons.xml</File>
+      <File>Art/Leader_Icons_Addon.xml</File>
     </UpdateIcons>
     <UpdateColors id="Serbia_Gameplay_Colors">
       <File>Art/Colors.xml</File>
     </UpdateColors>
   </InGameActions>
 
-  <!-- Registered Files List -->
   <Files>
     <File>Config/Leader_Config.sql</File>
     <File>Core/Civilization.xml</File>
@@ -63,6 +62,7 @@
     <File>Core/GreatPeople.sql</File>
     <File>Text/Localization.xml</File>
     <File>Art/Icons.xml</File>
+    <File>Art/Leader_Icons_Addon.xml</File>
     <File>Art/Colors.xml</File>
   </Files>
 </Mod>
