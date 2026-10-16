@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Serbia Civilization Pack - Civilization Definition + Combined Ability -->
 <GameData>
 
-  <!-- ===================== TYPES ===================== -->
   <Types>
     <Row Type="CIVILIZATION_SERBIA" Kind="KIND_CIVILIZATION"/>
     <Row Type="TRAIT_CIVILIZATION_SERBIA" Kind="KIND_TRAIT"/>
   </Types>
 
-  <!-- ===================== CIVILIZATION ===================== -->
+  <Traits>
+    <Row TraitType="TRAIT_CIVILIZATION_SERBIA"
+         Name="LOC_TRAIT_CIVILIZATION_SERBIA_NAME"
+         Description="LOC_TRAIT_CIVILIZATION_SERBIA_DESCRIPTION"/>
+  </Traits>
+
   <Civilizations>
     <Row>
       <CivilizationType>CIVILIZATION_SERBIA</CivilizationType>
@@ -21,16 +24,14 @@
     </Row>
   </Civilizations>
 
-  <!-- Leaders linked to the civ (capital = Beograd) -->
   <CivilizationLeaders>
-    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_TITO"      CapitalName="LOC_CITY_NAME_BEOGRAD"/>
-    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_DRAZA"     CapitalName="LOC_CITY_NAME_BEOGRAD"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_TITO" CapitalName="LOC_CITY_NAME_BEOGRAD"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_DRAZA" CapitalName="LOC_CITY_NAME_BEOGRAD"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_MILOSEVIC" CapitalName="LOC_CITY_NAME_BEOGRAD"/>
-    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_DUSAN"     CapitalName="LOC_CITY_NAME_BEOGRAD"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_DUSAN" CapitalName="LOC_CITY_NAME_BEOGRAD"/>
   </CivilizationLeaders>
 
-  <!-- City name pool -->
-  <CivilizationCityNames>
+  <CityNames>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_BEOGRAD"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NOVI_SAD"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NIS"/>
@@ -46,96 +47,35 @@
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_LESKOVAC"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_VRANJE"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NOVI_PAZAR"/>
-  </CivilizationCityNames>
+  </CityNames>
 
-  <!-- Link the civilization trait -->
   <CivilizationTraits>
     <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_SERBIA"/>
   </CivilizationTraits>
 
-  <!-- Trait definition -->
-  <Traits>
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA"
-         Name="LOC_TRAIT_CIVILIZATION_SERBIA_NAME"
-         Description="LOC_TRAIT_CIVILIZATION_SERBIA_DESCRIPTION"/>
-  </Traits>
-
-  <!-- ===================== TRAIT MODIFIERS ===================== -->
   <TraitModifiers>
-    <!-- Trade Route bonuses -->
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_DOMESTIC_TRADE_GOLD"/>
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE"/>
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD"/>
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE"/>
-    <!-- Earlier roads -->
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_EARLIER_ROADS"/>
-    <!-- Mines +1 Prod +1 Faith -->
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_MINE_PRODUCTION"/>
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_MINE_FAITH"/>
-    <!-- Defensive structures +1 Culture +1 Loyalty -->
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_DEFENSIVE_CULTURE"/>
-    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_DEFENSIVE_LOYALTY"/>
   </TraitModifiers>
 
-  <!-- ===================== MODIFIERS ===================== -->
   <Modifiers>
-    <!-- Trade Routes -->
-    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD"       ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC"       Permanent="true"/>
-    <Row ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE"    ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC"       Permanent="true"/>
-    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD"  ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL" Permanent="true"/>
-    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL" Permanent="true"/>
-    <!-- Roads -->
-    <Row ModifierId="SERBIA_EARLIER_ROADS" ModifierType="MODIFIER_PLAYER_ADJUST_ROUTE_TIER_OVERRIDE" Permanent="true"/>
-    <!-- Mines -->
-    <Row ModifierId="SERBIA_MINE_PRODUCTION" ModifierType="MODIFIER_PLAYER_ADJUST_PLOT_YIELD" SubjectRequirementSetId="SERBIA_PLOT_HAS_MINE" Permanent="true"/>
-    <Row ModifierId="SERBIA_MINE_FAITH"      ModifierType="MODIFIER_PLAYER_ADJUST_PLOT_YIELD" SubjectRequirementSetId="SERBIA_PLOT_HAS_MINE" Permanent="true"/>
-    <!-- Defensive buildings -->
-    <Row ModifierId="SERBIA_DEFENSIVE_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE" Permanent="true"/>
-    <Row ModifierId="SERBIA_DEFENSIVE_LOYALTY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN" Permanent="true"/>
+    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC"/>
+    <Row ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_DOMESTIC"/>
+    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL"/>
+    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL"/>
   </Modifiers>
 
-  <!-- ===================== MODIFIER ARGUMENTS ===================== -->
   <ModifierArguments>
-    <!-- Domestic Trade -->
-    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD"    Name="YieldType" Value="YIELD_GOLD"/>
-    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD"    Name="Amount"    Value="2"/>
+    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD" Name="YieldType" Value="YIELD_GOLD"/>
+    <Row ModifierId="SERBIA_DOMESTIC_TRADE_GOLD" Name="Amount" Value="2"/>
     <Row ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
-    <Row ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE" Name="Amount"    Value="1"/>
-    <!-- International Trade -->
-    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD"    Name="YieldType" Value="YIELD_GOLD"/>
-    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD"    Name="Amount"    Value="2"/>
+    <Row ModifierId="SERBIA_DOMESTIC_TRADE_CULTURE" Name="Amount" Value="1"/>
+    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD" Name="YieldType" Value="YIELD_GOLD"/>
+    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_GOLD" Name="Amount" Value="2"/>
     <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
-    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE" Name="Amount"    Value="1"/>
-    <!-- Roads (offset of 1 = one tier earlier) -->
-    <Row ModifierId="SERBIA_EARLIER_ROADS" Name="Offset" Value="1"/>
-    <!-- Mines -->
-    <Row ModifierId="SERBIA_MINE_PRODUCTION" Name="YieldType" Value="YIELD_PRODUCTION"/>
-    <Row ModifierId="SERBIA_MINE_PRODUCTION" Name="Amount"    Value="1"/>
-    <Row ModifierId="SERBIA_MINE_FAITH"      Name="YieldType" Value="YIELD_FAITH"/>
-    <Row ModifierId="SERBIA_MINE_FAITH"      Name="Amount"    Value="1"/>
-    <!-- Defensive Culture (Walls) -->
-    <Row ModifierId="SERBIA_DEFENSIVE_CULTURE" Name="BuildingType" Value="BUILDING_WALLS"/>
-    <Row ModifierId="SERBIA_DEFENSIVE_CULTURE" Name="YieldType"    Value="YIELD_CULTURE"/>
-    <Row ModifierId="SERBIA_DEFENSIVE_CULTURE" Name="Amount"       Value="1"/>
-    <!-- Defensive Loyalty -->
-    <Row ModifierId="SERBIA_DEFENSIVE_LOYALTY" Name="Amount" Value="1"/>
+    <Row ModifierId="SERBIA_INTERNATIONAL_TRADE_CULTURE" Name="Amount" Value="1"/>
   </ModifierArguments>
-
-  <!-- ===================== REQUIREMENTS ===================== -->
-  <RequirementSets>
-    <Row RequirementSetId="SERBIA_PLOT_HAS_MINE" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-  </RequirementSets>
-
-  <RequirementSetRequirements>
-    <Row RequirementSetId="SERBIA_PLOT_HAS_MINE" RequirementId="REQ_PLOT_HAS_MINE"/>
-  </RequirementSetRequirements>
-
-  <Requirements>
-    <Row RequirementId="REQ_PLOT_HAS_MINE" RequirementType="REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES"/>
-  </Requirements>
-
-  <RequirementArguments>
-    <Row RequirementId="REQ_PLOT_HAS_MINE" Name="ImprovementType" Value="IMPROVEMENT_MINE"/>
-  </RequirementArguments>
 
 </GameData>
