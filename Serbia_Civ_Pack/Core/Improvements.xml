@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Serbia Civilization Pack - Unique Improvement: Spomenik -->
 <GameData>
+
   <Types>
     <Row Type="IMPROVEMENT_SPOMENIK" Kind="KIND_IMPROVEMENT"/>
-    <Row Type="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK" Kind="KIND_TRAIT"/>
   </Types>
 
-  <Traits>
-    <Row TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK" Name="LOC_IMPROVEMENT_SPOMENIK_NAME" Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION"/>
-  </Traits>
-
-  <CivilizationTraits>
-    <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK"/>
-  </CivilizationTraits>
-
   <Improvements>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" 
-         Name="LOC_IMPROVEMENT_SPOMENIK_NAME" 
-         Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION" 
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK"
+         Name="LOC_IMPROVEMENT_SPOMENIK_NAME"
+         Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION"
          Icon="ICON_IMPROVEMENT_SPOMENIK"
-         Buildable="true" 
-         PrereqCivic="CIVIC_CIVIL_ENGINEERING" 
-         PlunderType="PLUNDER_CULTURE" 
-         PlunderAmount="25" 
-         TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK"/>
+         PlunderType="PLUNDER_CULTURE"
+         PlunderAmount="25"
+         Buildable="true"
+         PrereqCivic="CIVIC_CIVIL_ENGINEERING"
+         TraitType="TRAIT_CIVILIZATION_SERBIA"
+         Housing="0"
+         TilesRequired="1"
+         SameAdjacentValid="false"
+         Appeal="1"/>
   </Improvements>
-
-  <Improvement_YieldChanges>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" YieldChange="2"/>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" YieldChange="1"/>
-  </Improvement_YieldChanges>
-
-  <Improvement_Tourism>
-    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TourismSource="TOURISMSOURCE_CULTURE" PrereqCivic="CIVIC_CULTURAL_HERITAGE" ScalingFactor="100"/>
-  </Improvement_Tourism>
 
   <Improvement_ValidTerrains>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_GRASS_HILLS"/>
@@ -41,4 +29,45 @@
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_TUNDRA_HILLS"/>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_SNOW_HILLS"/>
   </Improvement_ValidTerrains>
+
+  <Improvement_YieldChanges>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" Amount="2"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH"   Amount="1"/>
+  </Improvement_YieldChanges>
+
+  <Improvement_Tourism>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TourismSource="TOURISMSOURCE_CULTURE" PrereqTech="TECH_FLIGHT" ScalingFactor="100"/>
+  </Improvement_Tourism>
+
+  <ImprovementModifiers>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" ModifierId="SPOMENIK_DEFENSIVE_COMBAT"/>
+  </ImprovementModifiers>
+
+  <Modifiers>
+    <Row ModifierId="SPOMENIK_DEFENSIVE_COMBAT"
+         ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH"
+         SubjectRequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT"
+         Permanent="true"/>
+  </Modifiers>
+
+  <ModifierArguments>
+    <Row ModifierId="SPOMENIK_DEFENSIVE_COMBAT" Name="Amount" Value="3"/>
+  </ModifierArguments>
+
+  <RequirementSets>
+    <Row RequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
+  </RequirementSets>
+
+  <RequirementSetRequirements>
+    <Row RequirementSetId="SPOMENIK_UNIT_ON_OR_ADJACENT" RequirementId="REQ_UNIT_ON_SPOMENIK"/>
+  </RequirementSetRequirements>
+
+  <Requirements>
+    <Row RequirementId="REQ_UNIT_ON_SPOMENIK" RequirementType="REQUIREMENT_PLOT_IMPROVEMENT_TYPE_MATCHES"/>
+  </Requirements>
+
+  <RequirementArguments>
+    <Row RequirementId="REQ_UNIT_ON_SPOMENIK" Name="ImprovementType" Value="IMPROVEMENT_SPOMENIK"/>
+  </RequirementArguments>
+
 </GameData>
