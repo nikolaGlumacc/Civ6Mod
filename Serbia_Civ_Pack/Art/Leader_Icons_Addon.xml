@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Safe icons using base-game atlases (no missing DDS files) -->
+<!-- Leader/unit icon definitions only (no duplicates from Icons.xml) -->
 <GameData>
   <IconDefinitions>
-    <!-- Civilization: use existing STR Serbia atlas if present, else leave -->
     <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
-
-    <!-- Leaders: temporarily use STR Serbia civ icon / Dusan art -->
     <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
     <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
     <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
     <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
-
-    <!-- Building / Improvement -->
-    <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="3"/>
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_IMPROVEMENTS" Index="0"/>
-
-    <!-- Units: base-game unit icons -->
     <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="28"/>
-    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="28"/>
     <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="10"/>
-    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="10"/>
     <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="34"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="34"/>
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD" Index="0"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT" Index="0"/>
   </IconDefinitions>
 </GameData>
