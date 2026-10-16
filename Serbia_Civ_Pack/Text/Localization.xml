@@ -1,128 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
-    <!-- CIVILIZATION -->
-    <Row Tag="LOC_CIVILIZATION_SERBIA_NAME">
-      <Text>Serbia</Text>
-    </Row>
-    <Row Tag="LOC_CIVILIZATION_SERBIA_DESCRIPTION">
-      <Text>Serbian Civilization</Text>
-    </Row>
-    <Row Tag="LOC_CIVILIZATION_SERBIA_ADJECTIVE">
-      <Text>Serbian</Text>
-    </Row>
 
-    <!-- CIV ABILITY -->
-    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_NAME">
-      <Text>Crossroads of the Balkans</Text>
-    </Row>
-    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_DESCRIPTION">
-      <Text>International and domestic Trade Routes yield +2 Gold and +1 Culture. Roads built inside Serbian borders upgrade one tier earlier than usual.</Text>
-    </Row>
+    <!-- ===================== CIVILIZATION ===================== -->
+    <Row Tag="LOC_CIVILIZATION_SERBIA_NAME"><Text>Serbia</Text></Row>
+    <Row Tag="LOC_CIVILIZATION_SERBIA_DESCRIPTION"><Text>Serbian Civilization</Text></Row>
+    <Row Tag="LOC_CIVILIZATION_SERBIA_ADJECTIVE"><Text>Serbian</Text></Row>
 
-    <!-- LEADERS -->
-    <Row Tag="LOC_LEADER_TITO_NAME">
-      <Text>Josip Broz Tito</Text>
-    </Row>
-    <Row Tag="LOC_LEADER_DRAZA_NAME">
-      <Text>Draža Mihailović</Text>
-    </Row>
-    <Row Tag="LOC_LEADER_MILOSEVIC_NAME">
-      <Text>Slobodan Milošević</Text>
-    </Row>
+    <Row Tag="LOC_TRAIT_CIVILIZATION_SERBIA_NAME"><Text>Raskršće Svetova</Text></Row>
+    <Row Tag="LOC_TRAIT_CIVILIZATION_SERBIA_DESCRIPTION"><Text>Trade Routes through Serbian territory yield +2 Gold and +1 Culture. Roads upgrade one tier earlier. Strategic and luxury mines yield +1 Production and +1 Faith. Defensive structures provide +1 Culture and +1 Loyalty per turn.</Text></Row>
 
-    <!-- LEADER ABILITIES -->
-    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_NAME">
-      <Text>Brotherhood and Unity</Text>
-    </Row>
-    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION">
-      <Text>All cities gain +20% Production while running Communism. Foreign Trade Routes grant +2 Food and +2 Production.</Text>
-    </Row>
+    <!-- Keep old tags for safety -->
+    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_NAME"><Text>Raskršće Svetova</Text></Row>
+    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_DESCRIPTION"><Text>Trade Routes through Serbian territory yield +2 Gold and +1 Culture. Roads upgrade one tier earlier. Strategic and luxury mines yield +1 Production and +1 Faith. Defensive structures provide +1 Culture and +1 Loyalty per turn.</Text></Row>
 
-    <Row Tag="LOC_TRAIT_LEADER_RAVNA_GORA_NAME">
-      <Text>Ravna Gora Movement</Text>
-    </Row>
-    <Row Tag="LOC_TRAIT_LEADER_RAVNA_GORA_DESCRIPTION">
-      <Text>All combat units gain +5 Combat Strength under Monarchy. Cities gain +2 Faith.</Text>
-    </Row>
+    <!-- ===================== LEADERS ===================== -->
+    <Row Tag="LOC_LEADER_TITO_NAME"><Text>Josip Broz Tito</Text></Row>
+    <Row Tag="LOC_LEADER_DRAZA_NAME"><Text>Draža Mihailović</Text></Row>
+    <Row Tag="LOC_LEADER_MILOSEVIC_NAME"><Text>Slobodan Milošević</Text></Row>
+    <Row Tag="LOC_LEADER_DUSAN_NAME"><Text>Stefan Dušan</Text></Row>
 
-    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME">
-      <Text>Rally of the People</Text>
-    </Row>
-    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION">
-      <Text>Monuments and Dom Kulture yield double Culture and +4 Loyalty per turn. War weariness is reduced by 50%.</Text>
-    </Row>
+    <!-- Tito -->
+    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_NAME"><Text>Brotherhood, Unity and Five Year Plan</Text></Row>
+    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION"><Text>Pre-Communism: Cities with an Industrial Zone get +1 Production and +1 Science. Under Communism: +100 Production and Science in all cities. Industrial Zones output Science equal to their Production; Campuses output Production equal to their Science.</Text></Row>
 
-    <!-- LEADER QUOTES -->
-    <Row Tag="LOC_DIPLO_QUOTE_TITO">
-      <Text>"Živelo bratstvo i jedinstvo naših naroda!"</Text>
-    </Row>
-    <Row Tag="LOC_DIPLO_QUOTE_DRAZA">
-      <Text>"Za kralja i otadžbinu, sa verom u Boga!"</Text>
-    </Row>
-    <Row Tag="LOC_DIPLO_QUOTE_MILOSEVIC">
-      <Text>"Niko ne sme da vas bije!"</Text>
-    </Row>
+    <!-- Draza -->
+    <Row Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_NAME"><Text>The Mountain Fox</Text></Row>
+    <Row Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION"><Text>Holy Sites receive triple adjacency from Hills and Mountains. Holy Sites generate Gold equal to their Faith output. Purchase military land units with Faith from turn 1 at a 20% discount.</Text></Row>
 
-    <!-- AGENDAS -->
-    <Row Tag="LOC_AGENDA_TITO_NAME">
-      <Text>Non-Aligned Movement</Text>
-    </Row>
-    <Row Tag="LOC_AGENDA_TITO_DESCRIPTION">
-      <Text>Likes civilizations that maintain peaceful trade. Dislikes warmongers.</Text>
-    </Row>
-    <Row Tag="LOC_AGENDA_DRAZA_NAME">
-      <Text>Ravna Gora</Text>
-    </Row>
-    <Row Tag="LOC_AGENDA_DRAZA_DESCRIPTION">
-      <Text>Likes civilizations that liberate cities. Dislikes aggressive expansionists.</Text>
-    </Row>
-    <Row Tag="LOC_AGENDA_MILOSEVIC_NAME">
-      <Text>Balkan Strongman</Text>
-    </Row>
-    <Row Tag="LOC_AGENDA_MILOSEVIC_DESCRIPTION">
-      <Text>Likes civilizations with a strong military and high loyalty. Dislikes weak or disloyal empires.</Text>
-    </Row>
+    <!-- Milosevic -->
+    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME"><Text>Nationalist Mobilization</Text></Row>
+    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION"><Text>Monuments yield double Culture. War Weariness reduced by 50%. Early game (to Renaissance): +50% War Weariness. From Industrial Era: War Weariness is 0%. Military and siege units gain +10 Combat Strength when attacking cities or districts.</Text></Row>
 
-    <!-- UNIQUE BUILDING -->
-    <Row Tag="LOC_BUILDING_DOM_KULTURE_NAME">
-      <Text>Dom Kulture</Text>
-    </Row>
-    <Row Tag="LOC_BUILDING_DOM_KULTURE_DESCRIPTION">
-      <Text>Serbian unique building that replaces the Broadcast Tower. Provides +4 Culture, +2 Production, +1 Amenity, and +2 Loyalty per turn.</Text>
-    </Row>
+    <!-- Dusan -->
+    <Row Tag="LOC_TRAIT_LEADER_DUSANS_CODE_NAME"><Text>Dušan's Code</Text></Row>
+    <Row Tag="LOC_TRAIT_LEADER_DUSANS_CODE_DESCRIPTION"><Text>Conquered cities generate +2 Loyalty and +2 Culture per turn. Capturing a city in a Golden Age grants +1 Wildcard Policy slot for the remainder of the era.</Text></Row>
 
-    <!-- UNIQUE IMPROVEMENT -->
-    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_NAME">
-      <Text>Spomenik</Text>
-    </Row>
-    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION">
-      <Text>Serbian unique improvement built on hills. Provides +2 Culture and +1 Faith, generating Tourism later in the game.</Text>
-    </Row>
+    <!-- Quotes -->
+    <Row Tag="LOC_DIPLO_QUOTE_TITO"><Text>"Živelo bratstvo i jedinstvo naših naroda!"</Text></Row>
+    <Row Tag="LOC_DIPLO_QUOTE_DRAZA"><Text>"Za kralja i otadžbinu, sa verom u Boga!"</Text></Row>
+    <Row Tag="LOC_DIPLO_QUOTE_MILOSEVIC"><Text>"Niko ne sme da vas bije!"</Text></Row>
+    <Row Tag="LOC_DIPLO_QUOTE_DUSAN"><Text>"Carstvo nemačko, carstvo srpsko."</Text></Row>
 
-    <!-- UNIQUE UNITS -->
-    <Row Tag="LOC_UNIT_PARTIZANI_NAME">
-      <Text>Partizani</Text>
-    </Row>
-    <Row Tag="LOC_UNIT_PARTIZANI_DESCRIPTION">
-      <Text>Serbian unique melee unit replacing Infantry under Josip Broz Tito. Gains +7 Combat Strength in Hills and has reduced production cost.</Text>
-    </Row>
+    <!-- ===================== BUILDING ===================== -->
+    <Row Tag="LOC_BUILDING_MANASTIR_NAME"><Text>Manastir</Text></Row>
+    <Row Tag="LOC_BUILDING_MANASTIR_DESCRIPTION"><Text>Serbian unique building that replaces the Temple. Provides +3 Faith, +1 Culture, and 1 Great Work of Relic slot.</Text></Row>
 
-    <Row Tag="LOC_UNIT_CETNICKI_ODRED_NAME">
-      <Text>Četnički Odred</Text>
-    </Row>
-    <Row Tag="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION">
-      <Text>Serbian unique recon unit replacing the Skirmisher under Draža Mihailović. Boasts high mobility (+4 Movement) and ignores Zone of Control.</Text>
-    </Row>
+    <!-- ===================== IMPROVEMENT ===================== -->
+    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_NAME"><Text>Spomenik</Text></Row>
+    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION"><Text>Serbian unique improvement. Build on Hills. Provides +2 Culture, +1 Faith, and Tourism. Defensive units on or adjacent gain +3 Combat Strength.</Text></Row>
 
-    <Row Tag="LOC_UNIT_GARDIJSKA_JEDINICA_NAME">
-      <Text>Gardijska Jedinica</Text>
-    </Row>
-    <Row Tag="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION">
-      <Text>Serbian unique melee unit replacing Mechanized Infantry under Slobodan Milošević. Boasts superior Combat Strength (93 vs 85).</Text>
-    </Row>
+    <!-- ===================== UNITS ===================== -->
+    <Row Tag="LOC_UNIT_PARTIZANI_NAME"><Text>Partizani</Text></Row>
+    <Row Tag="LOC_UNIT_PARTIZANI_DESCRIPTION"><Text>Serbian unique Infantry replacement (Tito). Combat Strength 75. +7 Combat Strength in Hills and Woods. 20% cheaper to produce.</Text></Row>
 
-    <!-- CITIES -->
+    <Row Tag="LOC_UNIT_CHETNIK_NAME"><Text>Chetnik</Text></Row>
+    <Row Tag="LOC_UNIT_CHETNIK_DESCRIPTION"><Text>Serbian unique Musketman replacement (Draža). +2 Movement on Hills. +10 Combat Strength when defending in Hills or Mountains.</Text></Row>
+
+    <Row Tag="LOC_UNIT_NEVA_M_NAME"><Text>Neva-M Anti-Air Battery</Text></Row>
+    <Row Tag="LOC_UNIT_NEVA_M_DESCRIPTION"><Text>Serbian unique Anti-Air replacement (Milošević). +100 damage against aircraft. "Sorry we didn't know it was invisible."</Text></Row>
+
+    <Row Tag="LOC_UNIT_ALEMANNIC_GUARD_NAME"><Text>Almanska Garda</Text></Row>
+    <Row Tag="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"><Text>Serbian unique Knight replacement (Dušan). +5 Combat Strength in foreign territory. 20% cheaper to maintain.</Text></Row>
+
+    <!-- ===================== CITIES ===================== -->
     <Row Tag="LOC_CITY_NAME_BEOGRAD"><Text>Beograd</Text></Row>
     <Row Tag="LOC_CITY_NAME_NOVI_SAD"><Text>Novi Sad</Text></Row>
     <Row Tag="LOC_CITY_NAME_NIS"><Text>Niš</Text></Row>
@@ -139,29 +80,5 @@
     <Row Tag="LOC_CITY_NAME_VRANJE"><Text>Vranje</Text></Row>
     <Row Tag="LOC_CITY_NAME_NOVI_PAZAR"><Text>Novi Pazar</Text></Row>
 
-    <!-- GREAT PEOPLE -->
-    <Row Tag="LOC_GREATPERSON_NIKOLA_TESLA_NAME">
-      <Text>Nikola Tesla</Text>
-    </Row>
-    <Row Tag="LOC_GREATPERSON_RATKO_MLADIC_NAME">
-      <Text>Ratko Mladić</Text>
-    </Row>
-    <Row Tag="LOC_GREATPERSON_DESANKA_MAKSIMOVIC_NAME">
-      <Text>Desanka Maksimović</Text>
-    </Row>
-
-    <!-- GREAT WORKS -->
-    <Row Tag="LOC_GREATWORK_KRVAVA_BAJKA_NAME">
-      <Text>Krvava Bajka</Text>
-    </Row>
-    <Row Tag="LOC_GREATWORK_KRVAVA_BAJKA_QUOTE">
-      <Text>"Bilo je to u zemlji seljaka i njiva..."</Text>
-    </Row>
-    <Row Tag="LOC_GREATWORK_TRAZIM_POMILOVANJE_NAME">
-      <Text>Tražim Pomilovanje</Text>
-    </Row>
-    <Row Tag="LOC_GREATWORK_TRAZIM_POMILOVANJE_QUOTE">
-      <Text>"Tražim pomilovanje za sve što je bilo..."</Text>
-    </Row>
   </LocalizedText>
 </GameData>
