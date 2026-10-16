@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="IMPROVEMENT_SPOMENIK" Kind="KIND_IMPROVEMENT"/>
+    <Row Type="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK" Kind="KIND_TRAIT"/>
+  </Types>
+
+  <Traits>
+    <Row TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK" Name="LOC_IMPROVEMENT_SPOMENIK_NAME" Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION"/>
+  </Traits>
+
+  <CivilizationTraits>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK"/>
+  </CivilizationTraits>
+
+  <Improvements>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" 
+         Name="LOC_IMPROVEMENT_SPOMENIK_NAME" 
+         Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION" 
+         Icon="ICON_IMPROVEMENT_SPOMENIK"
+         Buildable="true" 
+         PrereqCivic="CIVIC_CIVIL_ENGINEERING" 
+         PlunderType="PLUNDER_CULTURE" 
+         PlunderAmount="25" 
+         TraitType="TRAIT_CIVILIZATION_IMPROVEMENT_SPOMENIK"/>
+  </Improvements>
+
+  <Improvement_YieldChanges>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" YieldChange="2"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" YieldChange="1"/>
+  </Improvement_YieldChanges>
+
+  <Improvement_Tourism>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TourismSource="TOURISMSOURCE_CULTURE" PrereqCivic="CIVIC_CULTURAL_HERITAGE" ScalingFactor="100"/>
+  </Improvement_Tourism>
+
+  <Improvement_ValidTerrains>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_GRASS_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_PLAINS_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_DESERT_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_TUNDRA_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_SNOW_HILLS"/>
+  </Improvement_ValidTerrains>
+</GameData>

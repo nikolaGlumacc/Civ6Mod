@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_CivAltName06 -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 2/11/2024 7:43:31 PM -->
+<GameData>
+
+	<!-- Option changes name to Serbo-Rome -->
+	<Civilizations>
+		<Update>
+			<Where	CivilizationType="CIVILIZATION_STR_SERBIA"/>
+			<Set	Name="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_6"
+					Description="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_6"
+					Adjective="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_6"/>
+		</Update>
+	</Civilizations>
+	<Units>
+		<Update>
+			<Where	UnitType="UNIT_STR_SERBIA_GUSAR"/>
+			<Set	Description="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_6"/>
+		</Update>
+	</Units>
+	<Improvements>
+		<Update>
+			<Where	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"/>
+			<Set	Description="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_6"/>
+		</Update>
+	</Improvements>
+
+</GameData>

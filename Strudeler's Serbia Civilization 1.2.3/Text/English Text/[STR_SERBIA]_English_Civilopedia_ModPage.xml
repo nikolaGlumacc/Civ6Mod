@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_English_Civilopedia_ModPage -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 5:05:01 PM -->
+<GameData>
+
+	<LocalizedText>
+		<!-- GROUP NAME -->
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGEGROUP_STRUDELERS_SERBIA_MOD_NAME"
+				Language="en_US">
+			<Text>Strudeler's Civilizations: Serbia</Text>
+		</Row>
+		<!-- INTRODUCTION -->
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_TITLE"
+				Language="en_US">
+			<Text>01. Summary and Changelog</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_1"
+				Language="en_US">
+			<Text>
+				-Adds Serbia led by Stefan Uros IV Dušan.
+				[NEWLINE]-Adds Stefan Uros IV Dušan as a leader of Byzantium and Greece.
+				[NEWLINE]-Compatible with Strudeler's Civilization VI Deluxe, and (maybe) other leaders and civilizations created by Strudeler.
+				[NEWLINE][NEWLINE]-Stefan Uros IV Dušan Trait/Dušan's Code: All Historic Moments gain an additional +1 Era Score. Gain the Alemannic Guard unique unit.
+				[NEWLINE]-Stefan Uros IV Dušan Agenda/Emperor of Serbs and Greeks: Likes civilizations in a Golden Age. Dislikes civilizations in a Dark Age.
+				[NEWLINE]-Stefan Uros IV Dušan Unit/Alemannic Guard: Replaces the Knight. Adjacent levied units gain +5 [ICON_Strength] Combat Strength. Cost to levy city-state units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age. +50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age. +1 [ICON_Envoy] Envoy token point per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.
+				[NEWLINE][NEWLINE]-Serbia Trait/Sclaveni: Civilian units gain +2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden Age. Cities gain +1 [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age. Military or religious units gain +5 [ICON_Strength] Combat or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age.
+				[NEWLINE]-Serbia Unit/Gusar: Replaces the Courser. 1 [ICON_Range] Range. Can ranged attack when embarked. Can melee attack on land. +3 [ICON_Movement] Movement when embarked. Adjacent naval units can Coastal Raid.
+				[NEWLINE]-Serbia Improvement/Autocephalous Church: +1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields based on specialty districts, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn. A city can only have one Autocephalous Church. Tiles with an Autocephalous Church cannot be swapped. Cannot be built next to another Autocephalous Church.
+				[NEWLINE][NEWLINE]-This mod uses in-game assets remixed for the Alemannic Guard and Gusar.
+				[NEWLINE]-Serbia uses Serbo-Croatian names (cities, geographic landmarks, citizens).
+				[NEWLINE]-Serbia has alternate names available in the menu: Duklja, Rascia, Morava, Prilep, Serbo-Greece, and Serbo-Rome.
+				[NEWLINE]-TSL support for Firaxis: Standard TSL Earth, Firaxis: Huge TSL Earth, Firaxis: Standard TSL Europe, Firaxis: TSL Mediterranean, YnAMP: Giant Earth, YnAMP: Greatest Earth Map, YnAMP: Large Europe, and YnAEMP: Play Europe Again.
+				[NEWLINE]-Leader background for Stefan Uros IV Dušan (Serbia) created by Paja Jovanović; leader background for Stefan Uros IV Dušan (Byzantium) created by Alfonse Mucha; leader background for Stefan Uros IV Dušan (Greece) created by Paja Jovanović; moment art for the Alemannic Guard created by Adam Stefanović; moment art for the Gusar uploaded by G Ferg and taken from Pinterest; and moment art for the Autocephalous Church created by Vol de Nuit and taken from Wikipedia.
+				[NEWLINE]-Leader art finalised using Image2Image.
+				[NEWLINE]-Historic information can be found on Wikipedia.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_2"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.2.3 (CURRENT)[ENDCOLOR]
+				[NEWLINE]-Minor fixes.
+				[NEWLINE]-Bonus [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age increased to +2.
+				[NEWLINE]-Gusar embarked [ICON_Movement] Movement increased to +3.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_3"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.2.2 (OLD)[ENDCOLOR]
+				[NEWLINE]-Support for upcoming alternate leader: Njegoš.
+				[NEWLINE]-Text changes.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_4"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.2.1 (OLD)[ENDCOLOR]
+				[NEWLINE]-New graphics.
+				[NEWLINE]-Text changes.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_5"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.2.0 (OLD)[ENDCOLOR]
+				[NEWLINE]-New graphics.
+				[NEWLINE]-Text changes.
+				[NEWLINE]-Stefan Uros IV Dušan now has a unique unit: the Alemannic Guard.
+				[NEWLINE]-Alemannic Guard: Serbian, Greek, and Byzantine unique Medieval era Heavy Cavalry class unit that replaces the Knight when Stefan Uros IV Dušan is their leader. Adjacent levied units gain +5 [ICON_Strength] Combat Strength. Cost to levy city-state units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age. +50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age. +1 [ICON_Envoy] Envoy token point per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.
+				[NEWLINE]-Sclaveni now grants cities +1 [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age.
+				[NEWLINE]-Gusar [ICON_Gold] Gold maintenance lowered to 1 and it now costs 10 [ICON_Resource_Horses] Horses to build.
+				[NEWLINE]-TSL support.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_6"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.1.1 (OLD)[ENDCOLOR]
+				[NEWLINE]-TSL support.
+				[NEWLINE]-Gusar effects the Coastal Raid capabilities of adjacent ships and ships in formation with it.
+				[NEWLINE]-Fixed Gusar sight from 5 to 2.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_7"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.1.0 (OLD)[ENDCOLOR]
+				[NEWLINE]-Changed Leader art.
+				[NEWLINE]-Gusar now has an appropriate 5 [ICON_Movement] Movement.
+			</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_CHAPTER_CONTENT_PARA_8"
+				Language="en_US">
+			<Text>
+				[COLOR:Red]VERSION 1.0.0 (OLD)[ENDCOLOR]
+				[NEWLINE]-Welcome to the launch!
+			</Text>
+		</Row>
+	</LocalizedText>
+
+</GameData>

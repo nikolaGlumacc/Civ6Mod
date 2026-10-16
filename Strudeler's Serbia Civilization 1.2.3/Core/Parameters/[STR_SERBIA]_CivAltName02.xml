@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_CivAltName02 -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 2/11/2024 7:10:59 PM -->
+<GameData>
+
+	<!-- Option changes name to Rascia -->
+	<Civilizations>
+		<Update>
+			<Where	CivilizationType="CIVILIZATION_STR_SERBIA"/>
+			<Set	Name="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_2"
+					Description="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_2"
+					Adjective="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_2"/>
+		</Update>
+	</Civilizations>
+	<Units>
+		<Update>
+			<Where	UnitType="UNIT_STR_SERBIA_GUSAR"/>
+			<Set	Description="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_2"/>
+		</Update>
+	</Units>
+	<Improvements>
+		<Update>
+			<Where	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"/>
+			<Set	Description="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_2"/>
+		</Update>
+	</Improvements>
+
+</GameData>

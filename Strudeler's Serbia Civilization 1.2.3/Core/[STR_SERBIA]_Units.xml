@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_Units -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 4:58:32 PM -->
+<GameData>
+	
+	<!-- SERBIA/BYZANTIUM/GREECE ALEMANNIC GUARD | UNIT -->
+	<Types>
+		<Row	Type="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Kind="KIND_UNIT"/>
+	</Types>
+	<Tags>
+		<Row	Tag="CLASS_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<TypeTags>
+		<Row	Type="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Tag="CLASS_HEAVY_CAVALRY"/>
+		<Row	Type="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Tag="CLASS_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"/>
+	</TypeTags>
+	<UnitAiInfos>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				AiType="UNITAI_COMBAT"/>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				AiType="UNITAI_EXPLORE"/>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				AiType="UNITTYPE_CAVALRY"/>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				AiType="UNITTYPE_MELEE"/>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				AiType="UNITTYPE_LAND_COMBAT"/>
+	</UnitAiInfos>
+	<Units>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Cost="220"
+				Maintenance="4"
+				BaseMoves="4"
+				BaseSightRange="2"
+				ZoneOfControl="true"
+				Domain="DOMAIN_LAND"
+				Combat="50"
+				StrategicResource="RESOURCE_IRON"
+				FormationClass="FORMATION_CLASS_LAND_COMBAT"
+				PromotionClass="PROMOTION_CLASS_HEAVY_CAVALRY"
+				AdvisorType="ADVISOR_CONQUEST"
+				Name="LOC_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_NAME"
+				Description="LOC_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_DESCRIPTION"
+				PurchaseYield="YIELD_GOLD"
+				MandatoryObsoleteTech="TECH_COMBUSTION"
+				PrereqTech="TECH_STIRRUPS"
+				TraitType="TRAIT_LEADER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ALEMANNIC_GUARD"/>
+	</Units>
+	<Units_XP2>
+		<Row	UnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				ResourceCost="10"/>
+	</Units_XP2>
+	<UnitReplaces>
+		<Row	CivUniqueUnitType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				ReplacesUnitType="UNIT_KNIGHT"/>
+	</UnitReplaces>
+	<UnitUpgrades>
+		<Row	Unit="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				UpgradeUnit="UNIT_CUIRASSIER"/>
+	</UnitUpgrades>
+	
+	<!-- SERBIA/BYZANTIUM/GREECE ALEMANNIC GUARD | UNIT ABILITY -->
+	<Types>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE, FLANKING BONUS IN NORMAL AGE, ENVOYS IN DARK AGE -->
+		<Row	Type="ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1"
+				Kind="KIND_ABILITY"/>
+	</Types>
+	<TypeTags>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE, FLANKING BONUS IN NORMAL AGE, ENVOYS IN DARK AGE -->
+		<Row	Type="ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1"
+				Tag="CLASS_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"/>
+	</TypeTags>
+	<UnitAbilities>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE, FLANKING BONUS IN NORMAL AGE, ENVOYS IN DARK AGE -->
+		<Row	UnitAbilityType="ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1"
+				Name="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_NAME"
+				Description="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION"/>
+	</UnitAbilities>
+	<Modifiers>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_LEVY_DISCOUNT_PERCENT</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_GOLDEN_AGE</SubjectRequirementSetId>
+		</Row>
+		<!-- FLANKING BONUS IN NORMAL AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_NORMAL_AGE_BONUS_FLANKING_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_FLANKING_BONUS_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</SubjectRequirementSetId>
+		</Row>
+		<!-- ENVOYS IN DARK AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_DARK_AGE_ENVOYS_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_DARK_AGE</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1</ModifierId>
+			<Name>Percent</Name>
+			<Value>10</Value>
+		</Row>
+		<!-- FLANKING BONUS IN NORMAL AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_NORMAL_AGE_BONUS_FLANKING_1</ModifierId>
+			<Name>Percent</Name>
+			<Value>50</Value>
+		</Row>
+		<!-- ENVOYS IN DARK AGE -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_DARK_AGE_ENVOYS_1</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+	</ModifierArguments>
+	<UnitAbilityModifiers>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1</ModifierId>
+		</Row>
+		<!-- FLANKING BONUS IN NORMAL AGE -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_NORMAL_AGE_BONUS_FLANKING_1</ModifierId>
+		</Row>
+		<!-- ENVOYS IN DARK AGE -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_DARK_AGE_ENVOYS_1</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<ModifierStrings>
+		<!-- COST TO LEVY UNITS IN GOLDEN AGE -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION_BONUS"/>-->
+		<!-- FLANKING BONUS IN NORMAL AGE -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION_BONUS"/>-->
+		<!-- ENVOYS IN DARK AGE -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_GOLDEN_AGE_LEVY_DISCOUNT_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION_BONUS"/>-->
+	</ModifierStrings>
+
+	<!-- SERBIA GUSAR | UNIT -->
+	<Types>
+		<Row	Type="UNIT_STR_SERBIA_GUSAR"
+				Kind="KIND_UNIT"/>
+	</Types>
+	<Tags>
+		<Row	Tag="CLASS_STR_SERBIA_GUSAR"
+				Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<TypeTags>
+		<Row	Type="UNIT_STR_SERBIA_GUSAR"
+				Tag="CLASS_LIGHT_CAVALRY"/>
+		<Row	Type="UNIT_STR_SERBIA_GUSAR"
+				Tag="CLASS_STR_SERBIA_GUSAR"/>
+	</TypeTags>
+	<UnitAiInfos>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITAI_COMBAT"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITAI_EXPLORE"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITTYPE_CAVALRY"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITTYPE_MELEE"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITTYPE_LAND_COMBAT"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITTYPE_RANGED"/>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR" 
+				AiType="UNITTYPE_NAVAL"/>
+	</UnitAiInfos>
+	<Units>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR"
+				Cost="200"
+				Maintenance="1"
+				BaseMoves="5"
+				BaseSightRange="2"
+				ZoneOfControl="true"
+				Domain="DOMAIN_LAND"
+				Combat="46"
+				RangedCombat="40"
+				StrategicResource="RESOURCE_HORSES"
+				Range="1"
+				FormationClass="FORMATION_CLASS_LAND_COMBAT"
+				PromotionClass="PROMOTION_CLASS_LIGHT_CAVALRY"
+				AdvisorType="ADVISOR_CONQUEST"
+				Name="LOC_UNIT_STR_SERBIA_GUSAR_NAME"
+				Description="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION"
+				PurchaseYield="YIELD_GOLD"
+				MandatoryObsoleteTech="TECH_SYNTHETIC_MATERIALS"
+				PrereqTech="TECH_CASTLES"
+				TraitType="TRAIT_CIVILIZATION_STR_SERBIA_GUSAR"/>
+	</Units>
+	<Units_XP2>
+		<Row	UnitType="UNIT_STR_SERBIA_GUSAR"
+				ResourceCost="10"/>
+	</Units_XP2>
+	<UnitReplaces>
+		<Row	CivUniqueUnitType="UNIT_STR_SERBIA_GUSAR"
+				ReplacesUnitType="UNIT_COURSER"/>
+	</UnitReplaces>
+	<UnitUpgrades>
+		<Row	Unit="UNIT_STR_SERBIA_GUSAR"
+				UpgradeUnit="UNIT_CAVALRY"/>
+	</UnitUpgrades>
+
+	<!-- SERBIA GUSAR | UNIT ABILITY -->
+	<Types>
+		<!-- CAN DEFEND AT SEA, MOVEMENT ON COAST -->
+		<Row	Type="ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1"
+				Kind="KIND_ABILITY"/>>
+	</Types>
+	<TypeTags>
+		<!-- CAN DEFEND AT SEA, MOVEMENT ON COAST -->
+		<Row	Type="ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1"
+				Tag="CLASS_STR_SERBIA_GUSAR"/>
+	</TypeTags>
+	<UnitAbilities>
+		<!-- CAN DEFEND AT SEA, MOVEMENT ON COAST -->
+		<Row	UnitAbilityType="ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1"
+				Name="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_NAME"
+				Description="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_DESCRIPTION"/>
+	</UnitAbilities>
+	<Modifiers>
+		<!-- CAN DEFEND AT SEA -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_CAN_DEFEND_AT_SEA_1</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_UNIT_ADJUST_FIGHT_WHILE_EMBARKED</ModifierType>
+		</Row>
+		<!-- MOVEMENT ON COAST -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_MOVEMENT_ON_COAST_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT</ModifierType>
+			<OwnerRequirementSetId>REQUIREMENTS_UNIT_IS_EMBARKED</OwnerRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<!-- CAN DEFEND AT SEA -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_CAN_DEFEND_AT_SEA_1</ModifierId>
+			<Name>CanFight</Name>
+			<Value>true</Value>
+		</Row>
+		<!-- MOVEMENT ON COAST -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_MOVEMENT_ON_COAST_1</ModifierId>
+			<Name>Amount</Name>
+			<Value>3</Value>
+		</Row>
+	</ModifierArguments>
+	<UnitAbilityModifiers>
+		<!-- CAN DEFEND AT SEA -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_CAN_DEFEND_AT_SEA_1</ModifierId>
+		</Row>
+		<!-- MOVEMENT ON COAST -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_MOVEMENT_ON_COAST_1</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<ModifierStrings>
+		<!-- CAN DEFEND AT SEA -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_GUSAR_CAN_DEFEND_AT_SEA_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_DESCRIPTION_BONUS"/>-->
+		<!-- MOVEMENT ON COAST -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_GUSAR_MOVEMENT_ON_COAST_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_DESCRIPTION_BONUS"/>-->
+	</ModifierStrings>
+
+	<!-- SERBIA/GREECE/BYZANTIUM ALEMANNIC GUARD/GUSAR | UNIT REQUIREMENTS -->
+	<RequirementSets>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_1</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_2</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<Requirements>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_1</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_HAS_GOLDEN_AGE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_2</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_HAS_DARK_AGE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+			<!-- N/A -->
+	</RequirementArguments>
+
+</GameData>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_Civilopedia_ModPage -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 4:56:15 PM -->
+<GameData>
+
+	<!-- STRUDELER'S SERBIA MOD ENTRIES -->
+	<CivilopediaPageGroups>
+		<Row	SectionID="CONCEPTS"
+				PageGroupId="STRUDELERS_SERBIA_CONCEPTS"
+				Name="LOC_PEDIA_CONCEPTS_PAGEGROUP_STRUDELERS_SERBIA_MOD_NAME"
+				Tooltip=""
+				VisibleIfEmpty="false"
+				SortIndex="0"/>
+	</CivilopediaPageGroups>
+	<CivilopediaPages>
+		<Row	SectionId="CONCEPTS"
+				PageId="STRUDELERS_SERBIA_MOD_01"
+				PageGroupId="STRUDELERS_SERBIA_CONCEPTS"
+				PageLayoutId="Simple"
+				Name="LOC_PEDIA_CONCEPTS_PAGE_STRUDELERS_SERBIA_MOD_01_TITLE"
+				Tooltip=""
+				SortIndex="0"/>
+	</CivilopediaPages>
+
+</GameData>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="UNIT_PARTIZANI" Kind="KIND_UNIT"/>
+    <Row Type="UNIT_CETNICKI_ODRED" Kind="KIND_UNIT"/>
+    <Row Type="UNIT_GARDIJSKA_JEDINICA" Kind="KIND_UNIT"/>
+    <Row Type="ABILITY_PARTIZANI" Kind="KIND_ABILITY"/>
+    <Row Type="ABILITY_CETNICKI_ODRED" Kind="KIND_ABILITY"/>
+    <Row Type="ABILITY_GARDIJSKA_JEDINICA" Kind="KIND_ABILITY"/>
+  </Types>
+
+  <TypeTags>
+    <Row Type="UNIT_PARTIZANI" Tag="CLASS_MELEE"/>
+    <Row Type="UNIT_CETNICKI_ODRED" Tag="CLASS_RECON"/>
+    <Row Type="UNIT_GARDIJSKA_JEDINICA" Tag="CLASS_MELEE"/>
+    <Row Type="ABILITY_PARTIZANI" Tag="CLASS_MELEE"/>
+    <Row Type="ABILITY_CETNICKI_ODRED" Tag="CLASS_RECON"/>
+    <Row Type="ABILITY_GARDIJSKA_JEDINICA" Tag="CLASS_MELEE"/>
+  </TypeTags>
+
+  <UnitAbilities>
+    <Row UnitAbilityType="ABILITY_PARTIZANI" Name="LOC_UNIT_PARTIZANI_NAME" Description="LOC_UNIT_PARTIZANI_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_CETNICKI_ODRED" Name="LOC_UNIT_CETNICKI_ODRED_NAME" Description="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION"/>
+    <Row UnitAbilityType="ABILITY_GARDIJSKA_JEDINICA" Name="LOC_UNIT_GARDIJSKA_JEDINICA_NAME" Description="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION"/>
+  </UnitAbilities>
+
+  <UnitAbilityModifiers>
+    <Row UnitAbilityType="ABILITY_PARTIZANI" ModifierId="PARTIZANI_HILLS_COMBAT"/>
+    <Row UnitAbilityType="ABILITY_CETNICKI_ODRED" ModifierId="CETNICI_IGNORE_ZOC"/>
+  </UnitAbilityModifiers>
+
+  <Units>
+    <!-- Partizani: Replaces Infantry, Cost 344 (20% reduction from 430), Combat 75 (vs 70) -->
+    <Row UnitType="UNIT_PARTIZANI" 
+         Name="LOC_UNIT_PARTIZANI_NAME" 
+         Description="LOC_UNIT_PARTIZANI_DESCRIPTION" 
+         BaseMoves="2" 
+         Cost="344" 
+         Maintenance="6" 
+         BaseSightRange="2" 
+         Combat="75" 
+         Domain="DOMAIN_LAND" 
+         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
+         PromotionClass="PROMOTION_CLASS_MELEE" 
+         PrereqTech="TECH_REPLACEABLE_PARTS" 
+         AdvisorType="ADVISOR_CONQUEST"
+         TraitType="TRAIT_LEADER_UNIT_PARTIZANI"/>
+
+    <!-- Četnički Odred: Replaces Skirmisher, Moves 4 (high mobility), Combat 35, Sight 3 -->
+    <Row UnitType="UNIT_CETNICKI_ODRED" 
+         Name="LOC_UNIT_CETNICKI_ODRED_NAME" 
+         Description="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION" 
+         BaseMoves="4" 
+         Cost="150" 
+         Maintenance="3" 
+         BaseSightRange="3" 
+         Combat="35" 
+         RangedCombat="35" 
+         Range="1" 
+         Domain="DOMAIN_LAND" 
+         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
+         PromotionClass="PROMOTION_CLASS_RECON" 
+         PrereqTech="TECH_GUNPOWDER" 
+         AdvisorType="ADVISOR_CONQUEST"
+         TraitType="TRAIT_LEADER_UNIT_CETNICKI_ODRED"/>
+
+    <!-- Gardijska Jedinica: Replaces Mechanized Infantry, Combat 93 (vs 85) -->
+    <Row UnitType="UNIT_GARDIJSKA_JEDINICA" 
+         Name="LOC_UNIT_GARDIJSKA_JEDINICA_NAME" 
+         Description="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION" 
+         BaseMoves="3" 
+         Cost="650" 
+         Maintenance="8" 
+         BaseSightRange="3" 
+         Combat="93" 
+         Domain="DOMAIN_LAND" 
+         FormationClass="FORMATION_CLASS_LAND_COMBAT" 
+         PromotionClass="PROMOTION_CLASS_MELEE" 
+         PrereqTech="TECH_GUIDANCE_SYSTEMS" 
+         AdvisorType="ADVISOR_CONQUEST"
+         TraitType="TRAIT_LEADER_UNIT_GARDIJSKA_JEDINICA"/>
+  </Units>
+
+  <UnitReplaces>
+    <Row CivUniqueUnitType="UNIT_PARTIZANI" ReplacesUnitType="UNIT_INFANTRY"/>
+    <Row CivUniqueUnitType="UNIT_CETNICKI_ODRED" ReplacesUnitType="UNIT_SKIRMISHER"/>
+    <Row CivUniqueUnitType="UNIT_GARDIJSKA_JEDINICA" ReplacesUnitType="UNIT_MECHANIZED_INFANTRY"/>
+  </UnitReplaces>
+
+  <Modifiers>
+    <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RunOnce="0" Permanent="1"/>
+    <Row ModifierId="CETNICI_IGNORE_ZOC" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC" RunOnce="0" Permanent="1"/>
+  </Modifiers>
+
+  <ModifierArguments>
+    <Row ModifierId="PARTIZANI_HILLS_COMBAT" Name="Amount" Value="7"/>
+    <Row ModifierId="CETNICI_IGNORE_ZOC" Name="Ignore" Value="true"/>
+  </ModifierArguments>
+
+  <RequirementSets>
+    <Row RequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RequirementSetType="REQUIREMENTSET_TEST_ANY"/>
+  </RequirementSets>
+
+  <RequirementSetRequirements>
+    <Row RequirementSetId="REQUIREMENTS_OPPONENT_OR_ATTACKER_IN_HILLS" RequirementId="REQ_IN_HILLS"/>
+  </RequirementSetRequirements>
+
+  <Requirements>
+    <Row RequirementId="REQ_IN_HILLS" RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
+  </Requirements>
+</GameData>

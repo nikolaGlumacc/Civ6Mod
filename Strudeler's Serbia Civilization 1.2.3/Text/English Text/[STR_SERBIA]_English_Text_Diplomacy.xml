@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_English_Text_Diplomacy -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 5:05:45 PM -->
+<GameData>
+
+<!-- DIPLO TEXT -->
+	<LocalizedText>
+	<!-- FIRST MEET -->
+		<!-- First AI line -->
+		<Row	Tag="LOC_DIPLO_FIRST_MEET_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>You have reached the latest empire of the Balkans. I, Dušan, will ensure the security of the Roman Empire.</Text>
+		</Row>
+		<!-- AI Invitation to Visit nearby City -->
+		<Row	Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Serbs have dominated their side of the Danube for centuries, won't you visit a nearby city and see our progress?</Text>
+		</Row>
+		<!-- AI Accepts Human Invitation -->
+		<Row	Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>This will begin an age of prosperity.</Text>
+		</Row>
+		<!-- AI Invitation to Exchange Capital Information -->
+		<Row	Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>My seat of Empire shall be a new Cargrad, you should witness its development.</Text>
+		</Row>
+	<!-- GREETINGS -->
+		<!-- Greetings -->
+		<Row	Tag="LOC_DIPLO_GREETING_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Serbs, Greeks, Romans, we are a single people.</Text>
+		</Row>
+	<!-- DELEGATION -->
+		<!-- AI Accepts -->
+		<Row	Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>We shall teach them about the Cyrillic script.</Text>
+		</Row>
+		<!-- AI Rejects -->
+		<Row	Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The Empire cannot accept.</Text>
+		</Row>
+		<!-- AI Requests -->
+		<Row	Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The delegation of Serbs and Greeks sends you a dozen monks and artists commissioned with crafting the finest of icons. Do accept them and learn to love God.</Text>
+		</Row>
+	<!-- OPEN BORDERS -->
+		<!-- AI Accepts from Human -->
+		<Row	Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Tread the hinterlands of the former Rome carefully.</Text>
+		</Row>
+		<!-- AI Rejects from Human -->
+		<Row	Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The new Roman Empire of Greeks and Serbs would not fare well with vagrant soldiers passing.</Text>
+		</Row>
+		<!-- AI Requests from Human -->
+		<Row	Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The call to war is eternal, as is the need to request access from various princes.</Text>
+		</Row>
+	<!-- DECLARE FRIENDSHIP -->
+		<!-- AI Accepts from Human -->
+		<Row	Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>So it shall be.</Text>
+		</Row>
+		<!-- AI Rejects from Human -->
+		<Row	Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The Empire cannot accept.</Text>
+		</Row>
+		<!-- AI Requests Friendship from Human -->
+		<Row	Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>We shall bond our peoples in friendship, ensuring a new generation of Romans.</Text>
+		</Row>
+		<!-- Human Accepts AI Requests, AI Responds -->
+		<Row	Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The realms shall go from strength to strength.</Text>
+		</Row>
+		<!-- Human Rejects AI Requests, AI Responds -->
+		<Row	Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>There is still a sea of princes we may yet befriend.</Text>
+		</Row>
+	<!-- ALLIANCE -->
+		<!-- AI Requests an alliance from human -->
+		<Row	Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>It is time we joined as one, like the Romans of east and west of old.</Text>
+		</Row>
+	<!-- KUDOS AND WARNINGS -->
+		<!-- AI Kudos -->
+		<Row	Tag="LOC_DIPLO_KUDO_EXIT_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Your principality rises like the eagle, far above the rest in this age.</Text>
+		</Row>
+		<!-- AI Warnings -->
+		<Row	Tag="LOC_DIPLO_WARNING_EXIT_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Your principality is the dredge of civilization, a parasite upon prospering peoples everywhere.</Text>
+		</Row>
+		<!-- AI Warns Player for Border Troops -->
+		<Row	Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>We are well aware of motions within our vicinity, explain yourself.</Text>
+		</Row>
+	<!-- TRADE -->
+		<!-- AI Accepts Deal -->
+		<Row	Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Fair.</Text>
+		</Row>
+		<!-- AI Rejects Deal -->
+		<Row	Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>This is not to our benefit.</Text>
+		</Row>
+	<!-- DENOUNCE -->
+		<!-- From Human -->
+		<Row	Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>Serbs will not waver under empty threats from petty kings and dastardly sultans.</Text>
+		</Row>
+		<!-- From AI -->
+		<Row	Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>If your land is left to such decay, perhaps a revived Roman phoenix should take it from you! (Denounces You)</Text>
+		</Row>
+		<!-- Rationale -->
+		<Row	Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				Language="en_US">
+			<Text>(You are in a dark age.)</Text>
+		</Row>
+	<!-- DECLARE WAR -->
+		<!-- Human Declares War -->
+		<Row	Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>God protect the Serbs!</Text>
+		</Row>
+		<!-- AI Declares War -->
+		<Row	Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>As the custodian of the Roman Empire, I must march upon the lesser princes.</Text>
+		</Row>
+	<!-- MAKE PEACE -->
+		<!-- AI Accepts from Human -->
+		<Row	Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The Serbs and the Greeks, together, are not defeated yet.</Text>
+		</Row>
+		<!-- AI Refuses Human -->
+		<Row	Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The Empire of Serbs and Greeks will not stand for such humiliation!</Text>
+		</Row>
+		<!-- AI Requests from Human -->
+		<Row	Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>The princes around us hunger, we are both weakened. It is time to lay down our arms.</Text>
+		</Row>
+	<!-- DEFEAT -->
+		<!-- AI is Defeated -->
+		<Row	Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>You wolves will hunt us, but the Serbian eagles will take flight to the mountains.</Text>
+		</Row>
+		<!-- Human is Defeated (Visible in Hot Seat) -->
+		<Row	Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_ANY"
+				Language="en_US">
+			<Text>You wolves will hunt us, but the Serbian eagles will take flight to the mountains.</Text>
+		</Row>
+	</LocalizedText>
+
+</GameData>

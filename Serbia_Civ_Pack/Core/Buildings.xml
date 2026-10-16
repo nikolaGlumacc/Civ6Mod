@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="BUILDING_DOM_KULTURE" Kind="KIND_BUILDING"/>
+    <Row Type="TRAIT_CIVILIZATION_BUILDING_DOM_KULTURE" Kind="KIND_TRAIT"/>
+  </Types>
+
+  <Traits>
+    <Row TraitType="TRAIT_CIVILIZATION_BUILDING_DOM_KULTURE" Name="LOC_BUILDING_DOM_KULTURE_NAME" Description="LOC_BUILDING_DOM_KULTURE_DESCRIPTION"/>
+  </Traits>
+
+  <CivilizationTraits>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_BUILDING_DOM_KULTURE"/>
+  </CivilizationTraits>
+
+  <Buildings>
+    <Row BuildingType="BUILDING_DOM_KULTURE" 
+         Name="LOC_BUILDING_DOM_KULTURE_NAME" 
+         Description="LOC_BUILDING_DOM_KULTURE_DESCRIPTION" 
+         PrereqCivic="CIVIC_RADIO" 
+         Cost="440" 
+         AdvisorType="ADVISOR_CULTURE" 
+         Maintenance="3" 
+         CitizenSlots="1" 
+         TraitType="TRAIT_CIVILIZATION_BUILDING_DOM_KULTURE"/>
+  </Buildings>
+
+  <BuildingReplaces>
+    <Row CivUniqueBuildingType="BUILDING_DOM_KULTURE" ReplacesBuildingType="BUILDING_BROADCAST_TOWER"/>
+  </BuildingReplaces>
+
+  <Building_YieldChanges>
+    <Row BuildingType="BUILDING_DOM_KULTURE" YieldType="YIELD_CULTURE" YieldChange="4"/>
+    <Row BuildingType="BUILDING_DOM_KULTURE" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+  </Building_YieldChanges>
+
+  <Building_Modifiers>
+    <Row BuildingType="BUILDING_DOM_KULTURE" ModifierId="DOM_KULTURE_AMENITY"/>
+    <Row BuildingType="BUILDING_DOM_KULTURE" ModifierId="DOM_KULTURE_LOYALTY"/>
+  </Building_Modifiers>
+
+  <Modifiers>
+    <Row ModifierId="DOM_KULTURE_AMENITY" ModifierType="MODIFIER_SINGLE_CITY_ADJUST_CITY_AMENITIES_NO_ENTERTAINMENT" RunOnce="0" Permanent="1"/>
+    <Row ModifierId="DOM_KULTURE_LOYALTY" ModifierType="MODIFIER_SINGLE_CITY_ADJUST_IDENTITY_PER_TURN" RunOnce="0" Permanent="1"/>
+  </Modifiers>
+
+  <ModifierArguments>
+    <Row ModifierId="DOM_KULTURE_AMENITY" Name="Amount" Value="1"/>
+    <Row ModifierId="DOM_KULTURE_LOYALTY" Name="Amount" Value="2"/>
+  </ModifierArguments>
+</GameData>

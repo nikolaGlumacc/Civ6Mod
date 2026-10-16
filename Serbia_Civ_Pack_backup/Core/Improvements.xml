@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="IMPROVEMENT_SPOMENIK" Kind="KIND_IMPROVEMENT"/>
+  </Types>
+
+  <Improvements>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" Name="LOC_IMPROVEMENT_SPOMENIK_NAME" Description="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION" PrereqCivic="CIVIC_CIVIL_ENGINEERING" Buildable="1" Icon="ICON_IMPROVEMENT_SPOMENIK"/>
+  </Improvements>
+
+  <Improvement_Yields>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" YieldChange="2"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" YieldChange="1"/>
+  </Improvement_Yields>
+
+  <Improvement_ValidTerrains>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_GRASS_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_PLAINS_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_DESERT_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_TUNDRA_HILLS"/>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_SNOW_HILLS"/>
+  </Improvement_ValidTerrains>
+</GameData>

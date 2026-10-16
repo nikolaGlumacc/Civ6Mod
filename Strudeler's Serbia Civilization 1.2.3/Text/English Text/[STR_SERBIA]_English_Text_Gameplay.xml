@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_English_Text_Gameplay -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 5:06:04 PM -->
+<GameData>
+
+	<!-- MOD TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_MOD_TEXT_SERBIA_CIVILIZATION"
+				Language="en_US">
+			<Text>
+				LEADER: Stefan Uros IV Dušan (Serbia, Byzantium, and Greece)
+				[NEWLINE]LEADER AGENDA: Emperor of Serbs and Greeks
+				[NEWLINE]-Likes Civilizations in a Golden Age.
+				[NEWLINE]-Dislikes Civilizations in a Dark Age.
+				[NEWLINE]LEADER TRAIT: Dušan's Code
+				[NEWLINE]-All Historic Moments gain an additional +1 Era Score.
+				[NEWLINE]-Gain the Alemannic Guard unique Unit.
+				[NEWLINE][NEWLINE]LEADER UNIT: Alemannic Guard
+				[NEWLINE]-Replaces the Knight.
+				[NEWLINE]-Adjacent levied Units gain +5 [ICON_Strength] Combat Strength.
+				[NEWLINE]-Cost to levy City-State Units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age.
+				[NEWLINE]- +50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age.
+				[NEWLINE]- +1 [ICON_Envoy] Envoy token point per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.
+				[NEWLINE][NEWLINE]CIVILIZATION: Serbia
+				[NEWLINE]CIVILIZATION TRAIT: Sclaveni
+				[NEWLINE]-Civilian Units gain +2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden Age.
+				[NEWLINE]-Cities gain +2 [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age.
+				[NEWLINE]-Military or Religious Units gain +5 [ICON_Strength] Combat or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age.
+				[NEWLINE][NEWLINE]CIVILIZATION UNIT: Gusar
+				[NEWLINE]-Replaces the Courser.
+				[NEWLINE]-1 [ICON_Range] Range.
+				[NEWLINE]-Can ranged attack when embarked.
+				[NEWLINE]-Can melee attack on land.
+				[NEWLINE]- +3 [ICON_Movement] Movement when embarked.
+				[NEWLINE]-Adjacent naval units can Coastal Raid.
+				[NEWLINE][NEWLINE]CIVILIZATION IMPROVEMENT: Autocephalous Church
+				[NEWLINE]- +1 [ICON_Housing] Housing and [ICON_Faith] Faith.
+				[NEWLINE]- +2 Loyalty.
+				[NEWLINE]- +2 [ICON_GreatProphet] Great Prophet points per turn.
+				[NEWLINE]-Gain standard adjacency for various yields based on adjacent Specialty Districts, this becomes major adjacency with Nationalism.
+				[NEWLINE]- +15 HP healing for friendly Religious Units on the tile that has not attacked during the turn.
+				[NEWLINE]-A City can only have one Autocephalous Church.
+				[NEWLINE]-Tiles with an Autocephalous Church cannot be swapped.
+				[NEWLINE]-Cannot be built next to another Autocephalous Church.
+			</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA/BYZANTIUM/GREECE STEFAN UROS IV DUSAN THE MIGHTY NEMANJIC LEADER TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NAME"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Serbia)</Text>
+		</Row>
+		<Row	Tag="LOC_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NAME"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Greece)</Text>
+		</Row>
+		<Row	Tag="LOC_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NAME"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Byzantium)</Text>
+		</Row>
+		<Row	Tag="LOC_TRAIT_LEADER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_DUSANS_CODE_NAME"
+				Language="en_US">
+			<Text>Dušan's Code</Text>
+		</Row>
+		<Row	Tag="LOC_TRAIT_LEADER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_DUSANS_CODE_DESCRIPTION"
+				Language="en_US">
+			<Text>All Historic Moments grant an additional +1 Era Score. Gain the Alemannic Guard unique unit.</Text>
+		</Row>
+		<Row	Tag="LOC_LOADING_INFO_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				Language="en_US">
+			<Text>Stefan Uroš IV Dušan, Autocrat of the Greeks, Tsar of the Serbs, may the Archangels be with you. You are as skilled a diplomat as you are a commander, write a the new prostaxis, and seize the legacy of Rome. You are the final bulwark of the Balkans.</Text>
+		</Row>
+		<Row	Tag="LOC_LOADING_INFO_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				Language="en_US">
+			<Text>Stefan Uroš IV Dušan, Autocrat of the Greeks, Tsar of the Serbs, may the Archangels be with you. You are as skilled a diplomat as you are a commander, write a the new prostaxis, and seize the legacy of Rome. You are the final bulwark of the Balkans.</Text>
+		</Row>
+		<Row	Tag="LOC_LOADING_INFO_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				Language="en_US">
+			<Text>Stefan Uroš IV Dušan, Autocrat of the Greeks, Tsar of the Serbs, may the Archangels be with you. You are as skilled a diplomat as you are a commander, write a the new prostaxis, and seize the legacy of Rome. You are the final bulwark of the Balkans.</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA/BYZANTIUM/GREECE STEFAN UROS IV DUSAN THE MIGHTY NEMANJIC AGENDA TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_TRAIT_AGENDA_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_EMPEROR_OF_SERBS_AND_GREEKS_NAME"
+				Language="en_US">
+			<Text>Emperor of Serbs and Greeks</Text>
+		</Row>
+		<Row	Tag="LOC_TRAIT_AGENDA_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_EMPEROR_OF_SERBS_AND_GREEKS_DESCRIPTION"
+				Language="en_US">
+			<Text>Likes civilizations in a Golden Age. Dislikes civilizations in a Dark Age.</Text>
+		</Row>
+		<Row	Tag="LOC_DIPLO_MODIFIER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_EMPEROR_OF_SERBS_AND_GREEKS_POSITIVE"
+				Language="en_US">
+			<Text>Stefan Dušan looks up to princes that have been blessed with a Golden Age.</Text>
+		</Row>
+		<Row	Tag="LOC_DIPLO_MODIFIER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_EMPEROR_OF_SERBS_AND_GREEKS_NEGATIVE"
+				Language="en_US">
+			<Text>Stefan Dušan looks down on princes that have earned their Dark Age.</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA CIVILIZATION TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME"
+				Language="en_US">
+			<Text>Serbia</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION"
+				Language="en_US">
+			<Text>Serbian Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE"
+				Language="en_US">
+			<Text>Serbian</Text>
+		</Row>
+		<Row	Tag="LOC_TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_NAME"
+				Language="en_US">
+			<Text>Sclaveni</Text>
+		</Row>
+		<Row	Tag="LOC_TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_DESCRIPTION"
+				Language="en_US">
+			<Text>Civilian units gain +2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden or Heroic Age. Cities gain +1 [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age. Military or religious units gain +5 [ICON_Strength] Combat or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_NAME"
+				Language="en_US">
+			<Text>Sclaveni Golden Age</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_DESCRIPTION"
+				Language="en_US">
+			<Text>+2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden Age. (Sclaveni)</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>+2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden Age</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_STRENGTH_1_NAME"
+				Language="en_US">
+			<Text>Sclaveni Dark Age</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_STRENGTH_1_DESCRIPTION"
+				Language="en_US">
+			<Text>+5 [ICON_Strength] Combat Strength or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age. (Sclaveni)</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_STRENGTH_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>+{1_Amount} [ICON_Strength] Combat Strength or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age</Text>
+		</Row>
+	</LocalizedText>
+	
+	<!-- SERBIA/BYZANTIUM/GREECE ALEMANNIC GUARD -->
+	<LocalizedText>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_NAME"
+				Language="en_US">
+			<Text>Alemannic Guard</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_DESCRIPTION"
+				Language="en_US">
+			<Text>Stefan Uroš IV Dušan's unique Medieval era Heavy Cavalry class unit that replaces the Knight. Adjacent levied units gain +5 [ICON_Strength] Combat Strength. Cost to levy city-state units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age. +50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age. +1 [ICON_Envoy] Envoy token point per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_NAME"
+				Language="en_US">
+			<Text>German Hirelings</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION"
+				Language="en_US">
+			<Text>Adjacent levied units gain +5 [ICON_Strength] Combat Strength.[NEWLINE][ICON_Bullet]Cost to levy city-state units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age.[NEWLINE][ICON_Bullet]+50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age.[NEWLINE][ICON_Bullet]+1 [ICON_Envoy] Envoy token points per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_AGES_BONUS_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>+50% Flanking bonus while in a [ICON_GLORY_NORMAL_AGE] Normal Age</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LEVY_BONUS_1_NAME"
+				Language="en_US">
+			<Text>German Leadership</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LEVY_BONUS_1_DESCRIPTION"
+				Language="en_US">
+			<Text>+5 [ICON_Strength] Combat Strength when adjacent to an Alemannic Guard.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LEVY_BONUS_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>+{1_Amount} [ICON_Strength] Combat Strength while adjacent to an Alemannic Guard</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA GUSAR TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_NAME"
+				Language="en_US">
+			<Text>Gusar</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION"
+				Language="en_US">
+			<Text>Serbian unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Can ranged attack when embarked. Can melee attack on land. +3 [ICON_Movement] Movement when embarked. Adjacent naval units can Coastal Raid.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_NAME"
+				Language="en_US">
+			<Text>Gusar Corsair</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_DESCRIPTION"
+				Language="en_US">
+			<Text>Can ranged attack when embarked.[NEWLINE][ICON_Bullet]+3 [ICON_Movement] Movement when embarked.[NEWLINE][ICON_Bullet]Adjacent naval units can Coastal Raid.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_AMPHIBIOUS_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>Can ranged attack when embarked and +3 [ICON_Movement] Movement while embarked</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_NAME"
+				Language="en_US">
+			<Text>Gusar Brigandry</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_DESCRIPTION"
+				Language="en_US">
+			<Text>Can Coastal Raid when adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_DESCRIPTION_BONUS"
+				Language="en_US">
+			<Text>Can Coastal Raid while adjacent to a Gusar</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA AUTOCEPHALOUS CHURCH TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_NAME"
+				Language="en_US">
+			<Text>Autocephalous Church</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Serbia.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields based on adjacent specialty districts, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Tiles with an Autocephalous Church cannot be swapped. Cannot be built next to another Autocephalous Church.</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA CITY TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_1"
+				Language="en_US">
+			<Text>Prizren</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_2"
+				Language="en_US">
+			<Text>Beograd</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_3"
+				Language="en_US">
+			<Text>Niš</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_4"
+				Language="en_US">
+			<Text>Kragujevac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_5"
+				Language="en_US">
+			<Text>Leskovac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_6"
+				Language="en_US">
+			<Text>Subotica</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_7"
+				Language="en_US">
+			<Text>Kruševac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_8"
+				Language="en_US">
+			<Text>Kraljevo</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_9"
+				Language="en_US">
+			<Text>Pančevo</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_10"
+				Language="en_US">
+			<Text>Zrenjanin</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_11"
+				Language="en_US">
+			<Text>Šabac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_12"
+				Language="en_US">
+			<Text>Čačak</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_13"
+				Language="en_US">
+			<Text>Smederevo</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_14"
+				Language="en_US">
+			<Text>Novi Pazar</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_15"
+				Language="en_US">
+			<Text>Valjevo</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_16"
+				Language="en_US">
+			<Text>Sombor</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_17"
+				Language="en_US">
+			<Text>Vranje</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_18"
+				Language="en_US">
+			<Text>Sremska Mitrovica</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_19"
+				Language="en_US">
+			<Text>Loznica</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_20"
+				Language="en_US">
+			<Text>Užice</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_21"
+				Language="en_US">
+			<Text>Požarevac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_22"
+				Language="en_US">
+			<Text>Jagodina</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_23"
+				Language="en_US">
+			<Text>Stara Pazova</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_24"
+				Language="en_US">
+			<Text>Zaječar</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_25"
+				Language="en_US">
+			<Text>Kikinda</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_26"
+				Language="en_US">
+			<Text>Pirot</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_27"
+				Language="en_US">
+			<Text>Bačka Palanka</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_28"
+				Language="en_US">
+			<Text>Ruma</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_29"
+				Language="en_US">
+			<Text>Paraćin</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_30"
+				Language="en_US">
+			<Text>Vršac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_31"
+				Language="en_US">
+			<Text>Aleksinac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_32"
+				Language="en_US">
+			<Text>Smederevska Palanka</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_33"
+				Language="en_US">
+			<Text>Bor</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_34"
+				Language="en_US">
+			<Text>Inđija</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_35"
+				Language="en_US">
+			<Text>Aranđelovac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_36"
+				Language="en_US">
+			<Text>Prokuplje</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_37"
+				Language="en_US">
+			<Text>Gornji Milanovac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_38"
+				Language="en_US">
+			<Text>Bujanovac</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_39"
+				Language="en_US">
+			<Text>Kula</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_40"
+				Language="en_US">
+			<Text>Trstenik</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_41"
+				Language="en_US">
+			<Text>Vrbas</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_42"
+				Language="en_US">
+			<Text>Velika Plana</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_43"
+				Language="en_US">
+			<Text>Bečej</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_44"
+				Language="en_US">
+			<Text>Prijepolje</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_45"
+				Language="en_US">
+			<Text>Prijepolje</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_46"
+				Language="en_US">
+			<Text>Negotin</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_47"
+				Language="en_US">
+			<Text>Preševo</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_48"
+				Language="en_US">
+			<Text>Šid</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_49"
+				Language="en_US">
+			<Text>Kovin</Text>
+		</Row>
+		<Row	Tag="LOC_CITY_NAME_STR_SERBIA_50"
+				Language="en_US">
+			<Text>Bačka Topola</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA CITIZENS TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_1"
+				Language="en_US">
+			<Text>Bogdan</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_2"
+				Language="en_US">
+			<Text>Borislav</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_3"
+				Language="en_US">
+			<Text>Dalibor</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_4"
+				Language="en_US">
+			<Text>Milivoj</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_5"
+				Language="en_US">
+			<Text>Ninoslav</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_6"
+				Language="en_US">
+			<Text>Nikola</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_7"
+				Language="en_US">
+			<Text>Radomir</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_8"
+				Language="en_US">
+			<Text>Stanimir</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_9"
+				Language="en_US">
+			<Text>Tomislav</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MALE_10"
+				Language="en_US">
+			<Text>Velimir</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_1"
+				Language="en_US">
+			<Text>Bogdana</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_2"
+				Language="en_US">
+			<Text>Dragoslava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_3"
+				Language="en_US">
+			<Text>Miroslava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_4"
+				Language="en_US">
+			<Text>Radoslava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_5"
+				Language="en_US">
+			<Text>Stanislava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_6"
+				Language="en_US">
+			<Text>Tomislava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_7"
+				Language="en_US">
+			<Text>Bozhena</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_8"
+				Language="en_US">
+			<Text>Elena</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_9"
+				Language="en_US">
+			<Text>Oliga</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_FEMALE_10"
+				Language="en_US">
+			<Text>Yaroslava</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_1"
+				Language="en_US">
+			<Text>Boris</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_2"
+				Language="en_US">
+			<Text>Emil</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_3"
+				Language="en_US">
+			<Text>Gerašim</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_4"
+				Language="en_US">
+			<Text>Ivko</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_5"
+				Language="en_US">
+			<Text>Krisitijan</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_6"
+				Language="en_US">
+			<Text>Maksim</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_7"
+				Language="en_US">
+			<Text>Ozren</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_8"
+				Language="en_US">
+			<Text>Perica</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_9"
+				Language="en_US">
+			<Text>Todor</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_MALE_10"
+				Language="en_US">
+			<Text>Zivko</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_1"
+				Language="en_US">
+			<Text>Adrijana</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_2"
+				Language="en_US">
+			<Text>Branka</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_3"
+				Language="en_US">
+			<Text>Dragena</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_4"
+				Language="en_US">
+			<Text>Evidokija</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_5"
+				Language="en_US">
+			<Text>Gorana</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_6"
+				Language="en_US">
+			<Text>Ivana</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_7"
+				Language="en_US">
+			<Text>Lidija</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_8"
+				Language="en_US">
+			<Text>Nadiya</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_9"
+				Language="en_US">
+			<Text>Sofija</Text>
+		</Row>
+		<Row	Tag="LOC_CITIZEN_STR_SERBIA_MODERN_FEMALE_10"
+				Language="en_US">
+			<Text>Xenia</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA MOUNTAIN TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Arbanaška Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Avala Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Baba Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Babička Gora</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Cer Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Crni Vrh Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Gledić Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Homoljske Planine</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Magleš Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_MOUNTAIN_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Pešter Plato</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA RIVER TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Reka Dunav</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Sava Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Tisa Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Velika Morava Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Drina River</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Tamiš Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Drim Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Begej Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Lim Reka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_RIVER_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Nišava Reka</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA LAKES TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Đerdapska Klisura</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Vlasinsko Jezero</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Ribnjak Ečka</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Jezero Perućac</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Jezero Gazivode</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Zasavica Bog</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Carska Bara Bog</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Gružansko Jezero</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Zlatarsko Jezero</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_LAKE_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Potpeć Jezero</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA SEA TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Crno More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Jadransko More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Sredozemno More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Egejsko more</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Mramorno More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Venecijanska Laguna</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Jonsko More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Tirensko More</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Korintski Zaliv</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_SEA_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Patra Zaliv</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA OCEAN TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Atlanski Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Sredozemnog Okeana</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Tihi Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Jadranskog Okeana</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Egejski Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Crni Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Mramorno Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Tirensko Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Jonski Okean</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_OCEAN_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Srpski Okean</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA DESERT TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Bosanski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Hrvatski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Albanski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Kosovski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Hercegovački Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Mađarski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Rumunski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Bugarski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Makedonski Otpad</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_DESERT_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Titograd Otpad</Text>
+		</Row>
+	</LocalizedText>
+
+	<!-- SERBIA VOLCANO TEXT -->
+	<LocalizedText>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_1_NAME"
+				Language="en_US">
+			<Text>Lukaret Bazaltni Vulkan</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_2_NAME"
+				Language="en_US">
+			<Text>Stefana Dušana Gora</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_3_NAME"
+				Language="en_US">
+			<Text>Carstva Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_4_NAME"
+				Language="en_US">
+			<Text>Cezare Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_5_NAME"
+				Language="en_US">
+			<Text>Car Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_6_NAME"
+				Language="en_US">
+			<Text>Autokrata Planina</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_7_NAME"
+				Language="en_US">
+			<Text>Triglav Gora</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_8_NAME"
+				Language="en_US">
+			<Text>Gusar Vulkan</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_9_NAME"
+				Language="en_US">
+			<Text>Sultana Haljina za Glavu</Text>
+		</Row>
+		<Row	Tag="LOC_NAMED_VOLCANO_STR_SERBIA_10_NAME"
+				Language="en_US">
+			<Text>Svarog Gora</Text>
+		</Row>
+	</LocalizedText>
+
+</GameData>

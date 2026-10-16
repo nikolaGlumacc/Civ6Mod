@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="BUILDING_DOM_KULTURE" Kind="KIND_BUILDING"/>
+  </Types>
+
+  <Buildings>
+    <Row BuildingType="BUILDING_DOM_KULTURE" Name="LOC_BUILDING_DOM_KULTURE_NAME" Description="LOC_BUILDING_DOM_KULTURE_DESCRIPTION" PrereqCivic="CIVIC_RADIO" Cost="440" AdvisorType="ADVISOR_CULTURE" ObsoleteCivic="CIVIC_INFORMATION_WARFARE" Maintenance="4" CitizenSlots="1" Leisure="true"/>
+  </Buildings>
+
+  <BuildingReplaces>
+    <Row CivUniqueBuildingType="BUILDING_DOM_KULTURE" ReplacesBuildingType="BUILDING_BROADCAST_TOWER"/>
+  </BuildingReplaces>
+
+  <Building_YieldChanges>
+    <Row BuildingType="BUILDING_DOM_KULTURE" YieldType="YIELD_CULTURE" YieldChange="4"/>
+    <Row BuildingType="BUILDING_DOM_KULTURE" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+  </Building_YieldChanges>
+</GameData>

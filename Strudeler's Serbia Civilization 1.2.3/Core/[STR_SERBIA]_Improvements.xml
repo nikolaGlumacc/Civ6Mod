@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_Improvements -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 4:55:42 PM -->
+<GameData>
+
+	<!-- SERBIA AUTOCEPHALOUS CHURCH | IMPROVEMENT -->
+	<Types>
+		<Row	Type="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Kind="KIND_IMPROVEMENT"/>
+	</Types>
+	<Improvements>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Name="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_NAME"
+				Description="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION"
+				Icon="ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Housing="1"
+				PlunderType="PLUNDER_FAITH"
+				PlunderAmount="75"
+				ReligiousUnitHealRate="15"
+				Buildable="true"
+				PrereqCivic="CIVIC_MYSTICISM"
+				SameAdjacentValid="false"
+				OnePerCity="true"
+				TraitType="TRAIT_CIVILIZATION_STR_SERBIA_AUTOCEPHALOUS_CHURCH"/>
+	</Improvements>
+	<Improvement_YieldChanges>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_FOOD"
+				YieldChange="0"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_SCIENCE"
+				YieldChange="0"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_CULTURE"
+				YieldChange="0"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_PRODUCTION"
+				YieldChange="0"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_GOLD"
+				YieldChange="0"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldType="YIELD_FAITH"
+				YieldChange="1"/>
+	</Improvement_YieldChanges>
+	<Improvement_ValidTerrains>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_GRASS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_GRASS_HILLS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_PLAINS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_PLAINS_HILLS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_DESERT"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_DESERT_HILLS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_TUNDRA"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_TUNDRA_HILLS"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_SNOW"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				TerrainType="TERRAIN_SNOW_HILLS"/>
+	</Improvement_ValidTerrains>
+	<Improvement_ValidBuildUnits>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				UnitType="UNIT_BUILDER"/>
+	</Improvement_ValidBuildUnits>
+	<Improvement_Adjacencies>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Food_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Food_2"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Science_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Science_2"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Culture_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Culture_2"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Production_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Production_2"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Gold_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Gold_2"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Faith_1"/>
+		<Row	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				YieldChangeId="STR_Serbia_Autocephalous_Church_Faith_2"/>
+	</Improvement_Adjacencies>
+	<Adjacency_YieldChanges>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Food_1"
+				Description="Placeholder"
+				YieldType="YIELD_FOOD"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_HARBOR"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Food_2"
+				Description="Placeholder"
+				YieldType="YIELD_FOOD"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_HARBOR"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Science_1"
+				Description="Placeholder"
+				YieldType="YIELD_SCIENCE"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_CAMPUS"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Science_2"
+				Description="Placeholder"
+				YieldType="YIELD_SCIENCE"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_CAMPUS"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Culture_1"
+				Description="Placeholder"
+				YieldType="YIELD_CULTURE"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_THEATER"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Culture_2"
+				Description="Placeholder"
+				YieldType="YIELD_CULTURE"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_THEATER"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Production_1"
+				Description="Placeholder"
+				YieldType="YIELD_PRODUCTION"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_INDUSTRIAL_ZONE"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Production_2"
+				Description="Placeholder"
+				YieldType="YIELD_PRODUCTION"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_INDUSTRIAL_ZONE"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Gold_1"
+				Description="Placeholder"
+				YieldType="YIELD_GOLD"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_COMMERCIAL_HUB"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Gold_2"
+				Description="Placeholder"
+				YieldType="YIELD_GOLD"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_COMMERCIAL_HUB"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Faith_1"
+				Description="Placeholder"
+				YieldType="YIELD_FAITH"
+				YieldChange="1"
+				TilesRequired="1"
+				ObsoleteCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_HOLY_SITE"/>
+		<Row	ID="STR_Serbia_Autocephalous_Church_Faith_2"
+				Description="Placeholder"
+				YieldType="YIELD_FAITH"
+				YieldChange="2"
+				TilesRequired="1"
+				PrereqCivic="CIVIC_NATIONALISM"
+				AdjacentDistrict="DISTRICT_HOLY_SITE"/>
+	</Adjacency_YieldChanges>
+	
+	<!-- SERBIA AUTOCEPHALOUS CHURCH | IMPROVEMENT ABILITY -->
+	<Modifiers>
+		<!-- BONUS LOYALTY -->
+		<Row>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_1</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_IDENTITY_PER_TURN</ModifierType>
+		</Row>
+		<!-- GREAT PROPHET POINT -->
+		<Row>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_2</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<!-- BONUS LOYALTY -->
+		<Row>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_1</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+		<!-- GREAT PROPHET POINT -->
+		<Row>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_2</ModifierId>
+			<Name>GreatPersonClassType</Name>
+			<Value>GREAT_PERSON_CLASS_PROPHET</Value>
+		</Row>
+		<Row>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_2</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+	</ModifierArguments>
+	<ImprovementModifiers>
+		<!-- BONUS LOYALTY -->
+		<Row>
+			<ImprovementType>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH</ImprovementType>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_1</ModifierId>
+		</Row>
+		<!-- GREAT PROPHET POINT -->
+		<Row>
+			<ImprovementType>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH</ImprovementType>
+			<ModifierId>IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_2</ModifierId>
+		</Row>
+	</ImprovementModifiers>
+
+</GameData>

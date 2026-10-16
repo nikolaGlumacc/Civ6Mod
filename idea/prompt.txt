@@ -1,0 +1,93 @@
+Act as an expert Civilization VI SDK modder and database developer. I want you to write the complete, production-ready code base for a custom Civilization VI mod titled "Serbia Civilization Pack". 
+
+Ensure all XML, SQL, and Art configuration files strictly adhere to Civilization VI (Gathering Storm DLC) database schemas, table relationships, foreign key constraints, and modding best practices.
+
+Below are the complete specifications for the mod project.
+
+==============================================================================
+1. PROJECT & FOLDER STRUCTURE
+==============================================================================
+Generate all necessary files within the following standardized ModBuddy project directory structure:
+
+/Serbia_Civ_Pack/
+├── Serbia_Civ_Pack.modinfo
+├── Core/
+│   ├── Civilization.xml
+│   ├── Leaders.sql
+│   ├── Buildings.xml
+│   ├── Units.xml
+│   ├── Improvements.xml
+│   ├── Agenda.xml
+│   └── HistoricMoments.xml
+├── Config/
+│   └── Leader_Config.sql
+├── Text/
+│   └── Localization.xml
+└── Art/
+    ├── Icons.xml
+    └── Colors.xml
+
+==============================================================================
+2. CIVILIZATION SPECIFICATIONS: SERBIA
+==============================================================================
+- Civ Type: CIVILIZATION_SERBIA
+- Civ Name: LOC_CIVILIZATION_SERBIA_NAME ("Serbia")
+- Adjective: LOC_CIVILIZATION_SERBIA_ADJECTIVE ("Serbian")
+- Ability Name: LOC_TRAIT_CIVILIZATION_CROSSROADS_NAME ("Raskršće Svetova")
+- Ability Effect: LOC_TRAIT_CIVILIZATION_CROSSROADS_DESCRIPTION ("International and domestic Trade Routes passing through Serbian territory yield +2 Gold and +1 Culture. Roads built inside Serbian borders upgrade one tier earlier than usual.")
+- Shared Unique Building (UB): BUILDING_DOM_KULTURE
+  * Replaces: BUILDING_BROADCAST_TOWER
+  * Prereq Civic: CIVIC_RADIO
+  * Yields: +4 Culture, +2 Production, +1 Amenity, +2 Loyalty per turn.
+- Shared Unique Improvement (UI): IMPROVEMENT_SPOMENIK
+  * Unlocked at: CIVIC_CIVIL_ENGINEERING
+  * Valid Placement: Hills or adjacent to Mountains (Builder constructed).
+  * Yields: +2 Culture, +1 Faith, +2 Tourism (doubled after Atomic Era). Defensive units on/adjacent to tile get +3 Combat Strength.
+- City Name Pool: Beograd (Capital), Novi Sad, Niš, Kragujevac, Subotica, Zrenjanin, Pančevo, Čačak, Kraljevo, Užice, Valjevo, Kruševac, Leskovac, Vranje, Novi Pazar.
+
+==============================================================================
+3. LEADER 1: JOSIP BROZ TITO
+==============================================================================
+- Leader Type: LEADER_TITO
+- Preferred Government: GOVERNMENT_COMMUNISM
+- Leader Trait: TRAIT_LEADER_BROTHERHOOD_UNITY
+- Trait Effect: All cities gain +20% Production while running the Communism government. Foreign Trade Routes with non-warring civs grant +2 Food and +2 Production to both origins.
+- Exclusive Unique Unit (UU): UNIT_PARTIZANI
+  * Replaces: UNIT_INFANTRY
+  * Base Combat: 75 Strength (vs. 70 standard).
+  * Unique Traits: +7 Combat Strength in Hills, Woods, and Rainforest. 20% reduced Production/Gold cost.
+
+==============================================================================
+4. LEADER 2: DRAŽA MIHAILOVIĆ
+==============================================================================
+- Leader Type: LEADER_DRAZA
+- Preferred Government: GOVERNMENT_MONARCHY
+- Leader Trait: TRAIT_LEADER_RAVNA_GORA
+- Trait Effect: All combat units gain +5 Combat Strength and defensive walls/forts grant +2 Faith while running Monarchy. Defensive units in friendly territory heal +10 HP per turn even after moving or attacking.
+- Exclusive Unique Unit (UU): UNIT_CETNICKI_ODRED
+  * Replaces: UNIT_SKIRMISHER
+  * Base Combat: High mobility (+1 Sight, +1 Movement in rough terrain). Ignores Enemy Zone of Control. Gains +10 Combat Strength when attacking/defending inside friendly/neutral Hills or Forests.
+
+==============================================================================
+5. LEADER 3: SLOBODAN MILOŠEVIĆ
+==============================================================================
+- Leader Type: LEADER_MILOSEVIC
+- Preferred Government: GOVERNMENT_COMMUNISM or GOVERNMENT_FASCISM
+- Leader Trait: TRAIT_LEADER_RALLY_OF_THE_PEOPLE
+- Trait Effect: Monuments and Broadcast Towers (including Dom Kulture) yield double Culture and +2 Loyalty. Cities cannot drop below 100% Loyalty under Communism or Fascism. War Weariness reduced by 50%.
+- Exclusive Unique Unit (UU): UNIT_GARDIJSKA_JEDINICA
+  * Replaces: UNIT_MECHANIZED_INFANTRY
+  * Base Combat: +8 Combat Strength over standard Mechanized Infantry. Adjacent enemy units suffer -5 Combat Strength. Stationed in a city grants +4 local Loyalty.
+
+==============================================================================
+6. CODE GENERATION REQUIREMENTS
+==============================================================================
+Please output the full, un-truncated code for all project files:
+
+1. Serbia_Civ_Pack.modinfo: Configure all FrontEndActions (UpdateDatabase, UpdateText, UpdateIcons, UpdateColors) and InGameActions (UpdateDatabase, UpdateText, UpdateIcons, UpdateColors) targeting every file in the Core/, Config/, Text/, and Art/ folders.
+2. Core XML/SQL Files: Write exact database definitions including <Types>, <Civilizations>, <Leaders>, <Units>, <UnitReplaces>, <Buildings>, <BuildingReplaces>, <Improvements>, <Modifiers>, <ModifierArguments>, <RequirementSets>, <Requirements>, and <TraitModifiers>.
+3. Config/Leader_Config.sql: Fully implement the `Players` and `PlayerItems` front-end selection tables so Tito, Draža, and Milošević appear independently on the single-player setup screen with their respective unique units and traits.
+4. Text/Localization.xml: Include all English string tags (`LOC_...`) for names, descriptions, abilities, civilopedia entries, and diplomacy meeting/war quotes for all three leaders.
+5. Art/Colors.xml & Icons.xml: Define the custom RGB tricolor primary/secondary color schemes and standard 2D IconTextureAtlas references (size 256, 128, 80, 64, 50, 45, 32).
+
+Please write clean, well-commented code that is 100% ready to build inside Civ VI ModBuddy!

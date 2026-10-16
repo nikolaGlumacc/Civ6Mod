@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects::TexturePack file="Serbia_Civ_Pack.dep">
+  <SystemDependencies>
+    <Element>
+      <ConsumerID>{4873eb62-8ccc-4574-b784-dda455e74e68}</ConsumerID>
+      <ApplicationID>{LC242L2-524C-4523-BC11-15916D68F120}</ApplicationID>
+    </Element>
+  </SystemDependencies>
+</AssetObjects::TexturePack>

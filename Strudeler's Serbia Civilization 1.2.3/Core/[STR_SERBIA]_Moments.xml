@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_Moments -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 4:58:01 PM -->
+<GameData>
+
+	<!-- MOMENTS -->
+	<MomentIllustrations>
+		<Row	MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT"
+				MomentDataType="MOMENT_DATA_UNIT"
+				GameDataType="UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD"
+				Texture="STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_MOMENT.dds"/>
+		<Row	MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT"
+				MomentDataType="MOMENT_DATA_UNIT"
+				GameDataType="UNIT_STR_SERBIA_GUSAR"
+				Texture="STR_SERBIA_GUSAR_MOMENT.dds"/>
+		<Row	MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_IMPROVEMENT"
+				MomentDataType="MOMENT_DATA_IMPROVEMENT"
+				GameDataType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Texture="STR_SERBIA_AUTOCEPHALOUS_CHURCH_MOMENT.dds"/>
+	</MomentIllustrations>
+
+</GameData>

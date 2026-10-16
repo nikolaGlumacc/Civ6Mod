@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_CivAltName04 -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 2/11/2024 7:26:04 PM -->
+<GameData>
+
+	<!-- Option changes name to Prilep -->
+	<Civilizations>
+		<Update>
+			<Where	CivilizationType="CIVILIZATION_STR_SERBIA"/>
+			<Set	Name="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_4"
+					Description="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_4"
+					Adjective="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_4"/>
+		</Update>
+	</Civilizations>
+	<Units>
+		<Update>
+			<Where	UnitType="UNIT_STR_SERBIA_GUSAR"/>
+			<Set	Description="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_4"/>
+		</Update>
+	</Units>
+	<Improvements>
+		<Update>
+			<Where	ImprovementType="IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH"/>
+			<Set	Description="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_4"/>
+		</Update>
+	</Improvements>
+
+</GameData>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_Civilizations -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 4:55:57 PM -->
+<GameData>
+
+	<!-- SERBIA | CIVILIZATION -->
+	<Types>
+		<Row	Type="CIVILIZATION_STR_SERBIA"
+				Kind="KIND_CIVILIZATION"/>
+		<Row	Type="TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI"
+				Kind="KIND_TRAIT"/>
+		<Row	Type="TRAIT_CIVILIZATION_STR_SERBIA_GUSAR"
+				Kind="KIND_TRAIT"/>
+		<Row	Type="TRAIT_CIVILIZATION_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Kind="KIND_TRAIT"/>
+	</Types>
+	<Civilizations>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				Name="LOC_CIVILIZATION_STR_SERBIA_NAME"
+				Description="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION"
+				Adjective="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE"
+				StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV"
+				RandomCityNameDepth="10"
+				Ethnicity="ETHNICITY_EURO"/>
+	</Civilizations>
+	<CivilizationInfo>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				Header="LOC_CIVINFO_LOCATION"
+				Caption="LOC_CIVINFO_STR_SERBIA_LOCATION"
+				SortIndex="10"/>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				Header="LOC_CIVINFO_SIZE"
+				Caption="LOC_CIVINFO_STR_SERBIA_SIZE"
+				SortIndex="20"/>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				Header="LOC_CIVINFO_POPULATION"
+				Caption="LOC_CIVINFO_STR_SERBIA_POPULATION"
+				SortIndex="30"/>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				Header="LOC_CIVINFO_CAPITAL"
+				Caption="LOC_CIVINFO_STR_SERBIA_CAPITAL"
+				SortIndex="40"/>
+	</CivilizationInfo>
+	<CivilizationLeaders>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				LeaderType="LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				CapitalName="LOC_CITY_NAME_STR_SERBIA_1"/>
+		<Row	CivilizationType="CIVILIZATION_BYZANTIUM"
+				LeaderType="LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				CapitalName="LOC_CITY_NAME_STR_SERBIA_1"/>
+		<Row	CivilizationType="CIVILIZATION_GREECE"
+				LeaderType="LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"
+				CapitalName="LOC_CITY_NAME_STR_SERBIA_1"/>
+	</CivilizationLeaders>
+	<CivilizationTraits>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				TraitType="TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI"/>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				TraitType="TRAIT_CIVILIZATION_STR_SERBIA_GUSAR"/>
+		<Row	CivilizationType="CIVILIZATION_STR_SERBIA"
+				TraitType="TRAIT_CIVILIZATION_STR_SERBIA_AUTOCEPHALOUS_CHURCH"/>
+	</CivilizationTraits>
+	<Traits>
+		<Row	TraitType="TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI"
+				Name="LOC_TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_NAME"
+				Description="LOC_TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_DESCRIPTION"/>
+		<Row	TraitType="TRAIT_CIVILIZATION_STR_SERBIA_GUSAR"
+				Name="LOC_UNIT_STR_SERBIA_GUSAR_NAME"
+				Description="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION"/>
+		<Row	TraitType="TRAIT_CIVILIZATION_STR_SERBIA_AUTOCEPHALOUS_CHURCH"
+				Name="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_NAME"
+				Description="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION"/>
+	</Traits>
+
+	<!-- SERBIA | CIVILIZATION TRAIT -->
+	<Modifiers>
+		<!-- GOLDEN AGE UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_GOLDEN_AGE</SubjectRequirementSetId>
+		</Row>
+		<!-- DARK AGE UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_2</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_DARK_AGE</SubjectRequirementSetId>
+		</Row>
+		<!-- NORMAL AGE HOUSING -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_3</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_CITIES_ADJUST_WATER_HOUSING</ModifierType>
+			<SubjectRequirementSetId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</SubjectRequirementSetId>
+		</Row>
+		<!-- UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_GUSAR_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<Permanent>true</Permanent>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<!-- GOLDEN AGE UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_1</ModifierId>
+			<Name>AbilityType</Name>
+			<Value>ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1</Value>
+		</Row>
+		<!-- DARK AGE UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_2</ModifierId>
+			<Name>AbilityType</Name>
+			<Value>ABILITY_STR_SERBIA_STRENGTH_1</Value>
+		</Row>
+		<!-- NORMAL AGE HOUSING -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_3</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+		<!-- UNIT ABILITY -->
+		<Row>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_GUSAR_1</ModifierId>
+			<Name>AbilityType</Name>
+			<Value>ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1</Value>
+		</Row>
+	</ModifierArguments>
+	<TraitModifiers>
+		<!-- GOLDEN AGE UNIT ABILITY -->
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI</TraitType>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_1</ModifierId>
+		</Row>
+		<!-- DARK AGE UNIT ABILITY -->
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI</TraitType>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_2</ModifierId>
+		</Row>
+		<!-- NORMAL AGE HOUSING -->
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI</TraitType>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_SCLAVENI_3</ModifierId>
+		</Row>
+		<!-- UNIT ABILITY -->
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_STR_SERBIA_GUSAR</TraitType>
+			<ModifierId>TRAIT_CIVILIZATION_STR_SERBIA_GUSAR_1</ModifierId>
+		</Row>
+	</TraitModifiers>
+
+	<!-- SERBIA | CIVILIZATION ABILITY -->
+	<Types>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row	Type="ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1"
+				Kind="KIND_ABILITY"/>
+		<!-- DARK AGE STRENGTH -->
+		<Row	Type="ABILITY_STR_SERBIA_STRENGTH_1"
+				Kind="KIND_ABILITY"/>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row	Type="ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1"
+				Kind="KIND_ABILITY"/>
+	</Types>
+	<TypeTags>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row	Type="ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1"
+				Tag="CLASS_LANDCIVILIAN"/>
+		<!-- DARK AGE STRENGTH -->
+		<Row	Type="ABILITY_STR_SERBIA_STRENGTH_1" 
+				Tag="CLASS_ALL_COMBAT_UNITS"/>
+		<Row	Type="ABILITY_STR_SERBIA_STRENGTH_1"
+				Tag="CLASS_RELIGIOUS"/>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row	Type="ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1"
+				Tag="CLASS_NAVAL_MELEE"/>
+		<Row	Type="ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1"
+				Tag="CLASS_NAVAL_RANGED"/>
+	</TypeTags>
+	<UnitAbilities>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row	UnitAbilityType="ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1"
+				Name="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_NAME"
+				Description="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_DESCRIPTION"
+				Inactive="true"/>
+		<!-- DARK AGE STRENGTH -->
+		<Row	UnitAbilityType="ABILITY_STR_SERBIA_STRENGTH_1"
+				Name="LOC_ABILITY_STR_SERBIA_STRENGTH_1_NAME"
+				Description="LOC_ABILITY_STR_SERBIA_STRENGTH_1_DESCRIPTION"
+				Inactive="true"/>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row	UnitAbilityType="ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1"
+				Name="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_NAME"
+				Description="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_DESCRIPTION"
+				Inactive="true"/>
+	</UnitAbilities>
+	<Modifiers>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_CIVILIAN_MOVEMENT_1</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT</ModifierType>
+		</Row>
+		<!-- DARK AGE STRENGTH -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_STRENGTH_1</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+		</Row>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_UNIT_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>STR_SERBIA_GUSAR_ADJACENCY_REQSET_1</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_MOD_1</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_RAIDING</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_CIVILIAN_MOVEMENT_1</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+		<!-- DARK AGE STRENGTH -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_STRENGTH_1</ModifierId>
+			<Name>Amount</Name>
+			<Value>5</Value>
+		</Row>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1</ModifierId>
+			<Name>ModifierId</Name>
+			<Value>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_MOD_1</Value>
+		</Row>
+		<Row>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_MOD_1</ModifierId>
+			<Name>CanRaid</Name>
+			<Value>true</Value>
+		</Row>
+	</ModifierArguments>
+	<UnitAbilityModifiers>
+		<!-- GOLDEN AGE MOVEMENT -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_CIVILIAN_MOVEMENT_1</ModifierId>
+		</Row>
+		<!-- DARK AGE STRENGTH -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_STRENGTH_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_STRENGTH_1</ModifierId>
+		</Row>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+		<Row>
+			<UnitAbilityType>ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1</UnitAbilityType>
+			<ModifierId>STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<ModifierStrings>
+		<!-- GOLDEN AGE MOVEMENT -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_CIVILIAN_MOVEMENT_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_CIVILIAN_MOVEMENT_1_DESCRIPTION_BONUS"/>-->
+		<!-- DARK AGE STRENGTH -->
+		<Row	ModifierId="STR_MOD_SERBIA_STRENGTH_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_STRENGTH_1_DESCRIPTION_BONUS"/>
+		<!-- COASTAL RAID ADJACENT TO GUSAR -->
+	<!--<Row	ModifierId="STR_MOD_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1"
+				Context="Preview"
+				Text="LOC_ABILITY_STR_SERBIA_GUSAR_COASTAL_RAID_ADJACENCY_1_DESCRIPTION_BONUS"/>-->
+	</ModifierStrings>
+
+	<!-- SERBIA | CIVILIZATION REQUIREMENTS -->
+	<RequirementSets>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+		<!-- GUSAR ADJACENCY REQUIREMENTS -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_GUSAR_ADJACENCY_REQSET_1</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_1</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQSET_1</RequirementSetId>
+			<RequirementId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_2</RequirementId>
+		</Row>
+		<!-- GUSAR ADJACENCY REQUIREMENTS -->
+		<Row>
+			<RequirementSetId>STR_SERBIA_GUSAR_ADJACENCY_REQSET_1</RequirementSetId>
+			<RequirementId>STR_SERBIA_GUSAR_REQUIRES_UNIT_NEXT_TO_SERBIA_GUSAR_1</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<Requirements>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+		<Row>
+			<RequirementId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_1</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_HAS_GOLDEN_AGE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<Row>
+			<RequirementId>STR_SERBIA_PLAYER_IS_IN_A_NORMAL_AGE_REQUIREMENTS_2</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_HAS_DARK_AGE</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
+		<!-- GUSAR ADJACENCY REQUIREMENTS -->
+		<Row>
+			<RequirementId>STR_SERBIA_GUSAR_REQUIRES_UNIT_NEXT_TO_SERBIA_GUSAR_1</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_ADJACENT_FRIENDLY_UNIT_TAG_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<!-- PLAYER IS IN A NORMAL AGE -->
+			<!-- N/A -->
+		<!-- GUSAR ADJACENCY REQUIREMENTS -->
+		<Row>
+			<RequirementId>STR_SERBIA_GUSAR_REQUIRES_UNIT_NEXT_TO_SERBIA_GUSAR_1</RequirementId>
+			<Name>Tag</Name>
+			<Value>CLASS_STR_SERBIA_GUSAR</Value>
+		</Row>
+		<Row>
+			<RequirementId>STR_SERBIA_GUSAR_REQUIRES_UNIT_NEXT_TO_SERBIA_GUSAR_1</RequirementId>
+			<Name>IncludeCenter</Name>
+			<Value>true</Value>
+		</Row>
+	</RequirementArguments>
+
+</GameData>

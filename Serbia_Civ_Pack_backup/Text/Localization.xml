@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Row Tag="LOC_MOD_SERBIA_TITLE">
+      <Text>Serbia Civilization Pack</Text>
+    </Row>
+    <Row Tag="LOC_MOD_SERBIA_DESCRIPTION">
+      <Text>Adds Serbia featuring Josip Broz Tito, Draža Mihailović, and Slobodan Milošević.</Text>
+    </Row>
+  </LocalizedText>
+</GameData>

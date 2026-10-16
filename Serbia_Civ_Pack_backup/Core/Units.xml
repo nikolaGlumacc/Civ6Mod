@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="UNIT_PARTIZANI" Kind="KIND_UNIT"/>
+    <Row Type="UNIT_CETNICKI_ODRED" Kind="KIND_UNIT"/>
+    <Row Type="UNIT_GARDIJSKA_JEDINICA" Kind="KIND_UNIT"/>
+  </Types>
+
+  <Units>
+    <Row UnitType="UNIT_PARTIZANI" Name="LOC_UNIT_PARTIZANI_NAME" BaseMoves="2" Cost="380" Maintenance="6" BaseSightRange="2" Combat="75" RangedCombat="0" Range="0" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_MELEE" PrereqTech="TECH_REPLACEABLE_PARTS" AdvisorType="ADVISOR_CONQUEST"/>
+    <Row UnitType="UNIT_CETNICKI_ODRED" Name="LOC_UNIT_CETNICKI_ODRED_NAME" BaseMoves="3" Cost="120" Maintenance="2" BaseSightRange="3" Combat="35" RangedCombat="0" Range="0" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_RECON" PrereqTech="TECH_MILITARY_SCIENCE" AdvisorType="ADVISOR_CONQUEST"/>
+    <Row UnitType="UNIT_GARDIJSKA_JEDINICA" Name="LOC_UNIT_GARDIJSKA_JEDINICA_NAME" BaseMoves="3" Cost="670" Maintenance="9" BaseSightRange="3" Combat="93" RangedCombat="0" Range="0" Domain="DOMAIN_LAND" FormationClass="FORMATION_CLASS_LAND_COMBAT" PromotionClass="PROMOTION_CLASS_MELEE" PrereqTech="TECH_COMPOSITES" AdvisorType="ADVISOR_CONQUEST"/>
+  </Units>
+
+  <UnitReplaces>
+    <Row CivUniqueUnitType="UNIT_PARTIZANI" ReplacesUnitType="UNIT_INFANTRY"/>
+    <Row CivUniqueUnitType="UNIT_CETNICKI_ODRED" ReplacesUnitType="UNIT_SKIRMISHER"/>
+    <Row CivUniqueUnitType="UNIT_GARDIJSKA_JEDINICA" ReplacesUnitType="UNIT_MECHANIZED_INFANTRY"/>
+  </UnitReplaces>
+</GameData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <Agendas>
+    <InsertOrIgnore AgendaType="AGENDA_TITO"      Name="LOC_AGENDA_TITO_NAME"      Description="LOC_AGENDA_TITO_DESCRIPTION" />
+    <InsertOrIgnore AgendaType="AGENDA_DRAZA"     Name="LOC_AGENDA_DRAZA_NAME"     Description="LOC_AGENDA_DRAZA_DESCRIPTION" />
+    <InsertOrIgnore AgendaType="AGENDA_MILOSEVIC" Name="LOC_AGENDA_MILOSEVIC_NAME" Description="LOC_AGENDA_MILOSEVIC_DESCRIPTION" />
+  </Agendas>
+
+  <HistoricalAgendas>
+    <InsertOrIgnore LeaderType="LEADER_TITO"      AgendaType="AGENDA_TITO" />
+    <InsertOrIgnore LeaderType="LEADER_DRAZA"     AgendaType="AGENDA_DRAZA" />
+    <InsertOrIgnore LeaderType="LEADER_MILOSEVIC" AgendaType="AGENDA_MILOSEVIC" />
+  </HistoricalAgendas>
+</GameInfo>

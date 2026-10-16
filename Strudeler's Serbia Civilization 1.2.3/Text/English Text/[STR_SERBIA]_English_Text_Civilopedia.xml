@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_English_Text_Civilopedia -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 5/25/2022 5:05:26 PM -->
+<GameData>
+
+	<!-- CIVILOPEDIA ENTRIES  -->
+	<LocalizedText>
+		<!-- SERBIA/GREECE/BYZANTIUM STEFAN UROS IV DUSAN THE MIGHTY NEMANJIC LEADER -->
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_TITLE"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Serbia)</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_TITLE"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Greece)</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_TITLE"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan (Byzantium)</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_SUBTITLE"
+				Language="en_US">
+			<Text>Autocrat of Serbs, Greeks, Albanians, and Bulgarians</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_SUBTITLE"
+				Language="en_US">
+			<Text>Autocrat of Serbs, Greeks, Albanians, and Bulgarians</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_SUBTITLE"
+				Language="en_US">
+			<Text>Autocrat of Serbs, Greeks, Albanians, and Bulgarians</Text>
+		</Row>
+		<Row	Tag="LOC_LEADER_STR_SERBIA_BYZANTIUM_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_QUOTE"
+				Language="en_US">
+			<Text>At the council of Serres I did declare: I am Tsar of Serbs and Romans.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>In 1321 AD, Stefan Milutin died and the Nemanjić dynasty began a civil war for the rule of Serbia. Stefan Dečanski, who was not liked by his royal father, claimed the highest title of king from his brother, Stefan Konstantin, as opposed to his claimant cousin Stefan Vladislav II. Dečanski was crowned king in 1322 AD. He had a co-ruler: his son Stefan Dušan, who held the title "young king." The young king held the counties of Zeta and Zahumlje. Dušan may have been 14 when became co-ruler. It is disputed if Stefan Dušan was born in 1308 AD or 1312 AD.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>Serbia was divided into two kingdoms: one ruled by Dečanski; and another ruled by Vladislav II. By 1324 AD, Dečanski had won the whole Kingdom of Serbia. Prior to kingship, Dečanski and his family lived in exile at Constantinople. Exile allowed Stefan Dušan to learn Greek and Rhomanoi court customs. The young Dušan won two battles between 1329 AD and 1330 AD, the former against Bosnia and the latter against the Eastern Roman Emperor. Dušan fought against his father until he could imprison him and usurp the Kingdom of Serbia. He would ascend the throne as Stefan Uros IV Dušan. In 1331 AD, Dušan secured peace with Bulgaria via marriage. With the Bulgarian border pacified, Dušan then moved against the Eastern Roman Empire.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_3"
+				Language="en_US">
+			<Text>Stefan Dušan was described as tall and strong, hence his epitaph of 'the Mighty.' The young king secured writers that favoured him in their writings. Early in his rule, Dušan raided Macedonia and put down a noble revolt in Zeta. Dušan's ultimate goal was to claim the Roman legacy left in Greece. Dušan’s main opponents were mainly Greeks who he sought to rule and Hungarians who held power to the north. Wars with Hungary were defensive. Dušan secured Belgrade, Mačva, and Eastern Bosnia from Charles I of Hungary and Louis the Great of Hungary.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_4"
+				Language="en_US">
+			<Text>On occasion, Bulgarian Tsar Ivan Alexander assisted the campaigns of his son-in-law Stefan Dušan. The Eastern Roman Empire was engaged in the Second Palaiolgan Civil War of 1341-1347. Dušan capitalised on the civil war by taking the Balkans north of Attica and the Peloponnesus. The Serbian navy was too small to siege the Peloponnesus or Thessaloniki. The Eastern Roman Empire invited the Ottoman Turks to Europe in hope that Turkish mercenaries could halt the advancement of the Serbs. This invitation was the first time Ottomans entered Europe. In 1343 AD, Dušan's title expanded to include King of Romans, Greeks, Serbs, the Maritime Coast (of Serbia), and Bulgarians. In 1345 AD, he was recognized as Tsar, the Slavic equivalent of Caesar.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_5"
+				Language="en_US">
+			<Text>Under Stefan Dušan the Serbian Orthodox Church gained autocephaly with the archbishopric being promoted to a patriarchate. As Tsar, Dušan promoted Greek culture. He was a historic Philhellene and he granted his court Greek titles to be used in Constantinople. Dušan reigned in his native lands before engaging in further expansion, seeing written works and religious construction be done.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_6"
+				Language="en_US">
+			<Text>Dušan's Code was the first proto-constitution of the Serbian people. Dušan attempted to align the Venetians, but they feared losing existing trade privileges and avoided a military alliance. The Eastern Roman support was strong in Greece and Constantinople, the Patriarch of Constantinople excommunicated Dušan and many Greeks avoided him. In 1329 AD, Ban Stephen II seized Bosnia from the Serbs and sought to defend the region from Dušan. Stefan Dušan had already defeated Stephen when he was still the "young king."</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_7"
+				Language="en_US">
+			<Text>In 1350 AD, Stefan Dušan pursued Bosnia to subjugate the region and secure families connected to his own. Dušan's presence in Bosnia and Dalmatia stirred fear in Pope Clement VI. The Papacy pleaded Dušan to halt the persecution of Catholics. Dušan's grand plan was to make a new Roman Empire. His weakening of the Eastern Roman Empire, or the aversion of Greeks to submit to the Tsar, allowed the Ottoman Turks to invade the weakened Greek and Thracian lands. Dušan mounted a crusade in 1355 AD but he died too soon, possibly by poison. The Serbian Empire crumbled without Dušan. His son Stefan Uroš V succumbed to feudalism as various Serbian families carved principalities out of the former Serbian Kingdom/Empire. Dušan is the only monarch of his dynasty to not have been canonized as a saint.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>In 1321 AD, Stefan Milutin died and the Nemanjić dynasty began a civil war for the rule of Serbia. Stefan Dečanski, who was not liked by his royal father, claimed the highest title of king from his brother, Stefan Konstantin, as opposed to his claimant cousin Stefan Vladislav II. Dečanski was crowned king in 1322 AD. He had a co-ruler: his son Stefan Dušan, who held the title "young king." The young king held the counties of Zeta and Zahumlje. Dušan may have been 14 when became co-ruler. It is disputed if Stefan Dušan was born in 1308 AD or 1312 AD.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>Serbia was divided into two kingdoms: one ruled by Dečanski; and another ruled by Vladislav II. By 1324 AD, Dečanski had won the whole Kingdom of Serbia. Prior to kingship, Dečanski and his family lived in exile at Constantinople. Exile allowed Stefan Dušan to learn Greek and Rhomanoi court customs. The young Dušan won two battles between 1329 AD and 1330 AD, the former against Bosnia and the latter against the Eastern Roman Emperor. Dušan fought against his father until he could imprison him and usurp the Kingdom of Serbia. He would ascend the throne as Stefan Uros IV Dušan. In 1331 AD, Dušan secured peace with Bulgaria via marriage. With the Bulgarian border pacified, Dušan then moved against the Eastern Roman Empire.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_3"
+				Language="en_US">
+			<Text>Stefan Dušan was described as tall and strong, hence his epitaph of 'the Mighty.' The young king secured writers that favoured him in their writings. Early in his rule, Dušan raided Macedonia and put down a noble revolt in Zeta. Dušan's ultimate goal was to claim the Roman legacy left in Greece. Dušan’s main opponents were mainly Greeks who he sought to rule and Hungarians who held power to the north. Wars with Hungary were defensive. Dušan secured Belgrade, Mačva, and Eastern Bosnia from Charles I of Hungary and Louis the Great of Hungary.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_4"
+				Language="en_US">
+			<Text>On occasion, Bulgarian Tsar Ivan Alexander assisted the campaigns of his son-in-law Stefan Dušan. The Eastern Roman Empire was engaged in the Second Palaiolgan Civil War of 1341-1347. Dušan capitalised on the civil war by taking the Balkans north of Attica and the Peloponnesus. The Serbian navy was too small to siege the Peloponnesus or Thessaloniki. The Eastern Roman Empire invited the Ottoman Turks to Europe in hope that Turkish mercenaries could halt the advancement of the Serbs. This invitation was the first time Ottomans entered Europe. In 1343 AD, Dušan's title expanded to include King of Romans, Greeks, Serbs, the Maritime Coast (of Serbia), and Bulgarians. In 1345 AD, he was recognized as Tsar, the Slavic equivalent of Caesar.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_5"
+				Language="en_US">
+			<Text>Under Stefan Dušan the Serbian Orthodox Church gained autocephaly with the archbishopric being promoted to a patriarchate. As Tsar, Dušan promoted Greek culture. He was a historic Philhellene and he granted his court Greek titles to be used in Constantinople. Dušan reigned in his native lands before engaging in further expansion, seeing written works and religious construction be done.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_6"
+				Language="en_US">
+			<Text>Dušan's Code was the first proto-constitution of the Serbian people. Dušan attempted to align the Venetians, but they feared losing existing trade privileges and avoided a military alliance. The Eastern Roman support was strong in Greece and Constantinople, the Patriarch of Constantinople excommunicated Dušan and many Greeks avoided him. In 1329 AD, Ban Stephen II seized Bosnia from the Serbs and sought to defend the region from Dušan. Stefan Dušan had already defeated Stephen when he was still the "young king."</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_7"
+				Language="en_US">
+			<Text>In 1350 AD, Stefan Dušan pursued Bosnia to subjugate the region and secure families connected to his own. Dušan's presence in Bosnia and Dalmatia stirred fear in Pope Clement VI. The Papacy pleaded Dušan to halt the persecution of Catholics. Dušan's grand plan was to make a new Roman Empire. His weakening of the Eastern Roman Empire, or the aversion of Greeks to submit to the Tsar, allowed the Ottoman Turks to invade the weakened Greek and Thracian lands. Dušan mounted a crusade in 1355 AD but he died too soon, possibly by poison. The Serbian Empire crumbled without Dušan. His son Stefan Uroš V succumbed to feudalism as various Serbian families carved principalities out of the former Serbian Kingdom/Empire. Dušan is the only monarch of his dynasty to not have been canonized as a saint.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>In 1321 AD, Stefan Milutin died and the Nemanjić dynasty began a civil war for the rule of Serbia. Stefan Dečanski, who was not liked by his royal father, claimed the highest title of king from his brother, Stefan Konstantin, as opposed to his claimant cousin Stefan Vladislav II. Dečanski was crowned king in 1322 AD. He had a co-ruler: his son Stefan Dušan, who held the title "young king." The young king held the counties of Zeta and Zahumlje. Dušan may have been 14 when became co-ruler. It is disputed if Stefan Dušan was born in 1308 AD or 1312 AD.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>Serbia was divided into two kingdoms: one ruled by Dečanski; and another ruled by Vladislav II. By 1324 AD, Dečanski had won the whole Kingdom of Serbia. Prior to kingship, Dečanski and his family lived in exile at Constantinople. Exile allowed Stefan Dušan to learn Greek and Rhomanoi court customs. The young Dušan won two battles between 1329 AD and 1330 AD, the former against Bosnia and the latter against the Eastern Roman Emperor. Dušan fought against his father until he could imprison him and usurp the Kingdom of Serbia. He would ascend the throne as Stefan Uros IV Dušan. In 1331 AD, Dušan secured peace with Bulgaria via marriage. With the Bulgarian border pacified, Dušan then moved against the Eastern Roman Empire.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_3"
+				Language="en_US">
+			<Text>Stefan Dušan was described as tall and strong, hence his epitaph of 'the Mighty.' The young king secured writers that favoured him in their writings. Early in his rule, Dušan raided Macedonia and put down a noble revolt in Zeta. Dušan's ultimate goal was to claim the Roman legacy left in Greece. Dušan’s main opponents were mainly Greeks who he sought to rule and Hungarians who held power to the north. Wars with Hungary were defensive. Dušan secured Belgrade, Mačva, and Eastern Bosnia from Charles I of Hungary and Louis the Great of Hungary.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_4"
+				Language="en_US">
+			<Text>On occasion, Bulgarian Tsar Ivan Alexander assisted the campaigns of his son-in-law Stefan Dušan. The Eastern Roman Empire was engaged in the Second Palaiolgan Civil War of 1341-1347. Dušan capitalised on the civil war by taking the Balkans north of Attica and the Peloponnesus. The Serbian navy was too small to siege the Peloponnesus or Thessaloniki. The Eastern Roman Empire invited the Ottoman Turks to Europe in hope that Turkish mercenaries could halt the advancement of the Serbs. This invitation was the first time Ottomans entered Europe. In 1343 AD, Dušan's title expanded to include King of Romans, Greeks, Serbs, the Maritime Coast (of Serbia), and Bulgarians. In 1345 AD, he was recognized as Tsar, the Slavic equivalent of Caesar.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_5"
+				Language="en_US">
+			<Text>Under Stefan Dušan the Serbian Orthodox Church gained autocephaly with the archbishopric being promoted to a patriarchate. As Tsar, Dušan promoted Greek culture. He was a historic Philhellene and he granted his court Greek titles to be used in Constantinople. Dušan reigned in his native lands before engaging in further expansion, seeing written works and religious construction be done.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_6"
+				Language="en_US">
+			<Text>Dušan's Code was the first proto-constitution of the Serbian people. Dušan attempted to align the Venetians, but they feared losing existing trade privileges and avoided a military alliance. The Eastern Roman support was strong in Greece and Constantinople, the Patriarch of Constantinople excommunicated Dušan and many Greeks avoided him. In 1329 AD, Ban Stephen II seized Bosnia from the Serbs and sought to defend the region from Dušan. Stefan Dušan had already defeated Stephen when he was still the "young king."</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_HISTORY_PARA_7"
+				Language="en_US">
+			<Text>In 1350 AD, Stefan Dušan pursued Bosnia to subjugate the region and secure families connected to his own. Dušan's presence in Bosnia and Dalmatia stirred fear in Pope Clement VI. The Papacy pleaded Dušan to halt the persecution of Catholics. Dušan's grand plan was to make a new Roman Empire. His weakening of the Eastern Roman Empire, or the aversion of Greeks to submit to the Tsar, allowed the Ottoman Turks to invade the weakened Greek and Thracian lands. Dušan mounted a crusade in 1355 AD but he died too soon, possibly by poison. The Serbian Empire crumbled without Dušan. His son Stefan Uroš V succumbed to feudalism as various Serbian families carved principalities out of the former Serbian Kingdom/Empire. Dušan is the only monarch of his dynasty to not have been canonized as a saint.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_CAPSULE_BODY"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan ‘the Mighty’ is a relentless leader in pursuit of advancement. As leader of Serbia he can control if and when a [ICON_GLORY_GOLDEN_AGE] Golden Age or [ICON_GLORY_DARK_AGE] Dark Age will be most useful.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_CAPSULE_BODY"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan ‘the Mighty’ is a relentless leader in pursuit of advancement. As leader of Greece he can control if and when a [ICON_GLORY_GOLDEN_AGE] Golden Age or [ICON_GLORY_DARK_AGE] Dark Age will be most useful.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_CAPSULE_BODY"
+				Language="en_US">
+			<Text>Stefan Uros IV Dušan ‘the Mighty’ is a relentless leader in pursuit of advancement. As leader of Byzantium he can control if and when a [ICON_GLORY_GOLDEN_AGE] Golden Age or [ICON_GLORY_DARK_AGE] Dark Age will be most useful.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_DETAILED_BODY"
+				Language="en_US">
+			<Text>Serbia is a civilisation that represents the great wave of Slavic migrations. They are either strong at settling and improving cities during a [ICON_GLORY_GOLDEN_AGE] Golden Age or they are desperate conquerors during a [ICON_GLORY_DARK_AGE] Dark Age. Stefan Uros IV Dušan is crucial as he can control a flow of era score that is much greater than most other civilisations. The Alemannic Guard can turn the tide of the medieval era as it can drastically change the aggressive or diplomatic capabilities of Serbia. The Autocephalous Church is imperative for founding a religion. The Gusar allows for Serbia to engage in piracy and for the civilisation to better manage skirmishes in the medieval era.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_DETAILED_BODY"
+				Language="en_US">
+			<Text>Leading Greece, Stefan Uros IV Dušan is able to lead the whole game into sporadic [ICON_GLORY_GOLDEN_AGE] Golden Ages or [ICON_GLORY_DARK_AGE] Dark Ages. Coupled with a free Wildcard Policy slot, Greece is the government player throughout the game. Researching the civics that boost their victory strategy, they will have a full slate of Policies in place to help them along the way. The government system is flexible to support any victory path, though a Culture Victory is an easy fit for Greece.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CHAPTER_DETAILED_BODY"
+				Language="en_US">
+			<Text>The first priority for the Byzantines is found a religion, and spread it, as victories in the religious realm lead to increased military strength (and vice-versa). Their unique Taxis ability gives them additional [ICON_Strength] Combat and [ICON_Religion] Religious Strength for every Holy City converted, and the Byzantine founded religion spreads when defeating opposing units. Further, if you manage to convert your rival’s cities to your religion during war, Stefan Uros IV Dušan can gain additional era score. In addition to these, the Alemannic Guard is strong and capable of defining the medieval era and beyond. Fuelling conquest is Byzantiums extensive Heavy Cavalry (e.g. Alemannic Guard) from the Byzantine unique district, the Hippodrome, and an early-era naval unit, the Dromon, with increased damage against units and increased range. With this synergy between religion and military, Byzantium is setup to win either a Religious or Domination Victory.</Text>
+		</Row>
+		<!-- SERBIA CIVILIZATION -->
+		<Row	Tag="LOC_CIVINFO_STR_SERBIA_LOCATION"
+				Language="en_US">
+			<Text>Europe</Text>
+		</Row>
+		<Row	Tag="LOC_CIVINFO_STR_SERBIA_SIZE"
+				Language="en_US">
+			<Text>88,361 Kilometers squared in 2006 AD</Text>
+		</Row>
+		<Row	Tag="LOC_CIVINFO_STR_SERBIA_POPULATION"
+				Language="en_US">
+			<Text>8.6 Million in 2011 AD</Text>
+		</Row>
+		<Row	Tag="LOC_CIVINFO_STR_SERBIA_CAPITAL"
+				Language="en_US">
+			<Text>Belgrade</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>Slavs appeared in the Balkans towards the end of Late Antiquity. At this point Illyria had been depopulated due to the collapse of the Roman Empire in the west and the vacuum enabled new peoples to migrate with ease. They were a migratory people in the region much like the various eastern Germans before them,; Turks in the contemporary medieval period, such as the Avars; and the Magyars that had yet to come. Migratory Serbs were called White Serbs and there homeland of White Serbia is called Boiki. Similar to the White Croats, they migrated to Balkans from beyond the Carpathian Mountains and some Serbs continued into Germany where they became the Sorbs of Lusatia or Sorbia.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>The Emperors of Eastern Rome claimed to be overlords of Serbs; however, various Slavic peoples of the Sclaveni were very tribal and prone to raiding their Rhomanoi “overlords.” The Eastern Roman Emperors struggled to assert authority in the new Slavic lands which were named Sclaveni. The first Serbian state was the Principality of Serbia. It was independent from both the Eastern Roman Empire and the Bulgarian Empire. In 1217 AD, Serbia became a kingdom and the beloved Saint Sava affirmed an autocephalous Serbian Church.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_3"
+				Language="en_US">
+			<Text>The medieval Serbian Kingdom pursued a policy similar to Bulgaria's historic policy: conquer Greece and claim the old Roman legacy (which meant usurping the Eastern Roman Empire). Stefan Uros IV Dušan ‘the Mighty’ was the apex feudal lord of his day. He turned Serbia into an empire in 1346 AD. It sprawled into Albania, Bosnia, Bulgaria, and Greece. Dušan died against the Ottoman Turks which would lead to the Serbian Empire splintering into feudal states. The splinter realm of Zeta, part of Serbia’s coast, carved out the distinct Montenegrin identity that continued into the modern period.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_4"
+				Language="en_US">
+			<Text>Serbia, despite its strong Orthodox Christian patriachate and history of warfare and brigandry, fell to the Ottoman Turks in 1459 AD. Many Serbian chronicles were written between 1390 AD and 1526 AD, these old chronicles being written in differing times of success and subjugation. Serbs often rose up against the Ottoman administration, many, such as the gusars (courser riders, light cavalrymen), retreated to Croatia to unite with Christians in the Austrian military frontier.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_5"
+				Language="en_US">
+			<Text>In 1595 AD, the Ottomans punished the Serbs by burning the relics of Saint Sava after crushing a rebellion. Serbs felt a greater desire to revolt after 1595 AD. Serbian Patriarch Arsenije III Čarnojević was convinced to lead an uprising in 1688 AD during the Great Turkish War. In the aftermath a wave of Serb immigrants fled to Banat and accepted Habsburg rule.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_6"
+				Language="en_US">
+			<Text>The Serbian Revolution began in 1804 AD and lasted until 1835 AD, it resulted in an autonomous Serbia with the last Ottoman forces leaving in 1867 AD. Serbia became a recognized nation in 1878 AD at the Congress of Berlin. Serbian Orthodoxy became the most important factor in Serbian nationalism as the Serbo-Croat language was not a strong unifying force. Croatians shared the language, there were Muslims in Serbia, Montenegro, and Bosnia that used the language. Therefore, Serbian Orthodoxy became a greater rallying cry than ethnic and linguistic heritage.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_7"
+				Language="en_US">
+			<Text>Serbia fought the Balkan Wars of 1912 which forced the Ottomans to Thrace. Gavrilo Princip assassinated Archduke Franz Ferdinand of Austria which lighted the Balkan powder-keg, initiating World War I. Serbs during World War I were outnumbered by Austro-Hungarian forces yet saw success against them early. However, the combined forces of Austria-Hungary, Germany, and Bulgaria overwhelmed Serbia in 1915 AD. After that year, Serbs would fight in Macedonia on the Salonika front until liberating Serbia in 1918 AD.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_8"
+				Language="en_US">
+			<Text>The exhaustion and combined Illyrian movements throughout the Balkans allowed certain political parties to coup and integrate other states to form the Kingdom of Serbs, Croats, and Slovenes; the Kingdom of Yugoslavia. The nation of Yugoslavia was often in turmoil, many other Slavic peoples viewed it as a Greater Serbia, this was a popular belief among Croats. The royal dictatorship often attempted to centralise Yugoslavia.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_9"
+				Language="en_US">
+			<Text>Yugoslavia was invaded in 1941 AD by the Third Reich. The Ustaše of Croatia attempted to exterminate Serbs while recruiting Croats or Croatian-adjacent (Bosnian, Bosniak, and Muslim Croats) peoples. Serbs founded the Chetniks which were nationalist partisans, but the Communist Yugoslav Partisans gained more support. Josip Broz Tito was the leader of the communist partisans and he led Yugoslavia after World War II till his death in 1980 AD, without Tito, Yugoslavia suffered economically.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_10"
+				Language="en_US">
+			<Text>Communist Yugoslavia fell apart in the 1990s after the fall of the Soviet Union. During the Soviet Union's last years the Yugoslav leaders believed multi-ethnic participation would prove more beneficial than the Soviet Union’s policies of Russification. Such views were irrelevant as the multiple ethnicities and religious groups first attempted to separate from Yugoslavia democratically, and then it burst into violence.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_11"
+				Language="en_US">
+			<Text>Yugoslavia continued to exist until 2006 AD; however, it struggled against splinter republics adjacent to the socialist controlled Serbia. Croatia fought against Yugoslavia for independence until 1995 AD and it resulted in many Serbo-Croats and Serbs entering diaspora. Between 1992 AD and 1995 AD, the Bosnian Wars were engagements between Bosnians, Bosniaks, and Serbs.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_STR_SERBIA_CHAPTER_HISTORY_PARA_12"
+				Language="en_US">
+			<Text>The Dayton Agreement saw Bosnia be divided on ethnic lines. In 1998 AD, the region of Kosovo, which saw massive Albanian demographic growth, splintered from Serbia proper. The socialist Yugoslavs that endured in Serbia and Montenegro endured 78 days of aerial bombardment from the North Atlantic Treaty Organisation alliance. Yugoslavia finally concluded in 2006 AD, resulting in the two independent Serb nations of Serbia and Montenegro, with Bosnia and Herzegovina holding the Republic of Srpska, another Serb state within a larger polity.</Text>
+		</Row>
+		<!-- SERBIA/GREECE/BYZANTIUM ALEMANNIC GUARD -->
+		<Row	Tag="LOC_PEDIA_UNITS_PAGE_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>The Serbian Empire relied on a cavalry, the gusars, made up of native Serbs yet it also did not shy from foreign mercenaries staffing much of the military. The “Alemannic guard” refers to a ragtag band of 300 German knights that served the Serbian Empire of Stefan Uros IV Dušan. An Austrian knight known as Palman left his home of Styria, Austria at the age of 27 after his cleft lip horrified his bride to be. With his heart broken, he pursued many tournaments across the Holy Roman Empire until he found an opportunity from the rising power of Serbia.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_UNITS_PAGE_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>The Alemannic guard was elevated after the Kingdom of Serbia was seized by Stefan Uros IV Dušan who dethroned his father. The knight Palman became a high ranking vitez (knight). The German mercenaries were instrumental in suppressing rebellion at Zeta, Serbia (Montenegro) and Veria, Byzantine Empire (Greece/Thrace). Palman’s relations with Stefan Uros IV Dušan soured due to the Serbian Emperor’s conviction to enforce Orthodox Christianity. Despite Palman and his German brethren being persecuted, they continued to occupy various cities in the Balkans even after the death of Stefan Uros IV Dušan.</Text>
+		</Row>
+		<!-- SERBIA GUSAR -->
+		<Row	Tag="LOC_PEDIA_UNITS_PAGE_UNIT_STR_SERBIA_GUSAR_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>Before hussars became a popular light cavalry throughout Europe they were invented by Mathias Corvinus, King of Hungary, who instituted effective military reforms. The Hussars under Mathias Corvinus included many Serbian horseman, and it is the Serbo-Hungarian origin that sparks a debate on where the term hussar comes from. The original Hungarian term of huszár stemmed from the Serbian term gusar or “brigand.” But, modern Serbian uses the term exclusively for pirates much like with courser stemming from the French “corsair.” The Eastern Roman Empire employed Serb horseman as chonsariori, a term stemming from the earlier Latin cursarius, which in turn evolved into courser or corsair as seen in French.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_UNITS_PAGE_UNIT_STR_SERBIA_GUSAR_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>Serbian princes employed a variety of warrior peoples, such as German knights or Catalan halberdiers or Albanian spearmen, Gusars would have been exclusively Serb horsemen. The Gusar was armed with a spear and a pentagon wooden shield. Gusar tactics were like support cavalry, charging in when Serbian infantry was struggling with intention to cause disruption on the battlefield that would rout the enemy, the infantry's goal would be to prevent the enemy from pursuing the Gusars. The Ottoman Turks noted that Gusar tactics were similar to bandits they encountered. As the Ottoman Empire seized the Balkans, many Serb horseman retreated into Croatia, assimilating into the Austrian military frontier and joinging other Christians in military groups such as the Uskoci, Gusars would form the Krajišnici.</Text>
+		</Row>
+		<!-- SERBIA AUTOCEPHALOUS CHURCH IMPROVEMENT -->
+		<Row	Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_CHAPTER_HISTORY_PARA_1"
+				Language="en_US">
+			<Text>In 731 AD, Eastern Roman Emperor Leo III transferred the Praetorian Prefecture of Illyricum from the Western Catholic Church to the Ecumencial Patriarchate of Constantinople, thus thrusting the Balkans into the domain of Orthodox Christianity. Slavic migrations occurred near the end of the migration period, between the sixth and early seventh centuries. The Eastern Roman Empire of Late Antiquity suffered in wars against Avars and Persian; from the Plague of Justinian; and the decimation of the Little Ice Age.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_CHAPTER_HISTORY_PARA_2"
+				Language="en_US">
+			<Text>Mass depopulation allowed the Slavs to enter the Balkans and insert themselves in historical Roman provinces. Eventually the Eastern Roman Empire conceded to the Slav migrators and established the Sclaveni, lands recognized as Slavic by the Empire and natural subjects of the empire, much like the foederati of old. Serbs converted to Christianity sometime between c. 600 AD to c. 850 AD. Serbs were among the slowest to convert, but there had always been a Christian presence in their lands, it is likely that Bulgarians influenced the conversion of Serbs. The Greek language was in competition with Cyrillic script and Slavonic which complicated the conversion of the Slavs.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_CHAPTER_HISTORY_PARA_3"
+				Language="en_US">
+			<Text>In 1018 AD, the Eastern Roman Emperor Basil II defeated the Bulgarians and established the Archbishopric of Ohrid to lower the influence of Bulgarian Orthodoxy among the Balkan Slavs. The Bulgarian Church remained autocephalous and separate from Constantinople despite intervention by the Emperor. In 1020 AD, Basil II granted several privileges to several Serbian bishoprics.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_CHAPTER_HISTORY_PARA_4"
+				Language="en_US">
+			<Text>Serbian prince Rastko Nemanjić took monastic vows at Mount Athos in 1192 AD, he took the name Sava. In 1195 AD, Stefan Nemanja, Sava's father, took vows at Mount Athos under the name Simeon. Together, father and son founded a religious centre at the abandoned site of Hilandar. Sava and his father invoked a Serbian renaissance, after his father's death, Sava returned to Serbia to spread pastoral care and education. In 1217 AD, Sava's brother, Stefan, was crowned King of Serbia and Sava secured authority from the Patriarchate of Constantinople to establish the autocephalous Serbian Church. Sava was a beloved religious leader, bringing religious education to Serbia while condemning the Gnostic Bogomils.</Text>
+		</Row>
+		<Row	Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_CHAPTER_HISTORY_PARA_5"
+				Language="en_US">
+			<Text>From 1346 AD to 1463 AD, Stefan Uros IV Dušan ‘the Mighty’ expanded Serbia and the Serbian Church's territory; however this Patriarchate of Peć declined after Dušan's death at the hands of the Ottoman Turks. The Serbian Church struggled under the Ottomans and their sponsorship of Sunni Islam. Bosnia, a land with a traditional non-Catholic and non-Orthodox people, had to choose between success as Sunnis or joining foreign churches. The Habsburgs also demanded Catholicism in the Balkans. The Serbian Church was reunited with the founding of Yugoslavia, but after World War II it was suppressed by Josip Broz Tito’s regime. Serbian churches were built in Byzantine style or Raška style which combined Serb and Greek architecture. In Habsburg times, Serbian churches used the Baroque style.</Text>
+		</Row>
+	</LocalizedText>
+
+</GameData>

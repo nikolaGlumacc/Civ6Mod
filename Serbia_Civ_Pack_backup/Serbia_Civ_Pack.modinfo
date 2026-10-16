@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="1">
+  <Properties>
+    <Name>Serbia Civilization Pack</Name>
+    <Description>Adds Serbia featuring Josip Broz Tito, Draža Mihailović, and Slobodan Milošević.</Description>
+    <Teaser>Serbia Civilization Pack</Teaser>
+    <Authors>Nikola</Authors>
+    <CompatibleVersions>1.0,2.0</CompatibleVersions>
+  </Properties>
+
+  <Dependencies>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+
+  <Components>
+    <!-- CONFIG FOLDER (Setup Screen) -->
+    <ModdingUpdateConfigurationDatabase id="Serbia_Config">
+      <File>Core/Config.xml</File>
+    </ModdingUpdateConfigurationDatabase>
+
+    <!-- CORE FOLDER (Gameplay Database) -->
+    <UpdateDatabase id="Serbia_Core_Data">
+      <File>Core/Agenda.xml</File>
+      <File>Core/Buildings.xml</File>
+      <File>Core/Civilization.xml</File>
+      <File>Core/GreatPeople.sql</File>
+      <File>Core/Improvements.xml</File>
+      <File>Core/Leaders.sql</File>
+      <File>Core/Units.xml</File>
+    </UpdateDatabase>
+
+    <!-- TEXT FOLDER -->
+    <UpdateText id="Serbia_Text">
+      <File>Core/Serbia_Text.xml</File>
+      <File>Text/Localization.xml</File>
+    </UpdateText>
+  </Components>
+</Mod>

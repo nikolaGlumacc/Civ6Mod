@@ -1,0 +1,35 @@
+CIVILIZATION 1: Serbia (Empire of Serbia/Serbian Empire)
+
+LEADER 1: Stefan Uros IV Dusan the Mighty Nemanjic
+
+CIVILIZATION 1 TRAIT: Sclaveni
+-Miltary Units gain +4 Combat Strength during a Dark Age.
+-Religious Units gain +1 Movement during a Dark Age.
+-Settlers gain +1 Movement during a Golden Age.
+-Settling Cities during a Golden Age grants +2 Population.
+
+LEADER 1 TRAIT: Dusan's Code
+-Defeating an enemy Unit grants +1 Era Score.
+-Conquered Cities do not lose Population.
+-Conquered Cities gain +7 Loyalty.
+
+LEADER 1 AGENDA: Emperor of Serbs and Greeks
+-Likes civilizations that are in a Golden Age.
+-Dislikes civilizations that are in a Dark Age.
+
+CIVILIZATION 1 UNIT: Gusar
+-Replaces the Courser.
+-Gains bonuses that would effect a Naval Ranged class Unit.
+- 1 Range.
+-Can melee attack when on land.
+-Pillaging grants an additional 50 Gold.
+-Can fight while at sea.
+-Can Coastal Raid when on coast tiles.
+
+CIVILIZATION 1 IMPROVEMENT: Autocephalous Church
+- +1 Housing.
+- +2 Loyalty.
+- +1 Faith.
+-Gain standard adjacency based on what Specialty Districts are adjacent, this becomes major adjacency with the Nationalism Civic.
+-Religious Units heal +20 Health when fortified on the tile.
+-A City can only have 1 Autcephalous Church and cannot swap its tile.

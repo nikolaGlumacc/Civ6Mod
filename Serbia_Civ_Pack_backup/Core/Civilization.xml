@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Types>
+    <Row Type="CIVILIZATION_SERBIA" Kind="KIND_CIVILIZATION"/>
+    <Row Type="TRAIT_CIVILIZATION_CROSSROADS" Kind="KIND_TRAIT"/>
+  </Types>
+
+  <Civilizations>
+    <Row>
+      <CivilizationType>CIVILIZATION_SERBIA</CivilizationType>
+      <Name>LOC_CIVILIZATION_SERBIA_NAME</Name>
+      <Description>LOC_CIVILIZATION_SERBIA_DESCRIPTION</Description>
+      <Adjective>LOC_CIVILIZATION_SERBIA_ADJECTIVE</Adjective>
+      <StartingCivilizationLevelType>CIVILIZATION_LEVEL_FULL_CIV</StartingCivilizationLevelType>
+    </Row>
+  </Civilizations>
+  
+  <CivilizationLeaders>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_TITO"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_DRAZA"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" LeaderType="LEADER_MILOSEVIC"/>
+  </CivilizationLeaders>
+
+  <CivilizationCityNames>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_BEOGRAD"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NOVI_SAD"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NIS"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_KRAGUJEVAC"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_SUBOTICA"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_ZRENJANIN"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_PANCEVO"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_CACAK"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_KRALJEVO"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_UZICE"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_VALJEVO"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_KRUSEVAC"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_LESKOVAC"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_VRANJE"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NOVI_PAZAR"/>
+  </CivilizationCityNames>
+
+  <CivilizationTraits>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_CROSSROADS"/>
+  </CivilizationTraits>
+
+  <Traits>
+    <Row TraitType="TRAIT_CIVILIZATION_CROSSROADS" Name="LOC_TRAIT_CIVILIZATION_CROSSROADS_NAME" Description="LOC_TRAIT_CIVILIZATION_CROSSROADS_DESCRIPTION"/>
+  </Traits>
+</GameData>

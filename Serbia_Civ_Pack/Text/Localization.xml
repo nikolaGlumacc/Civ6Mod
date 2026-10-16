@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <!-- CIVILIZATION -->
+    <Row Tag="LOC_CIVILIZATION_SERBIA_NAME">
+      <Text>Serbia</Text>
+    </Row>
+    <Row Tag="LOC_CIVILIZATION_SERBIA_DESCRIPTION">
+      <Text>Serbian Civilization</Text>
+    </Row>
+    <Row Tag="LOC_CIVILIZATION_SERBIA_ADJECTIVE">
+      <Text>Serbian</Text>
+    </Row>
+
+    <!-- CIV ABILITY -->
+    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_NAME">
+      <Text>Crossroads of the Balkans</Text>
+    </Row>
+    <Row Tag="LOC_TRAIT_CIVILIZATION_CROSSROADS_DESCRIPTION">
+      <Text>International and domestic Trade Routes yield +2 Gold and +1 Culture. Roads built inside Serbian borders upgrade one tier earlier than usual.</Text>
+    </Row>
+
+    <!-- LEADERS -->
+    <Row Tag="LOC_LEADER_TITO_NAME">
+      <Text>Josip Broz Tito</Text>
+    </Row>
+    <Row Tag="LOC_LEADER_DRAZA_NAME">
+      <Text>Draža Mihailović</Text>
+    </Row>
+    <Row Tag="LOC_LEADER_MILOSEVIC_NAME">
+      <Text>Slobodan Milošević</Text>
+    </Row>
+
+    <!-- LEADER ABILITIES -->
+    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_NAME">
+      <Text>Brotherhood and Unity</Text>
+    </Row>
+    <Row Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION">
+      <Text>All cities gain +20% Production while running Communism. Foreign Trade Routes grant +2 Food and +2 Production.</Text>
+    </Row>
+
+    <Row Tag="LOC_TRAIT_LEADER_RAVNA_GORA_NAME">
+      <Text>Ravna Gora Movement</Text>
+    </Row>
+    <Row Tag="LOC_TRAIT_LEADER_RAVNA_GORA_DESCRIPTION">
+      <Text>All combat units gain +5 Combat Strength under Monarchy. Cities gain +2 Faith.</Text>
+    </Row>
+
+    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME">
+      <Text>Rally of the People</Text>
+    </Row>
+    <Row Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION">
+      <Text>Monuments and Dom Kulture yield double Culture and +4 Loyalty per turn. War weariness is reduced by 50%.</Text>
+    </Row>
+
+    <!-- LEADER QUOTES -->
+    <Row Tag="LOC_DIPLO_QUOTE_TITO">
+      <Text>"Živelo bratstvo i jedinstvo naših naroda!"</Text>
+    </Row>
+    <Row Tag="LOC_DIPLO_QUOTE_DRAZA">
+      <Text>"Za kralja i otadžbinu, sa verom u Boga!"</Text>
+    </Row>
+    <Row Tag="LOC_DIPLO_QUOTE_MILOSEVIC">
+      <Text>"Niko ne sme da vas bije!"</Text>
+    </Row>
+
+    <!-- AGENDAS -->
+    <Row Tag="LOC_AGENDA_TITO_NAME">
+      <Text>Non-Aligned Movement</Text>
+    </Row>
+    <Row Tag="LOC_AGENDA_TITO_DESCRIPTION">
+      <Text>Likes civilizations that maintain peaceful trade. Dislikes warmongers.</Text>
+    </Row>
+    <Row Tag="LOC_AGENDA_DRAZA_NAME">
+      <Text>Ravna Gora</Text>
+    </Row>
+    <Row Tag="LOC_AGENDA_DRAZA_DESCRIPTION">
+      <Text>Likes civilizations that liberate cities. Dislikes aggressive expansionists.</Text>
+    </Row>
+    <Row Tag="LOC_AGENDA_MILOSEVIC_NAME">
+      <Text>Balkan Strongman</Text>
+    </Row>
+    <Row Tag="LOC_AGENDA_MILOSEVIC_DESCRIPTION">
+      <Text>Likes civilizations with a strong military and high loyalty. Dislikes weak or disloyal empires.</Text>
+    </Row>
+
+    <!-- UNIQUE BUILDING -->
+    <Row Tag="LOC_BUILDING_DOM_KULTURE_NAME">
+      <Text>Dom Kulture</Text>
+    </Row>
+    <Row Tag="LOC_BUILDING_DOM_KULTURE_DESCRIPTION">
+      <Text>Serbian unique building that replaces the Broadcast Tower. Provides +4 Culture, +2 Production, +1 Amenity, and +2 Loyalty per turn.</Text>
+    </Row>
+
+    <!-- UNIQUE IMPROVEMENT -->
+    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_NAME">
+      <Text>Spomenik</Text>
+    </Row>
+    <Row Tag="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION">
+      <Text>Serbian unique improvement built on hills. Provides +2 Culture and +1 Faith, generating Tourism later in the game.</Text>
+    </Row>
+
+    <!-- UNIQUE UNITS -->
+    <Row Tag="LOC_UNIT_PARTIZANI_NAME">
+      <Text>Partizani</Text>
+    </Row>
+    <Row Tag="LOC_UNIT_PARTIZANI_DESCRIPTION">
+      <Text>Serbian unique melee unit replacing Infantry under Josip Broz Tito. Gains +7 Combat Strength in Hills and has reduced production cost.</Text>
+    </Row>
+
+    <Row Tag="LOC_UNIT_CETNICKI_ODRED_NAME">
+      <Text>Četnički Odred</Text>
+    </Row>
+    <Row Tag="LOC_UNIT_CETNICKI_ODRED_DESCRIPTION">
+      <Text>Serbian unique recon unit replacing the Skirmisher under Draža Mihailović. Boasts high mobility (+4 Movement) and ignores Zone of Control.</Text>
+    </Row>
+
+    <Row Tag="LOC_UNIT_GARDIJSKA_JEDINICA_NAME">
+      <Text>Gardijska Jedinica</Text>
+    </Row>
+    <Row Tag="LOC_UNIT_GARDIJSKA_JEDINICA_DESCRIPTION">
+      <Text>Serbian unique melee unit replacing Mechanized Infantry under Slobodan Milošević. Boasts superior Combat Strength (93 vs 85).</Text>
+    </Row>
+
+    <!-- CITIES -->
+    <Row Tag="LOC_CITY_NAME_BEOGRAD"><Text>Beograd</Text></Row>
+    <Row Tag="LOC_CITY_NAME_NOVI_SAD"><Text>Novi Sad</Text></Row>
+    <Row Tag="LOC_CITY_NAME_NIS"><Text>Niš</Text></Row>
+    <Row Tag="LOC_CITY_NAME_KRAGUJEVAC"><Text>Kragujevac</Text></Row>
+    <Row Tag="LOC_CITY_NAME_SUBOTICA"><Text>Subotica</Text></Row>
+    <Row Tag="LOC_CITY_NAME_ZRENJANIN"><Text>Zrenjanin</Text></Row>
+    <Row Tag="LOC_CITY_NAME_PANCEVO"><Text>Pančevo</Text></Row>
+    <Row Tag="LOC_CITY_NAME_CACAK"><Text>Čačak</Text></Row>
+    <Row Tag="LOC_CITY_NAME_KRALJEVO"><Text>Kraljevo</Text></Row>
+    <Row Tag="LOC_CITY_NAME_UZICE"><Text>Užice</Text></Row>
+    <Row Tag="LOC_CITY_NAME_VALJEVO"><Text>Valjevo</Text></Row>
+    <Row Tag="LOC_CITY_NAME_KRUSEVAC"><Text>Kruševac</Text></Row>
+    <Row Tag="LOC_CITY_NAME_LESKOVAC"><Text>Leskovac</Text></Row>
+    <Row Tag="LOC_CITY_NAME_VRANJE"><Text>Vranje</Text></Row>
+    <Row Tag="LOC_CITY_NAME_NOVI_PAZAR"><Text>Novi Pazar</Text></Row>
+
+    <!-- GREAT PEOPLE -->
+    <Row Tag="LOC_GREATPERSON_NIKOLA_TESLA_NAME">
+      <Text>Nikola Tesla</Text>
+    </Row>
+    <Row Tag="LOC_GREATPERSON_RATKO_MLADIC_NAME">
+      <Text>Ratko Mladić</Text>
+    </Row>
+    <Row Tag="LOC_GREATPERSON_DESANKA_MAKSIMOVIC_NAME">
+      <Text>Desanka Maksimović</Text>
+    </Row>
+
+    <!-- GREAT WORKS -->
+    <Row Tag="LOC_GREATWORK_KRVAVA_BAJKA_NAME">
+      <Text>Krvava Bajka</Text>
+    </Row>
+    <Row Tag="LOC_GREATWORK_KRVAVA_BAJKA_QUOTE">
+      <Text>"Bilo je to u zemlji seljaka i njiva..."</Text>
+    </Row>
+    <Row Tag="LOC_GREATWORK_TRAZIM_POMILOVANJE_NAME">
+      <Text>Tražim Pomilovanje</Text>
+    </Row>
+    <Row Tag="LOC_GREATWORK_TRAZIM_POMILOVANJE_QUOTE">
+      <Text>"Tražim pomilovanje za sve što je bilo..."</Text>
+    </Row>
+  </LocalizedText>
+</GameData>

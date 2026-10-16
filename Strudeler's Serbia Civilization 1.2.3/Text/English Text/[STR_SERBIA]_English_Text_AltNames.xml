@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- [STR_SERBIA]_English_Text_AltNames -->
+<!-- Author: Strudeler -->
+<!-- DateCreated: 2/11/2024 7:36:18 PM -->
+<GameData>
+
+	<!-- ALT NAMES -->
+	<LocalizedText>
+		<!-- MENU -->
+		<Row	Tag="LOC_STR_SERBIA_ALT_NAMES_NAME"
+				Language="en_US">
+			<Text>[ICON_AdditionalContent] STR[NEWLINE]Alt Names: Serbia</Text>
+		</Row>
+		<Row	Tag="LOC_STR_SERBIA_ALT_NAMES_DESCRIPTION"
+				Language="en_US">
+			<Text>Set the name of the Serbia Civilization in-game.[NEWLINE][ICON_Bullet]0: Serbia[NEWLINE][ICON_Bullet]1: Duklja[NEWLINE][ICON_Bullet]2: Rascia[NEWLINE][ICON_Bullet]3: Morava[NEWLINE][ICON_Bullet]4: Prilep[NEWLINE][ICON_Bullet]5: Serbo-Greece[NEWLINE][ICON_Bullet]6: Serbo-Rome</Text>
+		</Row>
+		<!-- IN-GAME -->
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_1"
+				Language="en_US">
+			<Text>Duklja</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_2"
+				Language="en_US">
+			<Text>Rascia</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_3"
+				Language="en_US">
+			<Text>Morava</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_4"
+				Language="en_US">
+			<Text>Prilep</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_5"
+				Language="en_US">
+			<Text>Serbo-Greece</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_NAME_ALT_6"
+				Language="en_US">
+			<Text>Serbo-Rome</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_1"
+				Language="en_US">
+			<Text>Dukljan Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_2"
+				Language="en_US">
+			<Text>Rascian Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_3"
+				Language="en_US">
+			<Text>Moravan Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_4"
+				Language="en_US">
+			<Text>Prilepan Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_5"
+				Language="en_US">
+			<Text>Serbo-Greek Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_DESCRIPTION_ALT_6"
+				Language="en_US">
+			<Text>Serbo-Roman Empire</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_1"
+				Language="en_US">
+			<Text>Dukljan</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_2"
+				Language="en_US">
+			<Text>Rascian</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_3"
+				Language="en_US">
+			<Text>Moravan</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_4"
+				Language="en_US">
+			<Text>Prilepan</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_5"
+				Language="en_US">
+			<Text>Serbo-Greek</Text>
+		</Row>
+		<Row	Tag="LOC_CIVILIZATION_STR_SERBIA_ADJECTIVE_ALT_6"
+				Language="en_US">
+			<Text>Serbo-Roman</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_1"
+				Language="en_US">
+			<Text>Dukljan unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_2"
+				Language="en_US">
+			<Text>Rascian unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_3"
+				Language="en_US">
+			<Text>Moravan unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_4"
+				Language="en_US">
+			<Text>Prilepan unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_5"
+				Language="en_US">
+			<Text>Serbo-Greek unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_UNIT_STR_SERBIA_GUSAR_DESCRIPTION_ALT_6"
+				Language="en_US">
+			<Text>Serbo-Roman unique Medieval era Light Cavalry class unit that replaces the Courser. 1 [ICON_Range] Range. Becomes a naval ranged unit when embarked. Can melee attack when on land, cannot melee attack when at sea. +2 [ICON_Movement] Movement when embarked. Naval Melee and Naval Ranged class units can Coastal Raid if adjacent to a Gusar.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_1"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Duklja.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_2"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Rascia.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_3"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Morava.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_4"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Prilep.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_5"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Serbo-Greece.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+		<Row	Tag="LOC_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_DESCRIPTION_ALT_6"
+				Language="en_US">
+			<Text>Unlocks the Builder ability to construct an Autocephalous Church, unique to Serbo-Rome.[NEWLINE][NEWLINE]+1 [ICON_Housing] Housing and [ICON_Faith] Faith. +2 Loyalty. +2 [ICON_GreatProphet] Great Prophet points per turn. Gain standard adjacency for various yields relative to the type of adjacent specialty district, this becomes major adjacency with with Nationalism. +15 HP healing for friendly religious units on the tile that has not attacked during the turn.[NEWLINE][NEWLINE]A city can only have one Autocephalous Church. Autocephalous Church tiles cannot be swapped. Cannot be built adjacent to another Autocephalous Church.</Text>
+		</Row>
+	</LocalizedText>
+
+</GameData>

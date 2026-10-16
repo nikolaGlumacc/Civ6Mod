@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="f76d2468-f027-473a-9751-33083e4211f4" version="4">
+  <Properties>
+    <Name>[COLOR:ResCultureLabelCS]STRUDELER'S CIVILIZATIONS: SERBIA[ICON_Bullet]1.2.2[ENDCOLOR]</Name>
+    <Description>[COLOR:ResFoodLabelCS]~Version 1.2.2~[ENDCOLOR][NEWLINE][NEWLINE][COLOR:ResGoldLabelCS]Requires: GATHERING STORM and BYZANTIUM AND GAUL CIVILIZATION PACK.[ENDCOLOR][NEWLINE][NEWLINE]Play as the mighty Emperor of Serbs and Greeks, Stefan Dušan; in Sid Meier's Civilization VI.[NEWLINE][NEWLINE]LEADER: Stefan Uros IV Dušan (Serbia, Byzantium, and Greece)[NEWLINE]LEADER AGENDA: Emperor of Serbs and Greeks[NEWLINE]-Likes Civilizations in a Golden Age.[NEWLINE]-Dislikes Civilizations in a Dark Age.[NEWLINE]LEADER TRAIT: Dušan's Code[NEWLINE]-All Historic Moments gain an additional +1 Era Score.[NEWLINE]-Gain the Alemannic Guard unique Unit.[NEWLINE][NEWLINE]LEADER UNIT: Alemannic Guard[NEWLINE]-Replaces the Knight.[NEWLINE]-Adjacent levied Units gain +5 [ICON_Strength] Combat Strength.[NEWLINE]-Cost to levy City-State Units decreases by 10% [ICON_Gold] Gold for every Alemannic Guard during a [ICON_GLORY_GOLDEN_AGE] Golden Age.[NEWLINE]- +50% Flanking bonus during a [ICON_GLORY_NORMAL_AGE] Normal Age.[NEWLINE]- +1 [ICON_Envoy] Envoy token point per turn for every Alemannic Guard during a [ICON_GLORY_DARK_AGE] Dark Age.[NEWLINE][NEWLINE]CIVILIZATION: Serbia[NEWLINE]CIVILIZATION TRAIT: Sclaveni[NEWLINE]-Civilian Units gain +2 [ICON_Movement] Movement during a [ICON_GLORY_GOLDEN_AGE] Golden Age.[NEWLINE]-Cities gain +2 [ICON_Housing] Housing during a [ICON_GLORY_NORMAL_AGE] Normal Age.[NEWLINE]-Military or Religious Units gain +5 [ICON_Strength] Combat or [ICON_Religion] Religious Strength during a [ICON_GLORY_DARK_AGE] Dark Age.[NEWLINE][NEWLINE]CIVILIZATION UNIT: Gusar[NEWLINE]-Replaces the Courser.[NEWLINE]-1 [ICON_Range] Range.[NEWLINE]-Can ranged attack when embarked.[NEWLINE]-Can melee attack on land.[NEWLINE]- +3 [ICON_Movement] Movement when embarked.[NEWLINE]-Adjacent naval units can Coastal Raid.[NEWLINE][NEWLINE]CIVILIZATION IMPROVEMENT: Autocephalous Church[NEWLINE]- +1 [ICON_Housing] Housing and [ICON_Faith] Faith.[NEWLINE]- +2 Loyalty.[NEWLINE]- +2 [ICON_GreatProphet] Great Prophet points per turn.[NEWLINE]-Gain standard adjacency for various yields based on adjacent Specialty Districts, this becomes major adjacency with Nationalism.[NEWLINE]- +15 HP healing for friendly Religious Units on the tile that has not attacked during the turn.[NEWLINE]-A City can only have one Autocephalous Church.[NEWLINE]-Tiles with an Autocephalous Church cannot be swapped.[NEWLINE]-Cannot be built next to another Autocephalous Church.</Description>
+    <Created>1762877060</Created>
+    <Teaser>Play as the mighty Emperor of Serbs and Greeks, Stefan Uros IV Dušan; in Sid Meier's Civilization VI.</Teaser>
+    <Authors>Strudeler</Authors>
+    <SpecialThanks>The Tart Society, Sailor Cat, Barbarian King, Leugi, Dartmor, TheCrazyScotsman</SpecialThanks>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+    <Mod id="A1100FC4-70F2-4129-AC27-2A65A685ED08" title="DLC: Byzantium and Gaul Civilization Pack" />
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="STRSerbiaAltName1">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="STRSerbiaAltName2">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>2</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="STRSerbiaAltName3">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>3</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="STRSerbiaAltName4">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>4</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="STRSerbiaAltName5">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>5</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="STRSerbiaAltName6">
+      <ConfigurationValueMatches>
+        <ConfigurationId>STR_SERBIA_ALT_NAMES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>6</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateArt id="UpdateArt">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Strudeler's Serbia Civilization.dep</File>
+    </UpdateArt>
+    <UpdateColors id="UpdateColours">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Core/[STR_SERBIA]_Colours.sql</File>
+    </UpdateColors>
+    <UpdateDatabase id="UpdateDatabase">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Core/[STR_SERBIA]_Config.xml</File>
+      <File>Core/[STR_SERBIA]_Maps.sql</File>
+      <File>Core/[STR_SERBIA]_ModSupport.sql</File>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltNames.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="UpdateIcons">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Icons/[STR_SERBIA]_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="UpdateText">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Text/English Text/[STR_SERBIA]_English_Civilopedia_ModPage.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Civilopedia.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Diplomacy.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Gameplay.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_ModSupport.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_AltNames.xml</File>
+    </UpdateText>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateArt id="UpdateArt">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Strudeler's Serbia Civilization.dep</File>
+    </UpdateArt>
+    <DoNothing id="DoNothing">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+    </DoNothing>
+    <UpdateColors id="UpdateColours">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Core/[STR_SERBIA]_Colours.sql</File>
+    </UpdateColors>
+    <UpdateDatabase id="UpdateDatabase">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Core/[STR_SERBIA]_Civilizations.xml</File>
+      <File>Core/[STR_SERBIA]_Civilopedia_ModPage.xml</File>
+      <File>Core/[STR_SERBIA]_Config.xml</File>
+      <File>Core/[STR_SERBIA]_Improvements.xml</File>
+      <File>Core/[STR_SERBIA]_Leaders.xml</File>
+      <File>Core/[STR_SERBIA]_Misc.sql</File>
+      <File>Core/[STR_SERBIA]_Moments.xml</File>
+      <File>Core/[STR_SERBIA]_Names.sql</File>
+      <File>Core/[STR_SERBIA]_Units.xml</File>
+      <File>Core/[STR_SERBIA]_Maps.sql</File>
+      <File>Core/[STR_SERBIA]_ModSupport.sql</File>
+      <File>Core/[STR_SERBIA]_Agendas.xml</File>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltNames.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="UpdateIcons">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Icons/[STR_SERBIA]_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="UpdateText">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <File>Text/English Text/[STR_SERBIA]_English_Civilopedia_ModPage.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Civilopedia.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Diplomacy.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_Gameplay.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_ModSupport.xml</File>
+      <File>Text/English Text/[STR_SERBIA]_English_Text_AltNames.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="AltName1">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName1</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName01.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AltName2">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName2</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName02.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AltName3">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName3</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName03.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AltName4">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName4</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName04.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AltName5">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName5</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName05.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AltName6">
+      <Properties>
+        <LoadOrder>500</LoadOrder>
+      </Properties>
+      <Criteria>STRSerbiaAltName6</Criteria>
+      <File>Core/Parameters/[STR_SERBIA]_CivAltName06.xml</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>ArtDefs/Civilizations.artdef</File>
+    <File>ArtDefs/Cultures.artdef</File>
+    <File>ArtDefs/Improvements.artdef</File>
+    <File>ArtDefs/Landmarks.artdef</File>
+    <File>ArtDefs/LeaderFallbacks.artdef</File>
+    <File>ArtDefs/Leaders.artdef</File>
+    <File>ArtDefs/Overlays.artdef</File>
+    <File>ArtDefs/StrategicViews.artdef</File>
+    <File>ArtDefs/Units.artdef</File>
+    <File>ArtDefs/Unit_Bins.artdef</File>
+    <File>Assets/Loyalty_Overlay_STR_Serbia_Box.ast</File>
+    <File>Assets/Loyalty_Pressure_STR_Serbia_Box.ast</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName00.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName01.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName02.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName03.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName04.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName05.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltName06.xml</File>
+    <File>Core/Parameters/[STR_SERBIA]_CivAltNames.sql</File>
+    <File>Core/[STR_SERBIA]_Agendas.xml</File>
+    <File>Core/[STR_SERBIA]_Civilizations.xml</File>
+    <File>Core/[STR_SERBIA]_Civilopedia_ModPage.xml</File>
+    <File>Core/[STR_SERBIA]_Colours.sql</File>
+    <File>Core/[STR_SERBIA]_Config.xml</File>
+    <File>Core/[STR_SERBIA]_Improvements.xml</File>
+    <File>Core/[STR_SERBIA]_Leaders.xml</File>
+    <File>Core/[STR_SERBIA]_Maps.sql</File>
+    <File>Core/[STR_SERBIA]_Misc.sql</File>
+    <File>Core/[STR_SERBIA]_ModSupport.sql</File>
+    <File>Core/[STR_SERBIA]_Moments.xml</File>
+    <File>Core/[STR_SERBIA]_Names.sql</File>
+    <File>Core/[STR_SERBIA]_Units.xml</File>
+    <File>Icons/[STR_SERBIA]_Icons.xml</File>
+    <File>Materials/Loyalty_Overlay_STR_Serbia_Material.mtl</File>
+    <File>Materials/Loyalty_Pressure_STR_Serbia_Material.mtl</File>
+    <File>Platforms/MacOS/BLPs/Atlas.blp</File>
+    <File>Platforms/MacOS/BLPs/LeaderFallbacks.blp</File>
+    <File>Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_ICON_LOYALTY_OVERLAY_STR_SERBIA_512</File>
+    <File>Platforms/MacOS/BLPs/SHARED_DATA/TEXTURE_ICON_LOYALTY_PRESSURE_STR_SERBIA_128</File>
+    <File>Platforms/MacOS/BLPs/StrategicView_Sprites.blp</File>
+    <File>Platforms/MacOS/BLPs/UILeaders.blp</File>
+    <File>Platforms/MacOS/BLPs/UILensAssets.blp</File>
+    <File>Platforms/Windows/BLPs/Atlas.blp</File>
+    <File>Platforms/Windows/BLPs/LeaderFallbacks.blp</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ICON_LOYALTY_OVERLAY_STR_SERBIA_512</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ICON_LOYALTY_PRESSURE_STR_SERBIA_128</File>
+    <File>Platforms/Windows/BLPs/StrategicView_Sprites.blp</File>
+    <File>Platforms/Windows/BLPs/UILeaders.blp</File>
+    <File>Platforms/Windows/BLPs/UILensAssets.blp</File>
+    <File>Strudeler's Serbia Civilization.dep</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE.tex</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.dds</File>
+    <File>Textures/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_200.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_200.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_22.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_22.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_256.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_256.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_30.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_30.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_32.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_32.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_36.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_36.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_44.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_44.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_48.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_48.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_50.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_50.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_55.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_55.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_64.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_64.tex</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_80.dds</File>
+    <File>Textures/ICON_CIVILIZATION_STR_SERBIA_80.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_200.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_200.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_22.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_22.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_256.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_256.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_32.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_32.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_38.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_38.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_40.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_40.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_50.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_50.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_70.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_70.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_80.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_80.tex</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_95.dds</File>
+    <File>Textures/ICON_IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_95.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_256.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_32.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_45.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_50.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_55.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_64.tex</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.dds</File>
+    <File>Textures/ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_80.tex</File>
+    <File>Textures/ICON_LOYALTY_OVERLAY_STR_SERBIA_512.dds</File>
+    <File>Textures/ICON_LOYALTY_OVERLAY_STR_SERBIA_512.tex</File>
+    <File>Textures/ICON_LOYALTY_PRESSURE_STR_SERBIA_128.dds</File>
+    <File>Textures/ICON_LOYALTY_PRESSURE_STR_SERBIA_128.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_200.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_200.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_22.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_22.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_256.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_256.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_32.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_32.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_38.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_38.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_45.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_45.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_50.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_50.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_55.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_55.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_64.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_64.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_70.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_70.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_80.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_80.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_95.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_95.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_200.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_200.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_256.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_256.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_38.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_38.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_50.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_50.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_70.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_70.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_95.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT_95.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_200.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_200.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_22.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_22.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_256.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_256.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_32.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_32.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_38.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_38.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_45.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_45.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_50.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_50.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_55.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_55.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_64.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_64.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_70.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_70.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_80.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_80.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_95.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_95.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_200.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_200.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_256.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_256.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_38.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_38.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_50.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_50.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_70.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_70.tex</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_95.dds</File>
+    <File>Textures/ICON_UNIT_STR_SERBIA_GUSAR_PORTRAIT_95.tex</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_PILLAGED_REVEALED.dds</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_PILLAGED_REVEALED.tex</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_PILLAGED_VISIBLE.dds</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_PILLAGED_VISIBLE.tex</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_REVEALED.dds</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_REVEALED.tex</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_VISIBLE.dds</File>
+    <File>Textures/IMPROVEMENT_STR_SERBIA_AUTOCEPHALOUS_CHURCH_VISIBLE.tex</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.dds</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.tex</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.dds</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.tex</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE_NEUTRAL.tex</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.dds</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_LOADING_SCREEN.tex</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.dds</File>
+    <File>Textures/LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_NEUTRAL.tex</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.dds</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.tex</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.dds</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.tex</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.dds</File>
+    <File>Textures/STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.tex</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.dds</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.tex</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.dds</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.tex</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.dds</File>
+    <File>Textures/STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.tex</File>
+    <File>Textures/STR_SERBIA_AUTOCEPHALOUS_CHURCH_MOMENT.dds</File>
+    <File>Textures/STR_SERBIA_AUTOCEPHALOUS_CHURCH_MOMENT.tex</File>
+    <File>Textures/STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_MOMENT.dds</File>
+    <File>Textures/STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_MOMENT.tex</File>
+    <File>Textures/STR_SERBIA_GUSAR_MOMENT.dds</File>
+    <File>Textures/STR_SERBIA_GUSAR_MOMENT.tex</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.dds</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_1.tex</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.dds</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_4.tex</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.dds</File>
+    <File>Textures/STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_COMPOSITE.tex</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Civilopedia_ModPage.xml</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Text_AltNames.xml</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Text_Civilopedia.xml</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Text_Diplomacy.xml</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Text_Gameplay.xml</File>
+    <File>Text/English Text/[STR_SERBIA]_English_Text_ModSupport.xml</File>
+    <File>Text/Mod Design.txt</File>
+    <File>Text/To Do List.txt</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 1 1920x1080.jpg</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 1 195x195.jpg</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 1 512x512.jpg</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 2 1920x1080.jpg</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 2 195x195.jpg</File>
+    <File>Thumbnails/Strudeler's Serbia Civilization 2 512x512.jpg</File>
+    <File>XLPs/Atlas.xlp</File>
+    <File>XLPs/LeaderFallbacks.xlp</File>
+    <File>XLPs/StrategicView_Sprites.xlp</File>
+    <File>XLPs/UILeaders.xlp</File>
+    <File>XLPs/UILensAssets.xlp</File>
+  </Files>
+</Mod>
