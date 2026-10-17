@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Only base-game atlases that always exist - no custom DDS, no FK failures -->
+<!-- Official ICON_ATLAS_UNITS indices from base-game Icons_Units.xml -->
 <GameData>
   <IconDefinitions>
+    <!-- Civ / Leaders / Building placeholders -->
     <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATIONS" Index="18"/>
-
     <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADERS" Index="10"/>
     <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADERS" Index="11"/>
     <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADERS" Index="12"/>
     <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADERS" Index="13"/>
-
-    <!-- Temple-style building -->
     <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="19"/>
-    <!-- Monument-style for Spomenik -->
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_BUILDINGS" Index="1"/>
 
-    <!-- Unique units mapped to the units they replace -->
+    <!-- Partizani = Infantry (index 71) -->
     <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="71"/>
-    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="71"/>
+    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS_2" Index="5"/>
+
+    <!-- Chetnik = Musketman (index 53) -->
     <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="53"/>
-    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="53"/>
+    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="51"/>
+
+    <!-- Neva-M = Artillery (index 72) - gun/howitzer look, not builder/warrior -->
     <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="72"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="72"/>
+    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS_2" Index="6"/>
+
+    <!-- Almanska Garda = Knight (index 45) -->
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNITS" Index="45"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="45"/>
+    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="43"/>
   </IconDefinitions>
 </GameData>
