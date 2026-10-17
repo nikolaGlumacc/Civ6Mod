@@ -14,13 +14,13 @@
     <!-- Monument-style for Spomenik -->
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_BUILDINGS" Index="1"/>
 
-    <!-- Unique units mapped to the units they replace (correct base ICON_ATLAS_UNITS indices) -->
+    <!-- Unique units mapped to the units they replace -->
     <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="71"/>
     <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="71"/>
     <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="53"/>
     <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="53"/>
-    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="82"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="82"/>
+    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="72"/>
+    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="72"/>
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNITS" Index="45"/>
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNITS" Index="45"/>
   </IconDefinitions>
