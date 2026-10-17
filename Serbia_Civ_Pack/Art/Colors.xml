@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Serbia Colors v9 - if you still see COLOR_UNKNOWN in Database.log you did NOT overwrite this file -->
 <GameInfo>
   <Colors>
     <Row Type="COLOR_PLAYER_SERBIA_PRIMARY" Color="0,100,50,255"/>
