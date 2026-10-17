@@ -27,6 +27,10 @@
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" TerrainType="TERRAIN_SNOW_HILLS"/>
   </Improvement_ValidTerrains>
 
+  <Improvement_ValidBuildUnits>
+    <Row ImprovementType="IMPROVEMENT_SPOMENIK" UnitType="UNIT_BUILDER"/>
+  </Improvement_ValidBuildUnits>
+
   <Improvement_YieldChanges>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_CULTURE" YieldChange="2"/>
     <Row ImprovementType="IMPROVEMENT_SPOMENIK" YieldType="YIELD_FAITH" YieldChange="1"/>
