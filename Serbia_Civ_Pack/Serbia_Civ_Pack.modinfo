@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="6">
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="7">
   <Properties>
     <Name>Serbia Civilization Pack</Name>
     <Description>Adds Serbia featuring Josip Broz Tito, Draza Mihailovic, Slobodan Milosevic, and Stefan Dusan.</Description>
@@ -21,68 +21,12 @@
       <File>Text/Localization.xml</File>
     </UpdateText>
     <UpdateIcons id="Serbia_Config_Icons">
+      <File>Art/Icons.xml</File>
       <File>Art/Custom_Icons.xml</File>
     </UpdateIcons>
     <UpdateColors id="Serbia_Config_Colors">
       <File>Art/Colors.xml</File>
     </UpdateColors>
-    <ImportFiles id="Serbia_Config_Art">
-      <File>Art/ICON_CIVILIZATION_SERBIA_32.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_50.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_64.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_80.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_256.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_32.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_50.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_64.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_80.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_256.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_32.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_50.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_64.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_80.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_256.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_32.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_50.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_64.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_80.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_256.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_32.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_50.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_64.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_80.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_256.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_32.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_50.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_64.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_80.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_256.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_32.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_50.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_64.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_80.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_256.dds</File>
-      <File>Art/ICON_LEADER_TITO_32.dds</File>
-      <File>Art/ICON_LEADER_TITO_50.dds</File>
-      <File>Art/ICON_LEADER_TITO_64.dds</File>
-      <File>Art/ICON_LEADER_TITO_80.dds</File>
-      <File>Art/ICON_LEADER_TITO_256.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_32.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_50.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_64.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_80.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_256.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_32.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_50.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_64.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_80.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_256.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_32.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_50.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_64.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_80.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_256.dds</File>
-    </ImportFiles>
   </FrontEndActions>
 
   <InGameActions>
@@ -99,68 +43,12 @@
       <File>Text/Localization.xml</File>
     </UpdateText>
     <UpdateIcons id="Serbia_Gameplay_Icons">
+      <File>Art/Icons.xml</File>
       <File>Art/Custom_Icons.xml</File>
     </UpdateIcons>
     <UpdateColors id="Serbia_Gameplay_Colors">
       <File>Art/Colors.xml</File>
     </UpdateColors>
-    <ImportFiles id="Serbia_Gameplay_Art">
-      <File>Art/ICON_CIVILIZATION_SERBIA_32.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_50.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_64.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_80.dds</File>
-      <File>Art/ICON_CIVILIZATION_SERBIA_256.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_32.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_50.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_64.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_80.dds</File>
-      <File>Art/ICON_BUILDING_MANASTIR_256.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_32.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_50.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_64.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_80.dds</File>
-      <File>Art/ICON_IMPROVEMENT_SPOMENIK_256.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_32.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_50.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_64.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_80.dds</File>
-      <File>Art/ICON_UNIT_PARTIZANI_256.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_32.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_50.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_64.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_80.dds</File>
-      <File>Art/ICON_UNIT_CHETNIK_256.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_32.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_50.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_64.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_80.dds</File>
-      <File>Art/ICON_UNIT_NEVA_M_256.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_32.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_50.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_64.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_80.dds</File>
-      <File>Art/ICON_UNIT_ALEMANNIC_GUARD_256.dds</File>
-      <File>Art/ICON_LEADER_TITO_32.dds</File>
-      <File>Art/ICON_LEADER_TITO_50.dds</File>
-      <File>Art/ICON_LEADER_TITO_64.dds</File>
-      <File>Art/ICON_LEADER_TITO_80.dds</File>
-      <File>Art/ICON_LEADER_TITO_256.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_32.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_50.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_64.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_80.dds</File>
-      <File>Art/ICON_LEADER_DRAZA_256.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_32.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_50.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_64.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_80.dds</File>
-      <File>Art/ICON_LEADER_MILOSEVIC_256.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_32.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_50.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_64.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_80.dds</File>
-      <File>Art/ICON_LEADER_DUSAN_256.dds</File>
-    </ImportFiles>
   </InGameActions>
 
   <Files>
@@ -173,6 +61,7 @@
     <File>Core/Agenda.xml</File>
     <File>Core/GreatPeople.sql</File>
     <File>Text/Localization.xml</File>
+    <File>Art/Icons.xml</File>
     <File>Art/Custom_Icons.xml</File>
     <File>Art/Colors.xml</File>
   </Files>
