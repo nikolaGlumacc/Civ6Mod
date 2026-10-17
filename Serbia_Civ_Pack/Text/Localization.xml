@@ -2,50 +2,64 @@
 <GameData>
   <LocalizedText>
 
+    <!-- ===================== CIVILIZATION ===================== -->
     <Replace Tag="LOC_CIVILIZATION_SERBIA_NAME" Language="en_US"><Text>Serbia</Text></Replace>
-    <Replace Tag="LOC_CIVILIZATION_SERBIA_DESCRIPTION" Language="en_US"><Text>Serbian Civilization</Text></Replace>
+    <Replace Tag="LOC_CIVILIZATION_SERBIA_DESCRIPTION" Language="en_US"><Text>Serbia - a civilization at the crossroads of empires, faith, and industry.</Text></Replace>
     <Replace Tag="LOC_CIVILIZATION_SERBIA_ADJECTIVE" Language="en_US"><Text>Serbian</Text></Replace>
 
     <Replace Tag="LOC_TRAIT_CIVILIZATION_SERBIA_NAME" Language="en_US"><Text>Raskrsce Svetova</Text></Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_SERBIA_DESCRIPTION" Language="en_US"><Text>Trade Routes yield +2 Gold and +1 Culture (domestic and international).</Text></Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_SERBIA_DESCRIPTION" Language="en_US"><Text>International and domestic Trade Routes yield +2 [ICON_Gold] Gold and +1 [ICON_Culture] Culture. Mines yield +1 [ICON_Production] Production and +1 [ICON_Faith] Faith. Walls provide +1 [ICON_Culture] Culture.</Text></Replace>
 
+    <!-- ===================== LEADERS ===================== -->
     <Replace Tag="LOC_LEADER_TITO_NAME" Language="en_US"><Text>Josip Broz Tito</Text></Replace>
     <Replace Tag="LOC_LEADER_DRAZA_NAME" Language="en_US"><Text>Draza Mihailovic</Text></Replace>
     <Replace Tag="LOC_LEADER_MILOSEVIC_NAME" Language="en_US"><Text>Slobodan Milosevic</Text></Replace>
     <Replace Tag="LOC_LEADER_DUSAN_NAME" Language="en_US"><Text>Stefan Dusan</Text></Replace>
 
-    <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_NAME" Language="en_US"><Text>Brotherhood and Unity</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION" Language="en_US"><Text>+2 Production and +2 Science in all cities.</Text></Replace>
+    <!-- TITO -->
+    <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_NAME" Language="en_US"><Text>Brotherhood, Unity and Five Year Plan</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION" Language="en_US"><Text>Industrial Zones grant +2 [ICON_Production] Production and +2 [ICON_Science] Science. Campuses grant +2 [ICON_Production] Production. Under Communism: +25% [ICON_Production] Production and +25% [ICON_Science] Science in all cities.[NEWLINE][NEWLINE]Unique Unit: Partizani (replaces Infantry) - 75 Combat Strength, stronger in Hills and Woods, cheaper to produce.</Text></Replace>
 
+    <!-- DRAZA -->
     <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_NAME" Language="en_US"><Text>The Mountain Fox</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+5 Faith in every city. Purchase land combat units and civilian units with Faith.</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+8 [ICON_Faith] Faith in every city. May purchase land military units with [ICON_Faith] Faith from turn 1 (no Grand Master's Chapel required). Holy Sites generate [ICON_Gold] Gold equal to their [ICON_Faith] Faith adjacency.[NEWLINE][NEWLINE]Unique Unit: Chetnik (replaces Musketman) - better movement and defense on Hills.</Text></Replace>
 
-    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Nationalist Mobilization</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 Culture in all cities. All units +5 Combat Strength.</Text></Replace>
+    <!-- MILOSEVIC -->
+    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Rally of the People</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 [ICON_Culture] Culture and +10 Loyalty in all cities. War Weariness reduced by 50%. All units gain +10 Combat Strength.[NEWLINE][NEWLINE]Unique Unit: Neva-M (replaces Anti-Air Gun) - massive bonus damage against aircraft. "Sorry we didn't know it was invisible."</Text></Replace>
 
+    <!-- DUSAN -->
     <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_NAME" Language="en_US"><Text>Dusan's Code</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_DESCRIPTION" Language="en_US"><Text>+2 Culture and +2 Loyalty in all cities.</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_DESCRIPTION" Language="en_US"><Text>All cities generate +2 [ICON_Culture] Culture and +2 Loyalty per turn, keeping conquered cities stable and productive.[NEWLINE][NEWLINE]Unique Unit: Almanska Garda (replaces Knight) - +5 Combat Strength in foreign territory, cheaper maintenance.</Text></Replace>
 
+    <!-- Quotes -->
     <Replace Tag="LOC_DIPLO_QUOTE_TITO" Language="en_US"><Text>Zivelo bratstvo i jedinstvo nasih naroda!</Text></Replace>
     <Replace Tag="LOC_DIPLO_QUOTE_DRAZA" Language="en_US"><Text>Za kralja i otadzbinu, sa verom u Boga!</Text></Replace>
     <Replace Tag="LOC_DIPLO_QUOTE_MILOSEVIC" Language="en_US"><Text>Niko ne sme da vas bije!</Text></Replace>
-    <Replace Tag="LOC_DIPLO_QUOTE_DUSAN" Language="en_US"><Text>Carstvo nemacko, carstvo srpsko.</Text></Replace>
+    <Replace Tag="LOC_DIPLO_QUOTE_DUSAN" Language="en_US"><Text>Carstvo Nebesko i zemaljsko - zakonom i maceem.</Text></Replace>
 
+    <!-- ===================== BUILDING ===================== -->
     <Replace Tag="LOC_BUILDING_MANASTIR_NAME" Language="en_US"><Text>Manastir</Text></Replace>
-    <Replace Tag="LOC_BUILDING_MANASTIR_DESCRIPTION" Language="en_US"><Text>Serbian unique building replacing the Temple. +3 Faith, +1 Culture, 1 Relic slot.</Text></Replace>
+    <Replace Tag="LOC_BUILDING_MANASTIR_DESCRIPTION" Language="en_US"><Text>Serbian unique building that replaces the Temple.[NEWLINE]+3 [ICON_Faith] Faith, +1 [ICON_Culture] Culture, and 1 Great Work of Relic slot.</Text></Replace>
 
+    <!-- ===================== IMPROVEMENT ===================== -->
     <Replace Tag="LOC_IMPROVEMENT_SPOMENIK_NAME" Language="en_US"><Text>Spomenik</Text></Replace>
-    <Replace Tag="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION" Language="en_US"><Text>Serbian unique improvement on Hills. +2 Culture, +1 Faith, Tourism after Flight.</Text></Replace>
+    <Replace Tag="LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION" Language="en_US"><Text>Serbian unique improvement. Unlocked at Civil Engineering. Build on Hills.[NEWLINE]+2 [ICON_Culture] Culture, +1 [ICON_Faith] Faith. Provides Tourism after Flight is researched.</Text></Replace>
 
+    <!-- ===================== UNITS ===================== -->
     <Replace Tag="LOC_UNIT_PARTIZANI_NAME" Language="en_US"><Text>Partizani</Text></Replace>
-    <Replace Tag="LOC_UNIT_PARTIZANI_DESCRIPTION" Language="en_US"><Text>Tito unique Infantry. Stronger in Hills and Woods.</Text></Replace>
-    <Replace Tag="LOC_UNIT_CHETNIK_NAME" Language="en_US"><Text>Chetnik</Text></Replace>
-    <Replace Tag="LOC_UNIT_CHETNIK_DESCRIPTION" Language="en_US"><Text>Draza unique Musketman. Better movement and defense on Hills.</Text></Replace>
-    <Replace Tag="LOC_UNIT_NEVA_M_NAME" Language="en_US"><Text>Neva-M</Text></Replace>
-    <Replace Tag="LOC_UNIT_NEVA_M_DESCRIPTION" Language="en_US"><Text>Milosevic unique Anti-Air. Extra damage vs aircraft.</Text></Replace>
-    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_NAME" Language="en_US"><Text>Almanska Garda</Text></Replace>
-    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION" Language="en_US"><Text>Dusan unique Knight. Stronger in foreign territory.</Text></Replace>
+    <Replace Tag="LOC_UNIT_PARTIZANI_DESCRIPTION" Language="en_US"><Text>Tito's unique Infantry replacement.[NEWLINE]75 Combat Strength (vs 70). Stronger when fighting in Hills and Woods. Cheaper to produce.</Text></Replace>
 
+    <Replace Tag="LOC_UNIT_CHETNIK_NAME" Language="en_US"><Text>Chetnik</Text></Replace>
+    <Replace Tag="LOC_UNIT_CHETNIK_DESCRIPTION" Language="en_US"><Text>Draza's unique Musketman replacement.[NEWLINE]Extra movement on Hills. Stronger when defending in Hills or Mountains.</Text></Replace>
+
+    <Replace Tag="LOC_UNIT_NEVA_M_NAME" Language="en_US"><Text>Neva-M</Text></Replace>
+    <Replace Tag="LOC_UNIT_NEVA_M_DESCRIPTION" Language="en_US"><Text>Milosevic's unique Anti-Air unit.[NEWLINE]Devastating bonus damage against aircraft. "Sorry we didn't know it was invisible."</Text></Replace>
+
+    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_NAME" Language="en_US"><Text>Almanska Garda</Text></Replace>
+    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION" Language="en_US"><Text>Dusan's unique Knight replacement.[NEWLINE]+5 Combat Strength when fighting in foreign territory. 20% cheaper to maintain.</Text></Replace>
+
+    <!-- ===================== CITIES ===================== -->
     <Replace Tag="LOC_CITY_NAME_BEOGRAD" Language="en_US"><Text>Beograd</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_NOVI_SAD" Language="en_US"><Text>Novi Sad</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_NIS" Language="en_US"><Text>Nis</Text></Replace>
