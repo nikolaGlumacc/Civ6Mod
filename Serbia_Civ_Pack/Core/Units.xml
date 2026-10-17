@@ -13,25 +13,26 @@
     <Row Type="ABILITY_ALEMANNIC_GUARD" Kind="KIND_ABILITY"/>
   </Types>
 
+  <!-- Tags MUST exist before TypeTags reference them -->
+  <Tags>
+    <Row Tag="ABILITY_PARTIZANI"       Vocabulary="ABILITY_CLASS"/>
+    <Row Tag="ABILITY_CHETNIK"         Vocabulary="ABILITY_CLASS"/>
+    <Row Tag="ABILITY_NEVA_M"          Vocabulary="ABILITY_CLASS"/>
+    <Row Tag="ABILITY_ALEMANNIC_GUARD" Vocabulary="ABILITY_CLASS"/>
+  </Tags>
+
   <TypeTags>
-    <!-- Unit classes -->
+    <!-- Unit combat classes -->
     <Row Type="UNIT_PARTIZANI"          Tag="CLASS_MELEE"/>
     <Row Type="UNIT_CHETNIK"            Tag="CLASS_MELEE"/>
     <Row Type="UNIT_NEVA_M"             Tag="CLASS_SIEGE"/>
-    <Row Type="UNIT_NEVA_M"             Tag="CLASS_ANTI_AIR"/>
     <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="CLASS_HEAVY_CAVALRY"/>
 
-    <!-- Grant unique abilities to units -->
+    <!-- Grant abilities to units -->
     <Row Type="UNIT_PARTIZANI"          Tag="ABILITY_PARTIZANI"/>
     <Row Type="UNIT_CHETNIK"            Tag="ABILITY_CHETNIK"/>
     <Row Type="UNIT_NEVA_M"             Tag="ABILITY_NEVA_M"/>
     <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="ABILITY_ALEMANNIC_GUARD"/>
-
-    <!-- Ability class tags -->
-    <Row Type="ABILITY_PARTIZANI"       Tag="CLASS_MELEE"/>
-    <Row Type="ABILITY_CHETNIK"         Tag="CLASS_MELEE"/>
-    <Row Type="ABILITY_NEVA_M"          Tag="CLASS_SIEGE"/>
-    <Row Type="ABILITY_ALEMANNIC_GUARD" Tag="CLASS_HEAVY_CAVALRY"/>
   </TypeTags>
 
   <UnitAbilities>
@@ -51,7 +52,6 @@
   </UnitAbilityModifiers>
 
   <Units>
-    <!-- Partizani (Tito) - replaces Infantry -->
     <Row UnitType="UNIT_PARTIZANI"
          Name="LOC_UNIT_PARTIZANI_NAME"
          Description="LOC_UNIT_PARTIZANI_DESCRIPTION"
@@ -67,7 +67,6 @@
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_PARTIZANI"/>
 
-    <!-- Chetnik (Draza) - replaces Musketman -->
     <Row UnitType="UNIT_CHETNIK"
          Name="LOC_UNIT_CHETNIK_NAME"
          Description="LOC_UNIT_CHETNIK_DESCRIPTION"
@@ -83,7 +82,6 @@
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_CHETNIK"/>
 
-    <!-- Neva-M (Milosevic) - replaces Artillery. Real combat unit + elite AA -->
     <Row UnitType="UNIT_NEVA_M"
          Name="LOC_UNIT_NEVA_M_NAME"
          Description="LOC_UNIT_NEVA_M_DESCRIPTION"
@@ -102,7 +100,6 @@
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_NEVA_M"/>
 
-    <!-- Alemannic Guard (Dusan) - replaces Knight -->
     <Row UnitType="UNIT_ALEMANNIC_GUARD"
          Name="LOC_UNIT_ALEMANNIC_GUARD_NAME"
          Description="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"
