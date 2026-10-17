@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Maps Serbia content to icons that ALREADY exist in Art/ or base game -->
+<!-- Maps Serbia content to existing Strudeler art in Art/ -->
 <GameData>
   <IconDefinitions>
-    <!-- Civilization - uses Strudeler Serbia atlas already in Art/ -->
+    <!-- Civilization -->
     <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
 
-    <!-- Building Manastir - use Temple icon from base game -->
+    <!-- Building / Improvement - temple & monument style from base -->
     <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="19"/>
-
-    <!-- Improvement Spomenik - use Monument icon from base game -->
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_IMPROVEMENTS" Index="0"/>
 
-    <!-- Units - map to existing STR unit icons or base infantry/missile -->
-    <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="58"/>
-    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="58"/>
-    <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="58"/>
-    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="58"/>
-    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="70"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="70"/>
+    <!-- Partizani & Chetnik: Serbian guerrilla look via Gusar atlas (already in Art/) -->
+    <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR" Index="0"/>
+    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR_PORTRAIT" Index="0"/>
+    <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR" Index="0"/>
+    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR_PORTRAIT" Index="0"/>
+
+    <!-- Neva-M anti-air: use Alemannic Guard art as military equipment look -->
+    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD" Index="0"/>
+    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT" Index="0"/>
+
+    <!-- Alemannic Guard: proper STR unit art -->
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD" Index="0"/>
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT" Index="0"/>
 
-    <!-- Leaders - Dusan uses STR atlas; others fall back to Dusan until custom DDS added -->
+    <!-- Leaders: Dusan has full STR leader atlas; others use it until custom portraits added -->
     <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
     <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
     <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
