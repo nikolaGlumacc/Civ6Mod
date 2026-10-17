@@ -1,46 +1,60 @@
 /*
-    [STR_SERBIA]_Colours.sql
-    Serbia Civilization Pack
+    Serbia Civilization Pack - Colors
+    Red / blue / white inspired by Serbian flag, with distinct leader variants
 */
 
-INSERT OR IGNORE INTO Colors
-        (Type, Color)
-VALUES  ('COLOR_STR_SERBIA_A_PRIMARY',    '203,164,54,255'),
-        ('COLOR_STR_SERBIA_A_SECONDARY',  '167,60,30,255'),
-        ('COLOR_STR_SERBIA_B_PRIMARY',    '0,199,150,255'),
-        ('COLOR_STR_SERBIA_B_SECONDARY',  '232,151,44,255'),
-        ('COLOR_STR_SERBIA_C_PRIMARY',    '42,47,45,255'),
-        ('COLOR_STR_SERBIA_C_SECONDARY',  '150,145,147,255'),
-        ('COLOR_STR_SERBIA_D_PRIMARY',    '216,221,215,255'),
-        ('COLOR_STR_SERBIA_D_SECONDARY',  '169,9,13,255');
+INSERT OR IGNORE INTO Colors (Type, Color) VALUES
+    ('COLOR_SERBIA_PRIMARY',      '199,30,40,255'),   -- Serbian red
+    ('COLOR_SERBIA_SECONDARY',    '10,50,140,255'),   -- Serbian blue
+    ('COLOR_SERBIA_WHITE',        '240,240,240,255'),
+    ('COLOR_SERBIA_GOLD',         '200,160,50,255'),
+    ('COLOR_SERBIA_DARK',         '30,30,35,255'),
+    ('COLOR_SERBIA_GREEN',        '40,120,70,255');
 
+-- Civilization default colors
 INSERT OR IGNORE INTO PlayerColors
-        (Type, Usage, PrimaryColor, SecondaryColor, Alt1PrimaryColor, Alt1SecondaryColor, Alt2PrimaryColor, Alt2SecondaryColor, Alt3PrimaryColor, Alt3SecondaryColor)
-VALUES  
-        ('LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC',
-         'Unique',
-         'COLOR_STR_SERBIA_A_PRIMARY', 'COLOR_STR_SERBIA_A_SECONDARY',
-         'COLOR_STR_SERBIA_B_PRIMARY', 'COLOR_STR_SERBIA_B_SECONDARY',
-         'COLOR_STR_SERBIA_C_PRIMARY', 'COLOR_STR_SERBIA_C_SECONDARY',
-         'COLOR_STR_SERBIA_D_PRIMARY', 'COLOR_STR_SERBIA_D_SECONDARY'),
+    (Type, Usage, PrimaryColor, SecondaryColor,
+     Alt1PrimaryColor, Alt1SecondaryColor,
+     Alt2PrimaryColor, Alt2SecondaryColor,
+     Alt3PrimaryColor, Alt3SecondaryColor)
+VALUES
+    ('CIVILIZATION_SERBIA', 'Unique',
+     'COLOR_SERBIA_PRIMARY', 'COLOR_SERBIA_SECONDARY',
+     'COLOR_SERBIA_SECONDARY', 'COLOR_SERBIA_WHITE',
+     'COLOR_SERBIA_DARK', 'COLOR_SERBIA_GOLD',
+     'COLOR_SERBIA_WHITE', 'COLOR_SERBIA_PRIMARY');
 
-        ('LEADER_DRAZA',
-         'Unique',
-         'COLOR_STR_SERBIA_C_PRIMARY', 'COLOR_STR_SERBIA_D_PRIMARY',
-         'COLOR_STR_SERBIA_A_PRIMARY', 'COLOR_STR_SERBIA_A_SECONDARY',
-         'COLOR_STR_SERBIA_B_PRIMARY', 'COLOR_STR_SERBIA_B_SECONDARY',
-         'COLOR_STR_SERBIA_D_PRIMARY', 'COLOR_STR_SERBIA_C_PRIMARY'),
+-- Leader colors (each leader gets a distinct palette)
+INSERT OR IGNORE INTO PlayerColors
+    (Type, Usage, PrimaryColor, SecondaryColor,
+     Alt1PrimaryColor, Alt1SecondaryColor,
+     Alt2PrimaryColor, Alt2SecondaryColor,
+     Alt3PrimaryColor, Alt3SecondaryColor)
+VALUES
+    -- Tito: red + gold (Yugoslav feel)
+    ('LEADER_TITO', 'Unique',
+     'COLOR_SERBIA_PRIMARY', 'COLOR_SERBIA_GOLD',
+     'COLOR_SERBIA_SECONDARY', 'COLOR_SERBIA_WHITE',
+     'COLOR_SERBIA_DARK', 'COLOR_SERBIA_PRIMARY',
+     'COLOR_SERBIA_GOLD', 'COLOR_SERBIA_DARK'),
 
-        ('LEADER_TITO',
-         'Unique',
-         'COLOR_STR_SERBIA_A_SECONDARY', 'COLOR_STR_SERBIA_A_PRIMARY',
-         'COLOR_STR_SERBIA_B_PRIMARY',   'COLOR_STR_SERBIA_D_PRIMARY',
-         'COLOR_STR_SERBIA_C_PRIMARY',   'COLOR_STR_SERBIA_A_SECONDARY',
-         'COLOR_STR_SERBIA_D_PRIMARY',   'COLOR_STR_SERBIA_A_PRIMARY'),
+    -- Draza: dark + white (royalist / Chetnik)
+    ('LEADER_DRAZA', 'Unique',
+     'COLOR_SERBIA_DARK', 'COLOR_SERBIA_WHITE',
+     'COLOR_SERBIA_PRIMARY', 'COLOR_SERBIA_SECONDARY',
+     'COLOR_SERBIA_SECONDARY', 'COLOR_SERBIA_GOLD',
+     'COLOR_SERBIA_WHITE', 'COLOR_SERBIA_DARK'),
 
-        ('LEADER_MILOSEVIC',
-         'Unique',
-         'COLOR_STR_SERBIA_D_SECONDARY', 'COLOR_STR_SERBIA_D_PRIMARY',
-         'COLOR_STR_SERBIA_A_PRIMARY',   'COLOR_STR_SERBIA_A_SECONDARY',
-         'COLOR_STR_SERBIA_C_PRIMARY',   'COLOR_STR_SERBIA_B_PRIMARY',
-         'COLOR_STR_SERBIA_B_SECONDARY', 'COLOR_STR_SERBIA_D_SECONDARY');
+    -- Milosevic: red + dark
+    ('LEADER_MILOSEVIC', 'Unique',
+     'COLOR_SERBIA_PRIMARY', 'COLOR_SERBIA_DARK',
+     'COLOR_SERBIA_SECONDARY', 'COLOR_SERBIA_WHITE',
+     'COLOR_SERBIA_GOLD', 'COLOR_SERBIA_PRIMARY',
+     'COLOR_SERBIA_DARK', 'COLOR_SERBIA_GOLD'),
+
+    -- Dusan: gold + red (imperial medieval)
+    ('LEADER_DUSAN', 'Unique',
+     'COLOR_SERBIA_GOLD', 'COLOR_SERBIA_PRIMARY',
+     'COLOR_SERBIA_SECONDARY', 'COLOR_SERBIA_WHITE',
+     'COLOR_SERBIA_DARK', 'COLOR_SERBIA_GOLD',
+     'COLOR_SERBIA_WHITE', 'COLOR_SERBIA_SECONDARY');
