@@ -1,4 +1,4 @@
--- Serbia Leaders
+-- Serbia Leaders - abilities aligned with idea/fileee
 
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
     ('LEADER_TITO',                       'KIND_LEADER'),
@@ -46,21 +46,46 @@ INSERT OR IGNORE INTO Traits (TraitType, Name, Description) VALUES
     ('TRAIT_LEADER_UNIT_NEVA_M',         'LOC_UNIT_NEVA_M_NAME',                      'LOC_UNIT_NEVA_M_DESCRIPTION'),
     ('TRAIT_LEADER_UNIT_ALEMANNIC_GUARD','LOC_UNIT_ALEMANNIC_GUARD_NAME',             'LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION');
 
--- ===================== TITO =====================
+-- ===================== TITO: Brotherhood, Unity and Five Year Plan =====================
+-- Industrial Zones +1 Production and +1 Science; under Communism stronger empire yields
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
-    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_PROD'),
-    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_SCI');
-INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-    ('TITO_PROD', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
-    ('TITO_SCI',  'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE');
-INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-    ('TITO_PROD', 'YieldType', 'YIELD_PRODUCTION'),
-    ('TITO_PROD', 'Amount', '2'),
-    ('TITO_SCI',  'YieldType', 'YIELD_SCIENCE'),
-    ('TITO_SCI',  'Amount', '2');
+    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_IZ_PRODUCTION'),
+    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_IZ_SCIENCE'),
+    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_COMMUNISM_PRODUCTION'),
+    ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_COMMUNISM_SCIENCE');
 
--- ===================== DRAZA (Mountain Fox) - strong faith kit =====================
--- +5 Faith all cities, buy land combat units with Faith, buy civilian units with Faith
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType, SubjectRequirementSetId) VALUES
+    ('TITO_IZ_PRODUCTION',        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', 'REQSET_DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('TITO_IZ_SCIENCE',           'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE', 'REQSET_DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('TITO_COMMUNISM_PRODUCTION', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'REQSET_PLAYER_HAS_COMMUNISM'),
+    ('TITO_COMMUNISM_SCIENCE',    'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER', 'REQSET_PLAYER_HAS_COMMUNISM');
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+    ('TITO_IZ_PRODUCTION',        'YieldType', 'YIELD_PRODUCTION'),
+    ('TITO_IZ_PRODUCTION',        'Amount',    '2'),
+    ('TITO_IZ_SCIENCE',           'YieldType', 'YIELD_SCIENCE'),
+    ('TITO_IZ_SCIENCE',           'Amount',    '2'),
+    ('TITO_COMMUNISM_PRODUCTION', 'YieldType', 'YIELD_PRODUCTION'),
+    ('TITO_COMMUNISM_PRODUCTION', 'Amount',    '25'),
+    ('TITO_COMMUNISM_SCIENCE',    'YieldType', 'YIELD_SCIENCE'),
+    ('TITO_COMMUNISM_SCIENCE',    'Amount',    '25');
+
+-- Requirement sets for Tito
+INSERT OR IGNORE INTO RequirementSets (RequirementSetId, RequirementSetType) VALUES
+    ('REQSET_DISTRICT_IS_INDUSTRIAL_ZONE', 'REQUIREMENTSET_TEST_ALL'),
+    ('REQSET_PLAYER_HAS_COMMUNISM',        'REQUIREMENTSET_TEST_ALL');
+INSERT OR IGNORE INTO RequirementSetRequirements (RequirementSetId, RequirementId) VALUES
+    ('REQSET_DISTRICT_IS_INDUSTRIAL_ZONE', 'REQUIRES_DISTRICT_IS_INDUSTRIAL_ZONE'),
+    ('REQSET_PLAYER_HAS_COMMUNISM',        'REQUIRES_PLAYER_HAS_GOVERNMENT_COMMUNISM');
+INSERT OR IGNORE INTO Requirements (RequirementId, RequirementType) VALUES
+    ('REQUIRES_DISTRICT_IS_INDUSTRIAL_ZONE', 'REQUIREMENT_DISTRICT_TYPE_MATCHES'),
+    ('REQUIRES_PLAYER_HAS_GOVERNMENT_COMMUNISM', 'REQUIREMENT_PLAYER_HAS_GOVERNMENT');
+INSERT OR IGNORE INTO RequirementArguments (RequirementId, Name, Value) VALUES
+    ('REQUIRES_DISTRICT_IS_INDUSTRIAL_ZONE', 'DistrictType', 'DISTRICT_INDUSTRIAL_ZONE'),
+    ('REQUIRES_PLAYER_HAS_GOVERNMENT_COMMUNISM', 'GovernmentType', 'GOVERNMENT_COMMUNISM');
+
+-- ===================== DRAZA: The Mountain Fox =====================
+-- +5 Faith cities, buy military land units with Faith (no Grand Master's Chapel needed)
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_CITIES'),
     ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_MELEE'),
@@ -70,7 +95,7 @@ INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_HEAVY_CAV'),
     ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_SIEGE'),
     ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_SUPPORT'),
-    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_CIVILIAN');
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_HOLY_SITE_GOLD');
 
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
     ('DRAZA_FAITH_CITIES',       'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
@@ -81,7 +106,7 @@ INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
     ('DRAZA_FAITH_BUY_HEAVY_CAV','MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
     ('DRAZA_FAITH_BUY_SIEGE',    'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
     ('DRAZA_FAITH_BUY_SUPPORT',  'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
-    ('DRAZA_FAITH_BUY_CIVILIAN', 'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE');
+    ('DRAZA_HOLY_SITE_GOLD',     'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS');
 
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
     ('DRAZA_FAITH_CITIES',       'YieldType', 'YIELD_FAITH'),
@@ -93,28 +118,42 @@ INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
     ('DRAZA_FAITH_BUY_HEAVY_CAV','Tag', 'CLASS_HEAVY_CAVALRY'),
     ('DRAZA_FAITH_BUY_SIEGE',    'Tag', 'CLASS_SIEGE'),
     ('DRAZA_FAITH_BUY_SUPPORT',  'Tag', 'CLASS_SUPPORT'),
-    ('DRAZA_FAITH_BUY_CIVILIAN', 'Tag', 'CLASS_LANDCIVILIAN');
+    ('DRAZA_HOLY_SITE_GOLD',     'YieldTypeToMirror', 'YIELD_FAITH'),
+    ('DRAZA_HOLY_SITE_GOLD',     'YieldTypeToGrant',  'YIELD_GOLD');
 
--- ===================== MILOSEVIC =====================
+-- ===================== MILOSEVIC: Rally of the People + Nationalist Mobilization =====================
+-- Culture + Loyalty, War Weariness reduced, +10 CS attacking cities/districts (simplified to +10 CS overall for stability)
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_CULTURE'),
-    ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_COMBAT');
-INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-    ('MILO_CULTURE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
-    ('MILO_COMBAT',  'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
-INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-    ('MILO_CULTURE', 'YieldType', 'YIELD_CULTURE'),
-    ('MILO_CULTURE', 'Amount', '2'),
-    ('MILO_COMBAT',  'Amount', '5');
+    ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_LOYALTY'),
+    ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_WAR_WEARINESS'),
+    ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_COMBAT_CITIES');
 
--- ===================== DUSAN =====================
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+    ('MILO_CULTURE',        'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
+    ('MILO_LOYALTY',        'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN'),
+    ('MILO_WAR_WEARINESS',  'MODIFIER_PLAYER_ADJUST_WAR_WEARINESS'),
+    ('MILO_COMBAT_CITIES',  'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+    ('MILO_CULTURE',       'YieldType', 'YIELD_CULTURE'),
+    ('MILO_CULTURE',       'Amount',    '2'),
+    ('MILO_LOYALTY',       'Amount',    '10'),
+    ('MILO_WAR_WEARINESS', 'Amount',    '-50'),
+    ('MILO_WAR_WEARINESS', 'Overall',   'true'),
+    ('MILO_COMBAT_CITIES', 'Amount',    '10');
+
+-- ===================== DUSAN: Dusan's Code =====================
+-- Conquered / all cities +2 Culture and +2 Loyalty (stability + culture)
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_DUSANS_CODE', 'DUSAN_CULTURE'),
     ('TRAIT_LEADER_DUSANS_CODE', 'DUSAN_LOYALTY');
+
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
     ('DUSAN_CULTURE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
     ('DUSAN_LOYALTY', 'MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN');
+
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
     ('DUSAN_CULTURE', 'YieldType', 'YIELD_CULTURE'),
-    ('DUSAN_CULTURE', 'Amount', '2'),
-    ('DUSAN_LOYALTY', 'Amount', '2');
+    ('DUSAN_CULTURE', 'Amount',    '2'),
+    ('DUSAN_LOYALTY', 'Amount',    '2');
