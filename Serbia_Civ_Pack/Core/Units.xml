@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Serbia Civilization Pack - Unique Units (Merged Design) -->
+<!-- Serbia Civilization Pack - Unique Units -->
 <GameData>
 
   <Types>
@@ -14,13 +14,23 @@
   </Types>
 
   <TypeTags>
+    <!-- Unit classes -->
     <Row Type="UNIT_PARTIZANI"          Tag="CLASS_MELEE"/>
     <Row Type="UNIT_CHETNIK"            Tag="CLASS_MELEE"/>
+    <Row Type="UNIT_NEVA_M"             Tag="CLASS_SIEGE"/>
     <Row Type="UNIT_NEVA_M"             Tag="CLASS_ANTI_AIR"/>
     <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="CLASS_HEAVY_CAVALRY"/>
+
+    <!-- Grant the unique abilities to the units (this was missing) -->
+    <Row Type="UNIT_PARTIZANI"          Tag="ABILITY_PARTIZANI"/>
+    <Row Type="UNIT_CHETNIK"            Tag="ABILITY_CHETNIK"/>
+    <Row Type="UNIT_NEVA_M"             Tag="ABILITY_NEVA_M"/>
+    <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="ABILITY_ALEMANNIC_GUARD"/>
+
+    <!-- Ability class tags -->
     <Row Type="ABILITY_PARTIZANI"       Tag="CLASS_MELEE"/>
     <Row Type="ABILITY_CHETNIK"         Tag="CLASS_MELEE"/>
-    <Row Type="ABILITY_NEVA_M"          Tag="CLASS_ANTI_AIR"/>
+    <Row Type="ABILITY_NEVA_M"          Tag="CLASS_SIEGE"/>
     <Row Type="ABILITY_ALEMANNIC_GUARD" Tag="CLASS_HEAVY_CAVALRY"/>
   </TypeTags>
 
@@ -32,11 +42,11 @@
   </UnitAbilities>
 
   <UnitAbilityModifiers>
-    <Row UnitAbilityType="ABILITY_PARTIZANI" ModifierId="PARTIZANI_HILLS_COMBAT"/>
-    <Row UnitAbilityType="ABILITY_PARTIZANI" ModifierId="PARTIZANI_WOODS_COMBAT"/>
-    <Row UnitAbilityType="ABILITY_CHETNIK" ModifierId="CHETNIK_HILLS_MOVE"/>
-    <Row UnitAbilityType="ABILITY_CHETNIK" ModifierId="CHETNIK_DEFEND_HILLS"/>
-    <Row UnitAbilityType="ABILITY_NEVA_M" ModifierId="NEVA_M_VS_PLANES"/>
+    <Row UnitAbilityType="ABILITY_PARTIZANI"       ModifierId="PARTIZANI_HILLS_COMBAT"/>
+    <Row UnitAbilityType="ABILITY_PARTIZANI"       ModifierId="PARTIZANI_WOODS_COMBAT"/>
+    <Row UnitAbilityType="ABILITY_CHETNIK"         ModifierId="CHETNIK_HILLS_MOVE"/>
+    <Row UnitAbilityType="ABILITY_CHETNIK"         ModifierId="CHETNIK_DEFEND_HILLS"/>
+    <Row UnitAbilityType="ABILITY_NEVA_M"          ModifierId="NEVA_M_VS_PLANES"/>
     <Row UnitAbilityType="ABILITY_ALEMANNIC_GUARD" ModifierId="ALEMANNIC_FOREIGN_CS"/>
   </UnitAbilityModifiers>
 
@@ -46,8 +56,8 @@
          Name="LOC_UNIT_PARTIZANI_NAME"
          Description="LOC_UNIT_PARTIZANI_DESCRIPTION"
          BaseMoves="2"
-         Cost="344"
-         Maintenance="6"
+         Cost="330"
+         Maintenance="5"
          BaseSightRange="2"
          Combat="75"
          Domain="DOMAIN_LAND"
@@ -62,10 +72,10 @@
          Name="LOC_UNIT_CHETNIK_NAME"
          Description="LOC_UNIT_CHETNIK_DESCRIPTION"
          BaseMoves="2"
-         Cost="240"
-         Maintenance="4"
+         Cost="230"
+         Maintenance="3"
          BaseSightRange="2"
-         Combat="55"
+         Combat="58"
          Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_MELEE"
@@ -73,20 +83,22 @@
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_CHETNIK"/>
 
-    <!-- Neva-M (Milosevic) - replaces Anti-Air Gun -->
+    <!-- Neva-M (Milosevic) - replaces Artillery. Real combat unit + elite AA -->
     <Row UnitType="UNIT_NEVA_M"
          Name="LOC_UNIT_NEVA_M_NAME"
          Description="LOC_UNIT_NEVA_M_DESCRIPTION"
          BaseMoves="2"
-         Cost="500"
+         Cost="450"
          Maintenance="6"
          BaseSightRange="2"
-         Combat="50"
-         AntiAirCombat="120"
+         Combat="65"
+         Bombard="85"
+         Range="2"
+         AntiAirCombat="130"
          Domain="DOMAIN_LAND"
-         FormationClass="FORMATION_CLASS_SUPPORT"
-         PromotionClass="PROMOTION_CLASS_SUPPORT"
-         PrereqTech="TECH_ADVANCED_BALLISTICS"
+         FormationClass="FORMATION_CLASS_LAND_COMBAT"
+         PromotionClass="PROMOTION_CLASS_SIEGE"
+         PrereqTech="TECH_STEEL"
          AdvisorType="ADVISOR_CONQUEST"
          TraitType="TRAIT_LEADER_UNIT_NEVA_M"/>
 
@@ -95,10 +107,10 @@
          Name="LOC_UNIT_ALEMANNIC_GUARD_NAME"
          Description="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"
          BaseMoves="4"
-         Cost="180"
-         Maintenance="3"
+         Cost="170"
+         Maintenance="2"
          BaseSightRange="2"
-         Combat="48"
+         Combat="50"
          Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_HEAVY_CAVALRY"
@@ -110,26 +122,26 @@
   <UnitReplaces>
     <Row CivUniqueUnitType="UNIT_PARTIZANI"       ReplacesUnitType="UNIT_INFANTRY"/>
     <Row CivUniqueUnitType="UNIT_CHETNIK"         ReplacesUnitType="UNIT_MUSKETMAN"/>
-    <Row CivUniqueUnitType="UNIT_NEVA_M"          ReplacesUnitType="UNIT_ANTIAIR_GUN"/>
+    <Row CivUniqueUnitType="UNIT_NEVA_M"          ReplacesUnitType="UNIT_ARTILLERY"/>
     <Row CivUniqueUnitType="UNIT_ALEMANNIC_GUARD" ReplacesUnitType="UNIT_KNIGHT"/>
   </UnitReplaces>
 
   <Modifiers>
     <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
     <Row ModifierId="PARTIZANI_WOODS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_WOODS" Permanent="true"/>
-    <Row ModifierId="CHETNIK_HILLS_MOVE"   ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
-    <Row ModifierId="CHETNIK_DEFEND_HILLS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_DEFENDING_HILLS" Permanent="true"/>
-    <Row ModifierId="NEVA_M_VS_PLANES" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_OPPONENT_IS_AIR" Permanent="true"/>
-    <Row ModifierId="ALEMANNIC_FOREIGN_CS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_IN_FOREIGN_TERRITORY" Permanent="true"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE"     ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS"   ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_DEFENDING_HILLS" Permanent="true"/>
+    <Row ModifierId="NEVA_M_VS_PLANES"       ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_OPPONENT_IS_AIR" Permanent="true"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS"  ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_IN_FOREIGN_TERRITORY" Permanent="true"/>
   </Modifiers>
 
   <ModifierArguments>
     <Row ModifierId="PARTIZANI_HILLS_COMBAT" Name="Amount" Value="7"/>
     <Row ModifierId="PARTIZANI_WOODS_COMBAT" Name="Amount" Value="7"/>
-    <Row ModifierId="CHETNIK_HILLS_MOVE"   Name="Amount" Value="2"/>
-    <Row ModifierId="CHETNIK_DEFEND_HILLS" Name="Amount" Value="10"/>
-    <Row ModifierId="NEVA_M_VS_PLANES"     Name="Amount" Value="100"/>
-    <Row ModifierId="ALEMANNIC_FOREIGN_CS" Name="Amount" Value="5"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE"     Name="Amount" Value="2"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS"   Name="Amount" Value="10"/>
+    <Row ModifierId="NEVA_M_VS_PLANES"       Name="Amount" Value="50"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS"  Name="Amount" Value="7"/>
   </ModifierArguments>
 
   <RequirementSets>
@@ -149,10 +161,10 @@
   </RequirementSetRequirements>
 
   <Requirements>
-    <Row RequirementId="REQ_PLOT_IS_HILLS"            RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
-    <Row RequirementId="REQ_PLOT_IS_WOODS"            RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
-    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT"     RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
-    <Row RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
+    <Row RequirementId="REQ_PLOT_IS_HILLS"             RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
+    <Row RequirementId="REQ_PLOT_IS_WOODS"             RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
+    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT"      RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
+    <Row RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"  RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
   </Requirements>
 
   <RequirementArguments>
