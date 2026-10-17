@@ -3,7 +3,7 @@
 
   <Box ID="DebugRoot" Size="parent,parent" Color="0,0,0,0" ConsumeMouse="0">
     <Grid ID="DebugPanel" Size="320,420" Anchor="C,C" Offset="0,0" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
-      <Label ID="Title" Anchor="C,T" Offset="0,12" Style="FontFlair16" String="Serbia Debug (F12)" Color="255,220,120,255"/>
+      <Label ID="Title" Anchor="C,T" Offset="0,12" Style="FontFlair16" String="Serbia Debug (F8)" Color="255,220,120,255"/>
 
       <Stack ID="ButtonStack" Anchor="C,T" Offset="0,40" StackGrowth="Down" Padding="6">
         <GridButton ID="BtnGold"      Size="280,32" Style="MainButton" String="+1000 Gold"/>
