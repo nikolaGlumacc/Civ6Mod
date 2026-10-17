@@ -18,7 +18,7 @@
     <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION" Language="en_US"><Text>+2 Production and +2 Science in all cities.</Text></Replace>
 
     <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_NAME" Language="en_US"><Text>The Mountain Fox</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+2 Faith in all cities.</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+5 Faith in every city. Purchase land combat units and civilian units with Faith.</Text></Replace>
 
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Nationalist Mobilization</Text></Replace>
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 Culture in all cities. All units +5 Combat Strength.</Text></Replace>
@@ -61,11 +61,6 @@
     <Replace Tag="LOC_CITY_NAME_LESKOVAC" Language="en_US"><Text>Leskovac</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_VRANJE" Language="en_US"><Text>Vranje</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_NOVI_PAZAR" Language="en_US"><Text>Novi Pazar</Text></Replace>
-
-    <!-- GREAT PEOPLE -->
-    <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_RATKO_MLADIC_NAME" Language="en_US"><Text>Ratko Mladic</Text></Replace>
-    <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_RATKO_MLADIC_ACTION" Language="en_US"><Text>Nearby land units gain +5 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_DESANKA_MAKSIMOVIC_NAME" Language="en_US"><Text>Desanka Maksimovic</Text></Replace>
 
   </LocalizedText>
 </GameData>
