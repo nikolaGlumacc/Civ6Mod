@@ -1,6 +1,5 @@
--- Serbia Civ Pack - temporary debug / cheat panel
--- HOTKEY: F8 (F12 is often captured by the GPU overlay / game)
--- Also try: Shift+F8
+-- Serbia Civ Pack - debug / cheat panel
+-- Open with the "DBG" button (top-right of screen). No hotkey needed.
 
 local m_Panel = nil
 local m_IsOpen = false
@@ -96,19 +95,6 @@ function OnClose()
   if m_Panel then m_Panel:SetHide(true) end
 end
 
-local function OnInput(pInputStruct)
-  local msg = pInputStruct:GetMessageType()
-  if msg == KeyEvents.KeyUp then
-    local key = pInputStruct:GetKey()
-    -- F8 primary (F12 is often stolen by GeForce/AMD overlay)
-    if key == Keys.VK_F8 or key == Keys.VK_F12 or key == Keys.VK_F9 then
-      TogglePanel()
-      return true
-    end
-  end
-  return false
-end
-
 function Initialize()
   m_Panel = Controls.DebugPanel
   if m_Panel == nil then
@@ -116,6 +102,14 @@ function Initialize()
   else
     m_Panel:SetHide(true)
     print("SerbiaDebug: panel found OK")
+  end
+
+  if Controls.BtnToggle then
+    Controls.BtnToggle:RegisterCallback(Mouse.eLClick, TogglePanel)
+    Controls.BtnToggle:SetHide(false)
+    print("SerbiaDebug: DBG button registered (top-right)")
+  else
+    print("SerbiaDebug: ERROR - BtnToggle not found")
   end
 
   if Controls.BtnGold then Controls.BtnGold:RegisterCallback(Mouse.eLClick, OnGold) end
@@ -129,8 +123,7 @@ function Initialize()
   if Controls.BtnWarrior then Controls.BtnWarrior:RegisterCallback(Mouse.eLClick, OnWarrior) end
   if Controls.BtnClose then Controls.BtnClose:RegisterCallback(Mouse.eLClick, OnClose) end
 
-  ContextPtr:SetInputHandler(OnInput, true)
-  print("SerbiaDebug: Press F8 (or F9/F12) to toggle cheat panel")
+  print("SerbiaDebug: click the DBG button (top-right) to open cheats")
 end
 
 Initialize()
