@@ -1,31 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Pure base-game atlases only. No custom DDS required. Icons are generic but load reliably. -->
+<!-- Intentionally empty. IconDefinitions were causing FK failures.
+     Game runs with default/green placeholders. Art comes later. -->
 <GameData>
-  <IconDefinitions>
-    <!-- Civ: use first base civ slot as placeholder -->
-    <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATIONS" Index="0"/>
-
-    <!-- Manastir = Temple icon (index 19 is commonly Temple in ICON_ATLAS_BUILDINGS) -->
-    <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="19"/>
-
-    <!-- Spomenik = Monument-style improvement -->
-    <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_IMPROVEMENTS" Index="0"/>
-
-    <!-- Units: Infantry / Musketman / Anti-Air / Knight style indices on base unit atlas -->
-    <!-- These indices are the standard Firaxis unit atlas slots for those classes -->
-    <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="47"/>
-    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="47"/>
-    <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="20"/>
-    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="20"/>
-    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="60"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="60"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNITS" Index="12"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="12"/>
-
-    <!-- Leaders: base leader atlas placeholders (different indices so not identical) -->
-    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADERS" Index="1"/>
-    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADERS" Index="2"/>
-    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADERS" Index="3"/>
-    <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADERS" Index="4"/>
-  </IconDefinitions>
 </GameData>
