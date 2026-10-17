@@ -1,30 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Official ICON_ATLAS_UNITS indices from base-game Icons_Units.xml -->
+<!-- Leader icons use existing STR Dusan art already in Art/ (different variants per leader).
+     Unit icons use official base-game ICON_ATLAS_UNITS indices. -->
 <GameData>
+
+  <IconTextureAtlases>
+    <!-- ========== LEADER: TITO (Byzantium Dusan portrait set) ========== -->
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_TITO" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds"/>
+
+    <!-- ========== LEADER: DRAZA (Greece Dusan portrait set) ========== -->
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DRAZA" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds"/>
+
+    <!-- ========== LEADER: MILOSEVIC (Serbia Dusan caricature set) ========== -->
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_MILOSEVIC" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_CARIACATURE_256.dds"/>
+
+    <!-- ========== LEADER: DUSAN (Serbia Dusan main set) ========== -->
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_32.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="45" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_45.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_50.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="55" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_55.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_64.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_80.dds"/>
+    <Row Name="ICON_ATLAS_LEADER_DUSAN" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_256.dds"/>
+
+    <!-- ========== CIV EMBLEM ========== -->
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="32" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_32.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="44" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_44.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="48" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_48.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="50" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_50.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="64" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_64.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="80" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_80.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="200" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_200.dds"/>
+    <Row Name="ICON_ATLAS_CIVILIZATION_SERBIA" IconSize="256" IconsPerRow="1" IconsPerColumn="1" Filename="ICON_CIVILIZATION_STR_SERBIA_256.dds"/>
+  </IconTextureAtlases>
+
   <IconDefinitions>
-    <!-- Civ / Leaders / Building placeholders -->
-    <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATIONS" Index="18"/>
-    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADERS" Index="10"/>
-    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADERS" Index="11"/>
-    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADERS" Index="12"/>
-    <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADERS" Index="13"/>
+    <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATION_SERBIA" Index="0"/>
+
+    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADER_TITO" Index="0"/>
+    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADER_DRAZA" Index="0"/>
+    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADER_MILOSEVIC" Index="0"/>
+    <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADER_DUSAN" Index="0"/>
+
     <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="19"/>
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_BUILDINGS" Index="1"/>
 
-    <!-- Partizani = Infantry (index 71) -->
+    <!-- Units: official base-game indices -->
     <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="71"/>
     <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS_2" Index="5"/>
-
-    <!-- Chetnik = Musketman (index 53) -->
     <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="53"/>
     <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="51"/>
-
-    <!-- Neva-M = Artillery (index 72) - gun/howitzer look, not builder/warrior -->
     <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="72"/>
     <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS_2" Index="6"/>
-
-    <!-- Almanska Garda = Knight (index 45) -->
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNITS" Index="45"/>
     <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="43"/>
   </IconDefinitions>
+
 </GameData>
