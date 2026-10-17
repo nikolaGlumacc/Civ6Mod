@@ -1,4 +1,4 @@
--- Serbia Leaders - stable version (safe modifiers only)
+-- Serbia Leaders
 
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
     ('LEADER_TITO',                       'KIND_LEADER'),
@@ -46,7 +46,7 @@ INSERT OR IGNORE INTO Traits (TraitType, Name, Description) VALUES
     ('TRAIT_LEADER_UNIT_NEVA_M',         'LOC_UNIT_NEVA_M_NAME',                      'LOC_UNIT_NEVA_M_DESCRIPTION'),
     ('TRAIT_LEADER_UNIT_ALEMANNIC_GUARD','LOC_UNIT_ALEMANNIC_GUARD_NAME',             'LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION');
 
--- TITO: +2 Production and +2 Science in all cities
+-- ===================== TITO =====================
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_PROD'),
     ('TRAIT_LEADER_BROTHERHOOD_UNITY', 'TITO_SCI');
@@ -59,16 +59,43 @@ INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
     ('TITO_SCI',  'YieldType', 'YIELD_SCIENCE'),
     ('TITO_SCI',  'Amount', '2');
 
--- DRAZA: +2 Faith in all cities
+-- ===================== DRAZA (Mountain Fox) - strong faith kit =====================
+-- +5 Faith all cities, buy land combat units with Faith, buy civilian units with Faith
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
-    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH');
-INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-    ('DRAZA_FAITH', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE');
-INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-    ('DRAZA_FAITH', 'YieldType', 'YIELD_FAITH'),
-    ('DRAZA_FAITH', 'Amount', '2');
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_CITIES'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_MELEE'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_RANGED'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_ANTI_CAV'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_LIGHT_CAV'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_HEAVY_CAV'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_SIEGE'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_SUPPORT'),
+    ('TRAIT_LEADER_MOUNTAIN_FOX', 'DRAZA_FAITH_BUY_CIVILIAN');
 
--- MILOSEVIC: +2 Culture all cities, +5 Combat Strength all units
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+    ('DRAZA_FAITH_CITIES',       'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE'),
+    ('DRAZA_FAITH_BUY_MELEE',    'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_RANGED',   'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_ANTI_CAV', 'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_LIGHT_CAV','MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_HEAVY_CAV','MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_SIEGE',    'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_SUPPORT',  'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE'),
+    ('DRAZA_FAITH_BUY_CIVILIAN', 'MODIFIER_PLAYER_CITIES_ENABLE_UNIT_FAITH_PURCHASE');
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+    ('DRAZA_FAITH_CITIES',       'YieldType', 'YIELD_FAITH'),
+    ('DRAZA_FAITH_CITIES',       'Amount',    '5'),
+    ('DRAZA_FAITH_BUY_MELEE',    'Tag', 'CLASS_MELEE'),
+    ('DRAZA_FAITH_BUY_RANGED',   'Tag', 'CLASS_RANGED'),
+    ('DRAZA_FAITH_BUY_ANTI_CAV', 'Tag', 'CLASS_ANTI_CAVALRY'),
+    ('DRAZA_FAITH_BUY_LIGHT_CAV','Tag', 'CLASS_LIGHT_CAVALRY'),
+    ('DRAZA_FAITH_BUY_HEAVY_CAV','Tag', 'CLASS_HEAVY_CAVALRY'),
+    ('DRAZA_FAITH_BUY_SIEGE',    'Tag', 'CLASS_SIEGE'),
+    ('DRAZA_FAITH_BUY_SUPPORT',  'Tag', 'CLASS_SUPPORT'),
+    ('DRAZA_FAITH_BUY_CIVILIAN', 'Tag', 'CLASS_LANDCIVILIAN');
+
+-- ===================== MILOSEVIC =====================
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_CULTURE'),
     ('TRAIT_LEADER_RALLY_OF_THE_PEOPLE', 'MILO_COMBAT');
@@ -80,7 +107,7 @@ INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
     ('MILO_CULTURE', 'Amount', '2'),
     ('MILO_COMBAT',  'Amount', '5');
 
--- DUSAN: +2 Culture all cities, +2 Loyalty all cities
+-- ===================== DUSAN =====================
 INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
     ('TRAIT_LEADER_DUSANS_CODE', 'DUSAN_CULTURE'),
     ('TRAIT_LEADER_DUSANS_CODE', 'DUSAN_LOYALTY');
