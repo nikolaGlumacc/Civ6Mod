@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Base\Assets\UI\Context.xsd">
+
+  <Box ID="DebugRoot" Size="parent,parent" Color="0,0,0,0" ConsumeMouse="0">
+    <Grid ID="DebugPanel" Size="320,420" Anchor="C,C" Offset="0,0" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
+      <Label ID="Title" Anchor="C,T" Offset="0,12" Style="FontFlair16" String="Serbia Debug (F12)" Color="255,220,120,255"/>
+
+      <Stack ID="ButtonStack" Anchor="C,T" Offset="0,40" StackGrowth="Down" Padding="6">
+        <GridButton ID="BtnGold"      Size="280,32" Style="MainButton" String="+1000 Gold"/>
+        <GridButton ID="BtnFaith"     Size="280,32" Style="MainButton" String="+1000 Faith"/>
+        <GridButton ID="BtnScience"   Size="280,32" Style="MainButton" String="+500 Science"/>
+        <GridButton ID="BtnCulture"   Size="280,32" Style="MainButton" String="+500 Culture"/>
+        <GridButton ID="BtnProd"      Size="280,32" Style="MainButton" String="+500 Production (cap)"/>
+        <GridButton ID="BtnEraScore"  Size="280,32" Style="MainButton" String="+10 Era Score"/>
+        <GridButton ID="BtnBuilder"   Size="280,32" Style="MainButton" String="Spawn Builder"/>
+        <GridButton ID="BtnSettler"   Size="280,32" Style="MainButton" String="Spawn Settler"/>
+        <GridButton ID="BtnWarrior"   Size="280,32" Style="MainButton" String="Spawn Warrior"/>
+        <GridButton ID="BtnClose"     Size="280,32" Style="MainButton" String="Close"/>
+      </Stack>
+    </Grid>
+  </Box>
+
+</Context>
