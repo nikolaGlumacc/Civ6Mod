@@ -22,7 +22,7 @@
 
     <!-- DRAZA -->
     <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_NAME" Language="en_US"><Text>The Mountain Fox</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+8 [ICON_Faith] Faith in every city. May purchase land military units with [ICON_Faith] Faith from turn 1 (no Grand Master's Chapel required). Holy Sites generate [ICON_Gold] Gold equal to their [ICON_Faith] Faith adjacency.[NEWLINE][NEWLINE]Unique Unit: Chetnik (replaces Musketman) - better movement and defense on Hills.</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+8 [ICON_Faith] Faith in every city. May purchase ANY unit, building, or district with [ICON_Faith] Faith from turn 1 (scouts, traders, settlers, builders, military, naval, air - everything). Holy Sites generate [ICON_Gold] Gold equal to their [ICON_Faith] Faith adjacency.[NEWLINE][NEWLINE]Unique Unit: Chetnik (replaces Musketman) - better movement and defense on Hills.</Text></Replace>
 
     <!-- MILOSEVIC -->
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Rally of the People</Text></Replace>
