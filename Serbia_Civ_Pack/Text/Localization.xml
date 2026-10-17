@@ -26,11 +26,11 @@
 
     <!-- MILOSEVIC -->
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Rally of the People</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 [ICON_Culture] Culture and +10 Loyalty in all cities. War Weariness reduced by 50%. All units gain +10 Combat Strength.[NEWLINE][NEWLINE]Unique Unit: Neva-M (replaces Anti-Air Gun) - massive bonus damage against aircraft. "Sorry we didn't know it was invisible."</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 [ICON_Culture] Culture and +10 Loyalty in all cities. War Weariness reduced by 50%. All units gain +10 Combat Strength.[NEWLINE][NEWLINE]Unique Unit: Neva-M (replaces Artillery) - strong siege unit with elite anti-air capabilities. "Sorry we didn't know it was invisible."</Text></Replace>
 
     <!-- DUSAN -->
     <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_NAME" Language="en_US"><Text>Dusan's Code</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_DESCRIPTION" Language="en_US"><Text>All cities generate +2 [ICON_Culture] Culture and +2 Loyalty per turn, keeping conquered cities stable and productive.[NEWLINE][NEWLINE]Unique Unit: Almanska Garda (replaces Knight) - +5 Combat Strength in foreign territory, cheaper maintenance.</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_DUSANS_CODE_DESCRIPTION" Language="en_US"><Text>All cities generate +2 [ICON_Culture] Culture and +2 Loyalty per turn, keeping conquered cities stable and productive.[NEWLINE][NEWLINE]Unique Unit: Almanska Garda (replaces Knight) - +7 Combat Strength in foreign territory, cheaper maintenance.</Text></Replace>
 
     <!-- Quotes -->
     <Replace Tag="LOC_DIPLO_QUOTE_TITO" Language="en_US"><Text>Zivelo bratstvo i jedinstvo nasih naroda!</Text></Replace>
@@ -48,16 +48,16 @@
 
     <!-- ===================== UNITS ===================== -->
     <Replace Tag="LOC_UNIT_PARTIZANI_NAME" Language="en_US"><Text>Partizani</Text></Replace>
-    <Replace Tag="LOC_UNIT_PARTIZANI_DESCRIPTION" Language="en_US"><Text>Tito's unique Infantry replacement.[NEWLINE]75 Combat Strength (vs 70). Stronger when fighting in Hills and Woods. Cheaper to produce.</Text></Replace>
+    <Replace Tag="LOC_UNIT_PARTIZANI_DESCRIPTION" Language="en_US"><Text>Tito's unique Infantry replacement.[NEWLINE]75 Combat Strength. +7 Combat Strength when fighting in Hills or Woods. Cheaper to produce and maintain.</Text></Replace>
 
     <Replace Tag="LOC_UNIT_CHETNIK_NAME" Language="en_US"><Text>Chetnik</Text></Replace>
-    <Replace Tag="LOC_UNIT_CHETNIK_DESCRIPTION" Language="en_US"><Text>Draza's unique Musketman replacement.[NEWLINE]Extra movement on Hills. Stronger when defending in Hills or Mountains.</Text></Replace>
+    <Replace Tag="LOC_UNIT_CHETNIK_DESCRIPTION" Language="en_US"><Text>Draza's unique Musketman replacement.[NEWLINE]+2 Movement on Hills. +10 Combat Strength when defending on Hills.</Text></Replace>
 
     <Replace Tag="LOC_UNIT_NEVA_M_NAME" Language="en_US"><Text>Neva-M</Text></Replace>
-    <Replace Tag="LOC_UNIT_NEVA_M_DESCRIPTION" Language="en_US"><Text>Milosevic's unique Anti-Air unit.[NEWLINE]Devastating bonus damage against aircraft. "Sorry we didn't know it was invisible."</Text></Replace>
+    <Replace Tag="LOC_UNIT_NEVA_M_DESCRIPTION" Language="en_US"><Text>Milosevic's unique Artillery replacement.[NEWLINE]65 Combat Strength, 85 Bombard Strength, Range 2. Elite anti-air (130 Anti-Air + bonus damage vs aircraft). A real combat unit that will not die the moment something walks onto its tile. "Sorry we didn't know it was invisible."</Text></Replace>
 
     <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_NAME" Language="en_US"><Text>Almanska Garda</Text></Replace>
-    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION" Language="en_US"><Text>Dusan's unique Knight replacement.[NEWLINE]+5 Combat Strength when fighting in foreign territory. 20% cheaper to maintain.</Text></Replace>
+    <Replace Tag="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION" Language="en_US"><Text>Dusan's unique Knight replacement.[NEWLINE]+7 Combat Strength when fighting in foreign territory. Cheaper to produce and maintain.</Text></Replace>
 
     <!-- ===================== CITIES ===================== -->
     <Replace Tag="LOC_CITY_NAME_BEOGRAD" Language="en_US"><Text>Beograd</Text></Replace>
