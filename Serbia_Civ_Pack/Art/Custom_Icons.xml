@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Maps our ICON_* names onto Strudeler atlases already defined in Icons.xml -->
+<!-- Pure base-game atlases only. No custom DDS required. Icons are generic but load reliably. -->
 <GameData>
   <IconDefinitions>
-    <!-- Civ emblem -->
-    <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATION_STR_SERBIA" Index="0"/>
+    <!-- Civ: use first base civ slot as placeholder -->
+    <Row Name="ICON_CIVILIZATION_SERBIA" Atlas="ICON_ATLAS_CIVILIZATIONS" Index="0"/>
 
-    <!-- Building / Improvement use base-game atlases (always present) -->
+    <!-- Manastir = Temple icon (index 19 is commonly Temple in ICON_ATLAS_BUILDINGS) -->
     <Row Name="ICON_BUILDING_MANASTIR" Atlas="ICON_ATLAS_BUILDINGS" Index="19"/>
+
+    <!-- Spomenik = Monument-style improvement -->
     <Row Name="ICON_IMPROVEMENT_SPOMENIK" Atlas="ICON_ATLAS_IMPROVEMENTS" Index="0"/>
 
-    <!-- Partizani + Chetnik = Serbian Gusar art (military cavalry/guerrilla look) -->
-    <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR" Index="0"/>
-    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR_PORTRAIT" Index="0"/>
-    <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR" Index="0"/>
-    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_GUSAR_PORTRAIT" Index="0"/>
+    <!-- Units: Infantry / Musketman / Anti-Air / Knight style indices on base unit atlas -->
+    <!-- These indices are the standard Firaxis unit atlas slots for those classes -->
+    <Row Name="ICON_UNIT_PARTIZANI" Atlas="ICON_ATLAS_UNITS" Index="47"/>
+    <Row Name="ICON_UNIT_PARTIZANI_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="47"/>
+    <Row Name="ICON_UNIT_CHETNIK" Atlas="ICON_ATLAS_UNITS" Index="20"/>
+    <Row Name="ICON_UNIT_CHETNIK_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="20"/>
+    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNITS" Index="60"/>
+    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="60"/>
+    <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNITS" Index="12"/>
+    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_PORTRAITS" Index="12"/>
 
-    <!-- Neva-M + Alemannic Guard = Alemannic Guard art -->
-    <Row Name="ICON_UNIT_NEVA_M" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD" Index="0"/>
-    <Row Name="ICON_UNIT_NEVA_M_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT" Index="0"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD" Index="0"/>
-    <Row Name="ICON_UNIT_ALEMANNIC_GUARD_PORTRAIT" Atlas="ICON_ATLAS_UNIT_STR_SERBIA_BYZANTIUM_GREECE_ALEMANNIC_GUARD_PORTRAIT" Index="0"/>
-
-    <!-- Leaders: different STR portrait variants so they do not all look identical -->
-    <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
-    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
-    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
-    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" Index="0"/>
+    <!-- Leaders: base leader atlas placeholders (different indices so not identical) -->
+    <Row Name="ICON_LEADER_TITO" Atlas="ICON_ATLAS_LEADERS" Index="1"/>
+    <Row Name="ICON_LEADER_DRAZA" Atlas="ICON_ATLAS_LEADERS" Index="2"/>
+    <Row Name="ICON_LEADER_MILOSEVIC" Atlas="ICON_ATLAS_LEADERS" Index="3"/>
+    <Row Name="ICON_LEADER_DUSAN" Atlas="ICON_ATLAS_LEADERS" Index="4"/>
   </IconDefinitions>
 </GameData>
