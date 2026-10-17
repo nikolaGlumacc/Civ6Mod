@@ -21,7 +21,7 @@
     <Row Type="UNIT_NEVA_M"             Tag="CLASS_ANTI_AIR"/>
     <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="CLASS_HEAVY_CAVALRY"/>
 
-    <!-- Grant the unique abilities to the units (this was missing) -->
+    <!-- Grant unique abilities to units -->
     <Row Type="UNIT_PARTIZANI"          Tag="ABILITY_PARTIZANI"/>
     <Row Type="UNIT_CHETNIK"            Tag="ABILITY_CHETNIK"/>
     <Row Type="UNIT_NEVA_M"             Tag="ABILITY_NEVA_M"/>
@@ -156,6 +156,7 @@
     <Row RequirementSetId="REQSET_PLOT_IS_HILLS"        RequirementId="REQ_PLOT_IS_HILLS"/>
     <Row RequirementSetId="REQSET_PLOT_IS_WOODS"        RequirementId="REQ_PLOT_IS_WOODS"/>
     <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementId="REQ_PLOT_IS_HILLS"/>
+    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementId="REQ_UNIT_IS_DEFENDING"/>
     <Row RequirementSetId="REQSET_OPPONENT_IS_AIR"      RequirementId="REQ_OPPONENT_IS_AIR_UNIT"/>
     <Row RequirementSetId="REQSET_IN_FOREIGN_TERRITORY" RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"/>
   </RequirementSetRequirements>
@@ -163,6 +164,7 @@
   <Requirements>
     <Row RequirementId="REQ_PLOT_IS_HILLS"             RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
     <Row RequirementId="REQ_PLOT_IS_WOODS"             RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
+    <Row RequirementId="REQ_UNIT_IS_DEFENDING"         RequirementType="REQUIREMENT_UNIT_IS_DEFENDING"/>
     <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT"      RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
     <Row RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"  RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
   </Requirements>
