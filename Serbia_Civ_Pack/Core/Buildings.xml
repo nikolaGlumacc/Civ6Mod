@@ -10,8 +10,9 @@
          Description="LOC_BUILDING_MANASTIR_DESCRIPTION"
          PrereqDistrict="DISTRICT_HOLY_SITE"
          PurchaseYield="YIELD_FAITH"
-         Cost="115"
+         Cost="120"
          Maintenance="2"
+         Housing="1"
          CitizenSlots="1"
          AdvisorType="ADVISOR_RELIGIOUS"
          TraitType="TRAIT_CIVILIZATION_SERBIA"/>
