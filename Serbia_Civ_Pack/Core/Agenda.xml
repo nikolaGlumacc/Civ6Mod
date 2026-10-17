@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <Types>
+    <Row Type="AGENDA_TITO" Kind="KIND_AGENDA"/>
+    <Row Type="AGENDA_DRAZA" Kind="KIND_AGENDA"/>
+    <Row Type="AGENDA_MILOSEVIC" Kind="KIND_AGENDA"/>
+    <Row Type="AGENDA_DUSAN" Kind="KIND_AGENDA"/>
     <Row Type="TRAIT_AGENDA_TITO" Kind="KIND_TRAIT"/>
     <Row Type="TRAIT_AGENDA_DRAZA" Kind="KIND_TRAIT"/>
     <Row Type="TRAIT_AGENDA_MILOSEVIC" Kind="KIND_TRAIT"/>
