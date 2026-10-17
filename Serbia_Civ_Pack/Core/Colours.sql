@@ -1,18 +1,23 @@
 /*
-    Serbia Civilization Pack - Colors
-    Only PlayerColors with columns that exist in all versions.
-    Do NOT insert into Colors table from FrontEnd (it does not exist there).
+    Serbia Civilization Pack - Colors (InGame only)
 */
 
--- Civilization colors (Serbian red / blue)
-INSERT OR REPLACE INTO PlayerColors (Type, Usage, PrimaryColor, SecondaryColor)
-VALUES
-    ('CIVILIZATION_SERBIA', 'Unique', '199,30,40,255', '10,50,140,255');
+INSERT OR IGNORE INTO Colors (Type, Color) VALUES
+    ('COLOR_PLAYER_SERBIA_PRIMARY',   '199,30,40,255'),
+    ('COLOR_PLAYER_SERBIA_SECONDARY', '10,50,140,255'),
+    ('COLOR_PLAYER_TITO_PRIMARY',     '199,30,40,255'),
+    ('COLOR_PLAYER_TITO_SECONDARY',   '200,160,50,255'),
+    ('COLOR_PLAYER_DRAZA_PRIMARY',    '30,30,35,255'),
+    ('COLOR_PLAYER_DRAZA_SECONDARY',  '240,240,240,255'),
+    ('COLOR_PLAYER_MILO_PRIMARY',     '199,30,40,255'),
+    ('COLOR_PLAYER_MILO_SECONDARY',   '30,30,35,255'),
+    ('COLOR_PLAYER_DUSAN_PRIMARY',    '200,160,50,255'),
+    ('COLOR_PLAYER_DUSAN_SECONDARY',  '199,30,40,255');
 
--- Leader colors
 INSERT OR REPLACE INTO PlayerColors (Type, Usage, PrimaryColor, SecondaryColor)
 VALUES
-    ('LEADER_TITO',      'Unique', '199,30,40,255',  '200,160,50,255'),
-    ('LEADER_DRAZA',     'Unique', '30,30,35,255',   '240,240,240,255'),
-    ('LEADER_MILOSEVIC', 'Unique', '199,30,40,255',  '30,30,35,255'),
-    ('LEADER_DUSAN',     'Unique', '200,160,50,255', '199,30,40,255');
+    ('CIVILIZATION_SERBIA', 'Unique', 'COLOR_PLAYER_SERBIA_PRIMARY', 'COLOR_PLAYER_SERBIA_SECONDARY'),
+    ('LEADER_TITO',         'Unique', 'COLOR_PLAYER_TITO_PRIMARY',   'COLOR_PLAYER_TITO_SECONDARY'),
+    ('LEADER_DRAZA',        'Unique', 'COLOR_PLAYER_DRAZA_PRIMARY',  'COLOR_PLAYER_DRAZA_SECONDARY'),
+    ('LEADER_MILOSEVIC',    'Unique', 'COLOR_PLAYER_MILO_PRIMARY',   'COLOR_PLAYER_MILO_SECONDARY'),
+    ('LEADER_DUSAN',        'Unique', 'COLOR_PLAYER_DUSAN_PRIMARY',  'COLOR_PLAYER_DUSAN_SECONDARY');
