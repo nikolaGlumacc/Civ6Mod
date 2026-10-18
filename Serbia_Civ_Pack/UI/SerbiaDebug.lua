@@ -1,5 +1,4 @@
--- Serbia debug panel (UI) with unit search
-
+-- Full debug panel UI
 print("========== SerbiaDebug.lua LOADED ==========")
 
 local m_IsOpen = false
@@ -8,7 +7,7 @@ local function Apply(cheat)
   if ExposedMembers and ExposedMembers.SerbiaDebug and ExposedMembers.SerbiaDebug.Apply then
     return ExposedMembers.SerbiaDebug.Apply(cheat)
   end
-  print("SerbiaDebug: gameplay bridge missing")
+  print("SerbiaDebug: bridge missing")
   return nil
 end
 
@@ -23,14 +22,11 @@ end
 
 local function DoSearch()
   local text = ""
-  if Controls.UnitSearch then
-    text = Controls.UnitSearch:GetText() or ""
-  end
+  if Controls.UnitSearch then text = Controls.UnitSearch:GetText() or "" end
   if ExposedMembers and ExposedMembers.SerbiaDebug and ExposedMembers.SerbiaDebug.SetUnitFilter then
     ExposedMembers.SerbiaDebug.SetUnitFilter(text)
   end
   RefreshUnitLabel()
-  print("SerbiaDebug: search='" .. tostring(text) .. "'")
 end
 
 local function TogglePanel()
@@ -39,7 +35,6 @@ local function TogglePanel()
   m_IsOpen = not m_IsOpen
   panel:SetHide(not m_IsOpen)
   if m_IsOpen then RefreshUnitLabel() end
-  print("SerbiaDebug: panel open = " .. tostring(m_IsOpen))
 end
 
 local function IsToggleKey(key)
@@ -49,8 +44,7 @@ local function IsToggleKey(key)
     if Keys.F8 and key == Keys.F8 then return true end
     if Keys.F12 and key == Keys.F12 then return true end
   end
-  if key == 119 or key == 123 then return true end
-  return false
+  return key == 119 or key == 123
 end
 
 function OnInputHandler(pInputStruct)
@@ -66,51 +60,47 @@ function OnInputHandler(pInputStruct)
 end
 
 function Initialize()
-  print("SerbiaDebug: Initialize()")
   if Controls.DebugPanel then Controls.DebugPanel:SetHide(true) end
   if Controls.BtnToggle then
     Controls.BtnToggle:RegisterCallback(Mouse.eLClick, TogglePanel)
     Controls.BtnToggle:SetHide(false)
   end
-
   if Controls.UnitSearch then
-    pcall(function()
-      Controls.UnitSearch:RegisterCommitCallback(function()
-        DoSearch()
-      end)
-    end)
-    pcall(function()
-      -- Some builds support live string change
-      Controls.UnitSearch:RegisterStringChangedCallback(function()
-        DoSearch()
-      end)
-    end)
+    pcall(function() Controls.UnitSearch:RegisterCommitCallback(DoSearch) end)
+    pcall(function() Controls.UnitSearch:RegisterStringChangedCallback(DoSearch) end)
   end
-  if Controls.BtnSearch then
-    Controls.BtnSearch:RegisterCallback(Mouse.eLClick, DoSearch)
-  end
+  if Controls.BtnSearch then Controls.BtnSearch:RegisterCallback(Mouse.eLClick, DoSearch) end
 
   local map = {
-    BtnGod       = function() Apply("godmode") end,
-    BtnReveal    = function() Apply("reveal") end,
-    BtnTechs     = function() Apply("techs") end,
-    BtnCivics    = function() Apply("civics") end,
-    BtnGoldMega  = function() Apply("gold_mega") end,
+    BtnGod = function() Apply("godmode") end,
+    BtnReveal = function() Apply("reveal") end,
+    BtnRevealResources = function() Apply("reveal_resources") end,
+    BtnTechs = function() Apply("techs") end,
+    BtnCivics = function() Apply("civics") end,
+    BtnGoldMega = function() Apply("gold_mega") end,
     BtnFaithMega = function() Apply("faith_mega") end,
-    BtnGold      = function() Apply("gold") end,
-    BtnFaith     = function() Apply("faith") end,
-    BtnScience   = function() Apply("science") end,
-    BtnCulture   = function() Apply("culture") end,
-    BtnProd      = function() Apply("prod") end,
-    BtnEraScore  = function() Apply("erascore") end,
-    BtnBuilder   = function() Apply("builder") end,
-    BtnSettler   = function() Apply("settler") end,
-    BtnWarrior   = function() Apply("warrior") end,
-    BtnUnitPrev  = function() Apply("unit_prev"); RefreshUnitLabel() end,
-    BtnUnitNext  = function() Apply("unit_next"); RefreshUnitLabel() end,
+    BtnGold = function() Apply("gold") end,
+    BtnFaith = function() Apply("faith") end,
+    BtnScience = function() Apply("science") end,
+    BtnCulture = function() Apply("culture") end,
+    BtnProd = function() Apply("prod") end,
+    BtnFinishProd = function() Apply("finish_prod") end,
+    BtnEraScore = function() Apply("erascore") end,
+    BtnResourcesGrant = function() Apply("resources_grant") end,
+    BtnPop = function() Apply("pop") end,
+    BtnHeal = function() Apply("heal") end,
+    BtnBarbs = function() Apply("kill_barbs") end,
+    BtnUnitPrev = function() Apply("unit_prev"); RefreshUnitLabel() end,
+    BtnUnitNext = function() Apply("unit_next"); RefreshUnitLabel() end,
     BtnUnitSpawn = function() Apply("unit_spawn"); RefreshUnitLabel() end,
-    BtnUnitAll   = function() Apply("unit_all") end,
-    BtnClose     = function()
+    BtnUnitAll = function() Apply("unit_all") end,
+    BtnBuilder = function() Apply("builder") end,
+    BtnSettler = function() Apply("settler") end,
+    BtnWarrior = function() Apply("warrior") end,
+    BtnDumpRes = function() Apply("dump_resources") end,
+    BtnDumpUnits = function() Apply("dump_units") end,
+    BtnDumpCities = function() Apply("dump_cities") end,
+    BtnClose = function()
       m_IsOpen = false
       if Controls.DebugPanel then Controls.DebugPanel:SetHide(true) end
     end,
@@ -121,7 +111,7 @@ function Initialize()
 
   ContextPtr:SetInputHandler(OnInputHandler, true)
   ContextPtr:SetHide(false)
-  print("SerbiaDebug: READY (unit search)")
+  print("SerbiaDebug: FULL panel ready")
 end
 
 Initialize()
