@@ -1,4 +1,4 @@
--- Serbia debug panel (UI)
+-- Serbia debug panel (UI) with unit search
 
 print("========== SerbiaDebug.lua LOADED ==========")
 
@@ -19,6 +19,18 @@ local function RefreshUnitLabel()
     name = ExposedMembers.SerbiaDebug.GetCurrentUnitName() or name
   end
   Controls.UnitLabel:SetText("Unit: " .. tostring(name))
+end
+
+local function DoSearch()
+  local text = ""
+  if Controls.UnitSearch then
+    text = Controls.UnitSearch:GetText() or ""
+  end
+  if ExposedMembers and ExposedMembers.SerbiaDebug and ExposedMembers.SerbiaDebug.SetUnitFilter then
+    ExposedMembers.SerbiaDebug.SetUnitFilter(text)
+  end
+  RefreshUnitLabel()
+  print("SerbiaDebug: search='" .. tostring(text) .. "'")
 end
 
 local function TogglePanel()
@@ -61,6 +73,23 @@ function Initialize()
     Controls.BtnToggle:SetHide(false)
   end
 
+  if Controls.UnitSearch then
+    pcall(function()
+      Controls.UnitSearch:RegisterCommitCallback(function()
+        DoSearch()
+      end)
+    end)
+    pcall(function()
+      -- Some builds support live string change
+      Controls.UnitSearch:RegisterStringChangedCallback(function()
+        DoSearch()
+      end)
+    end)
+  end
+  if Controls.BtnSearch then
+    Controls.BtnSearch:RegisterCallback(Mouse.eLClick, DoSearch)
+  end
+
   local map = {
     BtnGod       = function() Apply("godmode") end,
     BtnReveal    = function() Apply("reveal") end,
@@ -92,7 +121,7 @@ function Initialize()
 
   ContextPtr:SetInputHandler(OnInputHandler, true)
   ContextPtr:SetHide(false)
-  print("SerbiaDebug: READY")
+  print("SerbiaDebug: READY (unit search)")
 end
 
 Initialize()
