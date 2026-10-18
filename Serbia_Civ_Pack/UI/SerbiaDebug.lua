@@ -1,4 +1,4 @@
--- Serbia debug panel (UI). Cheats via ExposedMembers.SerbiaDebug.Apply
+-- Serbia debug panel (UI)
 
 print("========== SerbiaDebug.lua LOADED ==========")
 
@@ -6,10 +6,19 @@ local m_IsOpen = false
 
 local function Apply(cheat)
   if ExposedMembers and ExposedMembers.SerbiaDebug and ExposedMembers.SerbiaDebug.Apply then
-    ExposedMembers.SerbiaDebug.Apply(cheat)
-  else
-    print("SerbiaDebug: gameplay bridge missing - is Scripts/SerbiaCheats.lua loaded?")
+    return ExposedMembers.SerbiaDebug.Apply(cheat)
   end
+  print("SerbiaDebug: gameplay bridge missing")
+  return nil
+end
+
+local function RefreshUnitLabel()
+  if not Controls.UnitLabel then return end
+  local name = "(none)"
+  if ExposedMembers and ExposedMembers.SerbiaDebug and ExposedMembers.SerbiaDebug.GetCurrentUnitName then
+    name = ExposedMembers.SerbiaDebug.GetCurrentUnitName() or name
+  end
+  Controls.UnitLabel:SetText("Unit: " .. tostring(name))
 end
 
 local function TogglePanel()
@@ -17,6 +26,7 @@ local function TogglePanel()
   if not panel then return end
   m_IsOpen = not m_IsOpen
   panel:SetHide(not m_IsOpen)
+  if m_IsOpen then RefreshUnitLabel() end
   print("SerbiaDebug: panel open = " .. tostring(m_IsOpen))
 end
 
@@ -67,6 +77,10 @@ function Initialize()
     BtnBuilder   = function() Apply("builder") end,
     BtnSettler   = function() Apply("settler") end,
     BtnWarrior   = function() Apply("warrior") end,
+    BtnUnitPrev  = function() Apply("unit_prev"); RefreshUnitLabel() end,
+    BtnUnitNext  = function() Apply("unit_next"); RefreshUnitLabel() end,
+    BtnUnitSpawn = function() Apply("unit_spawn"); RefreshUnitLabel() end,
+    BtnUnitAll   = function() Apply("unit_all") end,
     BtnClose     = function()
       m_IsOpen = false
       if Controls.DebugPanel then Controls.DebugPanel:SetHide(true) end
@@ -78,7 +92,7 @@ function Initialize()
 
   ContextPtr:SetInputHandler(OnInputHandler, true)
   ContextPtr:SetHide(false)
-  print("SerbiaDebug: READY - F8/F12")
+  print("SerbiaDebug: READY")
 end
 
 Initialize()
