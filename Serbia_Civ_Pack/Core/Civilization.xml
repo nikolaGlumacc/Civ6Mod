@@ -19,7 +19,7 @@
       <Description>LOC_CIVILIZATION_SERBIA_DESCRIPTION</Description>
       <Adjective>LOC_CIVILIZATION_SERBIA_ADJECTIVE</Adjective>
       <StartingCivilizationLevelType>CIVILIZATION_LEVEL_FULL_CIV</StartingCivilizationLevelType>
-      <RandomCityNameDepth>15</RandomCityNameDepth>
+      <RandomCityNameDepth>25</RandomCityNameDepth>
       <Ethnicity>ETHNICITY_EURO</Ethnicity>
     </Row>
   </Civilizations>
@@ -47,7 +47,23 @@
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_LESKOVAC"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_VRANJE"/>
     <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_NOVI_PAZAR"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_SMEDEREVO"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_SABAC"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_SOMBOR"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_ZAJECAR"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_PIROT"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_JAGODINA"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_SREMSKA_MITROVICA"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_POZAREVAC"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" CityName="LOC_CITY_NAME_PROKUPLJE"/>
   </CityNames>
+
+  <!-- Prefer hills start (Serbia highlands) -->
+  <StartBiasTerrains>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TerrainType="TERRAIN_GRASS_HILLS" Tier="3"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TerrainType="TERRAIN_PLAINS_HILLS" Tier="3"/>
+    <Row CivilizationType="CIVILIZATION_SERBIA" TerrainType="TERRAIN_GRASS" Tier="5"/>
+  </StartBiasTerrains>
 
   <CivilizationTraits>
     <Row CivilizationType="CIVILIZATION_SERBIA" TraitType="TRAIT_CIVILIZATION_SERBIA"/>
@@ -61,6 +77,8 @@
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_MINE_PRODUCTION"/>
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_MINE_FAITH"/>
     <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_WALLS_CULTURE"/>
+    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_CASTLE_CULTURE"/>
+    <Row TraitType="TRAIT_CIVILIZATION_SERBIA" ModifierId="SERBIA_STAR_FORT_CULTURE"/>
   </TraitModifiers>
 
   <Modifiers>
@@ -71,6 +89,8 @@
     <Row ModifierId="SERBIA_MINE_PRODUCTION" ModifierType="MODIFIER_PLAYER_ADJUST_PLOT_YIELD"/>
     <Row ModifierId="SERBIA_MINE_FAITH" ModifierType="MODIFIER_PLAYER_ADJUST_PLOT_YIELD"/>
     <Row ModifierId="SERBIA_WALLS_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE"/>
+    <Row ModifierId="SERBIA_CASTLE_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE"/>
+    <Row ModifierId="SERBIA_STAR_FORT_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_YIELD_CHANGE"/>
   </Modifiers>
 
   <ModifierArguments>
@@ -91,6 +111,12 @@
     <Row ModifierId="SERBIA_WALLS_CULTURE" Name="BuildingType" Value="BUILDING_WALLS"/>
     <Row ModifierId="SERBIA_WALLS_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
     <Row ModifierId="SERBIA_WALLS_CULTURE" Name="Amount" Value="1"/>
+    <Row ModifierId="SERBIA_CASTLE_CULTURE" Name="BuildingType" Value="BUILDING_CASTLE"/>
+    <Row ModifierId="SERBIA_CASTLE_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
+    <Row ModifierId="SERBIA_CASTLE_CULTURE" Name="Amount" Value="1"/>
+    <Row ModifierId="SERBIA_STAR_FORT_CULTURE" Name="BuildingType" Value="BUILDING_STAR_FORT"/>
+    <Row ModifierId="SERBIA_STAR_FORT_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
+    <Row ModifierId="SERBIA_STAR_FORT_CULTURE" Name="Amount" Value="1"/>
   </ModifierArguments>
 
 </GameData>
