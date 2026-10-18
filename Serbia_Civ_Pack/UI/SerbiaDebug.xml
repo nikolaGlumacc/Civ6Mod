@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Context Name="SerbiaDebug" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\Base\Assets\UI\Context.xsd">
 
-  <!-- Full-screen transparent layer so this context can receive keyboard input -->
   <Box ID="InputRoot" Anchor="C,C" Size="Parent,Parent" Color="0,0,0,0" ConsumeMouse="0"/>
 
-  <!-- Visible toggle button (top-right, below the clock) -->
   <GridButton ID="BtnToggle" Size="80,36" Anchor="R,T" Offset="-16,96"
-              Style="MainButton" String="DBG" ToolTip="Serbia debug cheats - or press F8 / F12"/>
+              Style="MainButton" String="DBG" ToolTip="Serbia debug - F8 / F12"/>
 
-  <Grid ID="DebugPanel" Size="340,480" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
-    <Label ID="Title" Anchor="C,T" Offset="0,14" Style="FontFlair16"
-           String="Serbia Debug (F8 / F12)" Color="255,220,120,255"/>
-    <Stack ID="ButtonStack" Anchor="C,T" Offset="0,44" StackGrowth="Down" Padding="6">
-      <GridButton ID="BtnGold"      Size="300,34" Style="MainButton" String="+1000 Gold"/>
-      <GridButton ID="BtnFaith"     Size="300,34" Style="MainButton" String="+1000 Faith"/>
-      <GridButton ID="BtnScience"   Size="300,34" Style="MainButton" String="+500 Science"/>
-      <GridButton ID="BtnCulture"   Size="300,34" Style="MainButton" String="+500 Culture"/>
-      <GridButton ID="BtnProd"      Size="300,34" Style="MainButton" String="+500 Production (capital)"/>
-      <GridButton ID="BtnEraScore"  Size="300,34" Style="MainButton" String="+10 Era Score"/>
-      <GridButton ID="BtnBuilder"   Size="300,34" Style="MainButton" String="Spawn Builder"/>
-      <GridButton ID="BtnSettler"   Size="300,34" Style="MainButton" String="Spawn Settler"/>
-      <GridButton ID="BtnWarrior"   Size="300,34" Style="MainButton" String="Spawn Warrior"/>
-      <GridButton ID="BtnClose"     Size="300,34" Style="MainButton" String="Close"/>
+  <Grid ID="DebugPanel" Size="360,620" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
+    <Label ID="Title" Anchor="C,T" Offset="0,12" Style="FontFlair16"
+           String="Serbia Debug (F8/F12)" Color="255,220,120,255"/>
+    <Stack ID="ButtonStack" Anchor="C,T" Offset="0,40" StackGrowth="Down" Padding="5">
+      <GridButton ID="BtnGod"       Size="320,36" Style="MainButton" String="*** GOD MODE ***"/>
+      <GridButton ID="BtnReveal"    Size="320,32" Style="MainButton" String="Reveal Entire Map"/>
+      <GridButton ID="BtnTechs"     Size="320,32" Style="MainButton" String="Unlock All Techs"/>
+      <GridButton ID="BtnCivics"    Size="320,32" Style="MainButton" String="Unlock All Civics"/>
+      <GridButton ID="BtnGoldMega"  Size="320,32" Style="MainButton" String="+100000 Gold"/>
+      <GridButton ID="BtnFaithMega" Size="320,32" Style="MainButton" String="+100000 Faith"/>
+      <GridButton ID="BtnGold"      Size="320,28" Style="MainButton" String="+1000 Gold"/>
+      <GridButton ID="BtnFaith"     Size="320,28" Style="MainButton" String="+1000 Faith"/>
+      <GridButton ID="BtnScience"   Size="320,28" Style="MainButton" String="+500 Science"/>
+      <GridButton ID="BtnCulture"   Size="320,28" Style="MainButton" String="+500 Culture"/>
+      <GridButton ID="BtnProd"      Size="320,28" Style="MainButton" String="+500 Production"/>
+      <GridButton ID="BtnEraScore"  Size="320,28" Style="MainButton" String="+10 Era Score"/>
+      <GridButton ID="BtnBuilder"   Size="320,28" Style="MainButton" String="Spawn Builder"/>
+      <GridButton ID="BtnSettler"   Size="320,28" Style="MainButton" String="Spawn Settler"/>
+      <GridButton ID="BtnWarrior"   Size="320,28" Style="MainButton" String="Spawn Warrior"/>
+      <GridButton ID="BtnClose"     Size="320,32" Style="MainButton" String="Close"/>
     </Stack>
   </Grid>
 
