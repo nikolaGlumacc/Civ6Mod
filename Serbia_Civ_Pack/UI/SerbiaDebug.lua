@@ -1,5 +1,7 @@
 -- Serbia Civ Pack - debug / cheat panel
--- Open with the "DBG" button (top-right of screen). No hotkey needed.
+-- Press F8 or F12 to open/close. Also click the DBG button (top-right).
+
+include("InstanceManager")
 
 local m_Panel = nil
 local m_IsOpen = false
@@ -9,6 +11,9 @@ local function GetLocalPlayer()
 end
 
 local function TogglePanel()
+  if m_Panel == nil then
+    m_Panel = Controls.DebugPanel
+  end
   if m_Panel == nil then
     print("SerbiaDebug: panel control is nil")
     return
@@ -20,21 +25,21 @@ end
 
 function OnGold()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   Players[playerID]:GetTreasury():ChangeGoldBalance(1000)
   print("SerbiaDebug: +1000 Gold")
 end
 
 function OnFaith()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   Players[playerID]:GetReligion():ChangeFaithBalance(1000)
   print("SerbiaDebug: +1000 Faith")
 end
 
 function OnScience()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   local techs = Players[playerID]:GetTechs()
   if techs then
     techs:ChangeCurrentResearchProgress(500)
@@ -44,7 +49,7 @@ end
 
 function OnCulture()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   local culture = Players[playerID]:GetCulture()
   if culture then
     culture:ChangeCurrentCulturalProgress(500)
@@ -54,7 +59,7 @@ end
 
 function OnProd()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   local capital = Players[playerID]:GetCities():GetCapitalCity()
   if capital then
     capital:GetBuildQueue():AddProgress(500)
@@ -64,7 +69,7 @@ end
 
 function OnEraScore()
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   pcall(function()
     Game.GetEras():ChangePlayerEraScore(playerID, 10)
     print("SerbiaDebug: +10 Era Score")
@@ -73,10 +78,13 @@ end
 
 local function SpawnUnit(unitType)
   local playerID = GetLocalPlayer()
-  if playerID == -1 then return end
+  if playerID == nil or playerID < 0 then return end
   local player = Players[playerID]
   local capital = player:GetCities():GetCapitalCity()
-  if capital == nil then return end
+  if capital == nil then
+    print("SerbiaDebug: no capital - settle a city first")
+    return
+  end
   local info = GameInfo.Units[unitType]
   if info == nil then
     print("SerbiaDebug: unknown unit " .. tostring(unitType))
@@ -95,7 +103,22 @@ function OnClose()
   if m_Panel then m_Panel:SetHide(true) end
 end
 
+-- F8 or F12 to toggle
+function OnInputHandler(pInputStruct)
+  local uiMsg = pInputStruct:GetMessageType()
+  if uiMsg == KeyEvents.KeyUp then
+    local key = pInputStruct:GetKey()
+    if key == Keys.VK_F8 or key == Keys.VK_F12 then
+      TogglePanel()
+      return true
+    end
+  end
+  return false
+end
+
 function Initialize()
+  print("SerbiaDebug: Initialize() starting")
+
   m_Panel = Controls.DebugPanel
   if m_Panel == nil then
     print("SerbiaDebug: ERROR - DebugPanel control not found")
@@ -109,7 +132,7 @@ function Initialize()
     Controls.BtnToggle:SetHide(false)
     print("SerbiaDebug: DBG button registered (top-right)")
   else
-    print("SerbiaDebug: ERROR - BtnToggle not found")
+    print("SerbiaDebug: WARNING - BtnToggle not found")
   end
 
   if Controls.BtnGold then Controls.BtnGold:RegisterCallback(Mouse.eLClick, OnGold) end
@@ -123,7 +146,8 @@ function Initialize()
   if Controls.BtnWarrior then Controls.BtnWarrior:RegisterCallback(Mouse.eLClick, OnWarrior) end
   if Controls.BtnClose then Controls.BtnClose:RegisterCallback(Mouse.eLClick, OnClose) end
 
-  print("SerbiaDebug: click the DBG button (top-right) to open cheats")
+  ContextPtr:SetInputHandler(OnInputHandler, true)
+  print("SerbiaDebug: READY - press F8 or F12 to open cheats")
 end
 
 Initialize()
