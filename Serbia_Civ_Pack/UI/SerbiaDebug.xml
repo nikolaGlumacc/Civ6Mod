@@ -6,36 +6,43 @@
   <GridButton ID="BtnToggle" Size="80,36" Anchor="R,T" Offset="-16,96"
               Style="MainButton" String="DBG" ToolTip="Serbia debug - F8 / F12"/>
 
-  <Grid ID="DebugPanel" Size="380,700" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
+  <Grid ID="DebugPanel" Size="400,740" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
     <Label ID="Title" Anchor="C,T" Offset="0,10" Style="FontFlair16"
            String="Serbia Debug (F8/F12)" Color="255,220,120,255"/>
     <Stack ID="ButtonStack" Anchor="C,T" Offset="0,36" StackGrowth="Down" Padding="4">
-      <GridButton ID="BtnGod"       Size="340,34" Style="MainButton" String="*** GOD MODE ***"/>
-      <GridButton ID="BtnReveal"    Size="340,28" Style="MainButton" String="Reveal Entire Map"/>
-      <GridButton ID="BtnTechs"     Size="340,28" Style="MainButton" String="Unlock All Techs"/>
-      <GridButton ID="BtnCivics"    Size="340,28" Style="MainButton" String="Unlock All Civics"/>
-      <GridButton ID="BtnGoldMega"  Size="340,28" Style="MainButton" String="+100000 Gold"/>
-      <GridButton ID="BtnFaithMega" Size="340,28" Style="MainButton" String="+100000 Faith"/>
-      <GridButton ID="BtnGold"      Size="340,26" Style="MainButton" String="+1000 Gold"/>
-      <GridButton ID="BtnFaith"     Size="340,26" Style="MainButton" String="+1000 Faith"/>
-      <GridButton ID="BtnScience"   Size="340,26" Style="MainButton" String="+500 Science"/>
-      <GridButton ID="BtnCulture"   Size="340,26" Style="MainButton" String="+500 Culture"/>
-      <GridButton ID="BtnProd"      Size="340,26" Style="MainButton" String="+500 Production"/>
-      <GridButton ID="BtnEraScore"  Size="340,26" Style="MainButton" String="+10 Era Score"/>
+      <GridButton ID="BtnGod"       Size="360,34" Style="MainButton" String="*** GOD MODE ***"/>
+      <GridButton ID="BtnReveal"    Size="360,28" Style="MainButton" String="Reveal Entire Map"/>
+      <GridButton ID="BtnTechs"     Size="360,28" Style="MainButton" String="Unlock All Techs"/>
+      <GridButton ID="BtnCivics"    Size="360,28" Style="MainButton" String="Unlock All Civics"/>
+      <GridButton ID="BtnGoldMega"  Size="360,28" Style="MainButton" String="+100000 Gold"/>
+      <GridButton ID="BtnFaithMega" Size="360,28" Style="MainButton" String="+100000 Faith"/>
+      <GridButton ID="BtnGold"      Size="360,26" Style="MainButton" String="+1000 Gold"/>
+      <GridButton ID="BtnFaith"     Size="360,26" Style="MainButton" String="+1000 Faith"/>
+      <GridButton ID="BtnScience"   Size="360,26" Style="MainButton" String="+500 Science"/>
+      <GridButton ID="BtnCulture"   Size="360,26" Style="MainButton" String="+500 Culture"/>
+      <GridButton ID="BtnProd"      Size="360,26" Style="MainButton" String="+500 Production"/>
+      <GridButton ID="BtnEraScore"  Size="360,26" Style="MainButton" String="+10 Era Score"/>
 
-      <Label ID="UnitLabel" Anchor="C,C" Style="FontNormal14"
-             String="Unit: (press Next)" Color="200,220,255,255"/>
+      <Label ID="SearchTitle" Style="FontNormal12" String="Search units (e.g. TANK, SERBIA, BOMBER)" Color="180,200,220,255"/>
+      <Stack ID="SearchRow" StackGrowth="Right" Padding="6">
+        <Grid Size="260,30" Style="EditTextSurround">
+          <EditBox ID="UnitSearch" Size="250,24" Anchor="C,C" Style="FontNormal14" MaxLength="48"/>
+        </Grid>
+        <GridButton ID="BtnSearch" Size="90,30" Style="MainButton" String="Search"/>
+      </Stack>
+
+      <Label ID="UnitLabel" Style="FontNormal14" String="Unit: (search or Next)" Color="200,220,255,255"/>
       <Stack ID="UnitRow" StackGrowth="Right" Padding="6">
         <GridButton ID="BtnUnitPrev"  Size="100,28" Style="MainButton" String="< Prev"/>
         <GridButton ID="BtnUnitSpawn" Size="120,28" Style="MainButton" String="Spawn"/>
         <GridButton ID="BtnUnitNext"  Size="100,28" Style="MainButton" String="Next >"/>
       </Stack>
-      <GridButton ID="BtnUnitAll"   Size="340,32" Style="MainButton" String="SPAWN EVERY UNIT"/>
+      <GridButton ID="BtnUnitAll" Size="360,32" Style="MainButton" String="SPAWN ALL MATCHING UNITS"/>
 
-      <GridButton ID="BtnBuilder"   Size="340,26" Style="MainButton" String="Spawn Builder"/>
-      <GridButton ID="BtnSettler"   Size="340,26" Style="MainButton" String="Spawn Settler"/>
-      <GridButton ID="BtnWarrior"   Size="340,26" Style="MainButton" String="Spawn Warrior"/>
-      <GridButton ID="BtnClose"     Size="340,30" Style="MainButton" String="Close"/>
+      <GridButton ID="BtnBuilder" Size="360,26" Style="MainButton" String="Spawn Builder"/>
+      <GridButton ID="BtnSettler" Size="360,26" Style="MainButton" String="Spawn Settler"/>
+      <GridButton ID="BtnWarrior" Size="360,26" Style="MainButton" String="Spawn Warrior"/>
+      <GridButton ID="BtnClose"   Size="360,30" Style="MainButton" String="Close"/>
     </Stack>
   </Grid>
 
