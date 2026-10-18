@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="20">
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="21">
   <Properties>
     <Name>Serbia Civilization Pack</Name>
-    <Description>Adds Serbia featuring Josip Broz Tito, Draza Mihailovic, Slobodan Milosevic, and Stefan Dusan. Press F8 or F12 for debug cheats.</Description>
+    <Description>Serbia with Tito, Draza, Milosevic, Dusan. F8/F12 debug godmode.</Description>
     <Teaser>Serbia with four unique leaders</Teaser>
     <Authors>Nikola</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
@@ -128,7 +128,6 @@
       <File>Art/LEADER_MILOSEVIC_NEUTRAL.dds</File>
       <File>Art/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds</File>
     </ImportFiles>
-    <!-- Gameplay bridge for cheat buttons (UI cannot call GetTreasury etc.) -->
     <AddGameplayScripts id="Serbia_Cheats">
       <File>Scripts/SerbiaCheats.lua</File>
     </AddGameplayScripts>
