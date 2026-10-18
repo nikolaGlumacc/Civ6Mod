@@ -13,7 +13,6 @@
     <Row Type="ABILITY_ALEMANNIC_GUARD" Kind="KIND_ABILITY"/>
   </Types>
 
-  <!-- Tags MUST exist before TypeTags reference them -->
   <Tags>
     <Row Tag="ABILITY_PARTIZANI"       Vocabulary="ABILITY_CLASS"/>
     <Row Tag="ABILITY_CHETNIK"         Vocabulary="ABILITY_CLASS"/>
@@ -22,13 +21,10 @@
   </Tags>
 
   <TypeTags>
-    <!-- Unit combat classes -->
     <Row Type="UNIT_PARTIZANI"          Tag="CLASS_MELEE"/>
     <Row Type="UNIT_CHETNIK"            Tag="CLASS_MELEE"/>
     <Row Type="UNIT_NEVA_M"             Tag="CLASS_SIEGE"/>
     <Row Type="UNIT_ALEMANNIC_GUARD"    Tag="CLASS_HEAVY_CAVALRY"/>
-
-    <!-- Grant abilities to units -->
     <Row Type="UNIT_PARTIZANI"          Tag="ABILITY_PARTIZANI"/>
     <Row Type="UNIT_CHETNIK"            Tag="ABILITY_CHETNIK"/>
     <Row Type="UNIT_NEVA_M"             Tag="ABILITY_NEVA_M"/>
@@ -55,12 +51,8 @@
     <Row UnitType="UNIT_PARTIZANI"
          Name="LOC_UNIT_PARTIZANI_NAME"
          Description="LOC_UNIT_PARTIZANI_DESCRIPTION"
-         BaseMoves="2"
-         Cost="330"
-         Maintenance="5"
-         BaseSightRange="2"
-         Combat="75"
-         Domain="DOMAIN_LAND"
+         BaseMoves="2" Cost="330" Maintenance="5" BaseSightRange="2"
+         Combat="75" Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_MELEE"
          PrereqTech="TECH_REPLACEABLE_PARTS"
@@ -70,12 +62,8 @@
     <Row UnitType="UNIT_CHETNIK"
          Name="LOC_UNIT_CHETNIK_NAME"
          Description="LOC_UNIT_CHETNIK_DESCRIPTION"
-         BaseMoves="2"
-         Cost="230"
-         Maintenance="3"
-         BaseSightRange="2"
-         Combat="58"
-         Domain="DOMAIN_LAND"
+         BaseMoves="2" Cost="230" Maintenance="3" BaseSightRange="2"
+         Combat="58" Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_MELEE"
          PrereqTech="TECH_GUNPOWDER"
@@ -85,14 +73,8 @@
     <Row UnitType="UNIT_NEVA_M"
          Name="LOC_UNIT_NEVA_M_NAME"
          Description="LOC_UNIT_NEVA_M_DESCRIPTION"
-         BaseMoves="2"
-         Cost="450"
-         Maintenance="6"
-         BaseSightRange="2"
-         Combat="65"
-         Bombard="85"
-         Range="2"
-         AntiAirCombat="130"
+         BaseMoves="2" Cost="450" Maintenance="6" BaseSightRange="2"
+         Combat="65" Bombard="85" Range="2" AntiAirCombat="130"
          Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_SIEGE"
@@ -103,12 +85,8 @@
     <Row UnitType="UNIT_ALEMANNIC_GUARD"
          Name="LOC_UNIT_ALEMANNIC_GUARD_NAME"
          Description="LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION"
-         BaseMoves="4"
-         Cost="170"
-         Maintenance="2"
-         BaseSightRange="2"
-         Combat="50"
-         Domain="DOMAIN_LAND"
+         BaseMoves="4" Cost="170" Maintenance="2" BaseSightRange="2"
+         Combat="50" Domain="DOMAIN_LAND"
          FormationClass="FORMATION_CLASS_LAND_COMBAT"
          PromotionClass="PROMOTION_CLASS_HEAVY_CAVALRY"
          PrereqTech="TECH_STIRRUPS"
@@ -122,6 +100,12 @@
     <Row CivUniqueUnitType="UNIT_NEVA_M"          ReplacesUnitType="UNIT_ARTILLERY"/>
     <Row CivUniqueUnitType="UNIT_ALEMANNIC_GUARD" ReplacesUnitType="UNIT_KNIGHT"/>
   </UnitReplaces>
+
+  <UnitUpgrades>
+    <Row Unit="UNIT_CHETNIK" UpgradeUnit="UNIT_LINE_INFANTRY"/>
+    <Row Unit="UNIT_ALEMANNIC_GUARD" UpgradeUnit="UNIT_CUIRASSIER"/>
+    <Row Unit="UNIT_NEVA_M" UpgradeUnit="UNIT_ROCKET_ARTILLERY"/>
+  </UnitUpgrades>
 
   <Modifiers>
     <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
