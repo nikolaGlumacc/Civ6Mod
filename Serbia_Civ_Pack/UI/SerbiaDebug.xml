@@ -6,26 +6,36 @@
   <GridButton ID="BtnToggle" Size="80,36" Anchor="R,T" Offset="-16,96"
               Style="MainButton" String="DBG" ToolTip="Serbia debug - F8 / F12"/>
 
-  <Grid ID="DebugPanel" Size="360,620" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
-    <Label ID="Title" Anchor="C,T" Offset="0,12" Style="FontFlair16"
+  <Grid ID="DebugPanel" Size="380,700" Anchor="C,C" Style="SubContainer4" Hidden="1" ConsumeMouse="1">
+    <Label ID="Title" Anchor="C,T" Offset="0,10" Style="FontFlair16"
            String="Serbia Debug (F8/F12)" Color="255,220,120,255"/>
-    <Stack ID="ButtonStack" Anchor="C,T" Offset="0,40" StackGrowth="Down" Padding="5">
-      <GridButton ID="BtnGod"       Size="320,36" Style="MainButton" String="*** GOD MODE ***"/>
-      <GridButton ID="BtnReveal"    Size="320,32" Style="MainButton" String="Reveal Entire Map"/>
-      <GridButton ID="BtnTechs"     Size="320,32" Style="MainButton" String="Unlock All Techs"/>
-      <GridButton ID="BtnCivics"    Size="320,32" Style="MainButton" String="Unlock All Civics"/>
-      <GridButton ID="BtnGoldMega"  Size="320,32" Style="MainButton" String="+100000 Gold"/>
-      <GridButton ID="BtnFaithMega" Size="320,32" Style="MainButton" String="+100000 Faith"/>
-      <GridButton ID="BtnGold"      Size="320,28" Style="MainButton" String="+1000 Gold"/>
-      <GridButton ID="BtnFaith"     Size="320,28" Style="MainButton" String="+1000 Faith"/>
-      <GridButton ID="BtnScience"   Size="320,28" Style="MainButton" String="+500 Science"/>
-      <GridButton ID="BtnCulture"   Size="320,28" Style="MainButton" String="+500 Culture"/>
-      <GridButton ID="BtnProd"      Size="320,28" Style="MainButton" String="+500 Production"/>
-      <GridButton ID="BtnEraScore"  Size="320,28" Style="MainButton" String="+10 Era Score"/>
-      <GridButton ID="BtnBuilder"   Size="320,28" Style="MainButton" String="Spawn Builder"/>
-      <GridButton ID="BtnSettler"   Size="320,28" Style="MainButton" String="Spawn Settler"/>
-      <GridButton ID="BtnWarrior"   Size="320,28" Style="MainButton" String="Spawn Warrior"/>
-      <GridButton ID="BtnClose"     Size="320,32" Style="MainButton" String="Close"/>
+    <Stack ID="ButtonStack" Anchor="C,T" Offset="0,36" StackGrowth="Down" Padding="4">
+      <GridButton ID="BtnGod"       Size="340,34" Style="MainButton" String="*** GOD MODE ***"/>
+      <GridButton ID="BtnReveal"    Size="340,28" Style="MainButton" String="Reveal Entire Map"/>
+      <GridButton ID="BtnTechs"     Size="340,28" Style="MainButton" String="Unlock All Techs"/>
+      <GridButton ID="BtnCivics"    Size="340,28" Style="MainButton" String="Unlock All Civics"/>
+      <GridButton ID="BtnGoldMega"  Size="340,28" Style="MainButton" String="+100000 Gold"/>
+      <GridButton ID="BtnFaithMega" Size="340,28" Style="MainButton" String="+100000 Faith"/>
+      <GridButton ID="BtnGold"      Size="340,26" Style="MainButton" String="+1000 Gold"/>
+      <GridButton ID="BtnFaith"     Size="340,26" Style="MainButton" String="+1000 Faith"/>
+      <GridButton ID="BtnScience"   Size="340,26" Style="MainButton" String="+500 Science"/>
+      <GridButton ID="BtnCulture"   Size="340,26" Style="MainButton" String="+500 Culture"/>
+      <GridButton ID="BtnProd"      Size="340,26" Style="MainButton" String="+500 Production"/>
+      <GridButton ID="BtnEraScore"  Size="340,26" Style="MainButton" String="+10 Era Score"/>
+
+      <Label ID="UnitLabel" Anchor="C,C" Style="FontNormal14"
+             String="Unit: (press Next)" Color="200,220,255,255"/>
+      <Stack ID="UnitRow" StackGrowth="Right" Padding="6">
+        <GridButton ID="BtnUnitPrev"  Size="100,28" Style="MainButton" String="< Prev"/>
+        <GridButton ID="BtnUnitSpawn" Size="120,28" Style="MainButton" String="Spawn"/>
+        <GridButton ID="BtnUnitNext"  Size="100,28" Style="MainButton" String="Next >"/>
+      </Stack>
+      <GridButton ID="BtnUnitAll"   Size="340,32" Style="MainButton" String="SPAWN EVERY UNIT"/>
+
+      <GridButton ID="BtnBuilder"   Size="340,26" Style="MainButton" String="Spawn Builder"/>
+      <GridButton ID="BtnSettler"   Size="340,26" Style="MainButton" String="Spawn Settler"/>
+      <GridButton ID="BtnWarrior"   Size="340,26" Style="MainButton" String="Spawn Warrior"/>
+      <GridButton ID="BtnClose"     Size="340,30" Style="MainButton" String="Close"/>
     </Stack>
   </Grid>
 
