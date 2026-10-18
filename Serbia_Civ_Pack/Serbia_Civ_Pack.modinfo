@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="16">
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="17">
   <Properties>
     <Name>Serbia Civilization Pack</Name>
     <Description>Adds Serbia featuring Josip Broz Tito, Draza Mihailovic, Slobodan Milosevic, and Stefan Dusan.</Description>
@@ -128,6 +128,16 @@
       <File>Art/LEADER_MILOSEVIC_NEUTRAL.dds</File>
       <File>Art/FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds</File>
     </ImportFiles>
+    <!-- Debug cheat panel: DBG button top-right -->
+    <AddUserInterfaces id="Serbia_DebugUI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>UI/SerbiaDebug.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="Serbia_DebugLua">
+      <File>UI/SerbiaDebug.lua</File>
+    </ImportFiles>
   </InGameActions>
 
   <Files>
@@ -143,6 +153,8 @@
     <File>Core/Colours.sql</File>
     <File>Text/Localization.xml</File>
     <File>Art/Custom_Icons.xml</File>
+    <File>UI/SerbiaDebug.xml</File>
+    <File>UI/SerbiaDebug.lua</File>
     <File>Art/ICON_CIVILIZATION_STR_SERBIA_32.dds</File>
     <File>Art/ICON_CIVILIZATION_STR_SERBIA_44.dds</File>
     <File>Art/ICON_CIVILIZATION_STR_SERBIA_48.dds</File>
