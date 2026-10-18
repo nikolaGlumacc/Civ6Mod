@@ -1,28 +1,41 @@
--- Gameplay cheats. UI: ExposedMembers.SerbiaDebug.Apply(name)
+-- Gameplay cheats. UI: ExposedMembers.SerbiaDebug.Apply / SetUnitFilter / GetCurrentUnitName
 
 print("SerbiaCheats (gameplay) loaded")
 
 local m_UnitList = {}
+local m_Filtered = {}
 local m_UnitIndex = 1
+local m_Filter = ""
 
 local function BuildUnitList()
   m_UnitList = {}
   for row in GameInfo.Units() do
-    -- Skip invalid / test entries if any
     if row.UnitType and row.UnitType ~= "" then
       table.insert(m_UnitList, {
         Type = row.UnitType,
         Index = row.Index,
-        Name = row.Name or row.UnitType,
       })
     end
   end
   table.sort(m_UnitList, function(a, b) return a.Type < b.Type end)
-  m_UnitIndex = 1
-  print("SerbiaCheats: unit list built, count=" .. tostring(#m_UnitList))
+  print("SerbiaCheats: units=" .. tostring(#m_UnitList))
+end
+
+local function ApplyFilter()
+  m_Filtered = {}
+  local f = string.upper(m_Filter or "")
+  for _, u in ipairs(m_UnitList) do
+    if f == "" or string.find(string.upper(u.Type), f, 1, true) then
+      table.insert(m_Filtered, u)
+    end
+  end
+  if m_UnitIndex < 1 then m_UnitIndex = 1 end
+  if m_UnitIndex > #m_Filtered then m_UnitIndex = math.max(1, #m_Filtered) end
+  if #m_Filtered == 0 then m_UnitIndex = 0 end
 end
 
 BuildUnitList()
+ApplyFilter()
 
 local function GetPlayer()
   local id = Game.GetLocalPlayer()
@@ -30,31 +43,26 @@ local function GetPlayer()
   return id, Players[id]
 end
 
-local function GetCapitalPlot(p)
+local function GetCapitalXY(p)
   local city = p:GetCities():GetCapitalCity()
   if not city then return nil end
-  return city:GetX(), city:GetY(), city
+  return city:GetX(), city:GetY()
 end
 
 local function SpawnAt(p, unitIndex, x, y)
-  pcall(function()
-    p:GetUnits():Create(unitIndex, x, y)
-  end)
+  pcall(function() p:GetUnits():Create(unitIndex, x, y) end)
 end
 
 local function CurrentUnit()
-  if #m_UnitList == 0 then BuildUnitList() end
-  if #m_UnitList == 0 then return nil end
-  if m_UnitIndex < 1 then m_UnitIndex = 1 end
-  if m_UnitIndex > #m_UnitList then m_UnitIndex = #m_UnitList end
-  return m_UnitList[m_UnitIndex]
+  if #m_Filtered == 0 then return nil end
+  if m_UnitIndex < 1 or m_UnitIndex > #m_Filtered then return nil end
+  return m_Filtered[m_UnitIndex]
 end
 
 local function RevealMap(id)
   local vis = PlayersVisibility[id]
   if not vis then return end
-  local n = Map.GetPlotCount()
-  for i = 0, n - 1 do
+  for i = 0, Map.GetPlotCount() - 1 do
     pcall(function() vis:ChangeVisibilityCount(i, 1) end)
   end
   print("SerbiaCheats: map revealed")
@@ -69,7 +77,6 @@ local function UnlockAllTechs(p)
       elseif techs.ResearchComplete then techs:ResearchComplete(row.Index) end
     end)
   end
-  print("SerbiaCheats: all techs")
 end
 
 local function UnlockAllCivics(p)
@@ -81,7 +88,22 @@ local function UnlockAllCivics(p)
       elseif culture.CivicCompleted then culture:CivicCompleted(row.Index) end
     end)
   end
-  print("SerbiaCheats: all civics")
+end
+
+local function SetUnitFilter(str)
+  m_Filter = str or ""
+  m_UnitIndex = 1
+  ApplyFilter()
+  print("SerbiaCheats: filter='" .. m_Filter .. "' matches=" .. tostring(#m_Filtered))
+  return GetCurrentUnitName()
+end
+
+function GetCurrentUnitName()
+  local u = CurrentUnit()
+  if not u then
+    return string.format("(0/%d matches)", #m_Filtered)
+  end
+  return string.format("[%d/%d] %s", m_UnitIndex, #m_Filtered, u.Type)
 end
 
 local function Apply(cheat)
@@ -108,33 +130,24 @@ local function Apply(cheat)
     if city then city:GetBuildQueue():AddProgress(500) end
   elseif cheat == "erascore" then
     pcall(function() Game.GetEras():ChangePlayerEraScore(id, 10) end)
-
   elseif cheat == "builder" then
-    local x, y = GetCapitalPlot(p)
-    if x then
-      local info = GameInfo.Units["UNIT_BUILDER"]
-      if info then SpawnAt(p, info.Index, x, y) end
-    else print("SerbiaCheats: settle first") end
+    local x, y = GetCapitalXY(p)
+    local info = GameInfo.Units["UNIT_BUILDER"]
+    if x and info then SpawnAt(p, info.Index, x, y) else print("SerbiaCheats: settle first") end
   elseif cheat == "settler" then
-    local x, y = GetCapitalPlot(p)
-    if x then
-      local info = GameInfo.Units["UNIT_SETTLER"]
-      if info then SpawnAt(p, info.Index, x, y) end
-    else print("SerbiaCheats: settle first") end
+    local x, y = GetCapitalXY(p)
+    local info = GameInfo.Units["UNIT_SETTLER"]
+    if x and info then SpawnAt(p, info.Index, x, y) else print("SerbiaCheats: settle first") end
   elseif cheat == "warrior" then
-    local x, y = GetCapitalPlot(p)
-    if x then
-      local info = GameInfo.Units["UNIT_WARRIOR"]
-      if info then SpawnAt(p, info.Index, x, y) end
-    else print("SerbiaCheats: settle first") end
-
+    local x, y = GetCapitalXY(p)
+    local info = GameInfo.Units["UNIT_WARRIOR"]
+    if x and info then SpawnAt(p, info.Index, x, y) else print("SerbiaCheats: settle first") end
   elseif cheat == "reveal" then
     RevealMap(id)
   elseif cheat == "techs" then
     UnlockAllTechs(p)
   elseif cheat == "civics" then
     UnlockAllCivics(p)
-
   elseif cheat == "godmode" then
     p:GetTreasury():ChangeGoldBalance(999999)
     p:GetReligion():ChangeFaithBalance(999999)
@@ -150,64 +163,43 @@ local function Apply(cheat)
     RevealMap(id)
     print("SerbiaCheats: GODMODE")
 
-  -- Unit browser
   elseif cheat == "unit_next" then
-    if #m_UnitList == 0 then BuildUnitList() end
+    if #m_Filtered == 0 then return GetCurrentUnitName() end
     m_UnitIndex = m_UnitIndex + 1
-    if m_UnitIndex > #m_UnitList then m_UnitIndex = 1 end
-    local u = CurrentUnit()
-    if u then
-      print("SerbiaCheats: selected [" .. m_UnitIndex .. "/" .. #m_UnitList .. "] " .. u.Type)
-      return u.Type
-    end
+    if m_UnitIndex > #m_Filtered then m_UnitIndex = 1 end
+    return GetCurrentUnitName()
 
   elseif cheat == "unit_prev" then
-    if #m_UnitList == 0 then BuildUnitList() end
+    if #m_Filtered == 0 then return GetCurrentUnitName() end
     m_UnitIndex = m_UnitIndex - 1
-    if m_UnitIndex < 1 then m_UnitIndex = #m_UnitList end
-    local u = CurrentUnit()
-    if u then
-      print("SerbiaCheats: selected [" .. m_UnitIndex .. "/" .. #m_UnitList .. "] " .. u.Type)
-      return u.Type
-    end
+    if m_UnitIndex < 1 then m_UnitIndex = #m_Filtered end
+    return GetCurrentUnitName()
 
   elseif cheat == "unit_spawn" then
     local u = CurrentUnit()
-    local x, y = GetCapitalPlot(p)
-    if not x then
-      print("SerbiaCheats: settle a city first")
-      return nil
-    end
-    if not u then
-      print("SerbiaCheats: no unit selected")
-      return nil
-    end
+    local x, y = GetCapitalXY(p)
+    if not x then print("SerbiaCheats: settle first"); return GetCurrentUnitName() end
+    if not u then print("SerbiaCheats: no unit"); return GetCurrentUnitName() end
     SpawnAt(p, u.Index, x, y)
     print("SerbiaCheats: spawned " .. u.Type)
-    return u.Type
-
-  elseif cheat == "unit_info" then
-    local u = CurrentUnit()
-    if u then
-      print("SerbiaCheats: current " .. u.Type .. " (" .. m_UnitIndex .. "/" .. #m_UnitList .. ")")
-      return u.Type
-    end
-    return "(none)"
+    return GetCurrentUnitName()
 
   elseif cheat == "unit_all" then
-    local x, y = GetCapitalPlot(p)
-    if not x then
-      print("SerbiaCheats: settle a city first")
-      return nil
-    end
-    if #m_UnitList == 0 then BuildUnitList() end
-    local spawned = 0
-    for _, u in ipairs(m_UnitList) do
+    local x, y = GetCapitalXY(p)
+    if not x then print("SerbiaCheats: settle first"); return nil end
+    -- Spawn filtered list (or all if no filter)
+    local list = m_Filtered
+    if #list == 0 then list = m_UnitList end
+    local n = 0
+    for _, u in ipairs(list) do
       SpawnAt(p, u.Index, x, y)
-      spawned = spawned + 1
+      n = n + 1
     end
-    print("SerbiaCheats: spawned ALL units (" .. spawned .. ") at capital")
-    return tostring(spawned)
+    print("SerbiaCheats: spawned " .. n .. " units")
+    return tostring(n)
+
+  elseif cheat == "unit_all_filtered" then
+    return Apply("unit_all")
 
   else
     print("SerbiaCheats: unknown " .. tostring(cheat))
@@ -215,13 +207,8 @@ local function Apply(cheat)
   return nil
 end
 
-local function GetCurrentUnitName()
-  local u = CurrentUnit()
-  if not u then return "(none)" end
-  return string.format("[%d/%d] %s", m_UnitIndex, #m_UnitList, u.Type)
-end
-
 ExposedMembers.SerbiaDebug = ExposedMembers.SerbiaDebug or {}
 ExposedMembers.SerbiaDebug.Apply = Apply
+ExposedMembers.SerbiaDebug.SetUnitFilter = SetUnitFilter
 ExposedMembers.SerbiaDebug.GetCurrentUnitName = GetCurrentUnitName
-print("SerbiaCheats: ready, units=" .. tostring(#m_UnitList))
+print("SerbiaCheats: ready")
