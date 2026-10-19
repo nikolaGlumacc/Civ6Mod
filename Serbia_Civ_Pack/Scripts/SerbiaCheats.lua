@@ -1,4 +1,15 @@
 -- Full debug toolkit (gameplay). UI calls ExposedMembers.SerbiaDebug.*
+-- Set to false for a clean playthrough without debug hooks.
+local SERBIA_ENABLE_DEBUG = true
+
+if not SERBIA_ENABLE_DEBUG then
+  print("SerbiaCheats: disabled (SERBIA_ENABLE_DEBUG = false)")
+  ExposedMembers.SerbiaDebug = ExposedMembers.SerbiaDebug or {}
+  ExposedMembers.SerbiaDebug.Apply = function() return nil end
+  ExposedMembers.SerbiaDebug.SetUnitFilter = function() return "(debug off)" end
+  ExposedMembers.SerbiaDebug.GetCurrentUnitName = function() return "(debug off)" end
+  return
+end
 
 print("SerbiaCheats (gameplay) loaded")
 
@@ -66,7 +77,6 @@ local function SetUnitFilter(str)
   return GetCurrentUnitName()
 end
 
--- ===== REVEAL =====
 local function RevealMap(id)
   local vis = PlayersVisibility[id]
   if not vis then return end
@@ -77,13 +87,11 @@ local function RevealMap(id)
 end
 
 local function RevealResources(id)
-  -- Reveal every plot + ensure resource-seeing techs so resources show
   RevealMap(id)
   local _, p = LP()
   if p then
     local techs = p:GetTechs()
     if techs then
-      -- Common resource-revealing techs
       local resourceTechs = {
         "TECH_MINING", "TECH_BRONZE_WORKING", "TECH_IRON_WORKING",
         "TECH_ANIMAL_HUSBANDRY", "TECH_POTTERY", "TECH_IRRIGATION",
@@ -102,13 +110,10 @@ local function RevealResources(id)
       end
     end
   end
-  -- Log all resource plots
   local count = 0
   for i = 0, Map.GetPlotCount() - 1 do
     local plot = Map.GetPlotByIndex(i)
-    if plot and plot:GetResourceType() ~= -1 then
-      count = count + 1
-    end
+    if plot and plot:GetResourceType() ~= -1 then count = count + 1 end
   end
   print("SerbiaCheats: RESOURCES REVEALED (" .. count .. " resource plots on map)")
 end
@@ -148,14 +153,10 @@ end
 local function HealAllUnits(p)
   for _, unit in p:GetUnits():Members() do
     pcall(function()
-      local maxDmg = unit:GetMaxDamage and unit:GetMaxDamage() or 100
       if unit.SetDamage then unit:SetDamage(0) end
       if unit.SetMoves then unit:SetMoves(unit:GetMaxMoves()) end
     end)
-    pcall(function()
-      -- alternate API
-      unit:ChangeDamage(-1000)
-    end)
+    pcall(function() unit:ChangeDamage(-1000) end)
   end
   print("SerbiaCheats: healed + refreshed moves on all units")
 end
@@ -169,24 +170,17 @@ local function AddPopAllCities(p, amount)
 end
 
 local function GrantResources(p)
-  -- Grant large amounts of every strategic/luxury if API allows
   local res = p:GetResources()
-  if not res then
-    print("SerbiaCheats: no resource API")
-    return
-  end
+  if not res then print("SerbiaCheats: no resource API") return end
   for row in GameInfo.Resources() do
     pcall(function()
-      if res.ChangeResourceAmount then
-        res:ChangeResourceAmount(row.Index, 50)
-      end
+      if res.ChangeResourceAmount then res:ChangeResourceAmount(row.Index, 50) end
     end)
   end
   print("SerbiaCheats: granted resources x50")
 end
 
 local function KillBarbs()
-  local barbID = 63 -- often barbarian player; also try GameDefines
   pcall(function()
     for i = 0, 63 do
       local pl = Players[i]
