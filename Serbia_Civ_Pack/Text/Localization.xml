@@ -18,7 +18,7 @@
     <Replace Tag="LOC_TRAIT_LEADER_BROTHERHOOD_UNITY_DESCRIPTION" Language="en_US"><Text>Industrial Zones grant +2 [ICON_Production] Production and +2 [ICON_Science] Science. Campuses grant +2 [ICON_Production] Production. Under Communism: +25% [ICON_Production] Production and +25% [ICON_Science] Science in all cities.[NEWLINE][NEWLINE]Unique Unit: Partizani (replaces Infantry).</Text></Replace>
 
     <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_NAME" Language="en_US"><Text>The Mountain Fox</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+8 [ICON_Faith] Faith in every city. May purchase units, buildings, and districts with [ICON_Faith] Faith. Holy Sites generate [ICON_Gold] Gold equal to their [ICON_Faith] Faith adjacency.[NEWLINE][NEWLINE]Unique Unit: Chetnik (replaces Musketman).</Text></Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_MOUNTAIN_FOX_DESCRIPTION" Language="en_US"><Text>+8 [ICON_Faith] Faith in every city. May purchase units, buildings, and districts with [ICON_Faith] Faith. Generate [ICON_Gold] Gold equal to your total [ICON_Faith] Faith output.[NEWLINE][NEWLINE]Unique Unit: Chetnik (replaces Musketman).</Text></Replace>
 
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_NAME" Language="en_US"><Text>Rally of the People</Text></Replace>
     <Replace Tag="LOC_TRAIT_LEADER_RALLY_OF_THE_PEOPLE_DESCRIPTION" Language="en_US"><Text>+2 [ICON_Culture] Culture and +10 Loyalty in all cities. War Weariness reduced by 50%. All units gain +10 Combat Strength.[NEWLINE][NEWLINE]Unique Unit: Neva-M (replaces Artillery).</Text></Replace>
