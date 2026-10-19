@@ -2,7 +2,7 @@
 
 Adds **Serbia** with four leaders: **Josip Broz Tito**, **Draža Mihailović**, **Slobodan Milošević**, and **Stefan Dušan**.
 
-**Version 22** — polished load path (art, agendas, units, frontend colors).
+**Version 22+** — gameplay polish + custom portrait pipeline.
 
 ## Requirements
 - Civilization VI with **Rise and Fall** and **Gathering Storm**
@@ -12,10 +12,14 @@ Adds **Serbia** with four leaders: **Josip Broz Tito**, **Draža Mihailović**, 
 2. Delete any old `Serbia_Civ_Pack` folder under:
    `Documents/My Games/Sid Meier's Civilization VI (Epic)/Mods/`
 3. Copy the entire `Serbia_Civ_Pack` folder from this repo into that `Mods` folder.
-4. **Important:** If your Documents folder is on **OneDrive**, copy the mod to a local path or pause sync while updating — stale files caused most icon/load bugs.
-5. Optional leader faces: ensure `Art/LEADER_*_NEUTRAL.dds` and `Art/ICON_LEADER_*_*.dds` exist (from the face pack if you use one).
-6. Enable **Serbia Civilization Pack** in Additional Content → Mods.
-7. Start a **new** game (not an old save).
+4. **Leader portraits (required for faces):** extract the portrait DDS pack into `Serbia_Civ_Pack/Art/` **or** run:
+   ```bash
+   pip install pillow
+   python3 tools/generate_leader_portraits.py
+   ```
+   (needs ImageMagick `convert`). See `Art/PORTRAITS_README.md`.
+5. Enable **Serbia Civilization Pack** in Additional Content → Mods.
+6. Start a **new** game (not an old save).
 
 ## Features
 
@@ -36,20 +40,16 @@ Adds **Serbia** with four leaders: **Josip Broz Tito**, **Draža Mihailović**, 
 
 ### Debug panel (dev)
 - Press **F8** or **F12** in-game (or **DBG** top-right).
-- To disable for a clean playthrough, set `SERBIA_ENABLE_DEBUG = false` at the top of **both**:
-  - `UI/SerbiaDebug.lua`
-  - `Scripts/SerbiaCheats.lua`
+- To disable: set `SERBIA_ENABLE_DEBUG = false` in both `UI/SerbiaDebug.lua` and `Scripts/SerbiaCheats.lua`.
 
 ## Known limits
-- Custom **3D leader models** are not included (2D portraits + default body is normal for this pack).
-- Unique unit **3D models** reuse closest base-game unit art via Units.artdef / icons.
-- Nikola Tesla (Great Engineer) gains Electricity / Radio / Telecommunications eurekas on action.
+- Portraits are **2D** (loading screen + icons). Full 3D animated leaders need Asset Editor / BLP packs.
+- Unique unit models reuse closest base-game unit art.
 
 ## Troubleshooting
-- Leaders missing on setup screen → ensure Rise & Fall + Gathering Storm are enabled; only `Players:Expansion2_Players` is registered.
-- Pink/missing icons → re-copy `Art/` DDS files; avoid OneDrive partial sync.
-- Database errors → delete the mod folder completely, re-copy, start a **new** game.
-- Check `Documents/.../Logs/Database.log` and `Modding.log` if something fails to load.
+- Pink/missing leader faces → DDS files missing under `Art/`; run the generator or extract the portrait zip.
+- Leaders missing on setup → enable R&F + GS; domain is `Players:Expansion2_Players`.
+- Check `Logs/Database.log` and `Logs/Modding.log`.
 
 ## Version
-See `Serbia_Civ_Pack.modinfo` `version` attribute (currently **22**).
+See `Serbia_Civ_Pack.modinfo` `version` attribute.
