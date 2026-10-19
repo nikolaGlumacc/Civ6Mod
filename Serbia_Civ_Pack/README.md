@@ -28,7 +28,7 @@ Adds **Serbia** with four leaders: **Josip Broz Tito**, **Draža Mihailović**, 
 | Leader | Ability | Unique Unit |
 |--------|---------|-------------|
 | **Tito** | IZ +2 Prod/+2 Sci; Campus +2 Prod; Communism +25% Prod & Sci | **Partizani** (Infantry) |
-| **Draža** | +8 Faith/city; buy units/buildings/districts with Faith; HS Faith adjacency → Gold | **Chetnik** (Musketman) |
+| **Draža** | +8 Faith/city; buy units/buildings/districts with Faith; **Gold equal to total Faith output** | **Chetnik** (Musketman) |
 | **Milošević** | +2 Culture, +10 Loyalty, −50% war weariness, +10 CS all units | **Neva-M** (Artillery) |
 | **Dušan** | +2 Culture, +2 Loyalty | **Almanska Garda** (Knight) |
 
