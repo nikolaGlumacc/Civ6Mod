@@ -1,5 +1,15 @@
 -- Full debug panel UI
+-- Set to false for a clean playthrough (hides DBG button and F8/F12).
+local SERBIA_ENABLE_DEBUG = true
+
 print("========== SerbiaDebug.lua LOADED ==========")
+
+if not SERBIA_ENABLE_DEBUG then
+  print("SerbiaDebug: disabled (SERBIA_ENABLE_DEBUG = false)")
+  if Controls and Controls.BtnToggle then Controls.BtnToggle:SetHide(true) end
+  if Controls and Controls.DebugPanel then Controls.DebugPanel:SetHide(true) end
+  return
+end
 
 local m_IsOpen = false
 
