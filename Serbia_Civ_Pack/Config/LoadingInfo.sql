@@ -1,6 +1,8 @@
 -- Loading / selection large portraits
--- Tito/Draza/Milosevic: LEADER_*_NEUTRAL.dds from Serbia_Leader_Face_Icons.zip
--- Dusan: existing STR fallback
+-- Requires DDS in Art/ (generate with tools/generate_leader_portraits.py or extract Serbia_Leader_Portraits.zip):
+--   LEADER_TITO_NEUTRAL.dds, LEADER_DRAZA_NEUTRAL.dds, LEADER_MILOSEVIC_NEUTRAL.dds
+--   FALLBACK_NEUTRAL_LEADER_TITO/DRAZA/MILOSEVIC.dds (optional diplo)
+-- Dusan uses existing STR Serbia fallback DDS already in Art/
 
 INSERT OR REPLACE INTO LoadingInfo
     (LeaderType, ForegroundImage, BackgroundImage, PlayDawnOfManAudio)
