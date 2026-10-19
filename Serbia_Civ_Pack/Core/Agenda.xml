@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
+  <!-- KIND_AGENDA is missing on some installs; ensure it exists before Types rows -->
+  <Kinds>
+    <Row Kind="KIND_AGENDA"/>
+  </Kinds>
+
   <Types>
     <Row Type="AGENDA_TITO" Kind="KIND_AGENDA"/>
     <Row Type="AGENDA_DRAZA" Kind="KIND_AGENDA"/>
