@@ -4,10 +4,17 @@ echo ========================================
 echo  Serbia Civ Pack - Install Leader Faces
 echo ========================================
 echo.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0Run-Install.ps1"
+echo This writes portrait DDS files into the Art folder.
+echo.
+python "%~dp0apply_portraits_full.py"
 if errorlevel 1 (
-  echo Failed. You can also run: python apply_portraits.py
-  echo after portrait_data is present.
+  echo Python failed - trying py launcher...
+  py "%~dp0apply_portraits_full.py"
+)
+if errorlevel 1 (
+  echo.
+  echo Still failed. Install Python from python.org, then double-click this again.
+  echo Or extract Serbia_Leader_Portraits_READY.zip into the Art folder.
 )
 echo.
 pause
