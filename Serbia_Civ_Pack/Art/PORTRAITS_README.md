@@ -1,38 +1,25 @@
-# Custom leader portraits
+# Leader portraits — install (easy)
 
-## What you need in this folder (`Art/`)
+## Option A (easiest)
+1. Download **Serbia_Leader_Portraits_READY.zip** (from the chat / releases).
+2. Open your mod folder:
+   `Documents\\My Games\\Sid Meier's Civilization VI (Epic)\\Mods\\Serbia_Civ_Pack\\Art`
+3. **Extract the zip here** (so you see files like `LEADER_TITO_NEUTRAL.dds` inside `Art`).
+4. Fully quit Civ 6.
+5. Start a **new** game.
 
-| Leader | Loading portrait | Icons |
-|--------|------------------|-------|
-| Tito | `LEADER_TITO_NEUTRAL.dds` | `ICON_LEADER_TITO_32/45/50/55/64/80/256.dds` |
-| Draza | `LEADER_DRAZA_NEUTRAL.dds` | `ICON_LEADER_DRAZA_*.dds` |
-| Milosevic | `LEADER_MILOSEVIC_NEUTRAL.dds` | `ICON_LEADER_MILOSEVIC_*.dds` |
-| Dusan | `FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC.dds` (already present) | `ICON_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_*.dds` (already present) |
+## Option B (from this repo)
+1. Install Python from https://www.python.org (check **Add to PATH**).
+2. Double-click `tools\\INSTALL_PORTRAITS.bat`
+3. Wait until it says DONE.
+4. Quit Civ 6, start a **new** game.
 
-Optional diplo names (same image as neutral):
-- `FALLBACK_NEUTRAL_LEADER_TITO.dds`
-- `FALLBACK_NEUTRAL_LEADER_DRAZA.dds`
-- `FALLBACK_NEUTRAL_LEADER_MILOSEVIC.dds`
+## Files that should appear in Art/
+- `LEADER_TITO_NEUTRAL.dds`
+- `LEADER_DRAZA_NEUTRAL.dds`
+- `LEADER_MILOSEVIC_NEUTRAL.dds`
+- `ICON_LEADER_TITO_*.dds` (32,45,50,55,64,80,256)
+- `ICON_LEADER_DRAZA_*.dds`
+- `ICON_LEADER_MILOSEVIC_*.dds`
 
-## Source PNGs (already in repo)
-- `FALLBACK_NEUTRAL_TITO.png`
-- `FALLBACK_NEUTRAL_DRAZA.png`
-- `FALLBACK_NEUTRAL_MILOSEVIC.png`
-
-## Generate DDS (recommended)
-
-From the `Serbia_Civ_Pack` folder:
-
-```bash
-pip install pillow
-# also install ImageMagick so `convert` is on PATH
-python3 tools/generate_leader_portraits.py
-```
-
-Or extract the pre-built pack `Serbia_Leader_Portraits.zip` into this `Art/` folder (overwrite).
-
-## After adding DDS
-1. Quit Civ 6 fully
-2. Refresh the mod folder
-3. Start a **new** game
-4. Confirm portraits on the leader select / loading screen
+Dusan already has icons/portraits in this folder.
