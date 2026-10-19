@@ -102,57 +102,59 @@
   </UnitReplaces>
 
   <UnitUpgrades>
+    <Row Unit="UNIT_PARTIZANI" UpgradeUnit="UNIT_MECHANIZED_INFANTRY"/>
     <Row Unit="UNIT_CHETNIK" UpgradeUnit="UNIT_LINE_INFANTRY"/>
     <Row Unit="UNIT_ALEMANNIC_GUARD" UpgradeUnit="UNIT_CUIRASSIER"/>
     <Row Unit="UNIT_NEVA_M" UpgradeUnit="UNIT_ROCKET_ARTILLERY"/>
   </UnitUpgrades>
 
+  <!-- Unique requirement IDs so we never collide with base-game rows -->
+  <Requirements>
+    <Row RequirementId="SERBIA_REQ_PLOT_IS_HILLS" RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
+    <Row RequirementId="SERBIA_REQ_PLOT_IS_WOODS" RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
+    <Row RequirementId="SERBIA_REQ_UNIT_IS_DEFENDING" RequirementType="REQUIREMENT_UNIT_IS_DEFENDING"/>
+    <Row RequirementId="SERBIA_REQ_OPPONENT_IS_AIR" RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
+    <Row RequirementId="SERBIA_REQ_IN_FOREIGN_TERRITORY" RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
+  </Requirements>
+
+  <RequirementArguments>
+    <Row RequirementId="SERBIA_REQ_PLOT_IS_WOODS" Name="FeatureType" Value="FEATURE_FOREST"/>
+    <Row RequirementId="SERBIA_REQ_OPPONENT_IS_AIR" Name="UnitDomain" Value="DOMAIN_AIR"/>
+  </RequirementArguments>
+
+  <RequirementSets>
+    <Row RequirementSetId="SERBIA_REQSET_PLOT_IS_HILLS" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="SERBIA_REQSET_PLOT_IS_WOODS" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="SERBIA_REQSET_DEFENDING_HILLS" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="SERBIA_REQSET_OPPONENT_IS_AIR" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="SERBIA_REQSET_IN_FOREIGN_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+  </RequirementSets>
+
+  <RequirementSetRequirements>
+    <Row RequirementSetId="SERBIA_REQSET_PLOT_IS_HILLS" RequirementId="SERBIA_REQ_PLOT_IS_HILLS"/>
+    <Row RequirementSetId="SERBIA_REQSET_PLOT_IS_WOODS" RequirementId="SERBIA_REQ_PLOT_IS_WOODS"/>
+    <Row RequirementSetId="SERBIA_REQSET_DEFENDING_HILLS" RequirementId="SERBIA_REQ_PLOT_IS_HILLS"/>
+    <Row RequirementSetId="SERBIA_REQSET_DEFENDING_HILLS" RequirementId="SERBIA_REQ_UNIT_IS_DEFENDING"/>
+    <Row RequirementSetId="SERBIA_REQSET_OPPONENT_IS_AIR" RequirementId="SERBIA_REQ_OPPONENT_IS_AIR"/>
+    <Row RequirementSetId="SERBIA_REQSET_IN_FOREIGN_TERRITORY" RequirementId="SERBIA_REQ_IN_FOREIGN_TERRITORY"/>
+  </RequirementSetRequirements>
+
   <Modifiers>
-    <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
-    <Row ModifierId="PARTIZANI_WOODS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_PLOT_IS_WOODS" Permanent="true"/>
-    <Row ModifierId="CHETNIK_HILLS_MOVE"     ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT" SubjectRequirementSetId="REQSET_PLOT_IS_HILLS" Permanent="true"/>
-    <Row ModifierId="CHETNIK_DEFEND_HILLS"   ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_DEFENDING_HILLS" Permanent="true"/>
-    <Row ModifierId="NEVA_M_VS_PLANES"       ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_OPPONENT_IS_AIR" Permanent="true"/>
-    <Row ModifierId="ALEMANNIC_FOREIGN_CS"  ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="REQSET_IN_FOREIGN_TERRITORY" Permanent="true"/>
+    <Row ModifierId="PARTIZANI_HILLS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="SERBIA_REQSET_PLOT_IS_HILLS" Permanent="true"/>
+    <Row ModifierId="PARTIZANI_WOODS_COMBAT" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="SERBIA_REQSET_PLOT_IS_WOODS" Permanent="true"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE" ModifierType="MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT" SubjectRequirementSetId="SERBIA_REQSET_PLOT_IS_HILLS" Permanent="true"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="SERBIA_REQSET_DEFENDING_HILLS" Permanent="true"/>
+    <Row ModifierId="NEVA_M_VS_PLANES" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="SERBIA_REQSET_OPPONENT_IS_AIR" Permanent="true"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS" ModifierType="MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH" SubjectRequirementSetId="SERBIA_REQSET_IN_FOREIGN_TERRITORY" Permanent="true"/>
   </Modifiers>
 
   <ModifierArguments>
     <Row ModifierId="PARTIZANI_HILLS_COMBAT" Name="Amount" Value="7"/>
     <Row ModifierId="PARTIZANI_WOODS_COMBAT" Name="Amount" Value="7"/>
-    <Row ModifierId="CHETNIK_HILLS_MOVE"     Name="Amount" Value="2"/>
-    <Row ModifierId="CHETNIK_DEFEND_HILLS"   Name="Amount" Value="10"/>
-    <Row ModifierId="NEVA_M_VS_PLANES"       Name="Amount" Value="50"/>
-    <Row ModifierId="ALEMANNIC_FOREIGN_CS"  Name="Amount" Value="7"/>
+    <Row ModifierId="CHETNIK_HILLS_MOVE" Name="Amount" Value="2"/>
+    <Row ModifierId="CHETNIK_DEFEND_HILLS" Name="Amount" Value="10"/>
+    <Row ModifierId="NEVA_M_VS_PLANES" Name="Amount" Value="50"/>
+    <Row ModifierId="ALEMANNIC_FOREIGN_CS" Name="Amount" Value="7"/>
   </ModifierArguments>
-
-  <RequirementSets>
-    <Row RequirementSetId="REQSET_PLOT_IS_HILLS"        RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-    <Row RequirementSetId="REQSET_PLOT_IS_WOODS"        RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-    <Row RequirementSetId="REQSET_OPPONENT_IS_AIR"      RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-    <Row RequirementSetId="REQSET_IN_FOREIGN_TERRITORY" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
-  </RequirementSets>
-
-  <RequirementSetRequirements>
-    <Row RequirementSetId="REQSET_PLOT_IS_HILLS"        RequirementId="REQ_PLOT_IS_HILLS"/>
-    <Row RequirementSetId="REQSET_PLOT_IS_WOODS"        RequirementId="REQ_PLOT_IS_WOODS"/>
-    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementId="REQ_PLOT_IS_HILLS"/>
-    <Row RequirementSetId="REQSET_DEFENDING_HILLS"      RequirementId="REQ_UNIT_IS_DEFENDING"/>
-    <Row RequirementSetId="REQSET_OPPONENT_IS_AIR"      RequirementId="REQ_OPPONENT_IS_AIR_UNIT"/>
-    <Row RequirementSetId="REQSET_IN_FOREIGN_TERRITORY" RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"/>
-  </RequirementSetRequirements>
-
-  <Requirements>
-    <Row RequirementId="REQ_PLOT_IS_HILLS"             RequirementType="REQUIREMENT_PLOT_IS_HILLS"/>
-    <Row RequirementId="REQ_PLOT_IS_WOODS"             RequirementType="REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES"/>
-    <Row RequirementId="REQ_UNIT_IS_DEFENDING"         RequirementType="REQUIREMENT_UNIT_IS_DEFENDING"/>
-    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT"      RequirementType="REQUIREMENT_OPPONENT_UNIT_DOMAIN_MATCHES"/>
-    <Row RequirementId="REQ_UNIT_IN_FOREIGN_TERRITORY"  RequirementType="REQUIREMENT_UNIT_IN_ENEMY_TERRITORY"/>
-  </Requirements>
-
-  <RequirementArguments>
-    <Row RequirementId="REQ_PLOT_IS_WOODS"        Name="FeatureType" Value="FEATURE_FOREST"/>
-    <Row RequirementId="REQ_OPPONENT_IS_AIR_UNIT" Name="UnitDomain"  Value="DOMAIN_AIR"/>
-  </RequirementArguments>
 
 </GameData>
