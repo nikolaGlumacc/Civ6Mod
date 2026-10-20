@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <!-- Yugoslavia -->
+    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US">
+      <Text>Yugoslavia</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US">
+      <Text>A South Slavic state forged after the Great War. In this ruleset you can play as Yugoslavia even in a 1936-style start.</Text>
+    </Replace>
+    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_ADJECTIVE" Language="en_US">
+      <Text>Yugoslav</Text>
+    </Replace>
+
+    <Replace Tag="LOC_LEADER_WW2_TITO_NAME" Language="en_US">
+      <Text>Josip Broz Tito</Text>
+    </Replace>
+
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US">
+      <Text>Brotherhood and Unity</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US">
+      <Text>+15% Production toward military units.</Text>
+    </Replace>
+
+    <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_NAME" Language="en_US">
+      <Text>Partisan Leader</Text>
+    </Replace>
+    <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_DESCRIPTION" Language="en_US">
+      <Text>Placeholder leader trait for the WW2 Overhaul ruleset.</Text>
+    </Replace>
+
+    <!-- City names -->
+    <Replace Tag="LOC_CITY_NAME_BELGRADE" Language="en_US">
+      <Text>Belgrade</Text>
+    </Replace>
+    <Replace Tag="LOC_CITY_NAME_ZAGREB" Language="en_US">
+      <Text>Zagreb</Text>
+    </Replace>
+    <Replace Tag="LOC_CITY_NAME_SARAJEVO" Language="en_US">
+      <Text>Sarajevo</Text>
+    </Replace>
+    <Replace Tag="LOC_CITY_NAME_SKOPJE" Language="en_US">
+      <Text>Skopje</Text>
+    </Replace>
+    <Replace Tag="LOC_CITY_NAME_LJUBLJANA" Language="en_US">
+      <Text>Ljubljana</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>

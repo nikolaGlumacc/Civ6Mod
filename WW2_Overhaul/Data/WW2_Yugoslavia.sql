@@ -1,0 +1,67 @@
+-- Sample custom civilization: Yugoslavia (example of a country that can be chosen even if "it does not exist" in pure 1936 historical sense for some starts)
+-- Simple but fully playable placeholder. Expand later with unique units/buildings.
+
+-- Civilization
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('CIVILIZATION_WW2_YUGOSLAVIA', 'KIND_CIVILIZATION');
+
+INSERT OR IGNORE INTO Civilizations (
+  CivilizationType, Name, Description, Adjective,
+  StartingCivilizationLevelType, RandomCityNameDepth, Ethnicity
+) VALUES (
+  'CIVILIZATION_WW2_YUGOSLAVIA',
+  'LOC_CIVILIZATION_WW2_YUGOSLAVIA_NAME',
+  'LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION',
+  'LOC_CIVILIZATION_WW2_YUGOSLAVIA_ADJECTIVE',
+  'CIVILIZATION_LEVEL_FULL_CIV',
+  10,
+  'ETHNICITY_EURO'
+);
+
+-- Leader (simple placeholder leader)
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('LEADER_WW2_TITO', 'KIND_LEADER');
+
+INSERT OR IGNORE INTO Leaders (LeaderType, Name, InheritFrom, SceneLayers) VALUES
+('LEADER_WW2_TITO', 'LOC_LEADER_WW2_TITO_NAME', 'LEADER_DEFAULT', 4);
+
+INSERT OR IGNORE INTO CivilizationLeaders (CivilizationType, LeaderType, CapitalName) VALUES
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LEADER_WW2_TITO', 'LOC_CITY_NAME_BELGRADE');
+
+-- Basic trait so the civ is not empty
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('TRAIT_CIVILIZATION_WW2_YUGOSLAVIA', 'KIND_TRAIT');
+
+INSERT OR IGNORE INTO Traits (TraitType, Name, Description) VALUES
+('TRAIT_CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_NAME', 'LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION');
+
+INSERT OR IGNORE INTO CivilizationTraits (CivilizationType, TraitType) VALUES
+('CIVILIZATION_WW2_YUGOSLAVIA', 'TRAIT_CIVILIZATION_WW2_YUGOSLAVIA');
+
+-- Leader trait
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('TRAIT_LEADER_WW2_TITO', 'KIND_TRAIT');
+
+INSERT OR IGNORE INTO Traits (TraitType, Name, Description) VALUES
+('TRAIT_LEADER_WW2_TITO', 'LOC_TRAIT_LEADER_WW2_TITO_NAME', 'LOC_TRAIT_LEADER_WW2_TITO_DESCRIPTION');
+
+INSERT OR IGNORE INTO LeaderTraits (LeaderType, TraitType) VALUES
+('LEADER_WW2_TITO', 'TRAIT_LEADER_WW2_TITO');
+
+-- Simple bonus: +15% Production toward military units (fits the WW2 theme)
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_YUGOSLAVIA_MILITARY_PROD', 'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION');
+
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_YUGOSLAVIA_MILITARY_PROD', 'Amount', '15');
+
+INSERT OR IGNORE INTO TraitModifiers (TraitType, ModifierId) VALUES
+('TRAIT_CIVILIZATION_WW2_YUGOSLAVIA', 'WW2_YUGOSLAVIA_MILITARY_PROD');
+
+-- City names (minimal set)
+INSERT OR IGNORE INTO CityNames (CivilizationType, CityName) VALUES
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_CITY_NAME_BELGRADE'),
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_CITY_NAME_ZAGREB'),
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_CITY_NAME_SARAJEVO'),
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_CITY_NAME_SKOPJE'),
+('CIVILIZATION_WW2_YUGOSLAVIA', 'LOC_CITY_NAME_LJUBLJANA');

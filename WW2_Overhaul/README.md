@@ -1,23 +1,41 @@
-# WW2 Overhaul (Civ 6)
+# WW2 Overhaul (Ruleset) for Civilization VI
 
-Goal: Make Civilization VI feel more like a simplified HOI4 / WW2-focused game.
-Wars and industry first. Domination is the only victory. Long wars are expected (loyalty disabled).
+A WW2 / HOI4-style overhaul built **on top of** the official Rise and Fall + Gathering Storm ruleset.
 
-## What is implemented so far
+You keep **everything** from Rise & Fall and Gathering Storm:
+- Dark Ages & Golden Ages
+- Governors
+- Emergencies
+- Loyalty system (but pressure is disabled so long wars stay playable)
+- All other RF/GS features
 
-### Core rules
-- **Only Domination victory** is enabled. Culture, Science, Religion, Diplomatic, Score victories are disabled.
-- **Loyalty system heavily reduced / effectively disabled** for long WW2-style wars (cities do not flip easily from loyalty pressure).
-- **City combat** made much more dangerous: units deal significantly more damage to cities / districts.
-- **Navy and Air** units receive strength and combat bonuses.
-- **Unit promotions** and **Corps / Army formations** heavily buffed so a 2-star promoted unit (or formed unit) is roughly as strong as two regular units.
-- **Oil maintenance concept** prepared (units that need oil will check for it; full Lua logic still TODO).
-- Units do **not** have increased production costs.
+## Features
 
-### Start options (planned / partial)
-- Game is intended to start in **1936** (Industrial/Modern era focus).
-- Free choice of civilization / leader, including fictional or non-existing countries (Yugoslavia example, etc.).
-- Custom starting locations support planned.
+| Feature | Status |
+|---------|--------|
+| Only Domination victory | Done |
+| Loyalty pressure disabled (long wars) | Done |
+| Units deal much more damage to cities | Done |
+| Navy & Air stronger | Done |
+| Promotions + Corps/Army heavily buffed | Done |
+| No extra unit production cost | Done |
+| Oil maintenance (no oil = combat/movement penalty) | Done (Lua) |
+| Stronger Industrial / military production | Done |
+| 1936-style start (era + tech/civic grants) | Done (Lua) |
+| Free civ/leader choice | Supported (works with Unrestricted Leaders style mods) |
+| Sample custom nation: Yugoslavia | Done |
+| Full Rise & Fall + Gathering Storm systems | Required & preserved |
+
+## Requirements
+- Rise and Fall
+- Gathering Storm
+
+## How to use
+1. Enable this mod.
+2. Make sure you are using the **Expansion 2** ruleset (Gathering Storm).
+3. Start a new game. The start logic will push you into a late Industrial / early Modern feel (1936 style).
+4. You can pick any civilization/leader. For maximum freedom use an "Unrestricted Leaders" type mod together with this one.
+5. Yugoslavia is available as a playable civilization.
 
 ## Folder structure
 ```
@@ -30,22 +48,26 @@ WW2_Overhaul/
 │   ├── WW2_Combat.sql
 │   ├── WW2_Promotions_Formations.sql
 │   ├── WW2_Resources.sql
-│   └── WW2_Start.sql          (placeholders for 1936 + free civ select)
-└── Lua/                     (future oil maintenance, start logic, etc.)
+│   ├── WW2_Production.sql
+│   ├── WW2_Start.sql
+│   └── WW2_Yugoslavia.sql
+├── Lua/
+│   ├── WW2_OilMaintenance.lua
+│   └── WW2_StartLogic.lua
+└── Text/
+    └── WW2_Text.xml
 ```
 
-## How to use
-1. Copy the `WW2_Overhaul` folder into your Civ 6 Mods directory (or load via ModBuddy / Steam).
-2. Enable **only** this mod (or carefully with compatible ones).
-3. Start a new game. Domination is the only win condition.
+## Design notes
+- Loyalty pressure is turned off so multi-year wars do not cause constant city flipping (WW2 theme).
+- Dark Ages / Golden Ages still work normally — they are part of the RF ruleset we require.
+- Oil: modern land/sea/air units that historically need oil get a combat + movement penalty if the player has 0 Oil.
+- 1936 start is approximated by granting a large set of Industrial/Modern techs and civics at game start and setting a late starting era.
 
-## Next steps (TODO)
-- [ ] Proper 1936 start year + era unlocks
-- [ ] Free civilization / leader selection UI (including custom nations like Yugoslavia)
-- [ ] Full oil maintenance Lua (units without oil get combat/movement penalties)
-- [ ] More WW2 unit lines and promotions
-- [ ] War weariness tweaks that do not use loyalty
-- [ ] Stronger Industrial Zone / military production focus
-- [ ] Custom governments / policies for Total War
+## Future ideas
+- More historical WW2 units and promotions
+- Simple national focuses / war economy policies
+- Better Europe 1936 map support
+- More custom nations (Czechoslovakia, etc.)
 
-Do not edit the other folders in this repository (Serbia_Civ_Pack, templates, etc.). This is a separate project.
+Do not edit the other folders in this repository. This is a separate project.
