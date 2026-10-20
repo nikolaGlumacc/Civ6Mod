@@ -6,8 +6,21 @@ You keep **everything** from Rise & Fall and Gathering Storm:
 - Dark Ages & Golden Ages
 - Governors
 - Emergencies
-- Loyalty system (but pressure is disabled so long wars stay playable)
+- Loyalty system (pressure disabled so long wars stay playable)
 - All other RF/GS features
+
+## Compatibility with Serbia Civilization Pack
+
+**Fully supported.**  
+Enable both mods together:
+
+1. **Serbia Civilization Pack** (your mod with Tito, Draza, Milosevic, Dusan)
+2. **WW2 Overhaul**
+
+Load order recommendation: Serbia first, then WW2 Overhaul.  
+Your Serbian leaders work normally under the WW2 rules (Domination only, stronger combat, oil maintenance, 1936-style start, etc.).
+
+The sample "Yugoslavia" nation in this mod is just an extra optional civ and does not conflict with your Serbia pack.
 
 ## Features
 
@@ -19,23 +32,54 @@ You keep **everything** from Rise & Fall and Gathering Storm:
 | Navy & Air stronger | Done |
 | Promotions + Corps/Army heavily buffed | Done |
 | No extra unit production cost | Done |
-| Oil maintenance (no oil = combat/movement penalty) | Done (Lua) |
+| Oil maintenance (no oil = movement penalty) | Done (Lua) |
 | Stronger Industrial / military production | Done |
 | 1936-style start (era + tech/civic grants) | Done (Lua) |
-| Free civ/leader choice | Supported (works with Unrestricted Leaders style mods) |
-| Sample custom nation: Yugoslavia | Done |
+| Free civ/leader choice | Supported |
+| Sample extra nation: Yugoslavia | Done |
 | Full Rise & Fall + Gathering Storm systems | Required & preserved |
+| Works with Serbia Civ Pack | Done |
 
 ## Requirements
 - Rise and Fall
 - Gathering Storm
 
 ## How to use
-1. Enable this mod.
-2. Make sure you are using the **Expansion 2** ruleset (Gathering Storm).
-3. Start a new game. The start logic will push you into a late Industrial / early Modern feel (1936 style).
-4. You can pick any civilization/leader. For maximum freedom use an "Unrestricted Leaders" type mod together with this one.
-5. Yugoslavia is available as a playable civilization.
+1. Enable **Serbia Civilization Pack** (optional but recommended)
+2. Enable **WW2 Overhaul**
+3. Make sure you are using the **Expansion 2** ruleset (Gathering Storm)
+4. Start a new game. The start logic pushes everyone into a late-Industrial / early-Modern feel
+5. Play as any of your Serbian leaders or any other civ
+
+## What else I would add (recommended next features)
+
+These fit the HOI4 / WW2 feel while staying realistic for Civ 6:
+
+1. **War Economy / National Focus style policies**  
+   Simple military, industrial, and research "focus" cards that give big temporary bonuses (like HOI4 focuses but much lighter).
+
+2. **Better strategic resource loop**  
+   Oil, Rubber, Aluminium, Steel matter more. Cities can build synthetic plants or trade more aggressively.
+
+3. **Front-line / supply feel**  
+   Units far from your territory or from a supply depot heal slower and fight worse (simple distance or "out of supply" modifier).
+
+4. **More WW2 unit lines**  
+   Distinct light/medium/heavy tanks, better artillery, dedicated anti-tank, more plane types, troop transports.
+
+5. **War Weariness that does not use loyalty**  
+   Long wars raise amenity penalties or reduce production in non-core cities instead of flipping cities.
+
+6. **Simple ideology / government lean**  
+   Democracy / Fascism / Communism give different military and production bonuses (already partially in RF/GS, can be tuned).
+
+7. **Custom Europe 1936 map support**  
+   True-start locations for major powers + your Serbian leaders.
+
+8. **Leader-specific WW2 flavor for Serbia**  
+   Extra bonuses or agendas for Tito / Draza / etc. when the WW2 ruleset is active (optional).
+
+Tell me which of these you want next and I will implement them.
 
 ## Folder structure
 ```
@@ -58,16 +102,4 @@ WW2_Overhaul/
     └── WW2_Text.xml
 ```
 
-## Design notes
-- Loyalty pressure is turned off so multi-year wars do not cause constant city flipping (WW2 theme).
-- Dark Ages / Golden Ages still work normally — they are part of the RF ruleset we require.
-- Oil: modern land/sea/air units that historically need oil get a combat + movement penalty if the player has 0 Oil.
-- 1936 start is approximated by granting a large set of Industrial/Modern techs and civics at game start and setting a late starting era.
-
-## Future ideas
-- More historical WW2 units and promotions
-- Simple national focuses / war economy policies
-- Better Europe 1936 map support
-- More custom nations (Czechoslovakia, etc.)
-
-Do not edit the other folders in this repository. This is a separate project.
+Do not edit the other folders in this repository. This is a separate project that is designed to run alongside Serbia_Civ_Pack.

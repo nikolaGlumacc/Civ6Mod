@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="0.2">
+<Mod id="WW2_Overhaul" version="0.3">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>1936 start • Domination only • Stronger wars • HOI4-style • Full Rise &amp; Fall features</Teaser>
-    <Description>Full WW2-focused overhaul built on top of Rise and Fall + Gathering Storm ruleset. Keeps Dark Ages, Golden Ages, Governors, Emergencies, etc. Only Domination victory. Loyalty pressure disabled for long wars. Stronger city damage, navy, air, promotions and formations. Oil maintenance. Free civ/leader choice supported. Sample Yugoslavia included. 1936-style start.</Description>
+    <Teaser>1936 start • Domination only • Stronger wars • HOI4-style • Full Rise &amp; Fall features • Works with Serbia Civ Pack</Teaser>
+    <Description>Full WW2-focused overhaul built on top of Rise and Fall + Gathering Storm. Keeps Dark Ages, Golden Ages, Governors, Emergencies, etc. Only Domination victory. Loyalty pressure disabled for long wars. Stronger city damage, navy, air, promotions and formations. Oil maintenance. 1936-style start. Fully compatible with the Serbia Civilization Pack (Tito, Draza, Milosevic, Dusan).</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
@@ -13,6 +13,11 @@
     <Dependency id="1B28771A-C749-434B-9950-D51BDF21C6EA" title="Expansion: Rise and Fall"/>
     <Dependency id="4873eb62-8ccc-4574-b784-dda4558df0c1" title="Expansion: Gathering Storm"/>
   </Dependencies>
+
+  <!-- Soft reference so the game knows Serbia pack is supported -->
+  <References>
+    <Reference id="33b5f544-eb68-48d3-9919-0a827e907785" title="Serbia Civilization Pack"/>
+  </References>
 
   <ActionCriteria>
     <Criteria id="Always">
@@ -35,6 +40,7 @@
           <Item>Data/WW2_Resources.sql</Item>
           <Item>Data/WW2_Production.sql</Item>
           <Item>Data/WW2_Start.sql</Item>
+          <!-- Yugoslavia sample kept as optional extra nation -->
           <Item>Data/WW2_Yugoslavia.sql</Item>
         </UpdateDatabase>
         <AddGameplayScripts>
