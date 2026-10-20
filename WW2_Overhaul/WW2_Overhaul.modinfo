@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="1.1">
+<Mod id="WW2_Overhaul" version="1.2">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>v1.1 • Europe setup • Yugoslavia priority • Join Germany/USSR • Army Doctrine • Stubbornness</Teaser>
-    <Description>WW2 ruleset for Europe maps. Play Germany, Britain, France, Spain, Russia, Poland, Hungary, Yugoslavia (priority). Minors can Join Germany or USSR via policies. Domination only, selectable Army Doctrine, National Stubbornness, Supply Depots, Oil, 1936 start. Works with Serbia Civ Pack.</Description>
+    <Teaser>v1.2 • Deep Industrial start • Hard science • Join = land yes, army no</Teaser>
+    <Description>Techs unlocked through mid-Industrial/early Modern. Science heavily slowed (nukes stay late). Join Germany/USSR: keep your territory and build, but cannot raise an independent army. AI join ≈ conquered until released. Europe + Yugoslavia focus. Works with Serbia pack and Frontier Pass.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
@@ -28,6 +28,7 @@
           <Item>Data/WW2_Promotions_Formations.sql</Item>
           <Item>Data/WW2_Resources.sql</Item>
           <Item>Data/WW2_Production.sql</Item>
+          <Item>Data/WW2_Science.sql</Item>
           <Item>Data/WW2_Start.sql</Item>
           <Item>Data/WW2_Yugoslavia.sql</Item>
           <Item>Data/WW2_Policies.sql</Item>
