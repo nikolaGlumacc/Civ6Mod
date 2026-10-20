@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="WW2_Overhaul" version="0.1">
+  <Properties>
+    <Name>WW2 Overhaul</Name>
+    <Teaser>1936 start, Domination only, stronger wars, HOI4-style focus</Teaser>
+    <Description>Makes Civ 6 more WW2 / war focused. Only Domination victory. Loyalty reduced for long wars. Stronger city damage, navy, air, promotions and formations. Oil maintenance prepared. Free civ choice and 1936 start planned.</Description>
+    <Authors>nikolaGlumacc</Authors>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <!-- Add Rise and Fall / Gathering Storm if needed later -->
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="Always">
+      <AlwaysMet/>
+    </Criteria>
+  </ActionCriteria>
+  <ActionGroups>
+    <ActionGroup id="WW2_Gameplay" scope="game" criteria="Always">
+      <Actions>
+        <UpdateDatabase>
+          <Item>Data/WW2_Victories.sql</Item>
+          <Item>Data/WW2_Loyalty.sql</Item>
+          <Item>Data/WW2_Combat.sql</Item>
+          <Item>Data/WW2_Promotions_Formations.sql</Item>
+          <Item>Data/WW2_Resources.sql</Item>
+          <Item>Data/WW2_Start.sql</Item>
+        </UpdateDatabase>
+        <!-- Future Lua:
+        <AddGameplayScripts>
+          <Item>Lua/WW2_OilMaintenance.lua</Item>
+          <Item>Lua/WW2_StartLogic.lua</Item>
+        </AddGameplayScripts>
+        -->
+      </Actions>
+    </ActionGroup>
+  </ActionGroups>
+</Mod>
