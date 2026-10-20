@@ -38,7 +38,6 @@
     <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_DESCRIPTION" Language="en_US"><Text>+2 Movement, +5 CS attacking.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_NAME" Language="en_US"><Text>War of Attrition</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength.</Text></Replace>
-
     <Replace Tag="LOC_POLICY_WW2_JOIN_GERMANY_NAME" Language="en_US"><Text>Join Germany</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_JOIN_GERMANY_DESCRIPTION" Language="en_US"><Text>You keep your territory and can build on it, but you cannot raise an independent army (-100% unit Production). You are under German military authority.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_JOIN_USSR_NAME" Language="en_US"><Text>Join USSR</Text></Replace>
@@ -49,13 +48,13 @@
     <Replace Tag="LOC_POLICY_WW2_COMINTERN_DESCRIPTION" Language="en_US"><Text>Cooperate with the Soviet sphere without giving up your army. +10% Science, +15% unit Production, +5 CS.</Text></Replace>
 
     <Replace Tag="LOC_WW2_ARMY_DOCTRINE_NAME" Language="en_US"><Text>Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_DESC" Language="en_US"><Text>Global army doctrine.</Text></Replace>
+    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_DESC" Language="en_US"><Text>Global army doctrine for all combat units.</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_LIGHT_DESC" Language="en_US"><Text>+3 CS.</Text></Replace>
+    <Replace Tag="LOC_WW2_ARMY_LIGHT_DESC" Language="en_US"><Text>+3 Combat Strength.</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_MEDIUM_DESC" Language="en_US"><Text>+7 CS (default).</Text></Replace>
+    <Replace Tag="LOC_WW2_ARMY_MEDIUM_DESC" Language="en_US"><Text>+7 Combat Strength (default).</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_HEAVY_DESC" Language="en_US"><Text>+14 CS.</Text></Replace>
+    <Replace Tag="LOC_WW2_ARMY_HEAVY_DESC" Language="en_US"><Text>+14 Combat Strength.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army Doctrine</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>+3 CS.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army Doctrine</Text></Replace>
@@ -69,7 +68,10 @@
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building (regional). +8 heal, +3 CS, +3 Production.</Text></Replace>
 
     <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>HOI4-style setup: starts locked to Industrial Era, Continents / Large map defaults, deep Industrial tech, join/absorb diplomacy, army doctrines, supply, and delayed nukes. Pick Serbia or Yugoslavia leaders. For true Europe TSL use YnAMP Europe maps if you have them.</Text></Replace>
-    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era (1930s-style tech baseline).</Text></Replace>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>HOI4-style WW2: Europe map, Industrial start, Domination only, hard science, oil, supply, army doctrine, stubbornness, join/absorb diplomacy. Works with Serbia Civilization Pack.</Text></Replace>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era.</Text></Replace>
+
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Language="en_US"><Text>WW2 Europe</Text></Replace>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Europe theatre map (Atlantic to Urals, Med to Scandinavia). No world wrap. Major powers and Serbia/Yugoslavia get historical-style start positions.</Text></Replace>
   </LocalizedText>
 </GameData>

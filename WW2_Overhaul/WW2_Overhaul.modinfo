@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.0">
+<Mod id="WW2_Overhaul" version="2.1">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.0 • HOI4-style WW2 ruleset • Domination only • Industrial start • Serbia compatible</Teaser>
-    <Description>WW2 Overhaul ruleset (RF+GS): Domination-only, Industrial start, hard science, oil, supply, army doctrine, national stubbornness, join/absorb diplomacy, ideology bonuses. Compatible with Serbia Civilization Pack without redefining its leaders.</Description>
+    <Teaser>v2.1 • Europe map • Industrial start • Domination only • Serbia compatible</Teaser>
+    <Description>WW2 Overhaul ruleset with built-in Europe theatre map, Industrial start, Domination-only, hard science, oil, supply, army doctrine, stubbornness, join diplomacy. Compatible with Serbia Civilization Pack.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -25,6 +25,14 @@
     <UpdateText id="WW2_Config_Text">
       <File>Text/WW2_Text.xml</File>
     </UpdateText>
+    <AddMap id="WW2_Europe_Map">
+      <Properties>
+        <Name>LOC_MAP_WW2_EUROPE_NAME</Name>
+        <Description>LOC_MAP_WW2_EUROPE_DESCRIPTION</Description>
+        <Group>StandardMaps</Group>
+      </Properties>
+      <File>Maps/WW2_Europe.lua</File>
+    </AddMap>
   </FrontEndActions>
 
   <InGameActions>
@@ -55,6 +63,10 @@
     <UpdateText id="WW2_Gameplay_Text">
       <File>Text/WW2_Text.xml</File>
     </UpdateText>
+
+    <ImportFiles id="WW2_Map_Import">
+      <File>Maps/WW2_Europe.lua</File>
+    </ImportFiles>
 
     <AddGameplayScripts id="WW2_Gameplay_Scripts">
       <File>Lua/WW2_Config.lua</File>
@@ -89,6 +101,7 @@
     <File>Data/WW2_Stubbornness.sql</File>
     <File>Data/WW2_JoinPower.sql</File>
     <File>Data/WW2_EuropeGuide.sql</File>
+    <File>Maps/WW2_Europe.lua</File>
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>
     <File>Lua/WW2_StartLogic.lua</File>
