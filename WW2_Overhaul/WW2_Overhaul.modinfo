@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="0.4">
+<Mod id="WW2_Overhaul" version="0.5">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>1936 start • Domination only • Wildcards • Supply Stations • Light/Med/Heavy armies • Ideology • Configurable</Teaser>
-    <Description>WW2 / HOI4-style ruleset on top of Rise and Fall + Gathering Storm. Domination only. Loyalty pressure off. Stronger combat, navy, air, promotions. Oil maintenance. 1936 start. New wildcard policies (production, science, war strength, National Stubbornness). Supply Station improvement. Light / Medium / Heavy army doctrines. Ideology bonuses. Production penalty only when losing. Many options configurable in Advanced Setup. Compatible with Serbia Civ Pack.</Description>
+    <Teaser>1936 start • Domination only • Selectable Light/Med/Heavy Army • Wildcards • Supply • Ideology</Teaser>
+    <Description>WW2 / HOI4-style ruleset. Light / Medium / Heavy Army Doctrine is now a selectable option in Advanced Setup. Also includes wildcards, Supply Stations, ideology bonuses, oil maintenance, 1936 start, Domination only. Compatible with Serbia Civ Pack.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
@@ -45,6 +45,7 @@
           <Item>Lua/WW2_StartLogic.lua</Item>
           <Item>Lua/WW2_WarWeariness.lua</Item>
           <Item>Lua/WW2_Config.lua</Item>
+          <Item>Lua/WW2_ArmyDoctrine.lua</Item>
         </AddGameplayScripts>
       </Actions>
     </ActionGroup>

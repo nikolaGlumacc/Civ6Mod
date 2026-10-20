@@ -1,55 +1,32 @@
-# WW2 Overhaul (Ruleset) – v0.4
+# WW2 Overhaul (Ruleset) – v0.5
 
-WW2 / HOI4-style ruleset on top of Rise and Fall + Gathering Storm.
-Compatible with **Serbia Civilization Pack**.
+## Army Doctrine is now a selectable option
 
-## New in this version
+In **Create Game → Advanced Setup** you will find:
 
-### Wildcard Policies
-- **War Economy** – more production toward units & buildings
-- **Total Mobilization** – big unit production, small amenity cost
-- **Scientific Effort** – more science
-- **Offensive Spirit** / **Defensive Lines** – combat strength
-- **National Stubbornness** – strong defensive bonus + extra healing at home
-- **Blitz Doctrine** – movement + attack strength
-- **War of Attrition** – defensive combat focus
+**Army Doctrine**
+- Light Army   → +3 Combat Strength
+- Medium Army  → +7 Combat Strength (default)
+- Heavy Army   → +14 Combat Strength (≈ double Light)
 
-### Army Doctrines (Light / Medium / Heavy)
-Pick one Wildcard doctrine:
-- Light  = +3 CS
-- Medium = +7 CS
-- Heavy  = +14 CS (≈ 2× Light)
-Applies to combat units (attackers).
+This choice applies to **all combat units** for the whole game.
 
-### Supply
-- **Supply Station** improvement (Builders can build it)
-- **Supply Depot** city building (extra healing + production)
+The old Wildcard policy versions of Light/Medium/Heavy are still available if you want to stack or change later.
 
-### Ideology
-Clearer bonuses for Democracy / Fascism / Communism governments.
+## Everything else (unchanged)
+- Only Domination victory
+- Loyalty pressure disabled
+- Stronger city damage, navy, air, promotions
+- Oil maintenance
+- 1936-style start
+- Wildcard policies (War Economy, National Stubbornness, Blitz, etc.)
+- Supply Station (Builder) + Supply Depot (city building)
+- Ideology bonuses
+- Production pressure only when losing
+- Compatible with Serbia Civilization Pack
 
-### War Weariness
-Production pressure only applies when you are **losing** (not when you are conquering).
-
-### Configurable
-Options are prepared for the Advanced Setup menu (defaults = everything ON).
-
-## Requirements
-- Rise and Fall
-- Gathering Storm
-
-## How to play with Serbia pack
-1. Enable **Serbia Civilization Pack**
-2. Enable **WW2 Overhaul**
-3. Use Expansion 2 ruleset
-4. Start game – your Serbian leaders work normally under all WW2 rules
-
-No Serbia-specific bonuses were added (as requested).
-
-## Still planned / can be expanded
-- Full Advanced Setup UI checkboxes (Frontend parameters)
-- Stronger permanent production modifier when losing
-- More unit-line flavor (light/medium/heavy tanks etc.)
-- Distance-based supply radius from Supply Stations
-
-Tell me what you want polished next.
+## How to use
+1. Enable Serbia Civ Pack (optional)
+2. Enable WW2 Overhaul
+3. In Advanced Setup pick your Army Doctrine (Light / Medium / Heavy)
+4. Start the game
