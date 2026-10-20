@@ -57,7 +57,7 @@ VALUES
 
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_TITO',      'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DRAZA',     'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
-    ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_MILOSEVIC', 'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
+    ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_MILOSEVIC', 'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DUSAN',     'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
 
     -- Unique Units
@@ -69,8 +69,7 @@ VALUES
 -----------------------------------------------
 -- LoadingInfo (start-game leader portrait + Dawn of Man)
 -- ForegroundImage/BackgroundImage = DDS base names in Art/ (no extension).
--- Use NEUTRAL / FALLBACK portraits (typically alpha-supported DDS) so the
--- leader appears over the era background on the loading / intro screen.
+-- Use NEUTRAL / FALLBACK portraits so the leader appears on the loading screen.
 -----------------------------------------------
 
 INSERT OR REPLACE INTO LoadingInfo
