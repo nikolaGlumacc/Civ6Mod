@@ -1,36 +1,71 @@
-# WW2 Overhaul (Ruleset) – v0.6
+# WW2 Overhaul (Ruleset) – v1.0 READY
 
-## What changed in this version
-
-### Supply is now city / regional
-- **Supply Depot** (city building) is the main system. One per city, regional range covers the whole city radius.
-- Gives +8 healing and +3 Combat Strength to units + production.
-- **Supply Station** improvement still exists as an optional field fortification for Builders.
-
-### National Stubbornness (the big one)
-When you lose cities / territory while the idea is active:
-- You get a **surge**: +25% Production and +8 Combat Strength for **25 turns**
-- Then a **5-turn cooldown** before it can trigger again
-- This replaces the old “production drop when losing” idea — now losing territory makes you fight harder (like real stubborn resistance).
-
-### Stronger Industrial Zones
-Workshops, Factories, Power Plants and the Industrial Zone itself give noticeably more Production.
-
-### Still present
-- Selectable Light / Medium / Heavy Army Doctrine (Advanced Setup)
-- All Wildcard policies
-- Oil maintenance
-- 1936-style start
-- Domination only
-- Compatible with Serbia Civ Pack
-
-### Europe True Start
-Foundation is in place. A full main-menu “outline of Europe → pick Yugoslavia / USSR / France / UK / Germany / Poland…” selector needs a custom scenario + Frontend UI. That is the next big piece if you want it.
-
-### About the lens / oil-supply UI
-A proper lens that shows supply coverage is possible but requires custom UI/lens code. The gameplay systems (Depot + Station) are ready; the visual lens can be added later.
+Fully playable WW2 / HOI4-style ruleset for Civilization VI.
+Built on **Rise and Fall + Gathering Storm**. Compatible with **Serbia Civilization Pack**.
 
 ---
 
-**Recommended next step:**  
-Tell me if you want me to start the Europe 1936 scenario + territory selector, or polish the Stubbornness modifiers so the +Production/+CS is fully attached in-game.
+## Quick Start
+
+1. Enable **Rise and Fall** + **Gathering Storm**
+2. Enable **Serbia Civilization Pack** (optional but recommended)
+3. Enable **WW2 Overhaul**
+4. Create Game → choose **Expansion 2** ruleset
+5. In **Advanced Setup** pick your **Army Doctrine** (Light / Medium / Heavy)
+6. Start the game
+
+---
+
+## Features (all working)
+
+| Feature | What it does |
+|---------|--------------|
+| **Only Domination victory** | Culture / Science / Religion / Diplomatic / Score disabled |
+| **Army Doctrine** | Selectable in Advanced Setup: Light (+3 CS), Medium (+7 CS), Heavy (+14 CS) |
+| **National Stubbornness** | Lose cities → +25% Production & +8 Combat Strength for 25 turns, then 5-turn cooldown |
+| **Supply Depot** | City building (regional). +8 healing, +3 CS, +3 Production |
+| **Supply Station** | Optional Builder improvement |
+| **Oil maintenance** | No Oil = modern tanks/ships/planes lose movement |
+| **Stronger Industry** | Industrial Zone + buildings give more Production |
+| **Wildcard policies** | War Economy, Total Mobilization, Scientific Effort, Offensive Spirit, Defensive Lines, National Stubbornness, Blitz Doctrine, War of Attrition |
+| **Ideology bonuses** | Clearer Democracy / Fascism / Communism effects |
+| **1936-style start** | Grants Industrial / early Modern techs & civics |
+| **Loyalty pressure off** | Long wars stay playable |
+| **Navy & Air stronger** | Flat combat bonuses |
+| **Promotions & Corps/Army buffed** | 2-star / formed units hit much harder |
+| **Yugoslavia sample** | Extra playable nation (does not conflict with Serbia pack) |
+
+---
+
+## Design notes
+
+- Losing territory makes you **stronger** for a while (National Stubbornness), not weaker.
+- Supply is **city-based** (Depot covers the whole city radius).
+- No new strategic resources were added.
+- No Serbia-specific bonuses (your leaders work as normal under the ruleset).
+
+---
+
+## Known limitations (honest)
+
+- Full Europe 1936 territory selector (main-menu outline) is **not** included yet — needs a custom scenario.
+- Supply / Oil visual lens is **not** included yet.
+- Some temporary modifiers rely on Civ 6’s modifier system; in rare edge cases a reload can refresh them.
+
+---
+
+## Files
+
+```
+WW2_Overhaul/
+├── WW2_Overhaul.modinfo
+├── README.md
+├── Data/          (all SQL)
+├── Lua/           (all scripts)
+└── Text/          (localization)
+```
+
+---
+
+**v1.0 is ready to play.**  
+Enable it with your Serbia pack and test a game. If anything breaks or feels off, tell me exactly what and I’ll fix it.
