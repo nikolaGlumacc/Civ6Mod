@@ -1,0 +1,12 @@
+-- Europe setup notes (data side)
+-- Use the base game Europe map or any True Start Europe / YnAMP Europe map.
+-- Recommended playable civs for a WW2-style game:
+--   CIVILIZATION_GERMANY
+--   CIVILIZATION_ENGLAND
+--   CIVILIZATION_FRANCE
+--   CIVILIZATION_SPAIN
+--   CIVILIZATION_RUSSIA
+--   CIVILIZATION_POLAND   (if available)
+--   CIVILIZATION_HUNGARY  (if available)
+--   CIVILIZATION_WW2_YUGOSLAVIA  (our sample) or Serbia from Serbia Civ Pack
+--   Italy / Rome as Italy stand-in if desired

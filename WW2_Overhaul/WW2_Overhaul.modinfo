@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="1.0">
+<Mod id="WW2_Overhaul" version="1.1">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>v1.0 Ready • Domination only • Selectable Army Doctrine • National Stubbornness • Supply Depots • Oil • 1936 start</Teaser>
-    <Description>Fully playable WW2 / HOI4-style ruleset on Rise and Fall + Gathering Storm. Domination only. Selectable Light/Medium/Heavy Army. National Stubbornness surge when losing territory. City Supply Depots. Oil maintenance. Stronger industry. Wildcard policies. 1936-style start. Compatible with Serbia Civilization Pack.</Description>
+    <Teaser>v1.1 • Europe setup • Yugoslavia priority • Join Germany/USSR • Army Doctrine • Stubbornness</Teaser>
+    <Description>WW2 ruleset for Europe maps. Play Germany, Britain, France, Spain, Russia, Poland, Hungary, Yugoslavia (priority). Minors can Join Germany or USSR via policies. Domination only, selectable Army Doctrine, National Stubbornness, Supply Depots, Oil, 1936 start. Works with Serbia Civ Pack.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
-
   <Dependencies>
     <Dependency id="1B28771A-C749-434B-9950-D51BDF21C6EA" title="Expansion: Rise and Fall"/>
     <Dependency id="4873eb62-8ccc-4574-b784-dda4558df0c1" title="Expansion: Gathering Storm"/>
   </Dependencies>
-
   <References>
     <Reference id="33b5f544-eb68-48d3-9919-0a827e907785" title="Serbia Civilization Pack"/>
   </References>
-
   <ActionCriteria>
     <Criteria id="Always"><AlwaysMet/></Criteria>
     <Criteria id="Expansion1and2"><RuleSet>RULESET_EXPANSION_2</RuleSet></Criteria>
   </ActionCriteria>
-
   <ActionGroups>
     <ActionGroup id="WW2_Gameplay" scope="game" criteria="Expansion1and2">
       <Actions>
@@ -41,6 +37,8 @@
           <Item>Data/WW2_Config.sql</Item>
           <Item>Data/WW2_EuropeStart.sql</Item>
           <Item>Data/WW2_Stubbornness.sql</Item>
+          <Item>Data/WW2_JoinPower.sql</Item>
+          <Item>Data/WW2_EuropeGuide.sql</Item>
         </UpdateDatabase>
         <AddGameplayScripts>
           <Item>Lua/WW2_Config.lua</Item>
@@ -49,10 +47,10 @@
           <Item>Lua/WW2_ArmyDoctrine.lua</Item>
           <Item>Lua/WW2_Stubbornness.lua</Item>
           <Item>Lua/WW2_WarWeariness.lua</Item>
+          <Item>Lua/WW2_JoinPower.lua</Item>
         </AddGameplayScripts>
       </Actions>
     </ActionGroup>
-
     <ActionGroup id="WW2_Text" scope="game" criteria="Always">
       <Actions>
         <UpdateText>
