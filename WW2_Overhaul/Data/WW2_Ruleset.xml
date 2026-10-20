@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
-  <!-- Registers WW2 Overhaul as an explicit Ruleset in the Create Game / Advanced Setup menu -->
+  <!-- WW2 Overhaul ruleset: select this in Advanced Setup → Ruleset -->
   <RuleSets>
     <Row>
       <RuleSetType>RULESET_WW2</RuleSetType>
@@ -11,4 +11,47 @@
       <SortIndex>25</SortIndex>
     </Row>
   </RuleSets>
+
+  <!-- Only Industrial (and later) eras shown when WW2 ruleset is active -->
+  <RulesetDomainOverrides>
+    <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
+  </RulesetDomainOverrides>
+
+  <DomainValues>
+    <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
+    <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
+  </DomainValues>
+
+  <!-- When player picks RULESET_WW2, force sensible HOI4-style defaults -->
+  <ConfigurationUpdates>
+    <!-- Force Industrial era start -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
+    <!-- Continents = landmasses (best stock map for a Europe-heavy game without YnAMP) -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="Continents.lua" Hash="0"/>
+    <!-- Large map so Europe-sized land exists -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_LARGE" Hash="1"/>
+    <!-- No tribal villages (reduces early clutter) -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="GAME_NO_GOODY_HUTS" TargetValue="1" Hash="0"/>
+  </ConfigurationUpdates>
+
+  <!-- Make Start Era read-only when WW2 ruleset is selected (locked to Industrial) -->
+  <Parameters>
+    <Row Key1="Ruleset" Key2="RULESET_WW2"
+         ParameterId="GameStartEra"
+         Name="LOC_GAME_START_ERA"
+         Description="LOC_WW2_START_ERA_LOCKED_DESC"
+         Domain="WW2Eras"
+         DefaultValue="ERA_INDUSTRIAL"
+         ConfigurationGroup="Game"
+         ConfigurationId="GAME_START_ERA"
+         ValueNameConfigurationId="GAME_START_ERA_NAME"
+         Hash="1"
+         GroupId="GameOptions"
+         ReadOnly="1"
+         SortIndex="60"/>
+  </Parameters>
 </GameInfo>

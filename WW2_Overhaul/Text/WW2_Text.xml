@@ -14,6 +14,13 @@
     <Replace Tag="LOC_CITY_NAME_SARAJEVO" Language="en_US"><Text>Sarajevo</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_SKOPJE" Language="en_US"><Text>Skopje</Text></Replace>
     <Replace Tag="LOC_CITY_NAME_LJUBLJANA" Language="en_US"><Text>Ljubljana</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_NOVI_SAD" Language="en_US"><Text>Novi Sad</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_NIS" Language="en_US"><Text>Nis</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_SPLIT" Language="en_US"><Text>Split</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_DUBROVNIK" Language="en_US"><Text>Dubrovnik</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_PODGORICA" Language="en_US"><Text>Podgorica</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_PRISTINA" Language="en_US"><Text>Pristina</Text></Replace>
+    <Replace Tag="LOC_CITY_NAME_BANJA_LUKA" Language="en_US"><Text>Banja Luka</Text></Replace>
 
     <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_NAME" Language="en_US"><Text>War Economy</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_DESCRIPTION" Language="en_US"><Text>+20% unit Production, +15% building Production.</Text></Replace>
@@ -60,7 +67,9 @@
     <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>Builder improvement. +1 Production, +1 Gold.</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME" Language="en_US"><Text>Supply Depot</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building (regional). +8 heal, +3 CS, +3 Production.</Text></Replace>
+
     <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>World War II overhaul ruleset featuring deep Industrial start, diplomatic absorption and join mechanics, army doctrines, stubbornness, supply depots, and delayed nuclear tech.</Text></Replace>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>HOI4-style setup: starts locked to Industrial Era, Continents / Large map defaults, deep Industrial tech, join/absorb diplomacy, army doctrines, supply, and delayed nukes. Pick Serbia or Yugoslavia leaders. For true Europe TSL use YnAMP Europe maps if you have them.</Text></Replace>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era (1930s-style tech baseline).</Text></Replace>
   </LocalizedText>
 </GameData>

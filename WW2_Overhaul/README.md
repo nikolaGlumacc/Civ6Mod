@@ -1,26 +1,37 @@
-# WW2 Overhaul v1.3
+# WW2 Overhaul v1.5
 
-## Join = diplomacy, not policy buttons
+## How to play (HOI4-style)
 
-When you talk to another civ you (will) get two options:
+1. Enable **WW2 Overhaul** and **Serbia Civilization Pack** in Additional Content.
+2. Create Game → **Advanced Setup**.
+3. Set **Ruleset** to **WW2 Overhaul**.
+   - Start Era locks to **Industrial** (only Industrial / Modern available).
+   - Map defaults to **Continents** + **Large**.
+   - Goody huts off.
+4. Pick a leader:
+   - **Serbia** pack: Tito, Draza, Milosevic, Dusan
+   - **WW2 pack**: Yugoslavia (Tito placeholder)
+5. Start a **new** game.
 
-1. **Join them**  
-   You keep your territory and can build. You cannot raise an independent army.  
-   They accept more easily if they like you and they are stronger/similar strength.
+### Europe / TSL note
 
-2. **They join you**  
-   They are absorbed (treated as conquered until you release or someone liberates).  
-   They accept if they like you a lot **or** you are much stronger.
+Stock Civ 6 has **no built-in Europe TSL map**. Continents + Large is the best default without extra map mods.
 
-Acceptance is based on:
-- Relationship (friendship vs hostility / war)
-- Relative strength (cities + military)
+For real Europe borders:
+- Install **YnAMP** (Yet (not) Another Maps Pack) and pick a Europe / Greatest Earth map with TSL enabled.
+- This overhaul still applies Industrial start + tech grants on those maps.
 
-**Current status:** Logic is in `WW2_JoinDiplomacy.lua`. Full buttons inside the real diplomacy screen need a UI add-in (Civ 6 diplomacy UI is heavily protected). For testing use Firetuner:
-- `WW2_TryJoinLocal(otherPlayerID)`
-- `WW2_TryAbsorbLocal(otherPlayerID)`
+If you still spawn on ice/snow, the start script tries to **relocate** you to temperate land automatically.
 
-Axis Align / Comintern policies remain as softer cooperation without giving up your army.
+## Features
 
-## Rest of the mod
-Deep Industrial/Modern unlocks, hard science (nukes late), Europe + Yugoslavia, Army Doctrine, Stubbornness, Supply, Oil, Serbia pack compatible.
+- Industrial era start (ruleset-locked)
+- Late Industrial / early Modern tech grants (fewer notifications than v1.2)
+- Join / absorb diplomacy (see Lua; full diplo UI buttons limited by Firaxis)
+- Army doctrine, stubbornness, supply, oil, hard science (nukes late)
+- Serbia pack compatible (safe unit upgrades + shared Europe biases)
+
+## Serbia cities
+
+Serbia_Civ_Pack already ships a full Serbian city list (Beograd, Novi Sad, Nis, …).
+Yugoslavia adds Belgrade, Zagreb, Sarajevo, Skopje, Ljubljana, Split, etc.
