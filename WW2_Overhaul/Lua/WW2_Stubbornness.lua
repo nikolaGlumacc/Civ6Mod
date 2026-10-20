@@ -1,11 +1,22 @@
--- WW2 Overhaul v1.0: National Stubbornness
--- Lose cities/territory → +25% Production and +8 Combat Strength for 25 turns
--- Then 5-turn cooldown
+-- National Stubbornness surge: lose cities → +25% Prod +8 CS for 25 turns, then 5-turn cooldown
+-- State persisted in GameConfiguration for save/load.
 
-local DURATION  = 25
-local COOLDOWN  = 5
+local DURATION = 25
+local COOLDOWN = 5
 
-local playerData = {}  -- [playerID] = { lastCities, activeTurns, cooldownTurns, surgeActive }
+local function Key(playerID, field)
+  return "WW2_STUB_" .. tostring(playerID) .. "_" .. field
+end
+
+local function GetNum(playerID, field, default)
+  local v = GameConfiguration.GetValue(Key(playerID, field))
+  if v == nil then return default end
+  return tonumber(v) or default
+end
+
+local function SetNum(playerID, field, value)
+  GameConfiguration.SetValue(Key(playerID, field), value)
+end
 
 local function GetCityCount(playerID)
   local p = Players[playerID]
@@ -17,22 +28,10 @@ end
 local function AttachSurge(playerID)
   local p = Players[playerID]
   if not p then return end
-  -- Attach the two surge modifiers
   p:AttachModifierByID("WW2_STUBBORN_SURGE_PROD")
   p:AttachModifierByID("WW2_STUBBORN_SURGE_CS")
   if playerID == Game.GetLocalPlayer() then
     print("[WW2] National Stubbornness ACTIVATED: +25% Production & +8 CS for 25 turns")
-  end
-end
-
-local function DetachSurge(playerID)
-  local p = Players[playerID]
-  if not p then return end
-  -- Note: Civ6 has limited detach support; modifiers with Permanent=0
-  -- will naturally be managed by the game when re-attached carefully.
-  -- We track state in Lua so we don't re-trigger during active/cooldown.
-  if playerID == Game.GetLocalPlayer() then
-    print("[WW2] National Stubbornness ended. 5-turn cooldown started.")
   end
 end
 
@@ -41,42 +40,39 @@ local function OnTurn(playerID, isFirstTime)
   local p = Players[playerID]
   if not p or not p:IsMajor() or not p:IsAlive() then return end
 
-  if not playerData[playerID] then
-    playerData[playerID] = {
-      lastCities    = GetCityCount(playerID),
-      activeTurns   = 0,
-      cooldownTurns = 0,
-      surgeActive   = false
-    }
-  end
-
-  local d = playerData[playerID]
+  local lastCities = GetNum(playerID, "LAST_CITIES", -1)
+  local activeTurns = GetNum(playerID, "ACTIVE", 0)
+  local cooldownTurns = GetNum(playerID, "COOLDOWN", 0)
   local cities = GetCityCount(playerID)
 
-  -- Tick cooldown
-  if d.cooldownTurns > 0 then
-    d.cooldownTurns = d.cooldownTurns - 1
+  if lastCities < 0 then
+    SetNum(playerID, "LAST_CITIES", cities)
+    return
   end
 
-  -- Tick active surge
-  if d.activeTurns > 0 then
-    d.activeTurns = d.activeTurns - 1
-    if d.activeTurns <= 0 then
-      d.surgeActive = false
-      d.cooldownTurns = COOLDOWN
-      DetachSurge(playerID)
+  if cooldownTurns > 0 then
+    cooldownTurns = cooldownTurns - 1
+    SetNum(playerID, "COOLDOWN", cooldownTurns)
+  end
+
+  if activeTurns > 0 then
+    activeTurns = activeTurns - 1
+    SetNum(playerID, "ACTIVE", activeTurns)
+    if activeTurns <= 0 then
+      SetNum(playerID, "COOLDOWN", COOLDOWN)
+      if playerID == Game.GetLocalPlayer() then
+        print("[WW2] National Stubbornness ended. 5-turn cooldown.")
+      end
     end
   end
 
-  -- Detect city loss
-  if cities < d.lastCities and d.activeTurns <= 0 and d.cooldownTurns <= 0 then
-    d.activeTurns = DURATION
-    d.surgeActive = true
+  if cities < lastCities and activeTurns <= 0 and cooldownTurns <= 0 then
+    SetNum(playerID, "ACTIVE", DURATION)
     AttachSurge(playerID)
   end
 
-  d.lastCities = cities
+  SetNum(playerID, "LAST_CITIES", cities)
 end
 
 Events.PlayerTurnActivated.Add(OnTurn)
-print("[WW2] National Stubbornness v1.0 loaded")
+print("[WW2] National Stubbornness v2 loaded (save-safe)")

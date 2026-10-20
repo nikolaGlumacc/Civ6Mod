@@ -1,5 +1,4 @@
--- WW2 Overhaul v1.0: Oil maintenance
--- Modern tanks, ships and planes lose 1 movement when the player has 0 Oil
+-- Oil maintenance: 0 Oil → modern tanks/ships/planes nearly immobilized (no extra prod cost)
 
 local OIL = "RESOURCE_OIL"
 
@@ -35,17 +34,19 @@ local function OnTurn(playerID, isFirstTime)
   for _, unit in units:Members() do
     local info = GameInfo.Units[unit:GetType()]
     if info and NEEDS_OIL[info.UnitType] then
-      if unit:GetMovesRemaining() > 1 then
-        unit:ChangeMovesRemaining(-1)
+      local moves = unit:GetMovesRemaining()
+      if moves and moves > 1 then
+        -- Leave at most 1 move so they are nearly stuck
+        unit:ChangeMovesRemaining(-(moves - 1))
         hit = true
       end
     end
   end
 
   if hit and playerID == Game.GetLocalPlayer() then
-    print("[WW2] No Oil! Modern tanks, ships and planes have reduced movement.")
+    print("[WW2] NO OIL — modern armor, ships, and aircraft reduced to 1 movement.")
   end
 end
 
 Events.PlayerTurnActivated.Add(OnTurn)
-print("[WW2] Oil maintenance v1.0 loaded")
+print("[WW2] Oil maintenance v2 loaded")

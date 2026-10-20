@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
-  <!-- WW2 Overhaul ruleset: select this in Advanced Setup → Ruleset -->
+  <!--
+    WW2 Overhaul ruleset (RF + GS).
+    Select in Advanced Setup → Ruleset.
+    Compatible with Serbia Civilization Pack (does not redefine Serbia leaders).
+  -->
   <RuleSets>
     <Row>
       <RuleSetType>RULESET_WW2</RuleSetType>
@@ -12,7 +16,6 @@
     </Row>
   </RuleSets>
 
-  <!-- Only Industrial (and later) eras shown when WW2 ruleset is active -->
   <RulesetDomainOverrides>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
   </RulesetDomainOverrides>
@@ -20,26 +23,38 @@
   <DomainValues>
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
+    <!-- Army Doctrine dropdown values -->
+    <Row Domain="WW2ArmyDoctrine" Value="LIGHT" Name="LOC_WW2_ARMY_LIGHT_NAME" Description="LOC_WW2_ARMY_LIGHT_DESC" SortIndex="10"/>
+    <Row Domain="WW2ArmyDoctrine" Value="MEDIUM" Name="LOC_WW2_ARMY_MEDIUM_NAME" Description="LOC_WW2_ARMY_MEDIUM_DESC" SortIndex="20"/>
+    <Row Domain="WW2ArmyDoctrine" Value="HEAVY" Name="LOC_WW2_ARMY_HEAVY_NAME" Description="LOC_WW2_ARMY_HEAVY_DESC" SortIndex="30"/>
   </DomainValues>
 
-  <!-- When player picks RULESET_WW2, force sensible HOI4-style defaults -->
   <ConfigurationUpdates>
-    <!-- Force Industrial era start -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
-    <!-- Continents = landmasses (best stock map for a Europe-heavy game without YnAMP) -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="Continents.lua" Hash="0"/>
-    <!-- Large map so Europe-sized land exists -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_LARGE" Hash="1"/>
-    <!-- No tribal villages (reduces early clutter) -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_NO_GOODY_HUTS" TargetValue="1" Hash="0"/>
+    <!-- Domination only -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_DOMINATION" TargetValue="1" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_CULTURE" TargetValue="0" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_SCIENCE" TargetValue="0" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_RELIGIOUS" TargetValue="0" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_DIPLOMATIC" TargetValue="0" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Game" TargetId="VICTORY_SCORE" TargetValue="0" Hash="0"/>
   </ConfigurationUpdates>
 
-  <!-- Make Start Era read-only when WW2 ruleset is selected (locked to Industrial) -->
   <Parameters>
+    <!-- Locked Industrial start era when WW2 ruleset is selected -->
     <Row Key1="Ruleset" Key2="RULESET_WW2"
          ParameterId="GameStartEra"
          Name="LOC_GAME_START_ERA"
@@ -53,5 +68,18 @@
          GroupId="GameOptions"
          ReadOnly="1"
          SortIndex="60"/>
+
+    <!-- Army Doctrine: Light / Medium / Heavy (Advanced Setup) -->
+    <Row Key1="Ruleset" Key2="RULESET_WW2"
+         ParameterId="WW2_ARMY_DOCTRINE"
+         Name="LOC_WW2_ARMY_DOCTRINE_NAME"
+         Description="LOC_WW2_ARMY_DOCTRINE_DESC"
+         Domain="WW2ArmyDoctrine"
+         DefaultValue="MEDIUM"
+         ConfigurationGroup="Game"
+         ConfigurationId="WW2_ARMY_DOCTRINE"
+         GroupId="AdvancedOptions"
+         Hash="0"
+         SortIndex="350"/>
   </Parameters>
 </GameInfo>
