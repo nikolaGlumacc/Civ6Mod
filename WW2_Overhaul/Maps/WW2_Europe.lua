@@ -1,7 +1,10 @@
 ------------------------------------------------------------------------------
--- WW2 Overhaul — Europe map script
--- Regional (non-wrapping) Europe-shaped theatre: Atlantic west, Urals east,
--- Mediterranean south, Scandinavia north. Designed for WW2 ruleset play.
+-- WW2 Overhaul — Realistic Europe map
+-- Geographic landmask (not random continents): Iberia, Britain, France,
+-- Germany, Poland, Scandinavia, Italy, Balkans, Anatolia fringe, European Russia.
+-- Seas: Atlantic, Med, North Sea, Baltic, Black Sea, Adriatic.
+-- Ranges: Pyrenees, Alps, Carpathians, Balkans, Caucasus fringe.
+-- Grid ~ lon -10°..55° E, lat 34°..71° N  →  108 x 72, no wrap.
 ------------------------------------------------------------------------------
 include("MapEnums")
 include("MapUtilities")
@@ -11,26 +14,16 @@ include("FeatureGenerator")
 include("TerrainGenerator")
 include("NaturalWonderGenerator")
 include("ResourceGenerator")
-include("CoastalLowlands")
 include("AssignStartingPlots")
 
-local g_iW, g_iH
+local g_iW, g_iH = 108, 72
 local g_iFlags = {}
-local g_continentsFrac = nil
 
 ------------------------------------------------------------------------------
 function GetMapInitData(MapSize)
-  -- Fixed Europe theatre size (between Large and Huge)
-  -- No X/Y wrap — ocean edges, not a full planet
-  return {
-    Width = 96,
-    Height = 68,
-    WrapX = false,
-    WrapY = false,
-  }
+  return { Width = g_iW, Height = g_iH, WrapX = false, WrapY = false }
 end
 
-------------------------------------------------------------------------------
 function GetMapScriptInfo()
   local world_age, temperature, rainfall, sea_level, resources = GetCoreMapOptions()
   return {
@@ -44,50 +37,166 @@ function GetMapScriptInfo()
 end
 
 ------------------------------------------------------------------------------
-function GeneratePlotTypes(args)
-  print("WW2 Europe: GeneratePlotTypes")
+-- Normalized coords: nx 0..1 west→east, ny 0..1 south→north
+local function N(x, y)
+  return x / (g_iW - 1), y / (g_iH - 1)
+end
+
+-- Ellipse helper (center cx,cy radius rx,ry in normalized space)
+local function InEllipse(nx, ny, cx, cy, rx, ry)
+  local dx = (nx - cx) / rx
+  local dy = (ny - cy) / ry
+  return dx * dx + dy * dy <= 1.0
+end
+
+-- Axis-aligned box
+local function InBox(nx, ny, x0, y0, x1, y1)
+  return nx >= x0 and nx <= x1 and ny >= y0 and ny <= y1
+end
+
+------------------------------------------------------------------------------
+-- Geographic land test (hand-tuned Europe silhouette)
+local function IsEuropeLand(x, y)
+  local nx, ny = N(x, y)
+
+  -- Hard outer ocean frame
+  if nx < 0.015 or nx > 0.985 or ny < 0.02 or ny > 0.98 then
+    return false
+  end
+
+  local land = false
+
+  -- Iberian Peninsula (Spain/Portugal)
+  if InEllipse(nx, ny, 0.18, 0.32, 0.12, 0.14) then land = true end
+  -- France + Benelux + western Germany
+  if InEllipse(nx, ny, 0.30, 0.48, 0.14, 0.18) then land = true end
+  -- British Isles
+  if InEllipse(nx, ny, 0.22, 0.62, 0.07, 0.12) then land = true end -- Britain
+  if InEllipse(nx, ny, 0.16, 0.60, 0.035, 0.07) then land = true end -- Ireland
+  -- Central Europe (Germany, Poland, Czech, Hungary plain)
+  if InEllipse(nx, ny, 0.45, 0.52, 0.16, 0.16) then land = true end
+  -- Scandinavia (Norway/Sweden elongated north)
+  if InEllipse(nx, ny, 0.42, 0.78, 0.10, 0.18) then land = true end
+  -- Finland
+  if InEllipse(nx, ny, 0.55, 0.82, 0.07, 0.10) then land = true end
+  -- Italy boot
+  if InEllipse(nx, ny, 0.42, 0.30, 0.05, 0.14) then land = true end
+  if InEllipse(nx, ny, 0.44, 0.22, 0.035, 0.06) then land = true end -- southern tip / Sicily approach
+  -- Sicily
+  if InEllipse(nx, ny, 0.44, 0.16, 0.03, 0.025) then land = true end
+  -- Balkans (Yugoslavia, Greece north)
+  if InEllipse(nx, ny, 0.52, 0.36, 0.10, 0.12) then land = true end
+  -- Greece peninsula
+  if InEllipse(nx, ny, 0.54, 0.24, 0.05, 0.08) then land = true end
+  -- Anatolia (western Turkey) — WW2 edge
+  if InEllipse(nx, ny, 0.68, 0.28, 0.12, 0.08) then land = true end
+  -- European Russia / Ukraine / Belarus broad plain
+  if InEllipse(nx, ny, 0.72, 0.58, 0.22, 0.22) then land = true end
+  -- Caucasus fringe / Black Sea east shore
+  if InEllipse(nx, ny, 0.82, 0.38, 0.08, 0.08) then land = true end
+  -- North Africa fringe (Maghreb coast only — for Med theatre)
+  if InEllipse(nx, ny, 0.28, 0.08, 0.20, 0.05) then land = true end
+  if InEllipse(nx, ny, 0.50, 0.07, 0.12, 0.04) then land = true end -- Libya coast
+  -- Denmark / Jutland bridge
+  if InEllipse(nx, ny, 0.40, 0.64, 0.04, 0.05) then land = true end
+  -- Baltic states strip
+  if InEllipse(nx, ny, 0.58, 0.68, 0.08, 0.06) then land = true end
+
+  -- ---- SEAS (cut water out of land ellipses) ----
+  -- Mediterranean basin
+  if InBox(nx, ny, 0.20, 0.12, 0.72, 0.28) and not InEllipse(nx, ny, 0.42, 0.30, 0.05, 0.14)
+     and not InEllipse(nx, ny, 0.54, 0.24, 0.05, 0.08)
+     and not InEllipse(nx, ny, 0.18, 0.32, 0.12, 0.14)
+     and not InEllipse(nx, ny, 0.52, 0.36, 0.10, 0.12)
+     and not InEllipse(nx, ny, 0.68, 0.28, 0.12, 0.08)
+     and not InEllipse(nx, ny, 0.44, 0.16, 0.03, 0.025) then
+    -- keep only if clearly open Med (lower half of the box more aggressive)
+    if ny < 0.26 then land = false end
+  end
+
+  -- Adriatic (between Italy and Balkans)
+  if InBox(nx, ny, 0.44, 0.28, 0.52, 0.42) and nx > 0.46 and nx < 0.50 then
+    land = false
+  end
+
+  -- North Sea
+  if InBox(nx, ny, 0.26, 0.55, 0.40, 0.72) and not InEllipse(nx, ny, 0.22, 0.62, 0.07, 0.12)
+     and not InEllipse(nx, ny, 0.30, 0.48, 0.14, 0.18)
+     and not InEllipse(nx, ny, 0.40, 0.64, 0.04, 0.05) then
+    if nx > 0.28 and nx < 0.38 and ny > 0.58 then land = false end
+  end
+
+  -- Baltic Sea
+  if InBox(nx, ny, 0.42, 0.62, 0.58, 0.78) and not InEllipse(nx, ny, 0.42, 0.78, 0.10, 0.18)
+     and not InEllipse(nx, ny, 0.55, 0.82, 0.07, 0.10)
+     and not InEllipse(nx, ny, 0.58, 0.68, 0.08, 0.06)
+     and not InEllipse(nx, ny, 0.45, 0.52, 0.16, 0.16) then
+    if ny > 0.66 and nx > 0.44 and nx < 0.56 then land = false end
+  end
+
+  -- Black Sea
+  if InEllipse(nx, ny, 0.68, 0.40, 0.10, 0.07) then land = false end
+
+  -- English Channel
+  if InBox(nx, ny, 0.24, 0.52, 0.30, 0.58) then land = false end
+
+  -- Bay of Biscay
+  if InBox(nx, ny, 0.12, 0.38, 0.22, 0.50) and nx < 0.18 then land = false end
+
+  -- Caspian fringe (far east edge — keep mostly out)
+  if nx > 0.92 and ny < 0.50 then land = false end
+
+  return land
+end
+
+------------------------------------------------------------------------------
+-- Mountain belts (normalized)
+local function IsMountain(x, y)
+  local nx, ny = N(x, y)
+  -- Pyrenees
+  if InEllipse(nx, ny, 0.22, 0.38, 0.08, 0.025) then return true end
+  -- Alps
+  if InEllipse(nx, ny, 0.38, 0.40, 0.10, 0.04) then return true end
+  -- Carpathians
+  if InEllipse(nx, ny, 0.55, 0.46, 0.08, 0.05) then return true end
+  -- Dinaric / Balkan mountains
+  if InEllipse(nx, ny, 0.50, 0.34, 0.06, 0.06) then return true end
+  -- Caucasus
+  if InEllipse(nx, ny, 0.84, 0.36, 0.08, 0.03) then return true end
+  -- Norwegian mountains
+  if InEllipse(nx, ny, 0.38, 0.78, 0.04, 0.14) then return true end
+  -- Apennines
+  if InEllipse(nx, ny, 0.42, 0.28, 0.02, 0.10) then return true end
+  return false
+end
+
+local function IsHills(x, y)
+  local nx, ny = N(x, y)
+  if InEllipse(nx, ny, 0.30, 0.42, 0.08, 0.06) then return true end -- Massif Central / east France
+  if InEllipse(nx, ny, 0.48, 0.50, 0.06, 0.05) then return true end -- Bohemia
+  if InEllipse(nx, ny, 0.20, 0.30, 0.06, 0.05) then return true end -- Spanish interior
+  if InEllipse(nx, ny, 0.54, 0.30, 0.05, 0.05) then return true end -- Greek hills
+  return false
+end
+
+------------------------------------------------------------------------------
+function GeneratePlotTypes()
+  print("WW2 Realistic Europe: GeneratePlotTypes")
   local plotTypes = {}
-  local grain = 3
-  local hillsGrain = 4
-
-  math.randomseed(Map.GetRandomSeed())
-
-  -- Fractal for one primary landmass (Europe body)
-  local fracFlags = { FRAC_POLAR = false }
-  local continents = Fractal.Create(g_iW, g_iH, grain, fracFlags, -1, -1)
-  local hills = Fractal.Create(g_iW, g_iH, hillsGrain, fracFlags, -1, -1)
-
-  local iWaterThreshold = continents:GetHeight(58) -- ~42% land
-  local iHillsThreshold = hills:GetHeight(70)
-
   for y = 0, g_iH - 1 do
     for x = 0, g_iW - 1 do
       local i = y * g_iW + x
-      local val = continents:GetHeight(x, y)
-      local hx = x / math.max(g_iW - 1, 1)
-      local hy = y / math.max(g_iH - 1, 1)
-
-      -- Mask: force ocean on far edges (Atlantic / Arctic / desert south / deep east)
-      local edgeOcean = (hx < 0.04) or (hx > 0.96) or (hy < 0.05) or (hy > 0.94)
-
-      -- Mediterranean bite: southern band more water in the center-west
-      local medBite = (hy < 0.28) and (hx > 0.15) and (hx < 0.75) and (val < continents:GetHeight(50))
-
-      -- Baltic / North Sea cuts
-      local northCut = (hy > 0.70) and (hx > 0.35) and (hx < 0.55) and (val < continents:GetHeight(52))
-
-      if edgeOcean or medBite or northCut or val < iWaterThreshold then
+      if not IsEuropeLand(x, y) then
         plotTypes[i] = g_PLOT_TYPE_OCEAN
+      elseif IsMountain(x, y) then
+        plotTypes[i] = g_PLOT_TYPE_MOUNTAIN
+      elseif IsHills(x, y) then
+        plotTypes[i] = g_PLOT_TYPE_HILLS
       else
-        if hills:GetHeight(x, y) >= iHillsThreshold then
-          plotTypes[i] = g_PLOT_TYPE_HILLS
-        else
-          plotTypes[i] = g_PLOT_TYPE_LAND
-        end
+        plotTypes[i] = g_PLOT_TYPE_LAND
       end
     end
   end
-
   AreaBuilder.Recalculate()
   TerrainBuilder.ClearLandmarks()
   return plotTypes
@@ -95,73 +204,77 @@ end
 
 ------------------------------------------------------------------------------
 function GenerateTerrain()
-  print("WW2 Europe: GenerateTerrain")
-  local terraArgs = {
-    iW = g_iW,
-    iH = g_iH,
-    iFlags = g_iFlags,
-    blendRidge = 5,
-    blendFract = 5,
-    temperature = MapConfiguration.GetValue("temperature") or 2,
-  }
-  local terrainTypes = TerrainGenerator.GenerateTerrainTypes(terraArgs)
-  TerrainGenerator.ApplyTerrainTypes(terrainTypes)
+  print("WW2 Realistic Europe: GenerateTerrain")
+  -- Latitude-based climate: south warm, north cold, Atlantic milder west
+  for y = 0, g_iH - 1 do
+    for x = 0, g_iW - 1 do
+      local plot = Map.GetPlot(x, y)
+      if plot and not plot:IsWater() then
+        local nx, ny = N(x, y)
+        local isHill = plot:IsHills()
+        local isMtn = plot:IsMountain()
+        local terrain
+
+        if isMtn then
+          if ny > 0.55 then
+            terrain = isHill and "TERRAIN_TUNDRA_MOUNTAIN" or "TERRAIN_TUNDRA_MOUNTAIN"
+          else
+            terrain = "TERRAIN_GRASS_MOUNTAIN"
+          end
+        elseif ny > 0.82 then
+          -- Far north Scandinavia / Arctic
+          terrain = isHill and "TERRAIN_SNOW_HILLS" or "TERRAIN_SNOW"
+        elseif ny > 0.70 then
+          terrain = isHill and "TERRAIN_TUNDRA_HILLS" or "TERRAIN_TUNDRA"
+        elseif ny < 0.18 and nx > 0.15 and nx < 0.75 then
+          -- North Africa fringe + deep south Spain
+          terrain = isHill and "TERRAIN_DESERT_HILLS" or "TERRAIN_DESERT"
+        elseif ny < 0.28 then
+          -- Mediterranean belt — plains / some desert inland Iberia
+          if nx < 0.28 and ny < 0.30 then
+            terrain = isHill and "TERRAIN_PLAINS_HILLS" or "TERRAIN_PLAINS"
+          else
+            terrain = isHill and "TERRAIN_GRASS_HILLS" or "TERRAIN_GRASS"
+          end
+        elseif ny < 0.55 then
+          -- Temperate Europe core
+          terrain = isHill and "TERRAIN_GRASS_HILLS" or "TERRAIN_GRASS"
+        else
+          -- Northern plains / mixed
+          terrain = isHill and "TERRAIN_PLAINS_HILLS" or "TERRAIN_PLAINS"
+        end
+
+        local row = GameInfo.Terrains[terrain]
+        if row then
+          TerrainBuilder.SetTerrainType(plot, row.Index)
+        end
+      end
+    end
+  end
 end
 
 ------------------------------------------------------------------------------
-function FeatureGenerator:AddFeatures()
-  print("WW2 Europe: Features")
-  local args = {
-    rainfall = MapConfiguration.GetValue("rainfall") or 2
-  }
-  self:AddFeaturesFromArgs(args)
-end
-
-------------------------------------------------------------------------------
-function StartPlotSystem()
-  print("WW2 Europe: StartPlotSystem")
-  local args = {}
-  args.MIN_MAJOR_CIV_FERTILITY = 100
-  args.MIN_MINOR_CIV_FERTILITY = 25
-  args.MIN_BARBARIAN_FERTILITY = 1
-  args.START_MIN_Y = 12
-  args.START_MAX_Y = 12
-  args.WATER = false
-  args.LAND = false
-  args.IGNORE_LANDMASS = true -- single theatre — pack civs on the Europe landmass
-
-  local startConfig = MapConfiguration.GetValue("start") or 2
-  args.START_CONFIG = startConfig
-
-  local start_plot_database = AssignStartingPlots.Create(args)
-
-  -- Prefer mid-latitude land for everyone (no Antarctica)
-  -- AssignStartingPlots already ran; we do a soft pass for priority WW2 civs if they landed poorly.
-  WW2_RepositionPriorityCivs()
-end
-
-------------------------------------------------------------------------------
--- Approximate TSL on our generated grid (x,y normalized to 96x68)
--- West = Atlantic, East = Russia, South = Med, North = Scandinavia
+-- Historical TSL on this grid (tuned to landmask centers)
 local TSL = {
-  CIVILIZATION_ENGLAND   = { x = 22, y = 48 },
-  CIVILIZATION_FRANCE    = { x = 30, y = 40 },
-  CIVILIZATION_SPAIN     = { x = 24, y = 28 },
-  CIVILIZATION_GERMANY   = { x = 42, y = 48 },
-  CIVILIZATION_POLAND    = { x = 50, y = 48 },
-  CIVILIZATION_HUNGARY   = { x = 50, y = 40 },
-  CIVILIZATION_RUSSIA    = { x = 72, y = 50 },
-  CIVILIZATION_ROME      = { x = 42, y = 32 }, -- Italy stand-in
-  CIVILIZATION_SERBIA    = { x = 52, y = 36 },
-  CIVILIZATION_WW2_YUGOSLAVIA = { x = 52, y = 36 },
-  CIVILIZATION_GREECE    = { x = 54, y = 26 },
-  CIVILIZATION_OTTOMAN   = { x = 60, y = 28 },
-  CIVILIZATION_NORWAY    = { x = 40, y = 58 },
-  CIVILIZATION_SWEDEN    = { x = 48, y = 58 },
-  CIVILIZATION_NETHERLANDS = { x = 36, y = 50 },
-  CIVILIZATION_SCOTLAND  = { x = 22, y = 54 },
-  CIVILIZATION_PORTUGAL  = { x = 18, y = 28 },
-  CIVILIZATION_BYZANTIUM = { x = 58, y = 30 },
+  CIVILIZATION_ENGLAND      = { x = 24, y = 44 }, -- London area
+  CIVILIZATION_SCOTLAND     = { x = 22, y = 50 },
+  CIVILIZATION_FRANCE       = { x = 32, y = 34 }, -- Paris
+  CIVILIZATION_SPAIN        = { x = 20, y = 24 }, -- Madrid
+  CIVILIZATION_PORTUGAL     = { x = 14, y = 22 },
+  CIVILIZATION_GERMANY      = { x = 44, y = 40 }, -- Berlin
+  CIVILIZATION_POLAND       = { x = 54, y = 42 }, -- Warsaw
+  CIVILIZATION_HUNGARY      = { x = 52, y = 34 }, -- Budapest
+  CIVILIZATION_RUSSIA       = { x = 78, y = 48 }, -- Moscow area
+  CIVILIZATION_ROME         = { x = 44, y = 22 }, -- Rome / Italy
+  CIVILIZATION_SERBIA       = { x = 54, y = 28 }, -- Belgrade
+  CIVILIZATION_WW2_YUGOSLAVIA = { x = 54, y = 28 },
+  CIVILIZATION_GREECE       = { x = 58, y = 18 }, -- Athens
+  CIVILIZATION_OTTOMAN      = { x = 70, y = 22 }, -- Anatolia / Istanbul approach
+  CIVILIZATION_BYZANTIUM    = { x = 66, y = 24 },
+  CIVILIZATION_NORWAY       = { x = 40, y = 56 },
+  CIVILIZATION_SWEDEN       = { x = 48, y = 56 },
+  CIVILIZATION_NETHERLANDS  = { x = 36, y = 42 },
+  CIVILIZATION_PHOENICIA    = { x = 30, y = 8 },  -- North Africa fringe
 }
 
 local function IsPassableLand(plot)
@@ -169,15 +282,18 @@ local function IsPassableLand(plot)
   if plot:IsWater() or plot:IsImpassable() then return false end
   local t = plot:GetTerrainType()
   local terrain = GameInfo.Terrains[t]
-  if terrain and (terrain.TerrainType == "TERRAIN_SNOW" or terrain.TerrainType == "TERRAIN_SNOW_HILLS") then
-    return false
+  if terrain then
+    local n = terrain.TerrainType
+    if n == "TERRAIN_SNOW" or n == "TERRAIN_SNOW_HILLS" or n == "TERRAIN_SNOW_MOUNTAIN" then
+      return false
+    end
   end
   return true
 end
 
 local function FindNear(tx, ty)
   local best, bestD = nil, 99999
-  for r = 0, 8 do
+  for r = 0, 10 do
     for dy = -r, r do
       for dx = -r, r do
         local x, y = tx + dx, ty + dy
@@ -185,10 +301,7 @@ local function FindNear(tx, ty)
           local p = Map.GetPlot(x, y)
           if IsPassableLand(p) then
             local d = dx * dx + dy * dy
-            if d < bestD then
-              bestD = d
-              best = p
-            end
+            if d < bestD then bestD = d; best = p end
           end
         end
       end
@@ -211,7 +324,7 @@ function WW2_RepositionPriorityCivs()
           for _, unit in p:GetUnits():Members() do
             unit:SetXY(target:GetX(), target:GetY())
           end
-          print(string.format("[WW2 Europe] TSL place %s at %d,%d", civ, target:GetX(), target:GetY()))
+          print(string.format("[WW2 Europe] TSL %s → %d,%d", civ, target:GetX(), target:GetY()))
         end
       end
     end
@@ -219,49 +332,55 @@ function WW2_RepositionPriorityCivs()
 end
 
 ------------------------------------------------------------------------------
+function StartPlotSystem()
+  print("WW2 Realistic Europe: StartPlotSystem")
+  local args = {
+    MIN_MAJOR_CIV_FERTILITY = 80,
+    MIN_MINOR_CIV_FERTILITY = 20,
+    MIN_BARBARIAN_FERTILITY = 1,
+    START_MIN_Y = 8,
+    START_MAX_Y = 8,
+    IGNORE_LANDMASS = true,
+    START_CONFIG = MapConfiguration.GetValue("start") or 2,
+  }
+  AssignStartingPlots.Create(args)
+  WW2_RepositionPriorityCivs()
+end
+
+------------------------------------------------------------------------------
 function GenerateMap()
-  print("Generating WW2 Europe Map")
+  print("Generating WW2 Realistic Europe")
   local gridW, gridH = Map.GetGridSize()
   g_iW, g_iH = gridW, gridH
   g_iFlags = TerrainBuilder.GetFractalFlags()
 
-  plotTypes = GeneratePlotTypes()
-  terrainTypes = GenerateTerrain()
+  GeneratePlotTypes()
+  GenerateTerrain()
 
   AreaBuilder.Recalculate()
   TerrainBuilder.AnalyzeChokepoints()
   TerrainBuilder.StampContinents()
 
-  local iW, iH = Map.GetGridSize()
-  local args = {}
-  args.world_age = MapConfiguration.GetValue("world_age") or 2
-  if args.world_age == 1 then
-    args.world_age = 3
-  elseif args.world_age == 3 then
-    args.world_age = 1
-  end
-  mountainRatio = 8 + args.world_age * 2
-  args.iW = iW
-  args.iH = iH
-  args.iFlags = g_iFlags
-  args.blendRidge = 10
-  args.blendFract = 5
-  args.extra = mountainRatio
-  MountainsCliffs.AddMountains(args)
+  -- Light extra hills noise only (mountains already placed)
+  local args = {
+    iW = g_iW, iH = g_iH, iFlags = g_iFlags,
+    blendRidge = 5, blendFract = 5, extra = 4,
+  }
+  pcall(function() MountainsCliffs.AddMountains(args) end)
 
   local featuregen = FeatureGenerator.Create({ rainfall = MapConfiguration.GetValue("rainfall") or 2 })
   featuregen:AddFeatures()
 
-  local nwGen = NaturalWonderGenerator.Create({ numberToPlace = 4 })
+  pcall(function()
+    NaturalWonderGenerator.Create({ numberToPlace = 5 })
+  end)
+
   AreaBuilder.Recalculate()
   TerrainBuilder.AnalyzeChokepoints()
 
-  resourcesConfig = MapConfiguration.GetValue("resources") or 2
-  local resGen = ResourceGenerator.Create({ resources = resourcesConfig })
+  ResourceGenerator.Create({ resources = MapConfiguration.GetValue("resources") or 2 })
 
-  print("WW2 Europe: assigning starts")
   StartPlotSystem()
-
-  local goodyGen = AddGoodies(g_iW, g_iH)
-  print("WW2 Europe map done")
+  AddGoodies(g_iW, g_iH)
+  print("WW2 Realistic Europe map done")
 end
