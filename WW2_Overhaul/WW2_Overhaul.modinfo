@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="0.3">
+<Mod id="WW2_Overhaul" version="0.4">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>1936 start • Domination only • Stronger wars • HOI4-style • Full Rise &amp; Fall features • Works with Serbia Civ Pack</Teaser>
-    <Description>Full WW2-focused overhaul built on top of Rise and Fall + Gathering Storm. Keeps Dark Ages, Golden Ages, Governors, Emergencies, etc. Only Domination victory. Loyalty pressure disabled for long wars. Stronger city damage, navy, air, promotions and formations. Oil maintenance. 1936-style start. Fully compatible with the Serbia Civilization Pack (Tito, Draza, Milosevic, Dusan).</Description>
+    <Teaser>1936 start • Domination only • Wildcards • Supply Stations • Light/Med/Heavy armies • Ideology • Configurable</Teaser>
+    <Description>WW2 / HOI4-style ruleset on top of Rise and Fall + Gathering Storm. Domination only. Loyalty pressure off. Stronger combat, navy, air, promotions. Oil maintenance. 1936 start. New wildcard policies (production, science, war strength, National Stubbornness). Supply Station improvement. Light / Medium / Heavy army doctrines. Ideology bonuses. Production penalty only when losing. Many options configurable in Advanced Setup. Compatible with Serbia Civ Pack.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
 
-  <!-- Requires the expansions so Dark Ages / Golden Ages / Governors / etc. are present -->
   <Dependencies>
     <Dependency id="1B28771A-C749-434B-9950-D51BDF21C6EA" title="Expansion: Rise and Fall"/>
     <Dependency id="4873eb62-8ccc-4574-b784-dda4558df0c1" title="Expansion: Gathering Storm"/>
   </Dependencies>
 
-  <!-- Soft reference so the game knows Serbia pack is supported -->
   <References>
     <Reference id="33b5f544-eb68-48d3-9919-0a827e907785" title="Serbia Civilization Pack"/>
   </References>
 
   <ActionCriteria>
-    <Criteria id="Always">
-      <AlwaysMet/>
-    </Criteria>
-    <Criteria id="Expansion1and2">
-      <RuleSet>RULESET_EXPANSION_2</RuleSet>
-    </Criteria>
+    <Criteria id="Always"><AlwaysMet/></Criteria>
+    <Criteria id="Expansion1and2"><RuleSet>RULESET_EXPANSION_2</RuleSet></Criteria>
   </ActionCriteria>
 
   <ActionGroups>
-    <!-- Main gameplay changes - only load with RF+GS ruleset -->
     <ActionGroup id="WW2_Gameplay" scope="game" criteria="Expansion1and2">
       <Actions>
         <UpdateDatabase>
@@ -40,17 +33,22 @@
           <Item>Data/WW2_Resources.sql</Item>
           <Item>Data/WW2_Production.sql</Item>
           <Item>Data/WW2_Start.sql</Item>
-          <!-- Yugoslavia sample kept as optional extra nation -->
           <Item>Data/WW2_Yugoslavia.sql</Item>
+          <Item>Data/WW2_Policies.sql</Item>
+          <Item>Data/WW2_Supply.sql</Item>
+          <Item>Data/WW2_ArmyDoctrines.sql</Item>
+          <Item>Data/WW2_Ideology.sql</Item>
+          <Item>Data/WW2_Config.sql</Item>
         </UpdateDatabase>
         <AddGameplayScripts>
           <Item>Lua/WW2_OilMaintenance.lua</Item>
           <Item>Lua/WW2_StartLogic.lua</Item>
+          <Item>Lua/WW2_WarWeariness.lua</Item>
+          <Item>Lua/WW2_Config.lua</Item>
         </AddGameplayScripts>
       </Actions>
     </ActionGroup>
 
-    <!-- Text / localization -->
     <ActionGroup id="WW2_Text" scope="game" criteria="Always">
       <Actions>
         <UpdateText>

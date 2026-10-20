@@ -1,0 +1,148 @@
+-- WW2 Overhaul: New Wildcard policies
+-- Production, Science, War Strength, National Stubbornness, and other HOI4-flavored cards
+
+-- =====================================================
+-- Helper: register policy types
+-- =====================================================
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('POLICY_WW2_WAR_ECONOMY',          'KIND_POLICY'),
+('POLICY_WW2_TOTAL_MOBILIZATION',   'KIND_POLICY'),
+('POLICY_WW2_SCIENTIFIC_EFFORT',    'KIND_POLICY'),
+('POLICY_WW2_OFFENSIVE_SPIRIT',     'KIND_POLICY'),
+('POLICY_WW2_DEFENSIVE_LINES',      'KIND_POLICY'),
+('POLICY_WW2_NATIONAL_STUBBORNNESS','KIND_POLICY'),
+('POLICY_WW2_BLITZ_DOCTRINE',       'KIND_POLICY'),
+('POLICY_WW2_ATTRITION_WAR',        'KIND_POLICY');
+
+-- =====================================================
+-- Policies themselves (all Wildcard so they are flexible)
+-- =====================================================
+INSERT OR IGNORE INTO Policies (PolicyType, Name, Description, PrereqCivic, GovernmentSlotType) VALUES
+('POLICY_WW2_WAR_ECONOMY',
+ 'LOC_POLICY_WW2_WAR_ECONOMY_NAME',
+ 'LOC_POLICY_WW2_WAR_ECONOMY_DESCRIPTION',
+ 'CIVIC_MOBILIZATION',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_TOTAL_MOBILIZATION',
+ 'LOC_POLICY_WW2_TOTAL_MOBILIZATION_NAME',
+ 'LOC_POLICY_WW2_TOTAL_MOBILIZATION_DESCRIPTION',
+ 'CIVIC_TOTALITARIANISM',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_SCIENTIFIC_EFFORT',
+ 'LOC_POLICY_WW2_SCIENTIFIC_EFFORT_NAME',
+ 'LOC_POLICY_WW2_SCIENTIFIC_EFFORT_DESCRIPTION',
+ 'CIVIC_NUCLEAR_PROGRAM',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_OFFENSIVE_SPIRIT',
+ 'LOC_POLICY_WW2_OFFENSIVE_SPIRIT_NAME',
+ 'LOC_POLICY_WW2_OFFENSIVE_SPIRIT_DESCRIPTION',
+ 'CIVIC_MOBILIZATION',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_DEFENSIVE_LINES',
+ 'LOC_POLICY_WW2_DEFENSIVE_LINES_NAME',
+ 'LOC_POLICY_WW2_DEFENSIVE_LINES_DESCRIPTION',
+ 'CIVIC_MOBILIZATION',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_NATIONAL_STUBBORNNESS',
+ 'LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_NAME',
+ 'LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_DESCRIPTION',
+ 'CIVIC_NATIONALISM',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_BLITZ_DOCTRINE',
+ 'LOC_POLICY_WW2_BLITZ_DOCTRINE_NAME',
+ 'LOC_POLICY_WW2_BLITZ_DOCTRINE_DESCRIPTION',
+ 'CIVIC_MOBILIZATION',
+ 'SLOT_WILDCARD'),
+
+('POLICY_WW2_ATTRITION_WAR',
+ 'LOC_POLICY_WW2_ATTRITION_WAR_NAME',
+ 'LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION',
+ 'CIVIC_TOTALITARIANISM',
+ 'SLOT_WILDCARD');
+
+-- =====================================================
+-- Modifiers
+-- =====================================================
+
+-- War Economy: +20% Production toward units + buildings
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_WAR_ECONOMY_PROD_UNITS', 'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION'),
+('WW2_WAR_ECONOMY_PROD_BUILD', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_WAR_ECONOMY_PROD_UNITS', 'Amount', '20'),
+('WW2_WAR_ECONOMY_PROD_BUILD', 'Amount', '15');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_WAR_ECONOMY', 'WW2_WAR_ECONOMY_PROD_UNITS'),
+('POLICY_WW2_WAR_ECONOMY', 'WW2_WAR_ECONOMY_PROD_BUILD');
+
+-- Total Mobilization: +25% Production toward units, -10% Amenities
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_TOTAL_MOB_PROD', 'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION'),
+('WW2_TOTAL_MOB_AMEN', 'MODIFIER_PLAYER_CITIES_ADJUST_TRAIT_AMENITY');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_TOTAL_MOB_PROD', 'Amount', '25'),
+('WW2_TOTAL_MOB_AMEN', 'Amount', '-1');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_TOTAL_MOBILIZATION', 'WW2_TOTAL_MOB_PROD'),
+('POLICY_WW2_TOTAL_MOBILIZATION', 'WW2_TOTAL_MOB_AMEN');
+
+-- Scientific Effort: +15% Science, +10% Production toward Campus buildings
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_SCI_EFFORT_SCIENCE', 'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_SCI_EFFORT_SCIENCE', 'YieldType', 'YIELD_SCIENCE'),
+('WW2_SCI_EFFORT_SCIENCE', 'Amount', '15');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_SCIENTIFIC_EFFORT', 'WW2_SCI_EFFORT_SCIENCE');
+
+-- Offensive Spirit: +5 Combat Strength for all units when attacking
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_OFFENSIVE_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_OFFENSIVE_CS', 'Amount', '5');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_OFFENSIVE_SPIRIT', 'WW2_OFFENSIVE_CS');
+
+-- Defensive Lines: +5 Combat Strength for all units when defending + faster healing in friendly territory
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_DEFENSIVE_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_DEFENSIVE_CS', 'Amount', '5');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_DEFENSIVE_LINES', 'WW2_DEFENSIVE_CS');
+
+-- National Stubbornness: +10 Combat Strength when defending in home territory, units heal +5 extra in friendly territory
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_STUBBORN_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH'),
+('WW2_STUBBORN_HEAL', 'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_STUBBORN_CS', 'Amount', '10'),
+('WW2_STUBBORN_HEAL', 'Amount', '5');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_NATIONAL_STUBBORNNESS', 'WW2_STUBBORN_CS'),
+('POLICY_WW2_NATIONAL_STUBBORNNESS', 'WW2_STUBBORN_HEAL');
+
+-- Blitz Doctrine: +2 Movement for land combat units, +5 Combat when attacking
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_BLITZ_MOVE', 'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT'),
+('WW2_BLITZ_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_BLITZ_MOVE', 'Amount', '2'),
+('WW2_BLITZ_CS', 'Amount', '5');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_BLITZ_DOCTRINE', 'WW2_BLITZ_MOVE'),
+('POLICY_WW2_BLITZ_DOCTRINE', 'WW2_BLITZ_CS');
+
+-- Attrition War: Enemy units take extra damage when in your territory (approximated by combat bonus when defending)
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_ATTRITION_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_ATTRITION_CS', 'Amount', '7');
+INSERT OR IGNORE INTO PolicyModifiers (PolicyType, ModifierId) VALUES
+('POLICY_WW2_ATTRITION_WAR', 'WW2_ATTRITION_CS');

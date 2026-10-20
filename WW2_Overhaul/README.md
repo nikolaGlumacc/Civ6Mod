@@ -1,105 +1,55 @@
-# WW2 Overhaul (Ruleset) for Civilization VI
+# WW2 Overhaul (Ruleset) – v0.4
 
-A WW2 / HOI4-style overhaul built **on top of** the official Rise and Fall + Gathering Storm ruleset.
+WW2 / HOI4-style ruleset on top of Rise and Fall + Gathering Storm.
+Compatible with **Serbia Civilization Pack**.
 
-You keep **everything** from Rise & Fall and Gathering Storm:
-- Dark Ages & Golden Ages
-- Governors
-- Emergencies
-- Loyalty system (pressure disabled so long wars stay playable)
-- All other RF/GS features
+## New in this version
 
-## Compatibility with Serbia Civilization Pack
+### Wildcard Policies
+- **War Economy** – more production toward units & buildings
+- **Total Mobilization** – big unit production, small amenity cost
+- **Scientific Effort** – more science
+- **Offensive Spirit** / **Defensive Lines** – combat strength
+- **National Stubbornness** – strong defensive bonus + extra healing at home
+- **Blitz Doctrine** – movement + attack strength
+- **War of Attrition** – defensive combat focus
 
-**Fully supported.**  
-Enable both mods together:
+### Army Doctrines (Light / Medium / Heavy)
+Pick one Wildcard doctrine:
+- Light  = +3 CS
+- Medium = +7 CS
+- Heavy  = +14 CS (≈ 2× Light)
+Applies to combat units (attackers).
 
-1. **Serbia Civilization Pack** (your mod with Tito, Draza, Milosevic, Dusan)
-2. **WW2 Overhaul**
+### Supply
+- **Supply Station** improvement (Builders can build it)
+- **Supply Depot** city building (extra healing + production)
 
-Load order recommendation: Serbia first, then WW2 Overhaul.  
-Your Serbian leaders work normally under the WW2 rules (Domination only, stronger combat, oil maintenance, 1936-style start, etc.).
+### Ideology
+Clearer bonuses for Democracy / Fascism / Communism governments.
 
-The sample "Yugoslavia" nation in this mod is just an extra optional civ and does not conflict with your Serbia pack.
+### War Weariness
+Production pressure only applies when you are **losing** (not when you are conquering).
 
-## Features
-
-| Feature | Status |
-|---------|--------|
-| Only Domination victory | Done |
-| Loyalty pressure disabled (long wars) | Done |
-| Units deal much more damage to cities | Done |
-| Navy & Air stronger | Done |
-| Promotions + Corps/Army heavily buffed | Done |
-| No extra unit production cost | Done |
-| Oil maintenance (no oil = movement penalty) | Done (Lua) |
-| Stronger Industrial / military production | Done |
-| 1936-style start (era + tech/civic grants) | Done (Lua) |
-| Free civ/leader choice | Supported |
-| Sample extra nation: Yugoslavia | Done |
-| Full Rise & Fall + Gathering Storm systems | Required & preserved |
-| Works with Serbia Civ Pack | Done |
+### Configurable
+Options are prepared for the Advanced Setup menu (defaults = everything ON).
 
 ## Requirements
 - Rise and Fall
 - Gathering Storm
 
-## How to use
-1. Enable **Serbia Civilization Pack** (optional but recommended)
+## How to play with Serbia pack
+1. Enable **Serbia Civilization Pack**
 2. Enable **WW2 Overhaul**
-3. Make sure you are using the **Expansion 2** ruleset (Gathering Storm)
-4. Start a new game. The start logic pushes everyone into a late-Industrial / early-Modern feel
-5. Play as any of your Serbian leaders or any other civ
+3. Use Expansion 2 ruleset
+4. Start game – your Serbian leaders work normally under all WW2 rules
 
-## What else I would add (recommended next features)
+No Serbia-specific bonuses were added (as requested).
 
-These fit the HOI4 / WW2 feel while staying realistic for Civ 6:
+## Still planned / can be expanded
+- Full Advanced Setup UI checkboxes (Frontend parameters)
+- Stronger permanent production modifier when losing
+- More unit-line flavor (light/medium/heavy tanks etc.)
+- Distance-based supply radius from Supply Stations
 
-1. **War Economy / National Focus style policies**  
-   Simple military, industrial, and research "focus" cards that give big temporary bonuses (like HOI4 focuses but much lighter).
-
-2. **Better strategic resource loop**  
-   Oil, Rubber, Aluminium, Steel matter more. Cities can build synthetic plants or trade more aggressively.
-
-3. **Front-line / supply feel**  
-   Units far from your territory or from a supply depot heal slower and fight worse (simple distance or "out of supply" modifier).
-
-4. **More WW2 unit lines**  
-   Distinct light/medium/heavy tanks, better artillery, dedicated anti-tank, more plane types, troop transports.
-
-5. **War Weariness that does not use loyalty**  
-   Long wars raise amenity penalties or reduce production in non-core cities instead of flipping cities.
-
-6. **Simple ideology / government lean**  
-   Democracy / Fascism / Communism give different military and production bonuses (already partially in RF/GS, can be tuned).
-
-7. **Custom Europe 1936 map support**  
-   True-start locations for major powers + your Serbian leaders.
-
-8. **Leader-specific WW2 flavor for Serbia**  
-   Extra bonuses or agendas for Tito / Draza / etc. when the WW2 ruleset is active (optional).
-
-Tell me which of these you want next and I will implement them.
-
-## Folder structure
-```
-WW2_Overhaul/
-├── WW2_Overhaul.modinfo
-├── README.md
-├── Data/
-│   ├── WW2_Victories.sql
-│   ├── WW2_Loyalty.sql
-│   ├── WW2_Combat.sql
-│   ├── WW2_Promotions_Formations.sql
-│   ├── WW2_Resources.sql
-│   ├── WW2_Production.sql
-│   ├── WW2_Start.sql
-│   └── WW2_Yugoslavia.sql
-├── Lua/
-│   ├── WW2_OilMaintenance.lua
-│   └── WW2_StartLogic.lua
-└── Text/
-    └── WW2_Text.xml
-```
-
-Do not edit the other folders in this repository. This is a separate project that is designed to run alongside Serbia_Civ_Pack.
+Tell me what you want polished next.
