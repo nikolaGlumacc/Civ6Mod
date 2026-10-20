@@ -47,9 +47,9 @@
         </Stack>
         <Label ID="UnitLabel" Style="FontNormal13" String="Unit: (search or Next)" Color="200,220,255,255"/>
         <Stack StackGrowth="Right" Padding="4">
-          <GridButton ID="BtnUnitPrev"  Size="110,26" Style="MainButton" String="< Prev"/>
+          <GridButton ID="BtnUnitPrev"  Size="110,26" Style="MainButton" String="&lt; Prev"/>
           <GridButton ID="BtnUnitSpawn" Size="130,26" Style="MainButton" String="Spawn"/>
-          <GridButton ID="BtnUnitNext"  Size="110,26" Style="MainButton" String="Next >"/>
+          <GridButton ID="BtnUnitNext"  Size="110,26" Style="MainButton" String="Next &gt;"/>
         </Stack>
         <GridButton ID="BtnUnitAll" Size="380,28" Style="MainButton" String="SPAWN ALL MATCHING UNITS"/>
         <GridButton ID="BtnBuilder" Size="380,24" Style="MainButton" String="Quick: Builder"/>
