@@ -68,10 +68,10 @@
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building (regional). +8 heal, +3 CS, +3 Production.</Text></Replace>
 
     <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>HOI4-style WW2: realistic Europe map, Industrial start, Domination only, hard science, oil, supply, army doctrine, stubbornness, join/absorb diplomacy. Works with Serbia Civilization Pack.</Text></Replace>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>HOI4-style WW2: Europe + North Africa map, Industrial start, Domination only, hard science, oil, supply, army doctrine, stubbornness, join/absorb diplomacy. Works with Serbia Civilization Pack.</Text></Replace>
     <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era.</Text></Replace>
 
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Language="en_US"><Text>WW2 Europe (Realistic)</Text></Replace>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Geographic Europe theatre: Iberia, Britain, France, Germany, Poland, Scandinavia, Italy, Balkans, Anatolia fringe, European Russia. Mediterranean, North Sea, Baltic, Black Sea. Alps, Pyrenees, Carpathians. Historical starts for major powers and Serbia.</Text></Replace>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Language="en_US"><Text>WW2 Europe</Text></Replace>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Europe theatre plus North Africa coast. Africa is resource-rich (oil, metals, luxuries) but flat and weak for industry/military. No Anatolia. Historical starts for major powers and Serbia.</Text></Replace>
   </LocalizedText>
 </GameData>
