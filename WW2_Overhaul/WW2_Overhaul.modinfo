@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="1.5">
+<Mod id="WW2_Overhaul" version="2.0">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v1.5 • Industrial start locked • Continents/Large defaults • Serbia compatible • Quiet unlocks</Teaser>
-    <Description>Selectable WW2 Overhaul ruleset. Forces Industrial Era start, prefers Continents + Large map, grants late Industrial / early Modern tech with less notification spam, Europe-oriented start biases for Serbia/Yugoslavia, join/absorb diplomacy.</Description>
+    <Teaser>v2.0 • HOI4-style WW2 ruleset • Domination only • Industrial start • Serbia compatible</Teaser>
+    <Description>WW2 Overhaul ruleset (RF+GS): Domination-only, Industrial start, hard science, oil, supply, army doctrine, national stubbornness, join/absorb diplomacy, ideology bonuses. Compatible with Serbia Civilization Pack without redefining its leaders.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
