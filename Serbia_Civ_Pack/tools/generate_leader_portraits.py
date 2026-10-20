@@ -1,24 +1,7 @@
 #!/usr/bin/env python3
-"""Generate Civ 6 leader portrait DDS files from PNG sources in Art/.
-
-Requires: Pillow, ImageMagick (`convert`)
-
-Usage (from Serbia_Civ_Pack folder):
-  python3 tools/generate_leader_portraits.py
-
-Reads:
-  Art/FALLBACK_NEUTRAL_TITO.png
-  Art/FALLBACK_NEUTRAL_DRAZA.png
-  Art/FALLBACK_NEUTRAL_MILOSEVIC.png
-
-Writes into Art/:
-  LEADER_*_NEUTRAL.dds          (loading screen / large portrait)
-  FALLBACK_NEUTRAL_LEADER_*.dds (optional diplo fallback name)
-  ICON_LEADER_*_{32,45,50,55,64,80,256}.dds
-"""
+"""Generate Civ 6 leader portrait DDS files from PNG sources in Art/ using Pillow directly."""
 from __future__ import annotations
 
-import subprocess
 import sys
 from pathlib import Path
 
@@ -58,22 +41,8 @@ def make_neutral(im: Image.Image, target: int = 1024) -> Image.Image:
     return canvas
 
 
-def to_dds(png_path: Path, dds_path: Path) -> None:
-    cmd = ["convert", str(png_path), "-define", "dds:compression=dxt5", str(dds_path)]
-    try:
-        subprocess.run(cmd, check=True, capture_output=True)
-    except FileNotFoundError:
-        print("ImageMagick `convert` not found. Install ImageMagick.")
-        sys.exit(1)
-    except subprocess.CalledProcessError as e:
-        print("convert failed:", e.stderr.decode(errors="ignore"))
-        sys.exit(1)
-
-
 def main() -> None:
     ART.mkdir(parents=True, exist_ok=True)
-    tmp = ART / "_portrait_tmp"
-    tmp.mkdir(exist_ok=True)
 
     for key, src_name in LEADERS.items():
         src = ART / src_name
@@ -84,24 +53,16 @@ def main() -> None:
         print(f"Processing {key} from {src.name} ({im.size[0]}x{im.size[1]})")
 
         neutral = make_neutral(im, 1024)
-        n_png = tmp / f"LEADER_{key}_NEUTRAL.png"
-        neutral.save(n_png)
-        to_dds(n_png, ART / f"LEADER_{key}_NEUTRAL.dds")
-        to_dds(n_png, ART / f"FALLBACK_NEUTRAL_LEADER_{key}.dds")
+        neutral.save(ART / f"LEADER_{key}_NEUTRAL.dds", format="DDS")
+        neutral.save(ART / f"FALLBACK_NEUTRAL_LEADER_{key}.dds", format="DDS")
 
         for s in ICON_SIZES:
             icon = make_square(im, s)
-            i_png = tmp / f"ICON_LEADER_{key}_{s}.png"
-            icon.save(i_png)
-            to_dds(i_png, ART / f"ICON_LEADER_{key}_{s}.dds")
+            icon.save(ART / f"ICON_LEADER_{key}_{s}.dds", format="DDS")
 
-        print(f"  wrote LEADER_{key}_NEUTRAL.dds + icons")
+        print(f"  [OK] Generated LEADER_{key}_NEUTRAL.dds + {len(ICON_SIZES)} icons")
 
-    # cleanup temp pngs
-    for p in tmp.glob("*"):
-        p.unlink()
-    tmp.rmdir()
-    print("Done. DDS files are in Art/")
+    print("\nAll missing leader portraits and icons generated successfully!")
 
 
 if __name__ == "__main__":
