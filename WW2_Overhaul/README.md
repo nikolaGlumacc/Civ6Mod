@@ -1,30 +1,26 @@
-# WW2 Overhaul v1.2
+# WW2 Overhaul v1.3
 
-## Tech & Science
-- **Unlocked from start:** almost everything through mid-Industrial and early Modern (so WW2 units and infrastructure exist).
-- **Not unlocked:** Nuclear Fission / Fusion and other end-game techs.
-- **Science is hard:** population science cut hard, campus yields reduced, nuclear and late military techs cost 2–3× more. Nukes stay late-war, like history.
+## Join = diplomacy, not policy buttons
 
-## Join system (what you described)
+When you talk to another civ you (will) get two options:
 
-### When YOU join Germany or USSR
-- You **keep your territory** and can still **build** on it.
-- You **cannot raise an independent army** (-100% unit Production while the Join policy is slotted).
-- You are under that major power’s military authority, but you still manage your land and economy.
+1. **Join them**  
+   You keep your territory and can build. You cannot raise an independent army.  
+   They accept more easily if they like you and they are stronger/similar strength.
 
-Use policies: **Join Germany** or **Join USSR**.
+2. **They join you**  
+   They are absorbed (treated as conquered until you release or someone liberates).  
+   They accept if they like you a lot **or** you are much stronger.
 
-### When an AI “joins” you
-- Treat it like you **won the war**: take their cities / eliminate them as an independent power.
-- They only “come back” if you release them (or another player liberates the land).
-- Full automatic AI puppet with approve/deny unlink is limited by Civ 6; the practical rule is: conquered = gone until released or liberated.
+Acceptance is based on:
+- Relationship (friendship vs hostility / war)
+- Relative strength (cities + military)
 
-### Axis Align / Comintern
-- Cooperation **without** giving up your army (bonuses only).
+**Current status:** Logic is in `WW2_JoinDiplomacy.lua`. Full buttons inside the real diplomacy screen need a UI add-in (Civ 6 diplomacy UI is heavily protected). For testing use Firetuner:
+- `WW2_TryJoinLocal(otherPlayerID)`
+- `WW2_TryAbsorbLocal(otherPlayerID)`
 
-## Europe setup
-Map: Europe or True Start Europe.  
-Civs: Germany, England, France, Spain, Russia, Poland, Hungary, **Yugoslavia** (this mod or your Serbia pack).
+Axis Align / Comintern policies remain as softer cooperation without giving up your army.
 
-## Rest
-Domination only, Army Doctrine selector, National Stubbornness, Supply Depots, Oil, stronger industry, Serbia pack compatible, Frontier Pass fine.
+## Rest of the mod
+Deep Industrial/Modern unlocks, hard science (nukes late), Europe + Yugoslavia, Army Doctrine, Stubbornness, Supply, Oil, Serbia pack compatible.

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="1.2">
+<Mod id="WW2_Overhaul" version="1.3">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>v1.2 • Deep Industrial start • Hard science • Join = land yes, army no</Teaser>
-    <Description>Techs unlocked through mid-Industrial/early Modern. Science heavily slowed (nukes stay late). Join Germany/USSR: keep your territory and build, but cannot raise an independent army. AI join ≈ conquered until released. Europe + Yugoslavia focus. Works with Serbia pack and Frontier Pass.</Description>
+    <Teaser>v1.3 • Join via diplomacy (relations + strength) • Deep Industrial start • Hard science</Teaser>
+    <Description>Join is a diplomacy action: Join them (keep land, no army) or They join you (absorb), based on how much they like you and relative strength. Not simple policy buttons. Europe focus, Yugoslavia, Serbia pack compatible.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
@@ -49,6 +49,7 @@
           <Item>Lua/WW2_Stubbornness.lua</Item>
           <Item>Lua/WW2_WarWeariness.lua</Item>
           <Item>Lua/WW2_JoinPower.lua</Item>
+          <Item>Lua/WW2_JoinDiplomacy.lua</Item>
         </AddGameplayScripts>
       </Actions>
     </ActionGroup>
