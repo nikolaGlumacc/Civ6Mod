@@ -1,6 +1,7 @@
 /*
     Leader Configuration (Front-End) - Serbia Civilization Pack
     All 4 leaders: Tito, Draza, Milosevic, Dusan
+    Includes LoadingInfo (Dawn of Man / start-screen portraits)
 */
 
 -----------------------------------------------
@@ -56,7 +57,7 @@ VALUES
 
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_TITO',      'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DRAZA',     'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
-    ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_MILOSEVIC', 'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
+    ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_MILOSEVIC', 'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DUSAN',     'IMPROVEMENT_SPOMENIK',  'ICON_IMPROVEMENT_SPOMENIK',  'LOC_IMPROVEMENT_SPOMENIK_NAME',  'LOC_IMPROVEMENT_SPOMENIK_DESCRIPTION',  20),
 
     -- Unique Units
@@ -64,3 +65,21 @@ VALUES
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DRAZA',     'UNIT_CHETNIK',         'ICON_UNIT_CHETNIK',         'LOC_UNIT_CHETNIK_NAME',         'LOC_UNIT_CHETNIK_DESCRIPTION',         30),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_MILOSEVIC', 'UNIT_NEVA_M',          'ICON_UNIT_NEVA_M',          'LOC_UNIT_NEVA_M_NAME',          'LOC_UNIT_NEVA_M_DESCRIPTION',          30),
     ('Players:Expansion2_Players', 'CIVILIZATION_SERBIA', 'LEADER_DUSAN',     'UNIT_ALEMANNIC_GUARD', 'ICON_UNIT_ALEMANNIC_GUARD', 'LOC_UNIT_ALEMANNIC_GUARD_NAME', 'LOC_UNIT_ALEMANNIC_GUARD_DESCRIPTION', 30);
+
+-----------------------------------------------
+-- LoadingInfo (start-game leader portrait + Dawn of Man)
+-- ForegroundImage/BackgroundImage = DDS base names in Art/ (no extension).
+-- Use NEUTRAL / FALLBACK portraits (typically alpha-supported DDS) so the
+-- leader appears over the era background on the loading / intro screen.
+-----------------------------------------------
+
+INSERT OR REPLACE INTO LoadingInfo
+    (LeaderType, ForegroundImage, BackgroundImage, PlayDawnOfManAudio, EraText)
+VALUES
+    ('LEADER_TITO',      'LEADER_TITO_NEUTRAL',      'LEADER_TITO_NEUTRAL',      0, 'LOC_LOADING_INFO_LEADER_TITO'),
+    ('LEADER_DRAZA',     'LEADER_DRAZA_NEUTRAL',     'LEADER_DRAZA_NEUTRAL',     0, 'LOC_LOADING_INFO_LEADER_DRAZA'),
+    ('LEADER_MILOSEVIC', 'LEADER_MILOSEVIC_NEUTRAL', 'LEADER_MILOSEVIC_NEUTRAL', 0, 'LOC_LOADING_INFO_LEADER_MILOSEVIC'),
+    ('LEADER_DUSAN',
+     'FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC',
+     'FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC',
+     0, 'LOC_LOADING_INFO_LEADER_DUSAN');

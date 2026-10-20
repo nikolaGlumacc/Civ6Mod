@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="23">
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="24">
   <Properties>
     <Name>Serbia Civilization Pack</Name>
-    <Description>Serbia with Tito, Draza, Milosevic, Dusan. v23 database fixes.</Description>
+    <Description>Serbia with Tito, Draza, Milosevic, Dusan. v24: fixed UnitUpgrades FK (WW2-safe), LoadingInfo, Dawn of Man portraits/text.</Description>
     <Teaser>Serbia with four unique leaders</Teaser>
     <Authors>Nikola</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
@@ -16,7 +16,6 @@
   <FrontEndActions>
     <UpdateDatabase id="Serbia_Config_DB">
       <File>Config/Leader_Config.sql</File>
-      <File>Config/LoadingInfo.xml</File>
     </UpdateDatabase>
     <UpdateColors id="Serbia_Config_Colors">
       <File>Art/Colors.xml</File>
@@ -76,6 +75,7 @@
       <File>Core/Civilization.xml</File>
       <File>Core/Leaders.sql</File>
       <File>Core/Units.xml</File>
+      <File>Core/UnitUpgrades.sql</File>
       <File>Core/Buildings.xml</File>
       <File>Core/Improvements.xml</File>
       <File>Core/Agenda.xml</File>
@@ -152,6 +152,7 @@
     <File>Core/Civilization.xml</File>
     <File>Core/Leaders.sql</File>
     <File>Core/Units.xml</File>
+    <File>Core/UnitUpgrades.sql</File>
     <File>Core/Buildings.xml</File>
     <File>Core/Improvements.xml</File>
     <File>Core/Agenda.xml</File>

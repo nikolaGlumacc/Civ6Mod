@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Serbia Civilization Pack - Unique Units -->
+<!-- Unit upgrades that reference late-era units are applied via Core/UnitUpgrades.sql
+     so missing targets (e.g. if another mod removes UNIT_CUIRASSIER) cannot break FK validation. -->
 <GameData>
 
   <Types>
@@ -100,13 +102,6 @@
     <Row CivUniqueUnitType="UNIT_NEVA_M"          ReplacesUnitType="UNIT_ARTILLERY"/>
     <Row CivUniqueUnitType="UNIT_ALEMANNIC_GUARD" ReplacesUnitType="UNIT_KNIGHT"/>
   </UnitReplaces>
-
-  <UnitUpgrades>
-    <Row Unit="UNIT_PARTIZANI" UpgradeUnit="UNIT_MECHANIZED_INFANTRY"/>
-    <Row Unit="UNIT_CHETNIK" UpgradeUnit="UNIT_LINE_INFANTRY"/>
-    <Row Unit="UNIT_ALEMANNIC_GUARD" UpgradeUnit="UNIT_CUIRASSIER"/>
-    <Row Unit="UNIT_NEVA_M" UpgradeUnit="UNIT_ROCKET_ARTILLERY"/>
-  </UnitUpgrades>
 
   <!-- Unique requirement IDs so we never collide with base-game rows -->
   <Requirements>

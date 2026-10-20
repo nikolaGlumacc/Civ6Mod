@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- FrontEnd loading portraits. DDS must exist in Art/ (extract portrait zip). -->
+<!-- Deprecated: LoadingInfo is now inserted from Config/Leader_Config.sql
+     (avoids Configuration "no such table: LoadingInfo" when XML runs too early).
+     This file is kept empty of rows so old modinfo references do not error. -->
 <GameInfo>
-  <LoadingInfo>
-    <Row LeaderType="LEADER_TITO" ForegroundImage="LEADER_TITO_NEUTRAL" BackgroundImage="LEADER_TITO_NEUTRAL" PlayDawnOfManAudio="0"/>
-    <Row LeaderType="LEADER_DRAZA" ForegroundImage="LEADER_DRAZA_NEUTRAL" BackgroundImage="LEADER_DRAZA_NEUTRAL" PlayDawnOfManAudio="0"/>
-    <Row LeaderType="LEADER_MILOSEVIC" ForegroundImage="LEADER_MILOSEVIC_NEUTRAL" BackgroundImage="LEADER_MILOSEVIC_NEUTRAL" PlayDawnOfManAudio="0"/>
-    <Row LeaderType="LEADER_DUSAN" ForegroundImage="FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" BackgroundImage="FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC" PlayDawnOfManAudio="0"/>
-  </LoadingInfo>
 </GameInfo>
