@@ -3,20 +3,10 @@
   <Colors>
     <Row Type="COLOR_PLAYER_SERBIA_PRIMARY" Color="199,30,40,255"/>
     <Row Type="COLOR_PLAYER_SERBIA_SECONDARY" Color="10,50,140,255"/>
-    <Row Type="COLOR_PLAYER_TITO_PRIMARY" Color="199,30,40,255"/>
-    <Row Type="COLOR_PLAYER_TITO_SECONDARY" Color="200,160,50,255"/>
-    <Row Type="COLOR_PLAYER_DRAZA_PRIMARY" Color="30,30,35,255"/>
-    <Row Type="COLOR_PLAYER_DRAZA_SECONDARY" Color="240,240,240,255"/>
-    <Row Type="COLOR_PLAYER_MILO_PRIMARY" Color="199,30,40,255"/>
-    <Row Type="COLOR_PLAYER_MILO_SECONDARY" Color="30,30,35,255"/>
-    <Row Type="COLOR_PLAYER_DUSAN_PRIMARY" Color="200,160,50,255"/>
-    <Row Type="COLOR_PLAYER_DUSAN_SECONDARY" Color="199,30,40,255"/>
+
   </Colors>
   <PlayerColors>
     <Row Type="CIVILIZATION_SERBIA" Usage="Unique" PrimaryColor="COLOR_PLAYER_SERBIA_PRIMARY" SecondaryColor="COLOR_PLAYER_SERBIA_SECONDARY"/>
-    <Row Type="LEADER_TITO" Usage="Unique" PrimaryColor="COLOR_PLAYER_TITO_PRIMARY" SecondaryColor="COLOR_PLAYER_TITO_SECONDARY"/>
-    <Row Type="LEADER_DRAZA" Usage="Unique" PrimaryColor="COLOR_PLAYER_DRAZA_PRIMARY" SecondaryColor="COLOR_PLAYER_DRAZA_SECONDARY"/>
-    <Row Type="LEADER_MILOSEVIC" Usage="Unique" PrimaryColor="COLOR_PLAYER_MILO_PRIMARY" SecondaryColor="COLOR_PLAYER_MILO_SECONDARY"/>
-    <Row Type="LEADER_DUSAN" Usage="Unique" PrimaryColor="COLOR_PLAYER_DUSAN_PRIMARY" SecondaryColor="COLOR_PLAYER_DUSAN_SECONDARY"/>
+
   </PlayerColors>
 </GameInfo>
