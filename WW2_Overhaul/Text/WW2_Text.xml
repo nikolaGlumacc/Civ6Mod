@@ -60,5 +60,7 @@
     <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>Builder improvement. +1 Production, +1 Gold.</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME" Language="en_US"><Text>Supply Depot</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building (regional). +8 heal, +3 CS, +3 Production.</Text></Replace>
+    <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>World War II overhaul ruleset featuring deep Industrial start, diplomatic absorption and join mechanics, army doctrines, stubbornness, supply depots, and delayed nuclear tech.</Text></Replace>
   </LocalizedText>
 </GameData>

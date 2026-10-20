@@ -1,64 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="1.3">
+<Mod id="WW2_Overhaul" version="1.4">
   <Properties>
-    <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>v1.3 • Join via diplomacy (relations + strength) • Deep Industrial start • Hard science</Teaser>
-    <Description>Join is a diplomacy action: Join them (keep land, no army) or They join you (absorb), based on how much they like you and relative strength. Not simple policy buttons. Europe focus, Yugoslavia, Serbia pack compatible.</Description>
+    <Name>WW2 Overhaul</Name>
+    <Teaser>v1.4 • WW2 Overhaul Ruleset • Join via diplomacy (relations + strength) • Deep Industrial start • Hard science</Teaser>
+    <Description>Selectable WW2 Overhaul ruleset. Join is a diplomacy action: Join them (keep land, no army) or They join you (absorb), based on how much they like you and relative strength. Europe focus, Yugoslavia, Serbia pack compatible.</Description>
     <Authors>nikolaGlumacc</Authors>
-    <CompatibleVersions>2.0</CompatibleVersions>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
+
   <Dependencies>
-    <Dependency id="1B28771A-C749-434B-9950-D51BDF21C6EA" title="Expansion: Rise and Fall"/>
-    <Dependency id="4873eb62-8ccc-4574-b784-dda4558df0c1" title="Expansion: Gathering Storm"/>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall"/>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm"/>
   </Dependencies>
+
   <References>
-    <Reference id="33b5f544-eb68-48d3-9919-0a827e907785" title="Serbia Civilization Pack"/>
+    <Mod id="33b5f544-eb68-48d3-9919-0a827e907785" title="Serbia Civilization Pack"/>
   </References>
-  <ActionCriteria>
-    <Criteria id="Always"><AlwaysMet/></Criteria>
-    <Criteria id="Expansion1and2"><RuleSet>RULESET_EXPANSION_2</RuleSet></Criteria>
-  </ActionCriteria>
-  <ActionGroups>
-    <ActionGroup id="WW2_Gameplay" scope="game" criteria="Expansion1and2">
-      <Actions>
-        <UpdateDatabase>
-          <Item>Data/WW2_Victories.sql</Item>
-          <Item>Data/WW2_Loyalty.sql</Item>
-          <Item>Data/WW2_Combat.sql</Item>
-          <Item>Data/WW2_Promotions_Formations.sql</Item>
-          <Item>Data/WW2_Resources.sql</Item>
-          <Item>Data/WW2_Production.sql</Item>
-          <Item>Data/WW2_Science.sql</Item>
-          <Item>Data/WW2_Start.sql</Item>
-          <Item>Data/WW2_Yugoslavia.sql</Item>
-          <Item>Data/WW2_Policies.sql</Item>
-          <Item>Data/WW2_Supply.sql</Item>
-          <Item>Data/WW2_ArmyDoctrines.sql</Item>
-          <Item>Data/WW2_Ideology.sql</Item>
-          <Item>Data/WW2_Config.sql</Item>
-          <Item>Data/WW2_EuropeStart.sql</Item>
-          <Item>Data/WW2_Stubbornness.sql</Item>
-          <Item>Data/WW2_JoinPower.sql</Item>
-          <Item>Data/WW2_EuropeGuide.sql</Item>
-        </UpdateDatabase>
-        <AddGameplayScripts>
-          <Item>Lua/WW2_Config.lua</Item>
-          <Item>Lua/WW2_OilMaintenance.lua</Item>
-          <Item>Lua/WW2_StartLogic.lua</Item>
-          <Item>Lua/WW2_ArmyDoctrine.lua</Item>
-          <Item>Lua/WW2_Stubbornness.lua</Item>
-          <Item>Lua/WW2_WarWeariness.lua</Item>
-          <Item>Lua/WW2_JoinPower.lua</Item>
-          <Item>Lua/WW2_JoinDiplomacy.lua</Item>
-        </AddGameplayScripts>
-      </Actions>
-    </ActionGroup>
-    <ActionGroup id="WW2_Text" scope="game" criteria="Always">
-      <Actions>
-        <UpdateText>
-          <Item>Text/WW2_Text.xml</Item>
-        </UpdateText>
-      </Actions>
-    </ActionGroup>
-  </ActionGroups>
+
+  <!-- FrontEnd Actions to register WW2 Overhaul in the Create Game / Ruleset dropdown -->
+  <FrontEndActions>
+    <UpdateDatabase id="WW2_Config_DB">
+      <File>Data/WW2_Ruleset.xml</File>
+    </UpdateDatabase>
+    <UpdateText id="WW2_Config_Text">
+      <File>Text/WW2_Text.xml</File>
+    </UpdateText>
+  </FrontEndActions>
+
+  <!-- InGame Actions: runs when either Gathering Storm or the custom WW2 Ruleset is selected -->
+  <InGameActions>
+    <UpdateDatabase id="WW2_Gameplay_DB">
+      <Properties>
+        <RuleSet>RULESET_WW2,RULESET_EXPANSION_2</RuleSet>
+      </Properties>
+      <File>Data/WW2_Victories.sql</File>
+      <File>Data/WW2_Loyalty.sql</File>
+      <File>Data/WW2_Combat.sql</File>
+      <File>Data/WW2_Promotions_Formations.sql</File>
+      <File>Data/WW2_Resources.sql</File>
+      <File>Data/WW2_Production.sql</File>
+      <File>Data/WW2_Science.sql</File>
+      <File>Data/WW2_Start.sql</File>
+      <File>Data/WW2_Yugoslavia.sql</File>
+      <File>Data/WW2_Policies.sql</File>
+      <File>Data/WW2_Supply.sql</File>
+      <File>Data/WW2_ArmyDoctrines.sql</File>
+      <File>Data/WW2_Ideology.sql</File>
+      <File>Data/WW2_Config.sql</File>
+      <File>Data/WW2_EuropeStart.sql</File>
+      <File>Data/WW2_Stubbornness.sql</File>
+      <File>Data/WW2_JoinPower.sql</File>
+      <File>Data/WW2_EuropeGuide.sql</File>
+    </UpdateDatabase>
+
+    <UpdateText id="WW2_Gameplay_Text">
+      <File>Text/WW2_Text.xml</File>
+    </UpdateText>
+
+    <AddGameplayScripts id="WW2_Gameplay_Scripts">
+      <File>Lua/WW2_Config.lua</File>
+      <File>Lua/WW2_OilMaintenance.lua</File>
+      <File>Lua/WW2_StartLogic.lua</File>
+      <File>Lua/WW2_ArmyDoctrine.lua</File>
+      <File>Lua/WW2_Stubbornness.lua</File>
+      <File>Lua/WW2_WarWeariness.lua</File>
+      <File>Lua/WW2_JoinPower.lua</File>
+      <File>Lua/WW2_JoinDiplomacy.lua</File>
+    </AddGameplayScripts>
+  </InGameActions>
+
+  <Files>
+    <File>Data/WW2_Ruleset.xml</File>
+    <File>Data/WW2_Victories.sql</File>
+    <File>Data/WW2_Loyalty.sql</File>
+    <File>Data/WW2_Combat.sql</File>
+    <File>Data/WW2_Promotions_Formations.sql</File>
+    <File>Data/WW2_Resources.sql</File>
+    <File>Data/WW2_Production.sql</File>
+    <File>Data/WW2_Science.sql</File>
+    <File>Data/WW2_Start.sql</File>
+    <File>Data/WW2_Yugoslavia.sql</File>
+    <File>Data/WW2_Policies.sql</File>
+    <File>Data/WW2_Supply.sql</File>
+    <File>Data/WW2_ArmyDoctrines.sql</File>
+    <File>Data/WW2_Ideology.sql</File>
+    <File>Data/WW2_Config.sql</File>
+    <File>Data/WW2_EuropeStart.sql</File>
+    <File>Data/WW2_Stubbornness.sql</File>
+    <File>Data/WW2_JoinPower.sql</File>
+    <File>Data/WW2_EuropeGuide.sql</File>
+    <File>Lua/WW2_Config.lua</File>
+    <File>Lua/WW2_OilMaintenance.lua</File>
+    <File>Lua/WW2_StartLogic.lua</File>
+    <File>Lua/WW2_ArmyDoctrine.lua</File>
+    <File>Lua/WW2_Stubbornness.lua</File>
+    <File>Lua/WW2_WarWeariness.lua</File>
+    <File>Lua/WW2_JoinPower.lua</File>
+    <File>Lua/WW2_JoinDiplomacy.lua</File>
+    <File>Text/WW2_Text.xml</File>
+  </Files>
 </Mod>

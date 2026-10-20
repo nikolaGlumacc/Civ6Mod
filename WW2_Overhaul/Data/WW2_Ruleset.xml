@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+  <!-- Registers WW2 Overhaul as an explicit Ruleset in the Create Game / Advanced Setup menu -->
+  <RuleSets>
+    <Row>
+      <RuleSetType>RULESET_WW2</RuleSetType>
+      <Name>LOC_RULESET_WW2_NAME</Name>
+      <Description>LOC_RULESET_WW2_DESCRIPTION</Description>
+      <SupportsSinglePlayer>1</SupportsSinglePlayer>
+      <SupportsMultiPlayer>1</SupportsMultiPlayer>
+      <SortIndex>25</SortIndex>
+    </Row>
+  </RuleSets>
+</GameInfo>
