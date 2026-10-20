@@ -1,32 +1,36 @@
-# WW2 Overhaul (Ruleset) – v0.5
+# WW2 Overhaul (Ruleset) – v0.6
 
-## Army Doctrine is now a selectable option
+## What changed in this version
 
-In **Create Game → Advanced Setup** you will find:
+### Supply is now city / regional
+- **Supply Depot** (city building) is the main system. One per city, regional range covers the whole city radius.
+- Gives +8 healing and +3 Combat Strength to units + production.
+- **Supply Station** improvement still exists as an optional field fortification for Builders.
 
-**Army Doctrine**
-- Light Army   → +3 Combat Strength
-- Medium Army  → +7 Combat Strength (default)
-- Heavy Army   → +14 Combat Strength (≈ double Light)
+### National Stubbornness (the big one)
+When you lose cities / territory while the idea is active:
+- You get a **surge**: +25% Production and +8 Combat Strength for **25 turns**
+- Then a **5-turn cooldown** before it can trigger again
+- This replaces the old “production drop when losing” idea — now losing territory makes you fight harder (like real stubborn resistance).
 
-This choice applies to **all combat units** for the whole game.
+### Stronger Industrial Zones
+Workshops, Factories, Power Plants and the Industrial Zone itself give noticeably more Production.
 
-The old Wildcard policy versions of Light/Medium/Heavy are still available if you want to stack or change later.
-
-## Everything else (unchanged)
-- Only Domination victory
-- Loyalty pressure disabled
-- Stronger city damage, navy, air, promotions
+### Still present
+- Selectable Light / Medium / Heavy Army Doctrine (Advanced Setup)
+- All Wildcard policies
 - Oil maintenance
 - 1936-style start
-- Wildcard policies (War Economy, National Stubbornness, Blitz, etc.)
-- Supply Station (Builder) + Supply Depot (city building)
-- Ideology bonuses
-- Production pressure only when losing
-- Compatible with Serbia Civilization Pack
+- Domination only
+- Compatible with Serbia Civ Pack
 
-## How to use
-1. Enable Serbia Civ Pack (optional)
-2. Enable WW2 Overhaul
-3. In Advanced Setup pick your Army Doctrine (Light / Medium / Heavy)
-4. Start the game
+### Europe True Start
+Foundation is in place. A full main-menu “outline of Europe → pick Yugoslavia / USSR / France / UK / Germany / Poland…” selector needs a custom scenario + Frontend UI. That is the next big piece if you want it.
+
+### About the lens / oil-supply UI
+A proper lens that shows supply coverage is possible but requires custom UI/lens code. The gameplay systems (Depot + Station) are ready; the visual lens can be added later.
+
+---
+
+**Recommended next step:**  
+Tell me if you want me to start the Europe 1936 scenario + territory selector, or polish the Stubbornness modifiers so the +Production/+CS is fully attached in-game.

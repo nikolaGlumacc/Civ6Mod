@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="0.5">
+<Mod id="WW2_Overhaul" version="0.6">
   <Properties>
     <Name>WW2 Overhaul (Ruleset)</Name>
-    <Teaser>1936 start • Domination only • Selectable Light/Med/Heavy Army • Wildcards • Supply • Ideology</Teaser>
-    <Description>WW2 / HOI4-style ruleset. Light / Medium / Heavy Army Doctrine is now a selectable option in Advanced Setup. Also includes wildcards, Supply Stations, ideology bonuses, oil maintenance, 1936 start, Domination only. Compatible with Serbia Civ Pack.</Description>
+    <Teaser>City Supply Depots • National Stubbornness surge • Stronger Industry • Selectable Army Doctrine</Teaser>
+    <Description>WW2 ruleset. Supply is now city/regional (Supply Depot). National Stubbornness gives a 25-turn production + combat surge when you lose territory (5-turn cooldown). Stronger Industrial Zones. Selectable Light/Medium/Heavy Army. Wildcard policies. Compatible with Serbia Civ Pack. Europe true-start foundation included.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>2.0</CompatibleVersions>
   </Properties>
@@ -39,6 +39,7 @@
           <Item>Data/WW2_ArmyDoctrines.sql</Item>
           <Item>Data/WW2_Ideology.sql</Item>
           <Item>Data/WW2_Config.sql</Item>
+          <Item>Data/WW2_EuropeStart.sql</Item>
         </UpdateDatabase>
         <AddGameplayScripts>
           <Item>Lua/WW2_OilMaintenance.lua</Item>
@@ -46,6 +47,7 @@
           <Item>Lua/WW2_WarWeariness.lua</Item>
           <Item>Lua/WW2_Config.lua</Item>
           <Item>Lua/WW2_ArmyDoctrine.lua</Item>
+          <Item>Lua/WW2_Stubbornness.lua</Item>
         </AddGameplayScripts>
       </Actions>
     </ActionGroup>

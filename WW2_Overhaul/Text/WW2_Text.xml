@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
-    <!-- Yugoslavia (kept) -->
+    <!-- Yugoslavia -->
     <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US"><Text>Yugoslavia</Text></Replace>
     <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>A South Slavic state. Available as an extra nation in the WW2 ruleset.</Text></Replace>
     <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_ADJECTIVE" Language="en_US"><Text>Yugoslav</Text></Replace>
@@ -20,45 +20,43 @@
     <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_NAME" Language="en_US"><Text>War Economy</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_DESCRIPTION" Language="en_US"><Text>+20% Production toward units and +15% toward buildings.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_NAME" Language="en_US"><Text>Total Mobilization</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_DESCRIPTION" Language="en_US"><Text>+25% Production toward units. -1 Amenity in all cities.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_DESCRIPTION" Language="en_US"><Text>+25% Production toward units.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_NAME" Language="en_US"><Text>Scientific Effort</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_DESCRIPTION" Language="en_US"><Text>+15% Science in all cities.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_NAME" Language="en_US"><Text>Offensive Spirit</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength for all units when attacking.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_NAME" Language="en_US"><Text>Defensive Lines</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength for all units when defending.</Text></Replace>
+
     <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_NAME" Language="en_US"><Text>National Stubbornness</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_DESCRIPTION" Language="en_US"><Text>+10 Combat Strength when defending in home territory. Units heal +5 extra per turn in friendly territory.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_DESCRIPTION" Language="en_US"><Text>Base: +4 Combat Strength and +3 healing. When you lose cities or territory you gain a surge of +25% Production and +8 Combat Strength for 25 turns (5-turn cooldown afterwards).</Text></Replace>
+
     <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_NAME" Language="en_US"><Text>Blitz Doctrine</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_DESCRIPTION" Language="en_US"><Text>+2 Movement for land units. +5 Combat Strength when attacking.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_NAME" Language="en_US"><Text>War of Attrition</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength for all units (defensive attrition focus).</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength for all units.</Text></Replace>
 
-    <!-- Army Doctrine option (Advanced Setup) -->
+    <!-- Army Doctrine option -->
     <Replace Tag="LOC_WW2_ARMY_DOCTRINE_NAME" Language="en_US"><Text>Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_DESC" Language="en_US"><Text>Choose the global army doctrine for this game. Affects all combat units.</Text></Replace>
-
+    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_DESC" Language="en_US"><Text>Choose the global army doctrine for this game.</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_LIGHT_DESC" Language="en_US"><Text>+3 Combat Strength for all combat units. Fast and flexible.</Text></Replace>
-
+    <Replace Tag="LOC_WW2_ARMY_LIGHT_DESC" Language="en_US"><Text>+3 Combat Strength. Fast and flexible.</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_MEDIUM_DESC" Language="en_US"><Text>+7 Combat Strength for all combat units. Balanced (default).</Text></Replace>
-
+    <Replace Tag="LOC_WW2_ARMY_MEDIUM_DESC" Language="en_US"><Text>+7 Combat Strength. Balanced (default).</Text></Replace>
     <Replace Tag="LOC_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_HEAVY_DESC" Language="en_US"><Text>+14 Combat Strength for all combat units (roughly double Light). Slow but devastating.</Text></Replace>
+    <Replace Tag="LOC_WW2_ARMY_HEAVY_DESC" Language="en_US"><Text>+14 Combat Strength (roughly double Light).</Text></Replace>
 
-    <!-- Keep old policy names too -->
     <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>+3 Combat Strength for all combat units. Fast and flexible.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>+3 Combat Strength.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength for all combat units. Balanced.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_DESCRIPTION" Language="en_US"><Text>+14 Combat Strength for all combat units (roughly double Light).</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_DESCRIPTION" Language="en_US"><Text>+14 Combat Strength.</Text></Replace>
 
     <!-- Supply -->
     <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_NAME" Language="en_US"><Text>Supply Station</Text></Replace>
-    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>Built by Builders. Provides a local supply point. +1 Production, +1 Gold.</Text></Replace>
+    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>Optional field supply point built by Builders. +1 Production, +1 Gold.</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME" Language="en_US"><Text>Supply Depot</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building. Units heal +5 extra per turn. +2 Production.</Text></Replace>
+    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City building (regional). Units heal +8 and gain +3 Combat Strength. +3 Production. One per city covers the whole city radius.</Text></Replace>
   </LocalizedText>
 </GameData>
