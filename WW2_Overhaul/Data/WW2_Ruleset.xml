@@ -27,8 +27,9 @@
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="WW2_Europe.lua" Hash="0"/>
+    <!-- MUST match GetMapInitData size: 96x60 = MAPSIZE_HUGE. Large/Enormous mismatch = ACCESS_VIOLATION -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
-         TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_LARGE" Hash="1"/>
+         TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_HUGE" Hash="1"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_NO_GOODY_HUTS" TargetValue="1" Hash="0"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"

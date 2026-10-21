@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.4">
+<Mod id="WW2_Overhaul" version="2.5">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.4 • Fixed map crash • Army Doctrine in-game • Serbia in picker</Teaser>
-    <Description>WW2 ruleset. Map crash fixed (no ClearLandmarks). Army Doctrine = switchable military policies in-game. Serbia kept in leader pool.</Description>
+    <Teaser>v2.5 • Map size fix (no ACCESS_VIOLATION) • 96x60 HUGE Europe</Teaser>
+    <Description>Map size now matches MAPSIZE_HUGE (96x60). Previous Large vs 106x66 mismatch caused native ACCESS_VIOLATION crashes.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
