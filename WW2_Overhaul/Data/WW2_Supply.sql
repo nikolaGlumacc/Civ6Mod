@@ -1,48 +1,76 @@
--- WW2 Overhaul: Supply is now city / regional focused
--- One strong Supply Depot per city (covers the whole city radius).
--- Supply Station improvement is secondary / optional field fortification.
+-- Supply + Oil infrastructure (regional = whole city working radius)
 
 -- =====================================================
--- Building: Supply Depot (one per city, regional effect)
+-- Supply Depot (city building, regional coverage)
 -- =====================================================
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('BUILDING_WW2_SUPPLY_DEPOT', 'KIND_BUILDING');
 
 INSERT OR IGNORE INTO Buildings (
   BuildingType, Name, Description,
-  PrereqTech, Cost, MaxPlayerInstances,
+  PrereqTech, PrereqDistrict, Cost, MaxPlayerInstances,
   Maintenance, CitizenSlots, AdvisorType,
   RegionalRange
 ) VALUES (
   'BUILDING_WW2_SUPPLY_DEPOT',
   'LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME',
   'LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION',
-  'TECH_MILITARY_SCIENCE', 160, -1,   -- -1 = unlimited, one per city is natural
+  'TECH_MILITARY_SCIENCE', 'DISTRICT_CITY_CENTER',
+  140, -1,
   2, 0, 'ADVISOR_CONQUEST',
-  6                                 -- regional range covers typical city radius
+  9   -- covers full city region / adjacent cities
 );
 
 INSERT OR IGNORE INTO Building_YieldChanges (BuildingType, YieldType, YieldChange) VALUES
 ('BUILDING_WW2_SUPPLY_DEPOT', 'YIELD_PRODUCTION', 3);
 
--- Units in the city (and regional range) heal faster
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-('WW2_SUPPLY_DEPOT_HEAL', 'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN');
-INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-('WW2_SUPPLY_DEPOT_HEAL', 'Amount', '8');
-INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId) VALUES
-('BUILDING_WW2_SUPPLY_DEPOT', 'WW2_SUPPLY_DEPOT_HEAL');
+('WW2_SUPPLY_DEPOT_HEAL', 'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN'),
+('WW2_SUPPLY_DEPOT_CS',   'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
 
--- Small combat bonus while supplied (in owned territory with depot)
-INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-('WW2_SUPPLY_DEPOT_CS', 'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-('WW2_SUPPLY_DEPOT_CS', 'Amount', '3');
+('WW2_SUPPLY_DEPOT_HEAL', 'Amount', '10'),
+('WW2_SUPPLY_DEPOT_CS',   'Amount', '4');
+
 INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId) VALUES
+('BUILDING_WW2_SUPPLY_DEPOT', 'WW2_SUPPLY_DEPOT_HEAL'),
 ('BUILDING_WW2_SUPPLY_DEPOT', 'WW2_SUPPLY_DEPOT_CS');
 
 -- =====================================================
--- Improvement: Supply Station (optional field supply)
+-- Oil Depot (regional fuel infrastructure)
+-- =====================================================
+INSERT OR IGNORE INTO Types (Type, Kind) VALUES
+('BUILDING_WW2_OIL_DEPOT', 'KIND_BUILDING');
+
+INSERT OR IGNORE INTO Buildings (
+  BuildingType, Name, Description,
+  PrereqTech, PrereqDistrict, Cost, MaxPlayerInstances,
+  Maintenance, CitizenSlots, AdvisorType,
+  RegionalRange
+) VALUES (
+  'BUILDING_WW2_OIL_DEPOT',
+  'LOC_BUILDING_WW2_OIL_DEPOT_NAME',
+  'LOC_BUILDING_WW2_OIL_DEPOT_DESCRIPTION',
+ co  'TECH_REFINING', 'DISTRICT_CITY_CENTER',
+  180, -1,
+  3, 0, 'ADVISOR_CONQUEST',
+  9
+);
+
+INSERT OR IGNORE INTO Building_YieldChanges (BuildingType, YieldType, YieldChange) VALUES
+('BUILDING_WW2_OIL_DEPOT', 'YIELD_PRODUCTION', 2),
+('BUILDING_WW2_OIL_DEPOT', 'YIELD_GOLD', 2);
+
+-- Extra movement for modern units when oil infrastructure exists (soft buff; shortage still handled in Lua)
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_OIL_DEPOT_MOVE', 'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_OIL_DEPOT_MOVE', 'Amount', '1');
+INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId) VALUES
+('BUILDING_WW2_OIL_DEPOT', 'WW2_OIL_DEPOT_MOVE');
+
+-- =====================================================
+-- Supply Station (builder field line)
 -- =====================================================
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('IMPROVEMENT_WW2_SUPPLY_STATION', 'KIND_IMPROVEMENT');
@@ -77,3 +105,10 @@ INSERT OR IGNORE INTO Improvement_ValidBuildUnits (ImprovementType, UnitType) VA
 INSERT OR IGNORE INTO Improvement_YieldChanges (ImprovementType, YieldType, YieldChange) VALUES
 ('IMPROVEMENT_WW2_SUPPLY_STATION', 'YIELD_PRODUCTION', 1),
 ('IMPROVEMENT_WW2_SUPPLY_STATION', 'YIELD_GOLD', 1);
+
+INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
+('WW2_SUPPLY_STATION_HEAL', 'MODIFIER_PLAYER_UNITS_ADJUST_HEAL_PER_TURN');
+INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
+('WW2_SUPPLY_STATION_HEAL', 'Amount', '3');
+INSERT OR IGNORE INTO ImprovementModifiers (ImprovementType, ModifierId) VALUES
+('IMPROVEMENT_WW2_SUPPLY_STATION', 'WW2_SUPPLY_STATION_HEAL');
