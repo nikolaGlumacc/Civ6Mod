@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.3">
+<Mod id="WW2_Overhaul" version="2.4">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.3 • EU/Africa/Serbia only • Trajan=Italy • Join/Leave/Annex • Supply+Oil depots</Teaser>
-    <Description>WW2 ruleset using existing civs + Serbia pack. Europe map with North Africa, leader pool locked to European + African + Serbia, Trajan as Italy, Industrial start, Domination only, regional Supply/Oil depots, join/leave/annex diplomacy helpers.</Description>
+    <Teaser>v2.4 • Fixed map crash • Army Doctrine in-game • Serbia in picker</Teaser>
+    <Description>WW2 ruleset. Map crash fixed (no ClearLandmarks). Army Doctrine = switchable military policies in-game. Serbia kept in leader pool.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -19,6 +19,7 @@
 
   <FrontEndActions>
     <UpdateDatabase id="WW2_Config_DB">
+      <Properties><LoadOrder>50</LoadOrder></Properties>
       <File>Data/WW2_Ruleset.xml</File>
       <File>Data/WW2_Frontend_Players.sql</File>
     </UpdateDatabase>
@@ -39,6 +40,7 @@
     <UpdateDatabase id="WW2_Gameplay_DB">
       <Properties>
         <RuleSet>RULESET_WW2,RULESET_EXPANSION_2</RuleSet>
+        <LoadOrder>50</LoadOrder>
       </Properties>
       <File>Data/WW2_Victories.sql</File>
       <File>Data/WW2_Loyalty.sql</File>

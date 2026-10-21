@@ -1,10 +1,8 @@
 ------------------------------------------------------------------------------
--- WW2 Europe map — 106x66, Europe + North Africa
+-- WW2 Europe — 106x66 Europe + North Africa (no ClearLandmarks — that API is nil)
 ------------------------------------------------------------------------------
 include("MapEnums")
 include("MapUtilities")
-include("MountainsCliffs")
-include("RiversLakes")
 include("FeatureGenerator")
 include("TerrainGenerator")
 include("NaturalWonderGenerator")
@@ -12,7 +10,6 @@ include("ResourceGenerator")
 include("AssignStartingPlots")
 
 local g_iW, g_iH = 106, 66
-local g_iFlags = {}
 
 function GetMapInitData(MapSize)
   return { Width = 106, Height = 66, WrapX = false, WrapY = false }
@@ -31,7 +28,7 @@ function GetMapScriptInfo()
 end
 
 local function N(x, y)
-  return x / (g_iW - 1), y / (g_iH - 1)
+  return x / math.max(g_iW - 1, 1), y / math.max(g_iH - 1, 1)
 end
 
 local function InEllipse(nx, ny, cx, cy, rx, ry)
@@ -113,8 +110,8 @@ local function IsMountain(x, y)
 end
 
 local function IsHills(x, y)
-  local nx, ny = N(x, y)
   if IsAfrica(x, y) then return false end
+  local nx, ny = N(x, y)
   if InEllipse(nx, ny, 0.30, 0.44, 0.08, 0.06) then return true end
   if InEllipse(nx, ny, 0.48, 0.52, 0.06, 0.05) then return true end
   if InEllipse(nx, ny, 0.20, 0.32, 0.06, 0.05) then return true end
@@ -122,29 +119,40 @@ local function IsHills(x, y)
   return false
 end
 
--- Apply plot types by writing terrain (ocean vs land). No ClearLandmarks (not in API).
+-- Classic Firaxis contract: build plotTypes table and return it
 function GeneratePlotTypes()
-  print("WW2 Europe: GeneratePlotTypes")
+  print("[WW2 Europe] GeneratePlotTypes")
+  local plotTypes = {}
+  local ocean = g_PLOT_TYPE_OCEAN or 3
+  local land = g_PLOT_TYPE_LAND or 1
+  local hills = g_PLOT_TYPE_HILLS or 2
+  local mountain = g_PLOT_TYPE_MOUNTAIN or 0
+
+  for i = 0, (g_iW * g_iH) - 1 do
+    plotTypes[i] = ocean
+  end
+
   for y = 0, g_iH - 1 do
     for x = 0, g_iW - 1 do
-      local plot = Map.GetPlot(x, y)
-      if plot then
-        if not IsEuropeLand(x, y) then
-          local ocean = GameInfo.Terrains["TERRAIN_OCEAN"]
-          if ocean then TerrainBuilder.SetTerrainType(plot, ocean.Index) end
+      local i = y * g_iW + x
+      if IsEuropeLand(x, y) then
+        if IsMountain(x, y) then
+          plotTypes[i] = mountain
+        elseif IsHills(x, y) then
+          plotTypes[i] = hills
         else
-          -- Temporary grass; GenerateTerrain refinest
-          local grass = GameInfo.Terrains["TERRAIN_GRASS"]
-          if grass then TerrainBuilder.SetTerrainType(plot, grass.Index) end
+          plotTypes[i] = land
         end
       end
     end
   end
+
   pcall(function() AreaBuilder.Recalculate() end)
+  return plotTypes
 end
 
 function GenerateTerrain()
-  print("WW2 Europe: GenerateTerrain")
+  print("[WW2 Europe] GenerateTerrain")
   for y = 0, g_iH - 1 do
     for x = 0, g_iW - 1 do
       local plot = Map.GetPlot(x, y)
@@ -153,9 +161,9 @@ function GenerateTerrain()
         local terrain
         if IsAfrica(x, y) then
           terrain = ((x + y) % 5 == 0) and "TERRAIN_PLAINS" or "TERRAIN_DESERT"
-        elseif IsMountain(x, y) then
+        elseif plot:IsMountain() then
           terrain = ny > 0.55 and "TERRAIN_TUNDRA_MOUNTAIN" or "TERRAIN_GRASS_MOUNTAIN"
-        elseif IsHills(x, y) then
+        elseif plot:IsHills() then
           if ny > 0.70 then terrain = "TERRAIN_TUNDRA_HILLS"
           elseif ny < 0.28 then terrain = "TERRAIN_PLAINS_HILLS"
           else terrain = "TERRAIN_GRASS_HILLS" end
@@ -271,7 +279,7 @@ function WW2_RepositionPriorityCivs()
           for _, unit in p:GetUnits():Members() do
             unit:SetXY(target:GetX(), target:GetY())
           end
-          print(string.format("[WW2 Europe] TSL %s → %d,%d", civ, target:GetX(), target:GetY()))
+          print(string.format("[WW2 Europe] TSL %s -> %d,%d", civ, target:GetX(), target:GetY()))
         end
       end
     end
@@ -293,12 +301,13 @@ function StartPlotSystem()
 end
 
 function GenerateMap()
-  print("WW2 Europe 106x66")
+  print("[WW2 Europe] GenerateMap 106x66")
   local gridW, gridH = Map.GetGridSize()
-  g_iW, g_iH = gridW, gridH
-  g_iFlags = TerrainBuilder.GetFractalFlags()
+  if gridW and gridH and gridW > 0 then
+    g_iW, g_iH = gridW, gridH
+  end
 
-  GeneratePlotTypes()
+  local plotTypes = GeneratePlotTypes()
   GenerateTerrain()
 
   pcall(function() AreaBuilder.Recalculate() end)
@@ -314,5 +323,5 @@ function GenerateMap()
   EnrichAfricaResources()
   StartPlotSystem()
   pcall(function() AddGoodies(g_iW, g_iH) end)
-  print("WW2 Europe map done")
+  print("[WW2 Europe] map done")
 end
