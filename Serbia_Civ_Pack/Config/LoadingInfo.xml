@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Deprecated: LoadingInfo is now inserted from Config/Leader_Config.sql
-     (avoids Configuration "no such table: LoadingInfo" when XML runs too early).
-     This file is kept empty of rows so old modinfo references do not error. -->
+<!-- Empty on purpose. LoadingInfo is inserted from Core/LoadingInfo.sql (Gameplay DB). -->
 <GameInfo>
 </GameInfo>

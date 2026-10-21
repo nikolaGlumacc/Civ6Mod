@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
   <Colors>
-    <Row Type="COLOR_PLAYER_SERBIA_PRIMARY" Color="199,30,40,255"/>
-    <Row Type="COLOR_PLAYER_SERBIA_SECONDARY" Color="10,50,140,255"/>
-
+    <Replace Type="COLOR_PLAYER_SERBIA_PRIMARY" Color="199,30,40,255"/>
+    <Replace Type="COLOR_PLAYER_SERBIA_SECONDARY" Color="10,50,140,255"/>
   </Colors>
   <PlayerColors>
-    <Row Type="CIVILIZATION_SERBIA" Usage="Unique" PrimaryColor="COLOR_PLAYER_SERBIA_PRIMARY" SecondaryColor="COLOR_PLAYER_SERBIA_SECONDARY"/>
-
+    <Replace Type="CIVILIZATION_SERBIA" Usage="Unique" PrimaryColor="COLOR_PLAYER_SERBIA_PRIMARY" SecondaryColor="COLOR_PLAYER_SERBIA_SECONDARY"/>
   </PlayerColors>
 </GameInfo>
