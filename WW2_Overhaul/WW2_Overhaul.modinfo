@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.6">
+<Mod id="WW2_Overhaul" version="2.7">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.6 • TSL after load • seed cities • WW2 debug toolkit</Teaser>
-    <Description>Historical starts applied after load (England/France/Germany/Serbia/Macedonia etc). Seeds extra cities when API allows. Temporary debug: WW2_Debug("reveal"/"tsl"/"godmode").</Description>
+    <Teaser>v2.7 • Europe landmask • predefined nations • no fog</Teaser>
+    <Description>Clearer Europe map, multi-city predefined countries for every theatre civ, full map visible at start.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>

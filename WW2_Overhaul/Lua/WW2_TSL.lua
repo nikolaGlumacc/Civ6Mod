@@ -1,62 +1,148 @@
--- True-ish starts for WW2 Europe map (96x60).
--- Runs AFTER load screen so units/cities exist. Seeds a capital if none yet.
+-- Predefined WW2 nations: capital + secondary cities for every theatre civ.
+-- Full map revealed (no fog). Runs after LoadScreenClose.
 
 local RAN = false
 
--- Relative coords 0..1 mapped onto current grid (works if size changes slightly)
-local TSL = {
-  CIVILIZATION_ENGLAND      = { 0.22, 0.64 }, -- London
-  CIVILIZATION_SCOTLAND     = { 0.20, 0.72 },
-  CIVILIZATION_FRANCE       = { 0.30, 0.50 }, -- Paris
-  CIVILIZATION_SPAIN        = { 0.18, 0.36 }, -- Madrid
-  CIVILIZATION_PORTUGAL     = { 0.12, 0.34 }, -- Lisbon
-  CIVILIZATION_GERMANY      = { 0.42, 0.58 }, -- Berlin
-  CIVILIZATION_POLAND       = { 0.52, 0.60 }, -- Warsaw
-  CIVILIZATION_HUNGARY      = { 0.50, 0.50 }, -- Budapest
-  CIVILIZATION_RUSSIA       = { 0.72, 0.68 }, -- Moscow belt
-  CIVILIZATION_ROME         = { 0.42, 0.34 }, -- Rome / Italy (Trajan)
-  CIVILIZATION_SERBIA       = { 0.50, 0.42 }, -- Belgrade
-  CIVILIZATION_STR_SERBIA   = { 0.50, 0.42 },
-  CIVILIZATION_WW2_YUGOSLAVIA = { 0.50, 0.42 },
-  CIVILIZATION_GREECE       = { 0.54, 0.28 }, -- Athens
-  CIVILIZATION_MACEDON      = { 0.53, 0.32 }, -- north of Greece, NOT Spain
-  CIVILIZATION_NORWAY       = { 0.38, 0.80 },
-  CIVILIZATION_SWEDEN       = { 0.46, 0.80 },
-  CIVILIZATION_NETHERLANDS  = { 0.34, 0.60 },
-  CIVILIZATION_GEORGIA      = { 0.78, 0.42 },
-  CIVILIZATION_BYZANTIUM    = { 0.60, 0.34 }, -- Constantinople area
-  CIVILIZATION_OTTOMAN      = { 0.62, 0.36 },
-  CIVILIZATION_GAUL         = { 0.32, 0.52 },
-  CIVILIZATION_SCYTHIA      = { 0.70, 0.55 },
-  CIVILIZATION_PHOENICIA    = { 0.28, 0.10 }, -- North Africa / Carthage
-  CIVILIZATION_EGYPT        = { 0.60, 0.10 },
-  CIVILIZATION_ETHIOPIA     = { 0.64, 0.07 },
-  CIVILIZATION_NUBIA        = { 0.58, 0.08 },
-  CIVILIZATION_MALI         = { 0.20, 0.08 },
-}
-
--- Extra city seeds (relative) for HOI4-ish territory feel — capital + 1-2 more
-local EXTRA = {
-  CIVILIZATION_ENGLAND = { {0.20,0.62}, {0.24,0.68} },
-  CIVILIZATION_FRANCE  = { {0.28,0.46}, {0.34,0.48} },
-  CIVILIZATION_GERMANY = { {0.40,0.54}, {0.44,0.60} },
-  CIVILIZATION_SPAIN   = { {0.16,0.32}, {0.22,0.38} },
-  CIVILIZATION_RUSSIA  = { {0.68,0.64}, {0.76,0.70} },
-  CIVILIZATION_ROME    = { {0.40,0.30}, {0.44,0.36} },
-  CIVILIZATION_SERBIA  = { {0.48,0.40}, {0.52,0.44} },
-  CIVILIZATION_POLAND  = { {0.50,0.58}, {0.54,0.62} },
-  CIVILIZATION_GREECE  = { {0.52,0.26} },
-  CIVILIZATION_MACEDON = { {0.51,0.34} },
+-- Relative positions on Europe map (0..1). Capital first, then extra cities.
+local NATIONS = {
+  CIVILIZATION_ENGLAND = {
+    {0.22, 0.64}, -- London
+    {0.20, 0.60}, -- Portsmouth / south
+    {0.24, 0.70}, -- York / north
+    {0.18, 0.66}, -- Wales / west
+  },
+  CIVILIZATION_SCOTLAND = {
+    {0.20, 0.74},
+    {0.18, 0.70},
+  },
+  CIVILIZATION_FRANCE = {
+    {0.30, 0.50}, -- Paris
+    {0.28, 0.44}, -- Lyon
+    {0.26, 0.52}, -- Normandy
+    {0.34, 0.46}, -- east
+    {0.32, 0.40}, -- Marseille area
+  },
+  CIVILIZATION_SPAIN = {
+    {0.17, 0.36}, -- Madrid
+    {0.14, 0.32}, -- Seville
+    {0.20, 0.38}, -- Barcelona belt
+    {0.12, 0.36}, -- west
+  },
+  CIVILIZATION_PORTUGAL = {
+    {0.11, 0.34},
+    {0.11, 0.30},
+  },
+  CIVILIZATION_GERMANY = {
+    {0.42, 0.58}, -- Berlin
+    {0.40, 0.52}, -- Munich / south
+    {0.38, 0.58}, -- Ruhr / west
+    {0.46, 0.56}, -- east
+    {0.42, 0.62}, -- Hamburg / north
+  },
+  CIVILIZATION_POLAND = {
+    {0.52, 0.60}, -- Warsaw
+    {0.50, 0.56}, -- Krakow
+    {0.54, 0.62}, -- north
+  },
+  CIVILIZATION_HUNGARY = {
+    {0.50, 0.50}, -- Budapest
+    {0.48, 0.48},
+  },
+  CIVILIZATION_RUSSIA = {
+    {0.72, 0.66}, -- Moscow
+    {0.68, 0.62}, -- southwest
+    {0.76, 0.70}, -- north/east
+    {0.70, 0.58}, -- Ukraine belt
+    {0.78, 0.64},
+  },
+  CIVILIZATION_ROME = { -- Italy / Trajan
+    {0.42, 0.34}, -- Rome
+    {0.40, 0.38}, -- Milan / north
+    {0.44, 0.28}, -- Naples
+    {0.44, 0.18}, -- Sicily
+  },
+  CIVILIZATION_SERBIA = {
+    {0.50, 0.42}, -- Belgrade
+    {0.48, 0.40}, -- west
+    {0.52, 0.40}, -- Nis
+    {0.50, 0.44}, -- Novi Sad
+  },
+  CIVILIZATION_STR_SERBIA = {
+    {0.50, 0.42}, {0.48, 0.40}, {0.52, 0.40},
+  },
+  CIVILIZATION_WW2_YUGOSLAVIA = {
+    {0.50, 0.42}, {0.48, 0.44}, {0.52, 0.38}, {0.46, 0.42},
+  },
+  CIVILIZATION_GREECE = {
+    {0.54, 0.26}, -- Athens
+    {0.52, 0.28},
+    {0.56, 0.24},
+  },
+  CIVILIZATION_MACEDON = {
+    {0.53, 0.32}, -- Skopje / north Greece — NOT Spain
+    {0.51, 0.34},
+  },
+  CIVILIZATION_NORWAY = {
+    {0.38, 0.80},
+    {0.36, 0.76},
+  },
+  CIVILIZATION_SWEDEN = {
+    {0.46, 0.80},
+    {0.48, 0.76},
+  },
+  CIVILIZATION_NETHERLANDS = {
+    {0.34, 0.60},
+    {0.34, 0.58},
+  },
+  CIVILIZATION_GEORGIA = {
+    {0.78, 0.44},
+    {0.76, 0.42},
+  },
+  CIVILIZATION_BYZANTIUM = {
+    {0.60, 0.34}, -- Constantinople
+    {0.58, 0.32},
+  },
+  CIVILIZATION_OTTOMAN = {
+    {0.62, 0.36},
+    {0.64, 0.34},
+  },
+  CIVILIZATION_GAUL = {
+    {0.32, 0.52},
+    {0.30, 0.48},
+  },
+  CIVILIZATION_SCYTHIA = {
+    {0.70, 0.54},
+    {0.72, 0.52},
+  },
+  CIVILIZATION_PHOENICIA = {
+    {0.26, 0.10}, -- Carthage / Tunis
+    {0.24, 0.10},
+  },
+  CIVILIZATION_EGYPT = {
+    {0.60, 0.10}, -- Nile delta
+    {0.58, 0.08},
+    {0.62, 0.08},
+  },
+  CIVILIZATION_ETHIOPIA = {
+    {0.64, 0.07},
+    {0.62, 0.06},
+  },
+  CIVILIZATION_NUBIA = {
+    {0.58, 0.08},
+    {0.56, 0.07},
+  },
+  CIVILIZATION_MALI = {
+    {0.18, 0.08},
+    {0.20, 0.08},
+  },
 }
 
 local function GridXY(rx, ry)
   local w, h = Map.GetGridSize()
   local x = math.floor(rx * (w - 1) + 0.5)
   local y = math.floor(ry * (h - 1) + 0.5)
-  if x < 0 then x = 0 end
-  if y < 0 then y = 0 end
-  if x > w - 1 then x = w - 1 end
-  if y > h - 1 then y = h - 1 end
+  x = math.max(0, math.min(w - 1, x))
+  y = math.max(0, math.min(h - 1, y))
   return x, y
 end
 
@@ -66,16 +152,15 @@ local function IsGood(plot)
   local t = GameInfo.Terrains[plot:GetTerrainType()]
   if t then
     local n = t.TerrainType
-    if n == "TERRAIN_SNOW" or n == "TERRAIN_SNOW_HILLS" or n == "TERRAIN_SNOW_MOUNTAIN" then
+    if string.find(n, "SNOW") or n == "TERRAIN_TUNDRA" or n == "TERRAIN_TUNDRA_HILLS" then
       return false
     end
-    if n == "TERRAIN_TUNDRA" or n == "TERRAIN_TUNDRA_HILLS" then return false end
   end
   return true
 end
 
 local function FindNear(tx, ty, radius)
-  radius = radius or 14
+  radius = radius or 12
   local best, bestD = nil, 99999
   local w, h = Map.GetGridSize()
   for r = 0, radius do
@@ -96,17 +181,7 @@ local function FindNear(tx, ty, radius)
   return nil
 end
 
-local function MoveUnits(player, plot)
-  if not player or not plot then return end
-  local units = player:GetUnits()
-  if not units then return end
-  for _, u in units:Members() do
-    pcall(function() u:SetXY(plot:GetX(), plot:GetY()) end)
-  end
-end
-
 local function TryCreateCity(playerID, x, y)
-  -- Several API variants across builds
   local city = nil
   pcall(function()
     if CityManager and CityManager.CreateCity then
@@ -122,88 +197,100 @@ local function TryCreateCity(playerID, x, y)
   return city
 end
 
-local function EnsureCapital(player, plot)
+local function MoveUnits(player, plot)
   if not player or not plot then return end
-  local cities = player:GetCities()
-  if cities and cities:GetCount() > 0 then
-    -- Already has cities — leave them; still move units to capital area
-    return
-  end
-  local city = TryCreateCity(player:GetID(), plot:GetX(), plot:GetY())
-  if city then
-    print(string.format("[WW2 TSL] Founded capital for P%d at %d,%d", player:GetID(), plot:GetX(), plot:GetY()))
-    -- Kill settlers (already founded)
-    pcall(function()
-      for _, u in player:GetUnits():Members() do
-        local info = GameInfo.Units[u:GetType()]
-        if info and info.UnitType == "UNIT_SETTLER" then
-          UnitManager.Kill(u)
-        end
-      end
-    end)
-  else
-    -- Fallback: just park settlers on the plot so player founds manually
-    MoveUnits(player, plot)
-    print(string.format("[WW2 TSL] No CreateCity API — moved units for P%d to %d,%d", player:GetID(), plot:GetX(), plot:GetY()))
+  for _, u in player:GetUnits():Members() do
+    pcall(function() u:SetXY(plot:GetX(), plot:GetY()) end)
   end
 end
 
-local function SeedExtraCities(player, civ)
-  local list = EXTRA[civ]
-  if not list then return end
-  local cities = player:GetCities()
-  if not cities then return end
-  -- Only seed if we already have at least a capital
-  if cities:GetCount() < 1 then return end
-  for _, pair in ipairs(list) do
+local function KillSettlers(player)
+  pcall(function()
+    for _, u in player:GetUnits():Members() do
+      local info = GameInfo.Units[u:GetType()]
+      if info and info.UnitType == "UNIT_SETTLER" then
+        if UnitManager and UnitManager.Kill then UnitManager.Kill(u)
+        else u:Kill() end
+      end
+    end
+  end)
+end
+
+local function BuildNation(player, civ)
+  local sites = NATIONS[civ]
+  if not sites then
+    print("[WW2 Nation] No predefined country for " .. tostring(civ))
+    return
+  end
+
+  local founded = 0
+  local capitalPlot = nil
+
+  for idx, pair in ipairs(sites) do
     local tx, ty = GridXY(pair[1], pair[2])
-    local plot = FindNear(tx, ty, 8)
+    local plot = FindNear(tx, ty, 10)
     if plot then
-      local c = TryCreateCity(player:GetID(), plot:GetX(), plot:GetY())
-      if c then
-        print(string.format("[WW2 TSL] Extra city P%d at %d,%d", player:GetID(), plot:GetX(), plot:GetY()))
+      local city = TryCreateCity(player:GetID(), plot:GetX(), plot:GetY())
+      if city then
+        founded = founded + 1
+        if not capitalPlot then capitalPlot = plot end
+        print(string.format("[WW2 Nation] %s city#%d at %d,%d", civ, founded, plot:GetX(), plot:GetY()))
+      elseif not capitalPlot then
+        capitalPlot = plot
       end
     end
   end
+
+  if capitalPlot then
+    MoveUnits(player, capitalPlot)
+  end
+
+  if founded > 0 then
+    KillSettlers(player)
+    -- Small starting army for HOI feel
+    pcall(function()
+      local tank = GameInfo.Units["UNIT_TANK"]
+      local inf = GameInfo.Units["UNIT_INFANTRY"]
+      local x, y = capitalPlot:GetX(), capitalPlot:GetY()
+      if tank then player:GetUnits():Create(tank.Index, x, y) end
+      if inf then player:GetUnits():Create(inf.Index, x, y) end
+      if inf then player:GetUnits():Create(inf.Index, x, y) end
+    end)
+  end
+
+  print(string.format("[WW2 Nation] %s founded %d cities", civ, founded))
 end
 
-local function PlacePlayer(player)
-  local cfg = PlayerConfigurations[player:GetID()]
-  if not cfg then return end
-  local civ = cfg:GetCivilizationTypeName()
-  if not civ then return end
-  local tsl = TSL[civ]
-  if not tsl then
-    print("[WW2 TSL] No TSL entry for " .. tostring(civ))
-    return
+function WW2_RevealAllFog()
+  print("[WW2] Revealing entire map (no fog)...")
+  for pid = 0, 63 do
+    local vis = PlayersVisibility[pid]
+    if vis then
+      for i = 0, Map.GetPlotCount() - 1 do
+        pcall(function() vis:ChangeVisibilityCount(i, 1) end)
+      end
+    end
   end
-  local tx, ty = GridXY(tsl[1], tsl[2])
-  local plot = FindNear(tx, ty, 14)
-  if not plot then
-    print("[WW2 TSL] No land near TSL for " .. civ)
-    return
-  end
-  print(string.format("[WW2 TSL] %s -> target %d,%d (wanted %d,%d)", civ, plot:GetX(), plot:GetY(), tx, ty))
-  EnsureCapital(player, plot)
-  MoveUnits(player, plot)
-  SeedExtraCities(player, civ)
+  print("[WW2] Map fully visible")
 end
 
 function WW2_ApplyAllTSL()
-  print("[WW2 TSL] Applying historical starts...")
+  print("[WW2 Nation] Building predefined countries...")
   for i = 0, 63 do
     local p = Players[i]
     if p and p:IsMajor() and p:IsAlive() then
-      PlacePlayer(p)
+      local cfg = PlayerConfigurations[i]
+      local civ = cfg and cfg:GetCivilizationTypeName()
+      if civ then BuildNation(p, civ) end
     end
   end
-  print("[WW2 TSL] Done")
+  WW2_RevealAllFog()
+  print("[WW2 Nation] Done")
 end
 
 local function OnLoad()
   if RAN then return end
   RAN = true
-  -- Defer one tick so cities/units are fully initialized
   if Events.GameCoreEventPublishComplete then
     local n = 0
     local function once()
@@ -220,4 +307,4 @@ local function OnLoad()
 end
 
 Events.LoadScreenClose.Add(OnLoad)
-print("[WW2 TSL] loaded — will place civs after LoadScreenClose")
+print("[WW2 Nation/TSL] loaded — predefined countries + no fog after start")
