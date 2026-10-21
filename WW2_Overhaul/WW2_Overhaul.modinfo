@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.7">
+<Mod id="WW2_Overhaul" version="2.8">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.7 • Europe landmask • predefined nations • no fog</Teaser>
-    <Description>Clearer Europe map, multi-city predefined countries for every theatre civ, full map visible at start.</Description>
+    <Teaser>v2.8 • Real Europe regions (no blob) • quiet first-meet • no natural wonders</Teaser>
+    <Description>Europe built from separate peninsulas/islands. No natural wonders. Civs pre-met to reduce intro dialogue. Full map visible.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -71,6 +71,7 @@
       <File>Lua/WW2_Config.lua</File>
       <File>Lua/WW2_OilMaintenance.lua</File>
       <File>Lua/WW2_StartLogic.lua</File>
+      <File>Lua/WW2_QuietStart.lua</File>
       <File>Lua/WW2_TSL.lua</File>
       <File>Lua/WW2_ArmyDoctrine.lua</File>
       <File>Lua/WW2_Stubbornness.lua</File>
@@ -106,6 +107,7 @@
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>
     <File>Lua/WW2_StartLogic.lua</File>
+    <File>Lua/WW2_QuietStart.lua</File>
     <File>Lua/WW2_TSL.lua</File>
     <File>Lua/WW2_ArmyDoctrine.lua</File>
     <File>Lua/WW2_Stubbornness.lua</File>
