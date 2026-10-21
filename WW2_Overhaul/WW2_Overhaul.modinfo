@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.5">
+<Mod id="WW2_Overhaul" version="2.6">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.5 • Map size fix (no ACCESS_VIOLATION) • 96x60 HUGE Europe</Teaser>
-    <Description>Map size now matches MAPSIZE_HUGE (96x60). Previous Large vs 106x66 mismatch caused native ACCESS_VIOLATION crashes.</Description>
+    <Teaser>v2.6 • TSL after load • seed cities • WW2 debug toolkit</Teaser>
+    <Description>Historical starts applied after load (England/France/Germany/Serbia/Macedonia etc). Seeds extra cities when API allows. Temporary debug: WW2_Debug("reveal"/"tsl"/"godmode").</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -71,11 +71,13 @@
       <File>Lua/WW2_Config.lua</File>
       <File>Lua/WW2_OilMaintenance.lua</File>
       <File>Lua/WW2_StartLogic.lua</File>
+      <File>Lua/WW2_TSL.lua</File>
       <File>Lua/WW2_ArmyDoctrine.lua</File>
       <File>Lua/WW2_Stubbornness.lua</File>
       <File>Lua/WW2_WarWeariness.lua</File>
       <File>Lua/WW2_JoinPower.lua</File>
       <File>Lua/WW2_JoinDiplomacy.lua</File>
+      <File>Lua/WW2_Debug.lua</File>
     </AddGameplayScripts>
   </InGameActions>
 
@@ -104,11 +106,13 @@
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>
     <File>Lua/WW2_StartLogic.lua</File>
+    <File>Lua/WW2_TSL.lua</File>
     <File>Lua/WW2_ArmyDoctrine.lua</File>
     <File>Lua/WW2_Stubbornness.lua</File>
     <File>Lua/WW2_WarWeariness.lua</File>
     <File>Lua/WW2_JoinPower.lua</File>
     <File>Lua/WW2_JoinDiplomacy.lua</File>
+    <File>Lua/WW2_Debug.lua</File>
     <File>Text/WW2_Text.xml</File>
   </Files>
 </Mod>
