@@ -1,8 +1,5 @@
 -- Supply + Oil infrastructure (regional = whole city working radius)
 
--- =====================================================
--- Supply Depot (city building, regional coverage)
--- =====================================================
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('BUILDING_WW2_SUPPLY_DEPOT', 'KIND_BUILDING');
 
@@ -18,7 +15,7 @@ INSERT OR IGNORE INTO Buildings (
   'TECH_MILITARY_SCIENCE', 'DISTRICT_CITY_CENTER',
   140, -1,
   2, 0, 'ADVISOR_CONQUEST',
-  9   -- covers full city region / adjacent cities
+  9
 );
 
 INSERT OR IGNORE INTO Building_YieldChanges (BuildingType, YieldType, YieldChange) VALUES
@@ -36,9 +33,6 @@ INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId) VALUES
 ('BUILDING_WW2_SUPPLY_DEPOT', 'WW2_SUPPLY_DEPOT_HEAL'),
 ('BUILDING_WW2_SUPPLY_DEPOT', 'WW2_SUPPLY_DEPOT_CS');
 
--- =====================================================
--- Oil Depot (regional fuel infrastructure)
--- =====================================================
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('BUILDING_WW2_OIL_DEPOT', 'KIND_BUILDING');
 
@@ -51,7 +45,7 @@ INSERT OR IGNORE INTO Buildings (
   'BUILDING_WW2_OIL_DEPOT',
   'LOC_BUILDING_WW2_OIL_DEPOT_NAME',
   'LOC_BUILDING_WW2_OIL_DEPOT_DESCRIPTION',
- co  'TECH_REFINING', 'DISTRICT_CITY_CENTER',
+  'TECH_REFINING', 'DISTRICT_CITY_CENTER',
   180, -1,
   3, 0, 'ADVISOR_CONQUEST',
   9
@@ -61,7 +55,6 @@ INSERT OR IGNORE INTO Building_YieldChanges (BuildingType, YieldType, YieldChang
 ('BUILDING_WW2_OIL_DEPOT', 'YIELD_PRODUCTION', 2),
 ('BUILDING_WW2_OIL_DEPOT', 'YIELD_GOLD', 2);
 
--- Extra movement for modern units when oil infrastructure exists (soft buff; shortage still handled in Lua)
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
 ('WW2_OIL_DEPOT_MOVE', 'MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT');
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
@@ -69,9 +62,6 @@ INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
 INSERT OR IGNORE INTO BuildingModifiers (BuildingType, ModifierId) VALUES
 ('BUILDING_WW2_OIL_DEPOT', 'WW2_OIL_DEPOT_MOVE');
 
--- =====================================================
--- Supply Station (builder field line)
--- =====================================================
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('IMPROVEMENT_WW2_SUPPLY_STATION', 'KIND_IMPROVEMENT');
 

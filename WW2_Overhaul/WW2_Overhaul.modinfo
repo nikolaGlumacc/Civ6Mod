@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.1">
+<Mod id="WW2_Overhaul" version="2.2">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.1 • Europe map • Industrial start • Domination only • Serbia compatible</Teaser>
-    <Description>WW2 Overhaul ruleset with built-in Europe theatre map, Industrial start, Domination-only, hard science, oil, supply, army doctrine, stubbornness, join diplomacy. Compatible with Serbia Civilization Pack.</Description>
+    <Teaser>v2.2 • Europe+Africa • EU/Serbia/Africa civs only • Join/Leave/Annex • Supply+Oil</Teaser>
+    <Description>WW2 ruleset: European leaders + some Africans + Serbia, Trajan as Italy, Europe map with North Africa, Industrial start, Domination only, supply/oil depots, join/leave/annex diplomacy helpers.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -59,15 +59,12 @@
       <File>Data/WW2_JoinPower.sql</File>
       <File>Data/WW2_EuropeGuide.sql</File>
     </UpdateDatabase>
-
     <UpdateText id="WW2_Gameplay_Text">
       <File>Text/WW2_Text.xml</File>
     </UpdateText>
-
     <ImportFiles id="WW2_Map_Import">
       <File>Maps/WW2_Europe.lua</File>
     </ImportFiles>
-
     <AddGameplayScripts id="WW2_Gameplay_Scripts">
       <File>Lua/WW2_Config.lua</File>
       <File>Lua/WW2_OilMaintenance.lua</File>
