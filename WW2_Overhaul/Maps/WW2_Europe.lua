@@ -1,6 +1,5 @@
 ------------------------------------------------------------------------------
--- WW2 Europe map — scope similar to Steam "TSL Huge Europe" (106x66)
--- Europe + North Africa (resource-rich, weak). No Anatolia. No wrap.
+-- WW2 Europe map — 106x66, Europe + North Africa
 ------------------------------------------------------------------------------
 include("MapEnums")
 include("MapUtilities")
@@ -123,39 +122,48 @@ local function IsHills(x, y)
   return false
 end
 
+-- Apply plot types by writing terrain (ocean vs land). No ClearLandmarks (not in API).
 function GeneratePlotTypes()
-  local plotTypes = {}
+  print("WW2 Europe: GeneratePlotTypes")
   for y = 0, g_iH - 1 do
     for x = 0, g_iW - 1 do
-      local i = y * g_iW + x
-      if not IsEuropeLand(x, y) then plotTypes[i] = g_PLOT_TYPE_OCEAN
-      elseif IsMountain(x, y) then plotTypes[i] = g_PLOT_TYPE_MOUNTAIN
-      elseif IsHills(x, y) then plotTypes[i] = g_PLOT_TYPE_HILLS
-      else plotTypes[i] = g_PLOT_TYPE_LAND end
+      local plot = Map.GetPlot(x, y)
+      if plot then
+        if not IsEuropeLand(x, y) then
+          local ocean = GameInfo.Terrains["TERRAIN_OCEAN"]
+          if ocean then TerrainBuilder.SetTerrainType(plot, ocean.Index) end
+        else
+          -- Temporary grass; GenerateTerrain refinest
+          local grass = GameInfo.Terrains["TERRAIN_GRASS"]
+          if grass then TerrainBuilder.SetTerrainType(plot, grass.Index) end
+        end
+      end
     end
   end
-  AreaBuilder.Recalculate()
-  TerrainBuilder.ClearLandmarks()
-  return plotTypes
+  pcall(function() AreaBuilder.Recalculate() end)
 end
 
 function GenerateTerrain()
+  print("WW2 Europe: GenerateTerrain")
   for y = 0, g_iH - 1 do
     for x = 0, g_iW - 1 do
       local plot = Map.GetPlot(x, y)
       if plot and not plot:IsWater() then
         local nx, ny = N(x, y)
-        local isHill, isMtn = plot:IsHills(), plot:IsMountain()
         local terrain
         if IsAfrica(x, y) then
-          terrain = (x + y) % 5 == 0 and "TERRAIN_PLAINS" or "TERRAIN_DESERT"
-        elseif isMtn then
+          terrain = ((x + y) % 5 == 0) and "TERRAIN_PLAINS" or "TERRAIN_DESERT"
+        elseif IsMountain(x, y) then
           terrain = ny > 0.55 and "TERRAIN_TUNDRA_MOUNTAIN" or "TERRAIN_GRASS_MOUNTAIN"
-        elseif ny > 0.82 then terrain = isHill and "TERRAIN_SNOW_HILLS" or "TERRAIN_SNOW"
-        elseif ny > 0.70 then terrain = isHill and "TERRAIN_TUNDRA_HILLS" or "TERRAIN_TUNDRA"
-        elseif ny < 0.28 then terrain = isHill and "TERRAIN_PLAINS_HILLS" or "TERRAIN_PLAINS"
-        elseif ny < 0.55 then terrain = isHill and "TERRAIN_GRASS_HILLS" or "TERRAIN_GRASS"
-        else terrain = isHill and "TERRAIN_PLAINS_HILLS" or "TERRAIN_PLAINS" end
+        elseif IsHills(x, y) then
+          if ny > 0.70 then terrain = "TERRAIN_TUNDRA_HILLS"
+          elseif ny < 0.28 then terrain = "TERRAIN_PLAINS_HILLS"
+          else terrain = "TERRAIN_GRASS_HILLS" end
+        elseif ny > 0.82 then terrain = "TERRAIN_SNOW"
+        elseif ny > 0.70 then terrain = "TERRAIN_TUNDRA"
+        elseif ny < 0.28 then terrain = "TERRAIN_PLAINS"
+        elseif ny < 0.55 then terrain = "TERRAIN_GRASS"
+        else terrain = "TERRAIN_PLAINS" end
         local row = GameInfo.Terrains[terrain]
         if row then TerrainBuilder.SetTerrainType(plot, row.Index) end
       end
@@ -196,7 +204,6 @@ local function EnrichAfricaResources()
   print("[WW2 Europe] Africa resources: " .. tostring(placed))
 end
 
--- Scaled for 106x66 (same relative positions as before)
 local TSL = {
   CIVILIZATION_ENGLAND = { x = 23, y = 42 },
   CIVILIZATION_SCOTLAND = { x = 21, y = 48 },
@@ -272,37 +279,40 @@ function WW2_RepositionPriorityCivs()
 end
 
 function StartPlotSystem()
-  AssignStartingPlots.Create({
-    MIN_MAJOR_CIV_FERTILITY = 80,
-    MIN_MINOR_CIV_FERTILITY = 20,
-    MIN_BARBARIAN_FERTILITY = 1,
-    START_MIN_Y = 8, START_MAX_Y = 8,
-    IGNORE_LANDMASS = true,
-    START_CONFIG = MapConfiguration.GetValue("start") or 2,
-  })
+  pcall(function()
+    AssignStartingPlots.Create({
+      MIN_MAJOR_CIV_FERTILITY = 80,
+      MIN_MINOR_CIV_FERTILITY = 20,
+      MIN_BARBARIAN_FERTILITY = 1,
+      START_MIN_Y = 8, START_MAX_Y = 8,
+      IGNORE_LANDMASS = true,
+      START_CONFIG = MapConfiguration.GetValue("start") or 2,
+    })
+  end)
   WW2_RepositionPriorityCivs()
 end
 
 function GenerateMap()
-  print("WW2 Europe 106x66 (TSL Huge Europe scale)")
+  print("WW2 Europe 106x66")
   local gridW, gridH = Map.GetGridSize()
   g_iW, g_iH = gridW, gridH
   g_iFlags = TerrainBuilder.GetFractalFlags()
+
   GeneratePlotTypes()
   GenerateTerrain()
-  AreaBuilder.Recalculate()
-  TerrainBuilder.AnalyzeChokepoints()
-  TerrainBuilder.StampContinents()
+
+  pcall(function() AreaBuilder.Recalculate() end)
+  pcall(function() TerrainBuilder.AnalyzeChokepoints() end)
+  pcall(function() TerrainBuilder.StampContinents() end)
+
   pcall(function()
-    MountainsCliffs.AddMountains({ iW = g_iW, iH = g_iH, iFlags = g_iFlags, blendRidge = 5, blendFract = 5, extra = 4 })
+    FeatureGenerator.Create({ rainfall = MapConfiguration.GetValue("rainfall") or 2 }):AddFeatures()
   end)
-  FeatureGenerator.Create({ rainfall = MapConfiguration.GetValue("rainfall") or 2 }):AddFeatures()
   pcall(function() NaturalWonderGenerator.Create({ numberToPlace = 4 }) end)
-  AreaBuilder.Recalculate()
-  TerrainBuilder.AnalyzeChokepoints()
-  ResourceGenerator.Create({ resources = MapConfiguration.GetValue("resources") or 2 })
+  pcall(function() AreaBuilder.Recalculate() end)
+  pcall(function() ResourceGenerator.Create({ resources = MapConfiguration.GetValue("resources") or 2 }) end)
   EnrichAfricaResources()
   StartPlotSystem()
-  AddGoodies(g_iW, g_iH)
+  pcall(function() AddGoodies(g_iW, g_iH) end)
   print("WW2 Europe map done")
 end

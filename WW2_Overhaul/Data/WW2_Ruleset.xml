@@ -19,10 +19,6 @@
   <DomainValues>
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
-    <Row Domain="WW2ArmyDoctrine" Value="LIGHT" Name="LOC_WW2_ARMY_LIGHT_NAME" Description="LOC_WW2_ARMY_LIGHT_DESC" SortIndex="10"/>
-    <Row Domain="WW2ArmyDoctrine" Value="MEDIUM" Name="LOC_WW2_ARMY_MEDIUM_NAME" Description="LOC_WW2_ARMY_MEDIUM_DESC" SortIndex="20"/>
-    <Row Domain="WW2ArmyDoctrine" Value="HEAVY" Name="LOC_WW2_ARMY_HEAVY_NAME" Description="LOC_WW2_ARMY_HEAVY_DESC" SortIndex="30"/>
-    <!-- Europe map is the only map offered under WW2 ruleset -->
     <Row Domain="WW2Maps" Value="WW2_Europe.lua" Name="LOC_MAP_WW2_EUROPE_NAME" Description="LOC_MAP_WW2_EUROPE_DESCRIPTION" SortIndex="10"/>
   </DomainValues>
 
@@ -63,16 +59,5 @@
          GroupId="GameOptions"
          ReadOnly="1"
          SortIndex="60"/>
-    <Row Key1="Ruleset" Key2="RULESET_WW2"
-         ParameterId="WW2_ARMY_DOCTRINE"
-         Name="LOC_WW2_ARMY_DOCTRINE_NAME"
-         Description="LOC_WW2_ARMY_DOCTRINE_DESC"
-         Domain="WW2ArmyDoctrine"
-         DefaultValue="MEDIUM"
-         ConfigurationGroup="Game"
-         ConfigurationId="WW2_ARMY_DOCTRINE"
-         GroupId="AdvancedOptions"
-         Hash="0"
-         SortIndex="350"/>
   </Parameters>
 </GameInfo>

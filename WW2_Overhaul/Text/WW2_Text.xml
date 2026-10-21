@@ -2,74 +2,32 @@
 <GameData>
   <LocalizedText>
     <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US"><Text>Yugoslavia</Text></Replace>
-    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>Optional sample. Prefer Serbia Civilization Pack leaders for Serbia.</Text></Replace>
+    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>Optional sample. Prefer Serbia Civilization Pack leaders.</Text></Replace>
     <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_ADJECTIVE" Language="en_US"><Text>Yugoslav</Text></Replace>
     <Replace Tag="LOC_LEADER_WW2_TITO_NAME" Language="en_US"><Text>Josip Broz Tito</Text></Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US"><Text>Brotherhood and Unity</Text></Replace>
     <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>+15% Production toward military units while independent.</Text></Replace>
     <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_NAME" Language="en_US"><Text>Partisan Leader</Text></Replace>
     <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_DESCRIPTION" Language="en_US"><Text>Placeholder.</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_BELGRADE" Language="en_US"><Text>Belgrade</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_ZAGREB" Language="en_US"><Text>Zagreb</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SARAJEVO" Language="en_US"><Text>Sarajevo</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SKOPJE" Language="en_US"><Text>Skopje</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_LJUBLJANA" Language="en_US"><Text>Ljubljana</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_NOVI_SAD" Language="en_US"><Text>Novi Sad</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_NIS" Language="en_US"><Text>Nis</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SPLIT" Language="en_US"><Text>Split</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_DUBROVNIK" Language="en_US"><Text>Dubrovnik</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_PODGORICA" Language="en_US"><Text>Podgorica</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_PRISTINA" Language="en_US"><Text>Pristina</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_BANJA_LUKA" Language="en_US"><Text>Banja Luka</Text></Replace>
 
-    <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_NAME" Language="en_US"><Text>War Economy</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_DESCRIPTION" Language="en_US"><Text>+20% unit Production, +15% building Production.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_NAME" Language="en_US"><Text>Total Mobilization</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_DESCRIPTION" Language="en_US"><Text>+25% unit Production.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_NAME" Language="en_US"><Text>Scientific Effort</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_DESCRIPTION" Language="en_US"><Text>+15% Science.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_NAME" Language="en_US"><Text>Offensive Spirit</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_NAME" Language="en_US"><Text>Defensive Lines</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_NAME" Language="en_US"><Text>National Stubbornness</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_DESCRIPTION" Language="en_US"><Text>Base +4 CS, +3 heal. Lose cities → +25% Production and +8 CS for 25 turns (5-turn cooldown).</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_NAME" Language="en_US"><Text>Blitz Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_DESCRIPTION" Language="en_US"><Text>+2 Movement, +5 CS.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_NAME" Language="en_US"><Text>War of Attrition</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_AXIS_ALIGN_NAME" Language="en_US"><Text>Axis Alignment</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_AXIS_ALIGN_DESCRIPTION" Language="en_US"><Text>Cooperate without giving up your army. +6 CS, +15% unit Production.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_COMINTERN_NAME" Language="en_US"><Text>Comintern</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_COMINTERN_DESCRIPTION" Language="en_US"><Text>Cooperate without giving up your army. +10% Science, +15% unit Production, +5 CS.</Text></Replace>
-
-    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_NAME" Language="en_US"><Text>Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_DOCTRINE_DESC" Language="en_US"><Text>Global army doctrine for all combat units.</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_LIGHT_DESC" Language="en_US"><Text>+3 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_MEDIUM_DESC" Language="en_US"><Text>+7 Combat Strength (default).</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army</Text></Replace>
-    <Replace Tag="LOC_WW2_ARMY_HEAVY_DESC" Language="en_US"><Text>+14 Combat Strength.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>+3 CS.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>Scouting doctrine: +3 Combat Strength, +1 Movement. Swap anytime in the Government screen.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_DESCRIPTION" Language="en_US"><Text>+7 CS.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_DESCRIPTION" Language="en_US"><Text>Balanced doctrine: +7 Combat Strength. Swap anytime in the Government screen.</Text></Replace>
     <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_DESCRIPTION" Language="en_US"><Text>+14 CS.</Text></Replace>
+    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_DESCRIPTION" Language="en_US"><Text>Assault doctrine: +14 Combat Strength, -1 Movement. Swap anytime in the Government screen.</Text></Replace>
 
-    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_NAME" Language="en_US"><Text>Supply Station</Text></Replace>
-    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>Builder improvement. +1 Production, +1 Gold, +3 heal on tile.</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME" Language="en_US"><Text>Supply Depot</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>City Center building. Regional (covers the whole city radius). +10 heal, +4 CS, +3 Production.</Text></Replace>
+    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>Regional (city radius). +10 heal, +4 CS, +3 Production.</Text></Replace>
     <Replace Tag="LOC_BUILDING_WW2_OIL_DEPOT_NAME" Language="en_US"><Text>Oil Depot</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_OIL_DEPOT_DESCRIPTION" Language="en_US"><Text>City Center building. Regional. +1 Movement to units, +2 Production, +2 Gold. Helps keep mechanized forces supplied.</Text></Replace>
+    <Replace Tag="LOC_BUILDING_WW2_OIL_DEPOT_DESCRIPTION" Language="en_US"><Text>Regional. +1 Movement, +2 Production, +2 Gold.</Text></Replace>
+    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_NAME" Language="en_US"><Text>Supply Station</Text></Replace>
+    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>+1 Production, +1 Gold, +3 heal.</Text></Replace>
 
     <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>Europe + North Africa. Only European leaders, some Africans, and Serbia. Trajan = Italy. Industrial start, Domination only, supply/oil, join/leave/annex. Compatible with Serbia Civilization Pack.</Text></Replace>
-    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era.</Text></Replace>
-
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>Europe + North Africa. European/African/Serbia leaders. Industrial start. Domination only. In-game Army Doctrine policies (Light/Medium/Heavy). Supply and Oil depots.</Text></Replace>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>Locked to Industrial Era.</Text></Replace>
     <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Language="en_US"><Text>WW2 Europe</Text></Replace>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Europe theatre (approx. 106x66) with North Africa coast — similar scope to TSL Huge Europe workshop maps. Resource-rich weak Africa. Historical-style starts. For pixel TSL maps, enable Fidel Casserole TSL Huge Europe from Steam Workshop alongside this ruleset.</Text></Replace>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Europe + North Africa coast. Resource-rich weak Africa.</Text></Replace>
   </LocalizedText>
 </GameData>
