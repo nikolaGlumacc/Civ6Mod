@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="2.2">
+<Mod id="WW2_Overhaul" version="2.3">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v2.2 • Europe+Africa • EU/Serbia/Africa civs only • Join/Leave/Annex • Supply+Oil</Teaser>
-    <Description>WW2 ruleset: European leaders + some Africans + Serbia, Trajan as Italy, Europe map with North Africa, Industrial start, Domination only, supply/oil depots, join/leave/annex diplomacy helpers.</Description>
+    <Teaser>v2.3 • EU/Africa/Serbia only • Trajan=Italy • Join/Leave/Annex • Supply+Oil depots</Teaser>
+    <Description>WW2 ruleset using existing civs + Serbia pack. Europe map with North Africa, leader pool locked to European + African + Serbia, Trajan as Italy, Industrial start, Domination only, regional Supply/Oil depots, join/leave/annex diplomacy helpers.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>

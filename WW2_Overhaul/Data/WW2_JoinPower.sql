@@ -1,17 +1,17 @@
--- Join modifiers used by diplomacy Join actions
--- YOU join THEM: keep land & buildings, no independent army
+-- Join / Leave / Absorb modifiers
 
 INSERT OR IGNORE INTO Modifiers (ModifierId, ModifierType) VALUES
-('WW2_JOIN_NO_UNITS',   'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION'),
-('WW2_JOIN_BUILD_PROD', 'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
-('WW2_JOIN_CS_DEF',     'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH');
+('WW2_JOIN_NO_UNITS',     'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION'),
+('WW2_JOIN_BUILD_PROD',   'MODIFIER_PLAYER_CITIES_ADJUST_BUILDING_PRODUCTION'),
+('WW2_JOIN_CS_DEF',       'MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH'),
+('WW2_LEAVE_RESTORE_UNITS','MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PRODUCTION');
 
 INSERT OR IGNORE INTO ModifierArguments (ModifierId, Name, Value) VALUES
-('WW2_JOIN_NO_UNITS',   'Amount', '-100'),
-('WW2_JOIN_BUILD_PROD', 'Amount', '25'),
-('WW2_JOIN_CS_DEF',     'Amount', '3');
+('WW2_JOIN_NO_UNITS',      'Amount', '-100'),
+('WW2_JOIN_BUILD_PROD',    'Amount', '25'),
+('WW2_JOIN_CS_DEF',        'Amount', '3'),
+('WW2_LEAVE_RESTORE_UNITS','Amount', '100');
 
--- Keep optional cooperation policies (Align without giving up army)
 INSERT OR IGNORE INTO Types (Type, Kind) VALUES
 ('POLICY_WW2_AXIS_ALIGN', 'KIND_POLICY'),
 ('POLICY_WW2_COMINTERN',  'KIND_POLICY');

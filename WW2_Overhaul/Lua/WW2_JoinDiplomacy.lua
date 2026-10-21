@@ -1,8 +1,8 @@
 -- Join / Leave / Absorb (annex)
 -- Firetuner:
---   WW2_TryJoinLocal(themID)     -- you join them: keep land, no independent army
---   WW2_TryAbsorbLocal(themID)   -- they join you: transfer cities / subordinate
---   WW2_TryLeaveLocal()          -- leave subordination, restore unit production
+--   WW2_TryJoinLocal(themID)   -- you join them: keep land, no independent army
+--   WW2_TryAbsorbLocal(themID) -- they join you: transfer cities / subordinate
+--   WW2_TryLeaveLocal()        -- leave subordination, restore unit production
 
 local function GetCityCount(playerID)
   local p = Players[playerID]
@@ -71,6 +71,7 @@ local function ApplySubordinate(playerID, masterID)
   p:AttachModifierByID("WW2_JOIN_CS_DEF")
   GameConfiguration.SetValue("WW2_JOINED_UNDER_" .. tostring(playerID), masterID)
   GameConfiguration.SetValue("WW2_IS_SUBORDINATE_" .. tostring(playerID), 1)
+  GameConfiguration.SetValue("WW2_LEFT_" .. tostring(playerID), 0)
 end
 
 function WW2_DoJoinThem(youID, themID)
@@ -132,21 +133,22 @@ function WW2_DoTheyJoinYou(youID, themID)
   return true
 end
 
--- Leave: clear subordinate flag. (Cannot always detach modifiers in Civ6; unit prod returns on new game / via opposite +100% if needed)
 function WW2_DoLeave(youID)
   local under = GameConfiguration.GetValue("WW2_JOINED_UNDER_" .. tostring(youID))
-  if under == nil and GameConfiguration.GetValue("WW2_IS_SUBORDINATE_" .. tostring(youID)) ~= 1 then
+  local isSub = GameConfiguration.GetValue("WW2_IS_SUBORDINATE_" .. tostring(youID))
+  if under == nil and isSub ~= 1 then
     print("[WW2] Not currently subordinate")
     return false
   end
   GameConfiguration.SetValue("WW2_JOINED_UNDER_" .. tostring(youID), nil)
   GameConfiguration.SetValue("WW2_IS_SUBORDINATE_" .. tostring(youID), 0)
-  -- Compensating production so player can field an army again after leaving
+  GameConfiguration.SetValue("WW2_LEFT_" .. tostring(youID), 1)
   local p = Players[youID]
   if p then
-    pcall(function() p:AttachModifierByID("WW2_JOIN_BUILD_PROD") end)
+    -- +100% unit production offsets the permanent -100% join debuff (Civ cannot cleanly detach)
+    pcall(function() p:AttachModifierByID("WW2_LEAVE_RESTORE_UNITS") end)
   end
-  print("[WW2] Player " .. youID .. " LEFT subordination (was under " .. tostring(under) .. ")")
+  print("[WW2] Player " .. youID .. " LEFT subordination (was under " .. tostring(under) .. ") — army production restored")
   return true
 end
 
@@ -162,5 +164,5 @@ function WW2_TryLeaveLocal()
   return WW2_DoLeave(Game.GetLocalPlayer())
 end
 
-print("[WW2] Join Diplomacy v2.2 — Join / Absorb / Leave")
+print("[WW2] Join Diplomacy v2.3 — Join / Absorb / Leave (restore army)")
 print("[WW2] Firetuner: WW2_TryJoinLocal(id) | WW2_TryAbsorbLocal(id) | WW2_TryLeaveLocal()")
