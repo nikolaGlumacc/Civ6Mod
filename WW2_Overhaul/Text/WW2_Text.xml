@@ -2,45 +2,43 @@
 <GameData>
   <BaseGameText>
     <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 rules: Industrial start, starter army, +70 GPT Industrial Revolution, OP alliances. Use with Workshop map: TSL Huge Europe (Fidel Casserole)."/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="Industrial start, army, +70 GPT. Pick map separately: use True Start Location Europe (built-in) or any Europe map."/>
     <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 locks start era to Industrial/Modern."/>
-
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Europe (fallback)"/>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Fallback only. Prefer Steam Workshop: TSL Huge Europe by Fidel Casserole."/>
-
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Europe (fallback only)"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Only if you have no other Europe map. Prefer built-in True Start Location Europe."/>
     <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="WW2 Starting Territory"/>
-    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Optional. On TSL Huge Europe the map already places you correctly — leave AUTO."/>
-    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader / map TSL)"/>
-    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected / Workshop TSL."/>
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Optional override. AUTO is fine with TSL Europe."/>
+    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto"/>
+    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="From leader / map TSL."/>
     <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
-    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin region."/>
+    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin."/>
     <Replace Tag="LOC_WW2_TERR_BRITAIN" Text="Britain"/>
-    <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London / British Isles."/>
+    <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London."/>
     <Replace Tag="LOC_WW2_TERR_FRANCE" Text="France"/>
-    <Replace Tag="LOC_WW2_TERR_FRANCE_DESC" Text="Paris region."/>
+    <Replace Tag="LOC_WW2_TERR_FRANCE_DESC" Text="Paris."/>
     <Replace Tag="LOC_WW2_TERR_ITALY" Text="Italy"/>
-    <Replace Tag="LOC_WW2_TERR_ITALY_DESC" Text="Rome — use Trajan."/>
+    <Replace Tag="LOC_WW2_TERR_ITALY_DESC" Text="Rome."/>
     <Replace Tag="LOC_WW2_TERR_SPAIN" Text="Spain"/>
-    <Replace Tag="LOC_WW2_TERR_SPAIN_DESC" Text="Madrid region."/>
-    <Replace Tag="LOC_WW2_TERR_RUSSIA" Text="Russia / USSR"/>
-    <Replace Tag="LOC_WW2_TERR_RUSSIA_DESC" Text="Moscow region."/>
+    <Replace Tag="LOC_WW2_TERR_SPAIN_DESC" Text="Madrid."/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA" Text="Russia"/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA_DESC" Text="Moscow."/>
     <Replace Tag="LOC_WW2_TERR_POLAND" Text="Poland"/>
-    <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw region."/>
+    <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw."/>
     <Replace Tag="LOC_WW2_TERR_HUNGARY" Text="Hungary"/>
-    <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest region."/>
+    <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest."/>
     <Replace Tag="LOC_WW2_TERR_SERBIA" Text="Serbia / Yugoslavia"/>
-    <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade — Serbia pack leaders."/>
+    <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade."/>
     <Replace Tag="LOC_WW2_TERR_GREECE" Text="Greece"/>
-    <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens region."/>
+    <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens."/>
     <Replace Tag="LOC_WW2_TERR_NETHERLANDS" Text="Netherlands"/>
-    <Replace Tag="LOC_WW2_TERR_NETHERLANDS_DESC" Text="Low Countries."/>
+    <Replace Tag="LOC_WW2_TERR_NETHERLANDS_DESC" Text="Amsterdam."/>
     <Replace Tag="LOC_WW2_TERR_NORWAY" Text="Norway"/>
-    <Replace Tag="LOC_WW2_TERR_NORWAY_DESC" Text="Norwegian coast."/>
+    <Replace Tag="LOC_WW2_TERR_NORWAY_DESC" Text="Oslo."/>
     <Replace Tag="LOC_WW2_TERR_SWEDEN" Text="Sweden"/>
-    <Replace Tag="LOC_WW2_TERR_SWEDEN_DESC" Text="Stockholm region."/>
+    <Replace Tag="LOC_WW2_TERR_SWEDEN_DESC" Text="Stockholm."/>
     <Replace Tag="LOC_WW2_TERR_PORTUGAL" Text="Portugal"/>
     <Replace Tag="LOC_WW2_TERR_PORTUGAL_DESC" Text="Lisbon."/>
-    <Replace Tag="LOC_WW2_TERR_EGYPT" Text="Egypt / N. Africa"/>
-    <Replace Tag="LOC_WW2_TERR_EGYPT_DESC" Text="Nile / North Africa."/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT" Text="Egypt"/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT_DESC" Text="Cairo."/>
   </BaseGameText>
 </GameData>
