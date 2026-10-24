@@ -13,21 +13,36 @@
 
   <RulesetDomainOverrides>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
-    <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="WW2Maps"/>
+    <Row Ruleset="RULESET_WW2" ParameterId="WW2_Territory" Domain="WW2Territories"/>
   </RulesetDomainOverrides>
 
   <DomainValues>
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
-    <Row Domain="WW2Maps" Value="WW2_Europe.lua" Name="LOC_MAP_WW2_EUROPE_NAME" Description="LOC_MAP_WW2_EUROPE_DESCRIPTION" SortIndex="10"/>
+
+    <!-- Pre-game territory picker (pick nation → predefined cities seeded at start) -->
+    <Row Domain="WW2Territories" Value="TERRITORY_AUTO" Name="LOC_WW2_TERR_AUTO" Description="LOC_WW2_TERR_AUTO_DESC" SortIndex="1"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_GERMANY" Name="LOC_WW2_TERR_GERMANY" Description="LOC_WW2_TERR_GERMANY_DESC" SortIndex="10"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_BRITAIN" Name="LOC_WW2_TERR_BRITAIN" Description="LOC_WW2_TERR_BRITAIN_DESC" SortIndex="20"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_FRANCE" Name="LOC_WW2_TERR_FRANCE" Description="LOC_WW2_TERR_FRANCE_DESC" SortIndex="30"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_ITALY" Name="LOC_WW2_TERR_ITALY" Description="LOC_WW2_TERR_ITALY_DESC" SortIndex="40"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_SPAIN" Name="LOC_WW2_TERR_SPAIN" Description="LOC_WW2_TERR_SPAIN_DESC" SortIndex="50"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_RUSSIA" Name="LOC_WW2_TERR_RUSSIA" Description="LOC_WW2_TERR_RUSSIA_DESC" SortIndex="60"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_POLAND" Name="LOC_WW2_TERR_POLAND" Description="LOC_WW2_TERR_POLAND_DESC" SortIndex="70"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_HUNGARY" Name="LOC_WW2_TERR_HUNGARY" Description="LOC_WW2_TERR_HUNGARY_DESC" SortIndex="80"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_SERBIA" Name="LOC_WW2_TERR_SERBIA" Description="LOC_WW2_TERR_SERBIA_DESC" SortIndex="90"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_GREECE" Name="LOC_WW2_TERR_GREECE" Description="LOC_WW2_TERR_GREECE_DESC" SortIndex="100"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_NETHERLANDS" Name="LOC_WW2_TERR_NETHERLANDS" Description="LOC_WW2_TERR_NETHERLANDS_DESC" SortIndex="110"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_NORWAY" Name="LOC_WW2_TERR_NORWAY" Description="LOC_WW2_TERR_NORWAY_DESC" SortIndex="120"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_SWEDEN" Name="LOC_WW2_TERR_SWEDEN" Description="LOC_WW2_TERR_SWEDEN_DESC" SortIndex="130"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_PORTUGAL" Name="LOC_WW2_TERR_PORTUGAL" Description="LOC_WW2_TERR_PORTUGAL_DESC" SortIndex="140"/>
+    <Row Domain="WW2Territories" Value="TERRITORY_EGYPT" Name="LOC_WW2_TERR_EGYPT" Description="LOC_WW2_TERR_EGYPT_DESC" SortIndex="150"/>
   </DomainValues>
 
   <ConfigurationUpdates>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
-    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
-         TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="WW2_Europe.lua" Hash="0"/>
-    <!-- MUST match GetMapInitData size: 96x60 = MAPSIZE_HUGE. Large/Enormous mismatch = ACCESS_VIOLATION -->
+    <!-- Huge size for TSL Huge Europe (106x66). Do NOT force our broken custom map. -->
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_HUGE" Hash="1"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
@@ -60,5 +75,16 @@
          GroupId="GameOptions"
          ReadOnly="1"
          SortIndex="60"/>
+
+    <Row Key1="Ruleset" Key2="RULESET_WW2"
+         ParameterId="WW2_Territory"
+         Name="LOC_WW2_TERRITORY_NAME"
+         Description="LOC_WW2_TERRITORY_DESC"
+         Domain="WW2Territories"
+         DefaultValue="TERRITORY_AUTO"
+         ConfigurationGroup="Game"
+         ConfigurationId="WW2_TERRITORY"
+         GroupId="GameOptions"
+         SortIndex="55"/>
   </Parameters>
 </GameInfo>

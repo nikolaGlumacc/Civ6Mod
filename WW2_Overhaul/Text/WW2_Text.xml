@@ -1,66 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-  <LocalizedText>
-    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US"><Text>Yugoslavia</Text></Replace>
-    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>Optional sample. Prefer Serbia pack leaders.</Text></Replace>
-    <Replace Tag="LOC_CIVILIZATION_WW2_YUGOSLAVIA_ADJECTIVE" Language="en_US"><Text>Yugoslav</Text></Replace>
-    <Replace Tag="LOC_LEADER_WW2_TITO_NAME" Language="en_US"><Text>Josip Broz Tito</Text></Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_NAME" Language="en_US"><Text>Brotherhood and Unity</Text></Replace>
-    <Replace Tag="LOC_TRAIT_CIVILIZATION_WW2_YUGOSLAVIA_DESCRIPTION" Language="en_US"><Text>+15% Production toward military units while independent.</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_NAME" Language="en_US"><Text>Partisan Leader</Text></Replace>
-    <Replace Tag="LOC_TRAIT_LEADER_WW2_TITO_DESCRIPTION" Language="en_US"><Text>Placeholder.</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_BELGRADE" Language="en_US"><Text>Belgrade</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_ZAGREB" Language="en_US"><Text>Zagreb</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SARAJEVO" Language="en_US"><Text>Sarajevo</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SKOPJE" Language="en_US"><Text>Skopje</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_LJUBLJANA" Language="en_US"><Text>Ljubljana</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_NOVI_SAD" Language="en_US"><Text>Novi Sad</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_NIS" Language="en_US"><Text>Nis</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_SPLIT" Language="en_US"><Text>Split</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_DUBROVNIK" Language="en_US"><Text>Dubrovnik</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_PODGORICA" Language="en_US"><Text>Podgorica</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_PRISTINA" Language="en_US"><Text>Pristina</Text></Replace>
-    <Replace Tag="LOC_CITY_NAME_BANJA_LUKA" Language="en_US"><Text>Banja Luka</Text></Replace>
+  <BaseGameText>
+    <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="Simplified HOI4-style WW2 ruleset. Use with a real Europe map (subscribe: TSL Huge Europe by Fidel Casserole — Workshop). Domination only, Industrial start, oil, doctrines, stubbornness, predefined territories."/>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 ruleset locks start to Industrial (or Modern)."/>
 
-    <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_NAME" Language="en_US"><Text>War Economy</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_WAR_ECONOMY_DESCRIPTION" Language="en_US"><Text>+20% unit Production, +15% building Production.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_NAME" Language="en_US"><Text>Total Mobilization</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_TOTAL_MOBILIZATION_DESCRIPTION" Language="en_US"><Text>+25% unit Production.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_NAME" Language="en_US"><Text>Scientific Effort</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_SCIENTIFIC_EFFORT_DESCRIPTION" Language="en_US"><Text>+15% Science.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_NAME" Language="en_US"><Text>Offensive Spirit</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_OFFENSIVE_SPIRIT_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_NAME" Language="en_US"><Text>Defensive Lines</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_DEFENSIVE_LINES_DESCRIPTION" Language="en_US"><Text>+5 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_NAME" Language="en_US"><Text>National Stubbornness</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_NATIONAL_STUBBORNNESS_DESCRIPTION" Language="en_US"><Text>Base +4 CS, +3 heal. Lose cities → surge for 25 turns.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_NAME" Language="en_US"><Text>Blitz Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_BLITZ_DOCTRINE_DESCRIPTION" Language="en_US"><Text>+2 Movement, +5 CS.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_NAME" Language="en_US"><Text>War of Attrition</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ATTRITION_WAR_DESCRIPTION" Language="en_US"><Text>+7 Combat Strength.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_AXIS_ALIGN_NAME" Language="en_US"><Text>Axis Alignment</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_AXIS_ALIGN_DESCRIPTION" Language="en_US"><Text>+6 CS, +15% unit Production (keep your army).</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_COMINTERN_NAME" Language="en_US"><Text>Comintern</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_COMINTERN_DESCRIPTION" Language="en_US"><Text>+10% Science, +15% unit Production, +5 CS.</Text></Replace>
+    <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="WW2 Starting Territory"/>
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Choose your predefined country. Cities are seeded after load on a real Europe TSL map. Pick the matching leader in the civ list (e.g. Serbia leaders for Serbia). AUTO = seed from the leader you picked."/>
 
-    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_NAME" Language="en_US"><Text>Light Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_LIGHT_DESCRIPTION" Language="en_US"><Text>IN-GAME: switch anytime. +3 CS, +1 Movement — recon / screen force.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_NAME" Language="en_US"><Text>Medium Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_MEDIUM_DESCRIPTION" Language="en_US"><Text>IN-GAME: switch anytime. +7 CS — balanced defense and attack.</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_NAME" Language="en_US"><Text>Heavy Army Doctrine</Text></Replace>
-    <Replace Tag="LOC_POLICY_WW2_ARMY_HEAVY_DESCRIPTION" Language="en_US"><Text>IN-GAME: switch anytime. +14 CS, -1 Movement — breakthrough assault.</Text></Replace>
+    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader)"/>
+    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected."/>
+    <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
+    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin + core German cities. Play as Germany."/>
+    <Replace Tag="LOC_WW2_TERR_BRITAIN" Text="Britain"/>
+    <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London + British Isles. Play as England / Scotland."/>
+    <Replace Tag="LOC_WW2_TERR_FRANCE" Text="France"/>
+    <Replace Tag="LOC_WW2_TERR_FRANCE_DESC" Text="Paris + French cities. Play as France."/>
+    <Replace Tag="LOC_WW2_TERR_ITALY" Text="Italy"/>
+    <Replace Tag="LOC_WW2_TERR_ITALY_DESC" Text="Rome + Italian cities. Play as Trajan / Rome."/>
+    <Replace Tag="LOC_WW2_TERR_SPAIN" Text="Spain"/>
+    <Replace Tag="LOC_WW2_TERR_SPAIN_DESC" Text="Madrid + Iberian cities. Play as Spain."/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA" Text="Soviet Union / Russia"/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA_DESC" Text="Moscow + western Russia. Play as Russia."/>
+    <Replace Tag="LOC_WW2_TERR_POLAND" Text="Poland"/>
+    <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw + Polish cities. Play as Poland."/>
+    <Replace Tag="LOC_WW2_TERR_HUNGARY" Text="Hungary"/>
+    <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest. Play as Hungary."/>
+    <Replace Tag="LOC_WW2_TERR_SERBIA" Text="Serbia / Yugoslavia"/>
+    <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade + Serbian cities. Play as Serbia pack leaders."/>
+    <Replace Tag="LOC_WW2_TERR_GREECE" Text="Greece"/>
+    <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens area. Play as Greece / Macedon."/>
+    <Replace Tag="LOC_WW2_TERR_NETHERLANDS" Text="Netherlands"/>
+    <Replace Tag="LOC_WW2_TERR_NETHERLANDS_DESC" Text="Amsterdam area. Play as Netherlands."/>
+    <Replace Tag="LOC_WW2_TERR_NORWAY" Text="Norway"/>
+    <Replace Tag="LOC_WW2_TERR_NORWAY_DESC" Text="Norwegian coast. Play as Norway."/>
+    <Replace Tag="LOC_WW2_TERR_SWEDEN" Text="Sweden"/>
+    <Replace Tag="LOC_WW2_TERR_SWEDEN_DESC" Text="Stockholm area. Play as Sweden."/>
+    <Replace Tag="LOC_WW2_TERR_PORTUGAL" Text="Portugal"/>
+    <Replace Tag="LOC_WW2_TERR_PORTUGAL_DESC" Text="Lisbon. Play as Portugal."/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT" Text="Egypt (North Africa)"/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT_DESC" Text="Nile / North Africa. Play as Egypt."/>
 
-    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_NAME" Language="en_US"><Text>Supply Station</Text></Replace>
-    <Replace Tag="LOC_IMPROVEMENT_WW2_SUPPLY_STATION_DESCRIPTION" Language="en_US"><Text>+1 Production, +1 Gold, +3 heal on tile.</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_NAME" Language="en_US"><Text>Supply Depot</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_SUPPLY_DEPOT_DESCRIPTION" Language="en_US"><Text>Regional (whole city radius). +10 heal, +4 CS, +3 Production.</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_OIL_DEPOT_NAME" Language="en_US"><Text>Oil Depot</Text></Replace>
-    <Replace Tag="LOC_BUILDING_WW2_OIL_DEPOT_DESCRIPTION" Language="en_US"><Text>Regional. +1 Movement, +2 Production, +2 Gold.</Text></Replace>
-
-    <Replace Tag="LOC_RULESET_WW2_NAME" Language="en_US"><Text>WW2 Overhaul</Text></Replace>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Language="en_US"><Text>Europe + North Africa. European + African + Serbia leaders. Trajan = Italy. Industrial start. Domination only. Army Doctrine is an in-game military policy you can switch.</Text></Replace>
-    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Language="en_US"><Text>WW2 Overhaul locks the start to the Industrial Era.</Text></Replace>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Language="en_US"><Text>WW2 Europe</Text></Replace>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Language="en_US"><Text>Europe + North Africa (106x66). Resource-rich weak Africa.</Text></Replace>
-  </LocalizedText>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="(Deprecated) WW2 Europe Script"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Deprecated. Subscribe to Workshop: TSL Huge Europe by Fidel Casserole and select that map instead."/>
+  </BaseGameText>
 </GameData>
