@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.8">
+<Mod id="WW2_Overhaul" version="3.9">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.8 • Serbia TSL Belgrade • Workshop Europe compatible</Teaser>
-    <Description>WW2 ruleset with Industrial start, starter army, +70 GPT. Serbia (STR_SERBIA) forced to Belgrade. Use with TSL Huge Europe / YnAMP Europe maps.</Description>
+    <Teaser>v3.9 • Europe + TSL Europe on WW2 ruleset</Teaser>
+    <Description>WW2 ruleset includes built-in Europe and True Start Location Europe maps. Industrial start, army, Serbia Belgrade TSL.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -19,11 +19,13 @@
 
   <FrontEndActions>
     <UpdateDatabase id="WW2_Config_DB">
-      <Properties><LoadOrder>50</LoadOrder></Properties>
+      <Properties><LoadOrder>100</LoadOrder></Properties>
       <File>Data/WW2_Ruleset.xml</File>
       <File>Data/WW2_Frontend_Players.sql</File>
       <File>Data/WW2_SerbiaTSL.sql</File>
       <File>Data/WW2_SerbiaTSL.xml</File>
+      <File>Data/WW2_EuropeMaps.sql</File>
+      <File>Data/WW2_EuropeMaps.xml</File>
     </UpdateDatabase>
     <UpdateText id="WW2_Config_Text">
       <File>Text/WW2_Text.xml</File>
@@ -116,6 +118,8 @@
     <File>Data/WW2_Economy.sql</File>
     <File>Data/WW2_SerbiaTSL.sql</File>
     <File>Data/WW2_SerbiaTSL.xml</File>
+    <File>Data/WW2_EuropeMaps.sql</File>
+    <File>Data/WW2_EuropeMaps.xml</File>
     <File>Maps/WW2_Europe.lua</File>
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>

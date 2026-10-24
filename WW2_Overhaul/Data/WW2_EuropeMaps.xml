@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Re-register Firaxis Europe maps so they appear under RULESET_WW2 -->
+<GameInfo>
+
+  <Maps>
+    <!-- Rise & Fall Europe (non-TSL) — several path variants for Epic/Steam installs -->
+    <Row File="{1B28771A-C749-434B-9053-D1380C553DE9}Maps/Europe.Civ6Map"
+         Name="LOC_EUROPE_MAP_NAME" Description="LOC_EUROPE_MAP_DESCRIPTION"
+         Image="Map_Europe" StaticMap="1" SortIndex="20"/>
+    <Row File="{1B28771A-C749-434B-9053-D1380C553DE9}Maps/EuropeStandard.Civ6Map"
+         Name="LOC_EUROPE_MAP_NAME" Description="LOC_EUROPE_MAP_DESCRIPTION"
+         Image="Map_Europe" StaticMap="1" SortIndex="21"/>
+    <Row File="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/Europe.Civ6Map"
+         Name="LOC_EUROPE_MAP_NAME" Description="LOC_EUROPE_MAP_DESCRIPTION"
+         Image="Map_Europe" StaticMap="1" SortIndex="22"/>
+    <Row File="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/Europe_XP2.Civ6Map"
+         Name="LOC_EUROPE_MAP_NAME" Description="LOC_EUROPE_MAP_DESCRIPTION"
+         Image="Map_Europe" StaticMap="1" SortIndex="23"/>
+
+    <!-- True Start Location Europe -->
+    <Row File="{1B28771A-C749-434B-9053-D1380C553DE9}Maps/TSLEurope.Civ6Map"
+         Name="LOC_TSL_EUROPE_NAME" Description="LOC_TSL_EUROPE_DESCRIPTION"
+         Image="Map_TrueStartEurope" StaticMap="1" RequiresUniqueLeaders="1" SortIndex="10"/>
+    <Row File="{1B28771A-C749-434B-9053-D1380C553DE9}Maps/TSLEuropeStandard.Civ6Map"
+         Name="LOC_TSL_EUROPE_NAME" Description="LOC_TSL_EUROPE_DESCRIPTION"
+         Image="Map_TrueStartEurope" StaticMap="1" RequiresUniqueLeaders="1" SortIndex="11"/>
+    <Row File="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/TSLEurope.Civ6Map"
+         Name="LOC_TSL_EUROPE_NAME" Description="LOC_TSL_EUROPE_DESCRIPTION"
+         Image="Map_TrueStartEurope" StaticMap="1" RequiresUniqueLeaders="1" SortIndex="12"/>
+    <Row File="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/TSLEurope_XP2.Civ6Map"
+         Name="LOC_TSL_EUROPE_NAME" Description="LOC_TSL_EUROPE_DESCRIPTION"
+         Image="Map_TrueStartEurope" StaticMap="1" RequiresUniqueLeaders="1" SortIndex="13"/>
+    <Row File="{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/TSLEuropeStandard_XP2.Civ6Map"
+         Name="LOC_TSL_EUROPE_NAME" Description="LOC_TSL_EUROPE_DESCRIPTION"
+         Image="Map_TrueStartEurope" StaticMap="1" RequiresUniqueLeaders="1" SortIndex="14"/>
+
+    <!-- Mediterranean as extra Europe-ish option -->
+    <Row File="../../Assets/Maps/EarthMaps/TSLMediterraneanLarge.Civ6Map"
+         Name="LOC_TSL_MEDITERRANEAN_LARGE_NAME" Description="LOC_TSL_MEDITERRANEAN_LARGE_DESCRIPTION"
+         Image="Map_TrueStartMedit" StaticMap="1" SortIndex="30"/>
+    <Row File="../../Assets/Maps/EarthMaps/MediterraneanLarge.Civ6Map"
+         Name="LOC_MEDITERRANEAN_LARGE_NAME" Description="LOC_MEDITERRANEAN_LARGE_DESCRIPTION"
+         Image="Map_Medit" StaticMap="1" SortIndex="31"/>
+  </Maps>
+
+</GameInfo>
