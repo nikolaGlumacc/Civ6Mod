@@ -11,8 +11,9 @@
     </Row>
   </RuleSets>
 
-  <!-- IMPORTANT: do NOT override ParameterId Map — that hides every base map -->
+  <!-- Map domain = StandardMaps so copied Europe maps + scripts show up -->
   <RulesetDomainOverrides>
+    <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="StandardMaps"/>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
     <Row Ruleset="RULESET_WW2" ParameterId="WW2_Territory" Domain="WW2Territories"/>
   </RulesetDomainOverrides>
@@ -39,7 +40,6 @@
     <Row Domain="WW2Territories" Value="TERRITORY_EGYPT" Name="LOC_WW2_TERR_EGYPT" Description="LOC_WW2_TERR_EGYPT_DESC" SortIndex="150"/>
   </DomainValues>
 
-  <!-- No MAP_SCRIPT force — player picks Europe / TSL Europe / Continents / etc. -->
   <ConfigurationUpdates>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
@@ -64,8 +64,9 @@
          ParameterId="GameStartEra" Name="LOC_GAME_START_ERA" Description="LOC_WW2_START_ERA_LOCKED_DESC"
          Domain="WW2Eras" DefaultValue="ERA_INDUSTRIAL" ConfigurationGroup="Game" ConfigurationId="GAME_START_ERA"
          Hash="1" GroupId="GameOptions" ReadOnly="1" SortIndex="60"/>
+    <!-- Renamed in text to Start Position -->
     <Row Key1="Ruleset" Key2="RULESET_WW2"
-         ParameterId="WW2_Territory" Name="LOC_WW2_TERRITORY_NAME" Description="LOC_WW2_TERRITORY_DESC"
+         ParameterId="WW2_Territory" Name="LOC_WW2_START_POSITION_NAME" Description="LOC_WW2_START_POSITION_DESC"
          Domain="WW2Territories" DefaultValue="TERRITORY_AUTO" ConfigurationGroup="Game" ConfigurationId="WW2_TERRITORY"
          GroupId="GameOptions" SortIndex="55"/>
   </Parameters>
