@@ -1,10 +1,10 @@
--- Predefined territories: seed multi-city nations after load.
--- Designed for real Europe TSL maps (Workshop: TSL Huge Europe 106x66 by Fidel Casserole).
--- Relative coords (0..1) map onto whatever grid size the chosen map uses.
+-- Every major gets a historical territory automatically.
+-- Human: Advanced Setup "WW2 Starting Territory" overrides (or AUTO = from leader).
+-- AI: always mapped from civilization (England→Britain, France→France, ...).
+-- Each territory is only granted once (no double-stack on same land).
 
 local RAN = false
 
--- Territory key → list of relative city sites (capital first)
 local TERRITORIES = {
   TERRITORY_GERMANY = {
     {0.48, 0.58}, {0.46, 0.54}, {0.50, 0.56}, {0.44, 0.58}, {0.48, 0.62},
@@ -51,17 +51,28 @@ local TERRITORIES = {
   TERRITORY_EGYPT = {
     {0.62, 0.12}, {0.60, 0.10}, {0.64, 0.10},
   },
+  TERRITORY_SCOTLAND = {
+    {0.26, 0.72}, {0.24, 0.70},
+  },
+  TERRITORY_TURKEY = {
+    {0.64, 0.36}, {0.66, 0.34},
+  },
+  TERRITORY_GEORGIA = {
+    {0.78, 0.42}, {0.76, 0.40},
+  },
 }
 
--- Civ type → territory when AUTO or for AI
+-- Primary civ → territory (AI always use this)
 local CIV_TO_TERR = {
   CIVILIZATION_GERMANY = "TERRITORY_GERMANY",
   CIVILIZATION_ENGLAND = "TERRITORY_BRITAIN",
-  CIVILIZATION_SCOTLAND = "TERRITORY_BRITAIN",
+  CIVILIZATION_SCOTLAND = "TERRITORY_SCOTLAND",
   CIVILIZATION_FRANCE = "TERRITORY_FRANCE",
+  CIVILIZATION_GAUL = "TERRITORY_FRANCE",
   CIVILIZATION_ROME = "TERRITORY_ITALY",
   CIVILIZATION_SPAIN = "TERRITORY_SPAIN",
   CIVILIZATION_RUSSIA = "TERRITORY_RUSSIA",
+  CIVILIZATION_SCYTHIA = "TERRITORY_RUSSIA",
   CIVILIZATION_POLAND = "TERRITORY_POLAND",
   CIVILIZATION_HUNGARY = "TERRITORY_HUNGARY",
   CIVILIZATION_SERBIA = "TERRITORY_SERBIA",
@@ -69,6 +80,8 @@ local CIV_TO_TERR = {
   CIVILIZATION_WW2_YUGOSLAVIA = "TERRITORY_SERBIA",
   CIVILIZATION_GREECE = "TERRITORY_GREECE",
   CIVILIZATION_MACEDON = "TERRITORY_GREECE",
+  CIVILIZATION_BYZANTIUM = "TERRITORY_TURKEY",
+  CIVILIZATION_OTTOMAN = "TERRITORY_TURKEY",
   CIVILIZATION_NETHERLANDS = "TERRITORY_NETHERLANDS",
   CIVILIZATION_NORWAY = "TERRITORY_NORWAY",
   CIVILIZATION_SWEDEN = "TERRITORY_SWEDEN",
@@ -76,25 +89,26 @@ local CIV_TO_TERR = {
   CIVILIZATION_EGYPT = "TERRITORY_EGYPT",
   CIVILIZATION_PHOENICIA = "TERRITORY_EGYPT",
   CIVILIZATION_NUBIA = "TERRITORY_EGYPT",
+  CIVILIZATION_ETHIOPIA = "TERRITORY_EGYPT",
+  CIVILIZATION_MALI = "TERRITORY_EGYPT",
+  CIVILIZATION_GEORGIA = "TERRITORY_GEORGIA",
 }
+
+-- Claimed territories this game (one owner each)
+local claimed = {}
 
 local function GridXY(rx, ry)
   local w, h = Map.GetGridSize()
   local x = math.floor(rx * (w - 1) + 0.5)
   local y = math.floor(ry * (h - 1) + 0.5)
-  x = math.max(0, math.min(w - 1, x))
-  y = math.max(0, math.min(h - 1, y))
-  return x, y
+  return math.max(0, math.min(w - 1, x)), math.max(0, math.min(h - 1, y))
 end
 
 local function IsGood(plot)
   if not plot or plot:IsWater() or plot:IsImpassable() then return false end
   if plot:IsCity() then return false end
   local t = GameInfo.Terrains[plot:GetTerrainType()]
-  if t then
-    local n = t.TerrainType
-    if string.find(n, "SNOW") then return false end
-  end
+  if t and string.find(t.TerrainType, "SNOW") then return false end
   return true
 end
 
@@ -156,10 +170,7 @@ end
 
 local function BuildTerritory(player, terrKey)
   local sites = TERRITORIES[terrKey]
-  if not sites then
-    print("[WW2 Territory] unknown " .. tostring(terrKey))
-    return
-  end
+  if not sites then return end
   local founded = 0
   local capitalPlot = nil
   for _, pair in ipairs(sites) do
@@ -170,7 +181,7 @@ local function BuildTerritory(player, terrKey)
       if city then
         founded = founded + 1
         if not capitalPlot then capitalPlot = plot end
-        print(string.format("[WW2 Territory] %s city at %d,%d", terrKey, plot:GetX(), plot:GetY()))
+        print(string.format("[WW2 AI/Terr] %s city (%d,%d) P%d", terrKey, plot:GetX(), plot:GetY(), player:GetID()))
       elseif not capitalPlot then
         capitalPlot = plot
       end
@@ -188,21 +199,24 @@ local function BuildTerritory(player, terrKey)
       if inf then player:GetUnits():Create(inf.Index, x, y) end
     end)
   end
-  print(string.format("[WW2 Territory] %s founded %d cities for P%d", terrKey, founded, player:GetID()))
+  print(string.format("[WW2 AI/Terr] %s → P%d (%d cities)", terrKey, player:GetID(), founded))
 end
 
-local function ResolveTerritory(player)
-  local id = player:GetID()
-  local human = player:IsHuman()
-  if human then
+local function CivOf(player)
+  local cfg = PlayerConfigurations[player:GetID()]
+  return cfg and cfg:GetCivilizationTypeName() or nil
+end
+
+-- Human may override via Advanced Setup; AI always uses civ mapping.
+local function PreferredTerritory(player)
+  if player:IsHuman() then
     local sel = nil
     pcall(function() sel = GameConfiguration.GetValue("WW2_TERRITORY") end)
     if sel and sel ~= "TERRITORY_AUTO" and TERRITORIES[sel] then
       return sel
     end
   end
-  local cfg = PlayerConfigurations[id]
-  local civ = cfg and cfg:GetCivilizationTypeName()
+  local civ = CivOf(player)
   if civ and CIV_TO_TERR[civ] then return CIV_TO_TERR[civ] end
   return nil
 end
@@ -216,23 +230,51 @@ function WW2_RevealAllFog()
       end
     end
   end
-  print("[WW2] Full map revealed")
 end
 
 function WW2_ApplyAllTSL()
-  print("[WW2 Territory] Seeding predefined countries...")
+  claimed = {}
+  print("[WW2 AI/Terr] Assigning historical territories to all majors...")
   local w, h = Map.GetGridSize()
-  print(string.format("[WW2 Territory] Map grid %dx%d (use Workshop TSL Huge Europe 106x66)", w or 0, h or 0))
+  print(string.format("[WW2 AI/Terr] grid %dx%d", w or 0, h or 0))
+
+  -- Humans first (so their picker wins the territory), then AI
+  local order = {}
   for i = 0, 63 do
     local p = Players[i]
     if p and p:IsMajor() and p:IsAlive() then
-      local terr = ResolveTerritory(p)
-      if terr then BuildTerritory(p, terr)
-      else print("[WW2 Territory] no mapping for player " .. tostring(i)) end
+      table.insert(order, p)
     end
   end
+  table.sort(order, function(a, b)
+    local ah, bh = a:IsHuman() and 0 or 1, b:IsHuman() and 0 or 1
+    if ah ~= bh then return ah < bh end
+    return a:GetID() < b:GetID()
+  end)
+
+  for _, p in ipairs(order) do
+    local terr = PreferredTerritory(p)
+    local civ = CivOf(p) or "?"
+    if not terr then
+      print(string.format("[WW2 AI/Terr] P%d %s — no territory mapping", p:GetID(), civ))
+    elseif claimed[terr] then
+      print(string.format("[WW2 AI/Terr] P%d %s wanted %s but already taken — skip seed", p:GetID(), civ, terr))
+      -- Still move units near that region so they aren't in Antarctica
+      local sites = TERRITORIES[terr]
+      if sites and sites[1] then
+        local tx, ty = GridXY(sites[1][1], sites[1][2])
+        local plot = FindNear(tx, ty, 18)
+        if plot then MoveUnits(p, plot) end
+      end
+    else
+      claimed[terr] = p:GetID()
+      print(string.format("[WW2 AI/Terr] P%d %s claims %s", p:GetID(), civ, terr))
+      BuildTerritory(p, terr)
+    end
+  end
+
   WW2_RevealAllFog()
-  print("[WW2 Territory] Done")
+  print("[WW2 AI/Terr] Done")
 end
 
 local function OnLoad()
@@ -254,4 +296,4 @@ local function OnLoad()
 end
 
 Events.LoadScreenClose.Add(OnLoad)
-print("[WW2 Territory] loaded — pick territory in Advanced Setup; use Workshop TSL Huge Europe map")
+print("[WW2 AI/Terr] loaded — AI auto-picks England/France/Germany/Poland/Serbia/... territories")

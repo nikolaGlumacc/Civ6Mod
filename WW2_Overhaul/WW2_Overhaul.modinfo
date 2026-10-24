@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.0">
+<Mod id="WW2_Overhaul" version="3.1">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.0 • Territory picker • USE Workshop TSL Huge Europe map</Teaser>
-    <Description>WW2 ruleset. Custom map removed (was bad). Subscribe to TSL Huge Europe by Fidel Casserole (Workshop id 2784475643), set map to that, ruleset WW2 Overhaul, pick Starting Territory in Advanced Setup.</Description>
+    <Teaser>v3.1 • AI auto-territories • Serbia compatible</Teaser>
+    <Description>AI England/France/Germany/Poland/Serbia/etc each claim their historical territory and cities. Serbia pack stays in the leader pool. Use Workshop TSL Huge Europe map.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -116,5 +116,6 @@
     <File>Lua/WW2_JoinDiplomacy.lua</File>
     <File>Lua/WW2_Debug.lua</File>
     <File>Text/WW2_Text.xml</File>
+    <File>README_MAP.txt</File>
   </Files>
 </Mod>

@@ -1,4 +1,5 @@
--- WW2 leader pool: Europe + some Africa + Serbia. Runs early; Serbia re-inserts after with higher LoadOrder.
+-- WW2 leader pool: Europe + North Africa + Serbia pack.
+-- Serbia is NEVER deleted. Serbia pack leaders re-asserted at high LoadOrder in Serbia mod.
 
 DELETE FROM Players
 WHERE CivilizationType NOT IN (
@@ -32,17 +33,8 @@ WHERE CivilizationType NOT IN (
   'CIVILIZATION_WW2_YUGOSLAVIA'
 );
 
-DELETE FROM Players
-WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
+-- Prefer Trajan as Italy (remove Caesar from pool)
+DELETE FROM Players WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
 
--- Re-assert Serbia is playable if the pack already registered it
-INSERT OR IGNORE INTO Players
-    (Domain, CivilizationType, CivilizationName, CivilizationIcon,
-     CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon,
-     LeaderType, LeaderName, LeaderIcon,
-     LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
-SELECT Domain, CivilizationType, CivilizationName, CivilizationIcon,
-       CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon,
-       LeaderType, LeaderName, LeaderIcon,
-       LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon
-FROM Players WHERE CivilizationType = 'CIVILIZATION_SERBIA';
+-- Keep any Serbia rows that survived (pack must load / re-insert after this file)
+-- Explicit no-op safety so CIVILIZATION_SERBIA is always in the whitelist above.
