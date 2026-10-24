@@ -1,61 +1,55 @@
-# WW2 Overhaul v3.4 — HOI4-style Civ 6 ruleset
+# WW2 Overhaul v3.5
 
 **Requires:** Rise & Fall + Gathering Storm  
-**Compatible with:** Serbia Civilization Pack (does **not** break or redefine Serbia leaders)
+**Compatible with:** Serbia Civilization Pack
 
-## Goal
+## CRITICAL — How to start correctly
 
-A stable, playable WW2 ruleset: Domination-only, deep Industrial start, hard science, oil, supply, army doctrine, stubbornness when losing land, diplomacy Join (keep land / no army vs absorb), and strong cooperation between friends.
-
-## How to start
-
-1. Enable **WW2 Overhaul** + **Serbia Civilization Pack**.
+1. Enable **WW2 Overhaul** + **Serbia Civilization Pack** in Additional Content.
 2. Create Game → **Advanced Setup**.
-3. Set **Ruleset = WW2 Overhaul**.
-   - Start era locked to **Industrial**.
-   - Defaults: Continents + Large, no goody huts.
-   - Victories forced to **Domination only**.
-   - **Army Doctrine**: Light (+3 CS) / Medium (+7) / Heavy (+14).
-4. Pick Serbia leaders (Tito, Draža, Milošević, Dušan) or base Germany / England / France / Russia / Poland / Spain / Hungary, or WW2 Yugoslavia.
-5. New game only.
+3. **Ruleset** must be set to **WW2 Overhaul** (this locks Industrial start + all WW2 systems).
+4. **Map** — do **NOT** use the old "WW2 Huge Europe (Embedded)". That map is abandoned.
 
-### Europe map
+### Real Europe map (recommended)
 
-Stock game has no Europe TSL. Use **Continents Large**, or **YnAMP** Europe / Greatest Earth with TSL for real borders. Ruleset still applies.
+Install **YnAMP** (Yet not Another Maps Pack):
+- Steam Workshop: search "YnAMP" or "Yet (not) Another Maps Pack"
+- Or GitHub: https://github.com/Gedemon/Civ6-YnAMP
+
+Then in Advanced Setup pick one of:
+- **Play Europe Again** (best pure Europe)
+- **Greatest Earth Map** (whole Earth, Europe is large and detailed)
+
+Enable True Starting Locations if YnAMP offers the option.
+
+Without YnAMP you can still play on **Continents / Pangaea / any stock map** — the WW2 rules (army, techs, oil, alliances…) still work. Only the geography will not be Europe.
+
+5. New game only. Load-screen scripts grant techs + starter army.
+
+## What you should see on turn 1
+
+- Industrial / early-Modern techs already unlocked (no nukes)
+- **2 Tanks + 4 Infantry + 2 Artillery** near your capital
+- If capital is coastal → **1 Battleship**
+- Domination victory only
+
+If you still spawn with settlers + scouts + crossbowmen, the **WW2 ruleset was not selected**. Go back to Advanced Setup and set Ruleset = WW2 Overhaul.
 
 ## Core systems
 
 | System | Behavior |
 |--------|----------|
 | Victory | Domination only |
-| Loyalty | Foreign city pressure disabled; ages remain |
-| Start | Industrial era + extra late Industrial / early Modern tech (nukes not granted) |
-| **Starter army** | **2 Tanks + 4 Infantry + 2 Artillery**. Coastal capital also gets a **Battleship** |
-| Science | Low pop science, weaker campuses, nuclear 3×, late military 2× |
-| Oil | 0 Oil → modern armor/ships/air drop to 1 movement (no extra unit cost) |
-| Production | Stronger IZ + global military production |
-| Combat | Stronger navy/air, harder city hits, slower heal outside friendly |
-| Promotions / Corps / Army | Heavily buffed |
-| Army Doctrine | Advanced Setup: Light / Medium / Heavy |
-| Stubbornness | Policy base +4 CS / +3 heal; lose cities → +25% Prod +8 CS for 25 turns, 5-turn cooldown (save-safe) |
-| Supply | Supply Depot building (regional heal/CS/prod); Supply Station builder improvement |
-| Join | `WW2_TryJoinLocal(id)` keep land no army; `WW2_TryAbsorbLocal(id)` transfer/subordinate; Axis Align / Comintern soft coop |
-| Ideology | Extra bonuses on Democracy / Fascism / Communism |
-| **Research Agreements** | **Fully unlock the tech** for both parties (not just a boost) |
-| **Open Borders** | +4 CS, +1 Movement, +3 loyalty |
-| **Alliance** | +10% Science, +10% Production, +6 CS |
-| **Declaration of Friendship** | +8% Gold, +5% Science |
-
-## Serbia pack
-
-No Serbia-specific WW2 bonuses. Serbia leaders load under the same ruleset. Unit upgrades are FK-safe if intermediate units are missing.
-
-## Not in v3.4 (by design)
-
-- Full Europe country picker on main menu
-- Custom oil/supply lens
-- Guaranteed full AI annex UI inside the diplomacy panel (Firetuner helpers provided; full diplo UI add-in is a separate step)
+| Start | Industrial + WW2 techs |
+| Starter army | 2 Tank / 4 Infantry / 2 Artillery (+ Battleship if coastal) |
+| Science | Hard (nukes very late) |
+| Oil | 0 Oil → modern units move 1 |
+| Research Agreements | Full tech unlock for both sides |
+| Open Borders | +4 CS, +1 Move, +3 Loyalty |
+| Alliance | +10% Sci / Prod, +6 CS |
+| Friendship | +8% Gold, +5% Sci |
+| Join / Absorb | Firetuner helpers still available |
 
 ## Files
 
-Gameplay SQL under `Data/`, Lua under `Lua/`, ruleset registration in `Data/WW2_Ruleset.xml`.
+`Data/` = SQL, `Lua/` = scripts. Ruleset = `Data/WW2_Ruleset.xml`.
