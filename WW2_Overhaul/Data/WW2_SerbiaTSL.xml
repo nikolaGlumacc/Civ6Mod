@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Serbia TSL for YnAMP Europe maps. Safe if YnAMP missing (CREATE TABLE IF NOT EXISTS). -->
+<GameInfo>
+
+  <!-- YnAMP StartPosition table (created only if missing) -->
+  <!-- Loaded via UpdateDatabase; SQL companion creates table -->
+
+  <StartPosition>
+    <!-- ===== LargeEurope (79x73) — Belgrade ~ between Hungary & Macedon ===== -->
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_STR_SERBIA" X="47" Y="37" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SERBIA" X="47" Y="37" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_WW2_YUGOSLAVIA" X="47" Y="37" />
+
+    <!-- Zagreb-ish alternate -->
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_STR_SERBIA" X="44" Y="40" AlternateStart="1" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SERBIA" X="44" Y="40" AlternateStart="1" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_WW2_YUGOSLAVIA" X="44" Y="40" AlternateStart="1" />
+
+    <!-- ===== Play Europe Again ===== -->
+    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_STR_SERBIA" X="57" Y="40" />
+    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SERBIA" X="57" Y="40" />
+    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_WW2_YUGOSLAVIA" X="57" Y="40" />
+    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_STR_SERBIA" X="54" Y="43" AlternateStart="1" />
+
+    <!-- ===== Greatest Earth ===== -->
+    <Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_STR_SERBIA" X="28" Y="48" />
+    <Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SERBIA" X="28" Y="48" />
+    <Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_WW2_YUGOSLAVIA" X="28" Y="48" />
+
+    <!-- ===== Giant Earth ===== -->
+    <Replace MapName="GiantEarth" Civilization="CIVILIZATION_STR_SERBIA" X="27" Y="58" />
+    <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SERBIA" X="27" Y="58" />
+    <Replace MapName="GiantEarth" Civilization="CIVILIZATION_WW2_YUGOSLAVIA" X="27" Y="58" />
+  </StartPosition>
+
+</GameInfo>
