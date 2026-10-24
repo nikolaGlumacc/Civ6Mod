@@ -1,5 +1,6 @@
--- WW2 Overhaul: Industrial grants + starter army
--- NEVER kill the last settler / leave player with zero cities.
+-- WW2 Overhaul: grants + controlled starter army
+-- Units: 2 Tank, 3 Infantry, 2 Artillery, 2 Settler, coastal Battleship
+-- Kill default scouts. +80 GPT economy offset.
 
 local ALREADY_RAN = false
 
@@ -19,10 +20,12 @@ local CIVICS_EXTRA = {
   "CIVIC_TOTALITARIANISM", "CIVIC_CLASS_STRUGGLE", "CIVIC_CAPITALISM",
 }
 
+-- Exact composition requested
 local STARTER_ARMY = {
   { unit = "UNIT_TANK",      count = 2 },
-  { unit = "UNIT_INFANTRY",  count = 4 },
+  { unit = "UNIT_INFANTRY",  count = 3 },
   { unit = "UNIT_ARTILLERY", count = 2 },
+  { unit = "UNIT_SETTLER",   count = 2 },
 }
 local COASTAL_NAVY = "UNIT_BATTLESHIP"
 
@@ -44,22 +47,16 @@ local function GrantCivic(player, civicType)
   end
 end
 
-local function ClearUnlockSpam()
-  if NotificationManager == nil then return end
-  pcall(function()
-    if NotificationManager.DismissAllNotifications then
-      NotificationManager.DismissAllNotifications()
-    end
-  end)
+local function AttachEconomy(player)
+  pcall(function() player:AttachModifierByID("WW2_START_GOLD_PER_TURN") end)
+  pcall(function() player:AttachModifierByID("WW2_CITY_GOLD") end)
 end
 
 local function GetAnchorPlot(player)
   local cities = player:GetCities()
   if cities then
     local capital = cities:GetCapitalCity()
-    if capital then
-      return Map.GetPlot(capital:GetX(), capital:GetY()), true
-    end
+    if capital then return Map.GetPlot(capital:GetX(), capital:GetY()), true end
     for _, city in cities:Members() do
       return Map.GetPlot(city:GetX(), city:GetY()), true
     end
@@ -143,16 +140,30 @@ local function SpawnUnit(playerID, unitType, x, y)
   return unit
 end
 
+-- Remove default scouts (and any other junk the game gave)
+local function KillDefaultJunk(player)
+  pcall(function()
+    for _, u in player:GetUnits():Members() do
+      local info = GameInfo.Units[u:GetType()]
+      if info then
+        local t = info.UnitType
+        if t == "UNIT_SCOUT" or t == "UNIT_SKIRMISHER" or t == "UNIT_WARRIOR"
+            or t == "UNIT_SLINGER" or t == "UNIT_BUILDER" then
+          if UnitManager and UnitManager.Kill then UnitManager.Kill(u) else u:Kill() end
+        end
+      end
+    end
+  end)
+end
+
 local function TryFoundCapital(player)
   local cities = player:GetCities()
   if cities and cities:GetCount() > 0 then return true end
-
   local anchor = GetAnchorPlot(player)
   if not anchor then return false end
   local playerID = player:GetID()
   local plot = FindNearbyLandPlot(anchor:GetX(), anchor:GetY(), 3)
   if not plot then return false end
-
   local city = nil
   pcall(function()
     if CityManager and CityManager.CreateCity then
@@ -166,36 +177,17 @@ local function TryFoundCapital(player)
       end
     end)
   end
-
-  if city then
-    print("[WW2] Founded emergency capital for P" .. playerID)
-    -- only kill settlers AFTER successful city
-    pcall(function()
-      for _, u in player:GetUnits():Members() do
-        local info = GameInfo.Units[u:GetType()]
-        if info and info.UnitType == "UNIT_SETTLER" then
-          if UnitManager and UnitManager.Kill then UnitManager.Kill(u) else u:Kill() end
-        end
-      end
-    end)
-    return true
-  end
-  print("[WW2] Could not found capital for P" .. playerID .. " — settlers kept")
-  return false
+  return city ~= nil
 end
 
 local function GiveStarterArmy(player)
   if not player or not player:IsAlive() or not player:IsMajor() then return end
   local playerID = player:GetID()
-  local cities = player:GetCities()
-  -- only spawn army if player has a city (or at least units to anchor)
-  local anchor, hasCity = GetAnchorPlot(player)
-  if not anchor then
-    print("[WW2] No anchor for P" .. playerID)
-    return
-  end
+  local anchor = GetAnchorPlot(player)
+  if not anchor then return end
   local cx, cy = anchor:GetX(), anchor:GetY()
-  print("[WW2] Starter army P" .. playerID .. " near " .. cx .. "," .. cy .. " (hasCity=" .. tostring(hasCity) .. ")")
+
+  KillDefaultJunk(player)
 
   local spawned = 0
   for _, entry in ipairs(STARTER_ARMY) do
@@ -214,33 +206,32 @@ local function GiveStarterArmy(player)
       if not GameInfo.Units[navy] then navy = "UNIT_IRONCLAD" end
       if SpawnUnit(playerID, navy, water:GetX(), water:GetY()) then
         spawned = spawned + 1
+        print("[WW2] Coastal navy granted")
       end
     end
   end
-  print("[WW2] Army spawned: " .. tostring(spawned))
+  print("[WW2] Starter units spawned: " .. tostring(spawned))
 end
 
 local function OnStart()
   if ALREADY_RAN then return end
   ALREADY_RAN = true
-
-  print("[WW2] Start grants + army...")
+  print("[WW2] Start grants + economy + army...")
   for i = 0, 63 do
     local p = Players[i]
     if p and p:IsMajor() and p:IsAlive() then
       for _, t in ipairs(TECHS_EXTRA) do GrantTech(p, t) end
       for _, c in ipairs(CIVICS_EXTRA) do GrantCivic(p, c) end
+      AttachEconomy(p)
       TryFoundCapital(p)
       GiveStarterArmy(p)
     end
   end
-  ClearUnlockSpam()
-  print("[WW2] Start logic complete.")
+  print("[WW2] Start complete (+80 GPT, no scouts)")
 end
 
 Events.LoadScreenClose.Add(OnStart)
 
--- Second pass after TSL has had time to found cities
 if Events.GameCoreEventPublishComplete then
   local n = 0
   local function secondPass()
@@ -249,18 +240,15 @@ if Events.GameCoreEventPublishComplete then
       for i = 0, 63 do
         local p = Players[i]
         if p and p:IsMajor() and p:IsAlive() then
-          local cities = p:GetCities()
-          if cities and cities:GetCount() > 0 then
-            local hasTank = false
-            for _, u in p:GetUnits():Members() do
-              local info = GameInfo.Units[u:GetType()]
-              if info and info.UnitType == "UNIT_TANK" then hasTank = true break end
-            end
-            if not hasTank then
-              print("[WW2] Second-pass army for P" .. i)
-              GiveStarterArmy(p)
-            end
+          AttachEconomy(p)
+          local hasTank = false
+          for _, u in p:GetUnits():Members() do
+            local info = GameInfo.Units[u:GetType()]
+            if info and info.UnitType == "UNIT_TANK" then hasTank = true break end
           end
+          if not hasTank then GiveStarterArmy(p) end
+          -- scouts sometimes reappear; wipe again
+          KillDefaultJunk(p)
         end
       end
       Events.GameCoreEventPublishComplete.Remove(secondPass)
@@ -269,4 +257,4 @@ if Events.GameCoreEventPublishComplete then
   Events.GameCoreEventPublishComplete.Add(secondPass)
 end
 
-print("[WW2] Start logic v2.2 — safe (no elimination)")
+print("[WW2] Start logic v2.3 — 2T/3I/2A/2S + navy, +80 GPT, no scouts")

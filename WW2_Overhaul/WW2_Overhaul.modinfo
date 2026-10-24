@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.6">
+<Mod id="WW2_Overhaul" version="3.7">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.6 • Built-in Huge Europe + TSL • Starter army • No YnAMP needed</Teaser>
-    <Description>Self-contained Europe map with true-ish starting locations for major European civs. Industrial start, 2 tanks / 4 infantry / 2 artillery, OP research agreements, strong alliances. Serbia pack compatible.</Description>
+    <Teaser>v3.7 • +80 GPT • 2T/3I/2A/2S start • denser Europe</Teaser>
+    <Description>Built-in Europe map, Industrial start, controlled starter army (2 tanks, 3 infantry, 2 artillery, 2 settlers, coastal battleship), +80 gold/turn to cover upkeep. No scouts.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -61,6 +61,7 @@
       <File>Data/WW2_JoinPower.sql</File>
       <File>Data/WW2_EuropeGuide.sql</File>
       <File>Data/WW2_Cooperation.sql</File>
+      <File>Data/WW2_Economy.sql</File>
     </UpdateDatabase>
     <UpdateText id="WW2_Gameplay_Text">
       <File>Text/WW2_Text.xml</File>
@@ -107,6 +108,7 @@
     <File>Data/WW2_JoinPower.sql</File>
     <File>Data/WW2_EuropeGuide.sql</File>
     <File>Data/WW2_Cooperation.sql</File>
+    <File>Data/WW2_Economy.sql</File>
     <File>Maps/WW2_Europe.lua</File>
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>

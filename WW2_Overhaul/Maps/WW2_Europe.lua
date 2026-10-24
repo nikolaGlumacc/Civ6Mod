@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
--- WW2 Overhaul — Self-contained Huge Europe map (no YnAMP required)
--- Size 100x64. Shaped for: Britain, Iberia, France, Italy, Balkans, Scandinavia,
--- Germany/Poland belt, Russia west, Anatolia, North Africa strip.
+-- WW2 Overhaul — Self-contained Europe map (120x72, denser land)
+-- Aimed at: clear Britain, Iberia, France, Italy, Balkans, Scandinavia,
+-- Central Europe belt, Russia, Anatolia, N.Africa
 ------------------------------------------------------------------------------
 include("MapEnums")
 include("MapUtilities")
@@ -9,7 +9,7 @@ include("FeatureGenerator")
 include("ResourceGenerator")
 include("AssignStartingPlots")
 
-local W, H = 100, 64
+local W, H = 120, 72
 
 function GetMapInitData(MapSize)
   return { Width = W, Height = H, WrapX = false, WrapY = false }
@@ -27,55 +27,53 @@ function GetMapScriptInfo()
   }
 end
 
--- Land mask helpers (nx,ny in 0..1, y=0 south)
 local function ell(nx, ny, cx, cy, rx, ry)
   return ((nx - cx) / rx) ^ 2 + ((ny - cy) / ry) ^ 2 <= 1
 end
 
+-- Much fatter land so it actually reads as Europe, not a peanut
 local function IsLand(x, y)
   local nx = x / math.max(W - 1, 1)
   local ny = y / math.max(H - 1, 1)
 
-  -- Main European landmass (France → Russia belt)
-  if ell(nx, ny, 0.48, 0.55, 0.38, 0.22) then return true end
-  -- Britain + Ireland
-  if ell(nx, ny, 0.22, 0.62, 0.07, 0.11) then return true end
-  if ell(nx, ny, 0.15, 0.64, 0.035, 0.05) then return true end
-  -- Iberia
-  if ell(nx, ny, 0.18, 0.38, 0.11, 0.12) then return true end
-  -- Italy boot
-  if ell(nx, ny, 0.40, 0.40, 0.05, 0.14) then return true end
-  if ell(nx, ny, 0.42, 0.28, 0.035, 0.06) then return true end
-  if ell(nx, ny, 0.43, 0.22, 0.03, 0.025) then return true end -- Sicily area
-  -- Greece / Balkans tip
-  if ell(nx, ny, 0.52, 0.32, 0.07, 0.10) then return true end
+  -- Core continent: Iberia through Russia (wide belt)
+  if ell(nx, ny, 0.50, 0.52, 0.42, 0.28) then return true end
+  -- Britain
+  if ell(nx, ny, 0.20, 0.60, 0.08, 0.12) then return true end
+  if ell(nx, ny, 0.13, 0.62, 0.04, 0.06) then return true end -- Ireland
+  -- Iberia (explicit so it sticks out)
+  if ell(nx, ny, 0.16, 0.36, 0.12, 0.13) then return true end
+  -- Italy
+  if ell(nx, ny, 0.38, 0.38, 0.06, 0.16) then return true end
+  if ell(nx, ny, 0.40, 0.24, 0.04, 0.06) then return true end
+  if ell(nx, ny, 0.41, 0.18, 0.035, 0.03) then return true end
+  -- Balkans / Greece
+  if ell(nx, ny, 0.50, 0.32, 0.09, 0.12) then return true end
   -- Scandinavia
-  if ell(nx, ny, 0.42, 0.82, 0.08, 0.14) then return true end
-  if ell(nx, ny, 0.50, 0.84, 0.07, 0.12) then return true end
-  -- Denmark bridge
-  if ell(nx, ny, 0.38, 0.68, 0.04, 0.04) then return true end
+  if ell(nx, ny, 0.40, 0.80, 0.09, 0.16) then return true end
+  if ell(nx, ny, 0.50, 0.82, 0.08, 0.14) then return true end
+  if ell(nx, ny, 0.36, 0.68, 0.05, 0.05) then return true end -- Denmark
   -- Anatolia
-  if ell(nx, ny, 0.64, 0.36, 0.12, 0.08) then return true end
-  -- Caucasus / Georgia edge
-  if ell(nx, ny, 0.78, 0.42, 0.06, 0.06) then return true end
-  -- North Africa strip
-  if ny > 0.06 and ny < 0.16 and nx > 0.12 and nx < 0.70 then
-    if ell(nx, ny, 0.40, 0.11, 0.28, 0.045) then return true end
+  if ell(nx, ny, 0.64, 0.34, 0.13, 0.09) then return true end
+  -- Caucasus
+  if ell(nx, ny, 0.78, 0.40, 0.07, 0.07) then return true end
+  -- North Africa
+  if ny > 0.05 and ny < 0.18 and nx > 0.10 and nx < 0.72 then
+    if ell(nx, ny, 0.40, 0.11, 0.30, 0.05) then return true end
   end
-  -- Egypt / Nile
-  if ell(nx, ny, 0.62, 0.12, 0.06, 0.05) then return true end
+  if ell(nx, ny, 0.62, 0.11, 0.07, 0.05) then return true end -- Egypt
   return false
 end
 
 local function IsMountain(x, y)
   local nx = x / math.max(W - 1, 1)
   local ny = y / math.max(H - 1, 1)
-  if ell(nx, ny, 0.20, 0.42, 0.07, 0.025) then return true end -- Pyrenees
-  if ell(nx, ny, 0.36, 0.48, 0.09, 0.035) then return true end -- Alps
-  if ell(nx, ny, 0.52, 0.50, 0.07, 0.03) then return true end  -- Carpathians
-  if ell(nx, ny, 0.42, 0.82, 0.03, 0.10) then return true end  -- Scandes
-  if ell(nx, ny, 0.40, 0.36, 0.02, 0.10) then return true end  -- Apennines
-  if ell(nx, ny, 0.64, 0.38, 0.06, 0.03) then return true end  -- Anatolia highlands
+  if ell(nx, ny, 0.18, 0.40, 0.07, 0.025) then return true end -- Pyrenees
+  if ell(nx, ny, 0.34, 0.48, 0.10, 0.04) then return true end  -- Alps
+  if ell(nx, ny, 0.50, 0.50, 0.08, 0.035) then return true end -- Carpathians
+  if ell(nx, ny, 0.40, 0.80, 0.03, 0.12) then return true end  -- Scandes
+  if ell(nx, ny, 0.38, 0.34, 0.02, 0.12) then return true end  -- Apennines
+  if ell(nx, ny, 0.64, 0.36, 0.07, 0.03) then return true end  -- Anatolia
   return false
 end
 
@@ -83,10 +81,10 @@ local function IsHill(x, y)
   local nx = x / math.max(W - 1, 1)
   local ny = y / math.max(H - 1, 1)
   if ny < 0.18 then return false end
-  return ell(nx, ny, 0.28, 0.52, 0.07, 0.05)
-      or ell(nx, ny, 0.50, 0.54, 0.06, 0.05)
-      or ell(nx, ny, 0.18, 0.40, 0.06, 0.05)
-      or ell(nx, ny, 0.54, 0.36, 0.05, 0.05)
+  return ell(nx, ny, 0.28, 0.52, 0.08, 0.06)
+      or ell(nx, ny, 0.48, 0.54, 0.07, 0.06)
+      or ell(nx, ny, 0.16, 0.38, 0.07, 0.06)
+      or ell(nx, ny, 0.52, 0.34, 0.06, 0.06)
 end
 
 local function T(name)
@@ -95,14 +93,14 @@ local function T(name)
 end
 
 function GenerateMap()
-  print("[WW2 Europe] Self-contained Huge Europe " .. W .. "x" .. H)
+  print("[WW2 Europe] denser Europe " .. W .. "x" .. H)
   local gw, gh = Map.GetGridSize()
   if gw and gh and gw > 0 then W, H = gw, gh end
 
   local ocean, coast = T("TERRAIN_OCEAN"), T("TERRAIN_COAST")
   local grass, grassH, grassM = T("TERRAIN_GRASS"), T("TERRAIN_GRASS_HILLS"), T("TERRAIN_GRASS_MOUNTAIN")
   local plains, plainsH, plainsM = T("TERRAIN_PLAINS"), T("TERRAIN_PLAINS_HILLS"), T("TERRAIN_PLAINS_MOUNTAIN")
-  local desert, desertH = T("TERRAIN_DESERT"), T("TERRAIN_DESERT_HILLS")
+  local desert = T("TERRAIN_DESERT")
   local tundra, tundraH, tundraM = T("TERRAIN_TUNDRA"), T("TERRAIN_TUNDRA_HILLS"), T("TERRAIN_TUNDRA_MOUNTAIN")
   local snow = T("TERRAIN_SNOW")
 
@@ -142,7 +140,6 @@ function GenerateMap()
   end
   print("[WW2 Europe] land tiles: " .. tostring(landN))
 
-  -- Coast rings
   if coast then
     for y = 0, H - 1 do
       for x = 0, W - 1 do
@@ -175,7 +172,6 @@ function GenerateMap()
     ResourceGenerator.Create({ resources = MapConfiguration.GetValue("resources") or 2 })
   end)
 
-  -- Oil in N. Africa / Caucasus-ish
   pcall(function()
     local oil = GameInfo.Resources["RESOURCE_OIL"]
     if not oil then return end
@@ -196,10 +192,9 @@ function GenerateMap()
     end
   end)
 
-  -- Let base game place starts; our Lua TSL will move everyone after load
   pcall(function()
     AssignStartingPlots.Create({
-      MIN_MAJOR_CIV_FERTILITY = 25,
+      MIN_MAJOR_CIV_FERTILITY = 20,
       MIN_MINOR_CIV_FERTILITY = 5,
       MIN_BARBARIAN_FERTILITY = 1,
       START_MIN_Y = 2, START_MAX_Y = 2,
@@ -208,5 +203,5 @@ function GenerateMap()
     })
   end)
   pcall(function() AddGoodies(W, H) end)
-  print("[WW2 Europe] GenerateMap done")
+  print("[WW2 Europe] GenerateMap done — land should dominate the view")
 end
