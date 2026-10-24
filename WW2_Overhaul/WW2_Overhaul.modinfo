@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.4">
+<Mod id="WW2_Overhaul" version="3.6">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.4 • Starter army • OP Research Agreements • Stronger alliances</Teaser>
-    <Description>AI England gets Britain, Trajan gets Italy, Serbia gets Belgrade, etc. Germany+Italy friendly; AI Germany declares on Poland early. Starting army (2 tanks / 4 infantry / 2 artillery + coastal navy). Research Agreements fully unlock techs. Open Borders / Alliances / Friendship give real bonuses.</Description>
+    <Teaser>v3.6 • Built-in Huge Europe + TSL • Starter army • No YnAMP needed</Teaser>
+    <Description>Self-contained Europe map with true-ish starting locations for major European civs. Industrial start, 2 tanks / 4 infantry / 2 artillery, OP research agreements, strong alliances. Serbia pack compatible.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>

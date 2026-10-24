@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
--- WW2 Embedded Huge Europe (ORIGINAL map for Epic / offline installs)
--- Size 106x66 = MAPSIZE_HUGE. Terrain forced tile-by-tile.
--- Not a copy of any Workshop map — original silhouette for this mod.
+-- WW2 Overhaul — Self-contained Huge Europe map (no YnAMP required)
+-- Size 100x64. Shaped for: Britain, Iberia, France, Italy, Balkans, Scandinavia,
+-- Germany/Poland belt, Russia west, Anatolia, North Africa strip.
 ------------------------------------------------------------------------------
 include("MapEnums")
 include("MapUtilities")
@@ -9,10 +9,10 @@ include("FeatureGenerator")
 include("ResourceGenerator")
 include("AssignStartingPlots")
 
-local W, H = 106, 66
+local W, H = 100, 64
 
 function GetMapInitData(MapSize)
-  return { Width = 106, Height = 66, WrapX = false, WrapY = false }
+  return { Width = W, Height = H, WrapX = false, WrapY = false }
 end
 
 function GetMapScriptInfo()
@@ -27,101 +27,66 @@ function GetMapScriptInfo()
   }
 end
 
--- 53x33 land mask (scaled x2 → 106x66). Row 1 = NORTH. '1'=land '.'=ocean
--- Shape: Scandinavia, Britain, Iberia, Italy boot, Greece, main continent, Maghreb
-local ROWS = {
-".........................11111......................",
-"........................1111111.....................",
-".......................111111111....................",
-"......................11111111111...................",
-".....................1111111111111..................",
-"..........11........11111111111111..................",
-".........1111......111111111111111..................",
-"........111111.....1111111111111111.................",
-".......1111111....11111111111111111...11............",
-"......11111111....11111111111111111..1111...........",
-".....111111111....11111111111111111111111...........",
-".....111111111....1111111111111111111111............",
-"....1111111111....111111111111111111111.............",
-"....1111.1111.....11111111111111111111..............",
-"....111...11......1111111111111111111...............",
-".....11...........111111111111111111................",
-"..................11111111111111111.................",
-"..................1111111111111111..................",
-".................1111111111111111...................",
-"......11.........111111111111111....................",
-".....1111........11111111111111.....................",
-"....111111.......1111111111111......................",
-"....111111.......111111111111.......................",
-"...1111111.......11111111111........................",
-"...111111........1111111111.........................",
-"...11111.........111111111..........................",
-"....111...........1111111...........................",
-"....................11..............................",
-"....................................................",
-"....................................................",
-"....................................................",
-"....................................................",
-"....................................................",
-}
+-- Land mask helpers (nx,ny in 0..1, y=0 south)
+local function ell(nx, ny, cx, cy, rx, ry)
+  return ((nx - cx) / rx) ^ 2 + ((ny - cy) / ry) ^ 2 <= 1
+end
 
-local function Sample(x, y)
+local function IsLand(x, y)
   local nx = x / math.max(W - 1, 1)
   local ny = y / math.max(H - 1, 1)
 
-  -- Overlays for peninsulas / islands the coarse grid misses
-  local function ell(cx, cy, rx, ry)
-    return ((nx - cx) / rx) ^ 2 + ((ny - cy) / ry) ^ 2 <= 1
-  end
-  if ell(0.14, 0.70, 0.035, 0.05) then return 1 end -- Ireland
-  if ell(0.22, 0.68, 0.06, 0.10) then return 1 end  -- Britain
-  if ell(0.16, 0.38, 0.10, 0.11) then return 1 end  -- Iberia
-  if ell(0.42, 0.40, 0.04, 0.12) then return 1 end  -- Italy
-  if ell(0.44, 0.26, 0.03, 0.05) then return 1 end  -- south Italy
-  if ell(0.44, 0.18, 0.025, 0.02) then return 1 end -- Sicily
-  if ell(0.54, 0.30, 0.05, 0.07) then return 1 end  -- Greece
-  if ell(0.42, 0.82, 0.08, 0.12) then return 1 end  -- Norway/Sweden
-  if ell(0.52, 0.84, 0.06, 0.09) then return 1 end  -- Finland/east Scandi
-  if ell(0.38, 0.70, 0.035, 0.04) then return 1 end -- Denmark
+  -- Main European landmass (France → Russia belt)
+  if ell(nx, ny, 0.48, 0.55, 0.38, 0.22) then return true end
+  -- Britain + Ireland
+  if ell(nx, ny, 0.22, 0.62, 0.07, 0.11) then return true end
+  if ell(nx, ny, 0.15, 0.64, 0.035, 0.05) then return true end
+  -- Iberia
+  if ell(nx, ny, 0.18, 0.38, 0.11, 0.12) then return true end
+  -- Italy boot
+  if ell(nx, ny, 0.40, 0.40, 0.05, 0.14) then return true end
+  if ell(nx, ny, 0.42, 0.28, 0.035, 0.06) then return true end
+  if ell(nx, ny, 0.43, 0.22, 0.03, 0.025) then return true end -- Sicily area
+  -- Greece / Balkans tip
+  if ell(nx, ny, 0.52, 0.32, 0.07, 0.10) then return true end
+  -- Scandinavia
+  if ell(nx, ny, 0.42, 0.82, 0.08, 0.14) then return true end
+  if ell(nx, ny, 0.50, 0.84, 0.07, 0.12) then return true end
+  -- Denmark bridge
+  if ell(nx, ny, 0.38, 0.68, 0.04, 0.04) then return true end
+  -- Anatolia
+  if ell(nx, ny, 0.64, 0.36, 0.12, 0.08) then return true end
+  -- Caucasus / Georgia edge
+  if ell(nx, ny, 0.78, 0.42, 0.06, 0.06) then return true end
   -- North Africa strip
-  if ny > 0.04 and ny < 0.12 and nx > 0.10 and nx < 0.68 then
-    if ell(0.38, 0.08, 0.26, 0.035) then return 1 end
+  if ny > 0.06 and ny < 0.16 and nx > 0.12 and nx < 0.70 then
+    if ell(nx, ny, 0.40, 0.11, 0.28, 0.045) then return true end
   end
-
-  local cols = 53
-  local rows = #ROWS
-  local bx = math.floor(nx * (cols - 1)) + 1
-  local by = math.floor((1.0 - ny) * (rows - 1)) + 1
-  if by < 1 then by = 1 end
-  if by > rows then by = rows end
-  if bx < 1 then bx = 1 end
-  if bx > cols then bx = cols end
-  local row = ROWS[by]
-  if not row then return 0 end
-  local ch = string.sub(row, bx, bx)
-  return (ch == "1") and 1 or 0
+  -- Egypt / Nile
+  if ell(nx, ny, 0.62, 0.12, 0.06, 0.05) then return true end
+  return false
 end
 
-local function IsMtn(x, y)
-  local nx, ny = x / (W - 1), y / (H - 1)
-  local function ell(cx, cy, rx, ry)
-    return ((nx - cx) / rx) ^ 2 + ((ny - cy) / ry) ^ 2 <= 1
-  end
-  if ell(0.18, 0.44, 0.06, 0.02) then return true end -- Pyrenees
-  if ell(0.38, 0.48, 0.08, 0.03) then return true end -- Alps
-  if ell(0.54, 0.52, 0.06, 0.03) then return true end -- Carpathians
-  if ell(0.42, 0.80, 0.03, 0.10) then return true end -- Scandes
-  if ell(0.42, 0.36, 0.015, 0.10) then return true end -- Apennines
+local function IsMountain(x, y)
+  local nx = x / math.max(W - 1, 1)
+  local ny = y / math.max(H - 1, 1)
+  if ell(nx, ny, 0.20, 0.42, 0.07, 0.025) then return true end -- Pyrenees
+  if ell(nx, ny, 0.36, 0.48, 0.09, 0.035) then return true end -- Alps
+  if ell(nx, ny, 0.52, 0.50, 0.07, 0.03) then return true end  -- Carpathians
+  if ell(nx, ny, 0.42, 0.82, 0.03, 0.10) then return true end  -- Scandes
+  if ell(nx, ny, 0.40, 0.36, 0.02, 0.10) then return true end  -- Apennines
+  if ell(nx, ny, 0.64, 0.38, 0.06, 0.03) then return true end  -- Anatolia highlands
   return false
 end
 
 local function IsHill(x, y)
-  local nx, ny = x / (W - 1), y / (H - 1)
-  if ny < 0.14 then return false end
-  local function ell(cx, cy, rx, ry)
-    return ((nx - cx) / rx) ^ 2 + ((ny - cy) / ry) ^ 2 <= 1
-  end
-  return ell(0.28, 0.50, 0.06, 0.04) or ell(0.50, 0.54, 0.05, 0.04) or ell(0.16, 0.38, 0.05, 0.04)
+  local nx = x / math.max(W - 1, 1)
+  local ny = y / math.max(H - 1, 1)
+  if ny < 0.18 then return false end
+  return ell(nx, ny, 0.28, 0.52, 0.07, 0.05)
+      or ell(nx, ny, 0.50, 0.54, 0.06, 0.05)
+      or ell(nx, ny, 0.18, 0.40, 0.06, 0.05)
+      or ell(nx, ny, 0.54, 0.36, 0.05, 0.05)
 end
 
 local function T(name)
@@ -130,19 +95,19 @@ local function T(name)
 end
 
 function GenerateMap()
-  print("[WW2 Europe Embedded] v3.2 106x66 — Epic offline map")
+  print("[WW2 Europe] Self-contained Huge Europe " .. W .. "x" .. H)
   local gw, gh = Map.GetGridSize()
   if gw and gh and gw > 0 then W, H = gw, gh end
 
   local ocean, coast = T("TERRAIN_OCEAN"), T("TERRAIN_COAST")
   local grass, grassH, grassM = T("TERRAIN_GRASS"), T("TERRAIN_GRASS_HILLS"), T("TERRAIN_GRASS_MOUNTAIN")
-  local plains, plainsH = T("TERRAIN_PLAINS"), T("TERRAIN_PLAINS_HILLS")
-  local desert = T("TERRAIN_DESERT")
+  local plains, plainsH, plainsM = T("TERRAIN_PLAINS"), T("TERRAIN_PLAINS_HILLS"), T("TERRAIN_PLAINS_MOUNTAIN")
+  local desert, desertH = T("TERRAIN_DESERT"), T("TERRAIN_DESERT_HILLS")
   local tundra, tundraH, tundraM = T("TERRAIN_TUNDRA"), T("TERRAIN_TUNDRA_HILLS"), T("TERRAIN_TUNDRA_MOUNTAIN")
   local snow = T("TERRAIN_SNOW")
 
   if not ocean or not grass then
-    print("[WW2 Europe Embedded] ERROR missing terrains")
+    print("[WW2 Europe] ERROR missing terrains")
     return
   end
 
@@ -151,21 +116,22 @@ function GenerateMap()
     for x = 0, W - 1 do
       local plot = Map.GetPlot(x, y)
       if plot then
-        local land = Sample(x, y)
         local ny = y / math.max(H - 1, 1)
         local idx = ocean
-        if land > 0 then
+        if IsLand(x, y) then
           landN = landN + 1
-          if IsMtn(x, y) then
-            idx = (ny > 0.65 and tundraM or grassM) or grass
+          if IsMountain(x, y) then
+            if ny > 0.70 then idx = tundraM or grassM or grass
+            elseif ny < 0.25 then idx = plainsM or grassM or grass
+            else idx = grassM or plainsM or grass end
           elseif IsHill(x, y) then
-            if ny > 0.72 then idx = tundraH or grassH or grass
-            elseif ny < 0.30 then idx = plainsH or grassH or grass
-            else idx = grassH or grass end
+            if ny > 0.75 then idx = tundraH or grassH or grass
+            elseif ny < 0.28 then idx = plainsH or grassH or grass
+            else idx = grassH or plainsH or grass end
           else
-            if ny < 0.13 then idx = desert or plains or grass
-            elseif ny > 0.85 then idx = snow or tundra or grass
-            elseif ny > 0.75 then idx = tundra or grass
+            if ny < 0.15 then idx = desert or plains or grass
+            elseif ny > 0.88 then idx = snow or tundra or grass
+            elseif ny > 0.78 then idx = tundra or grass
             elseif ny < 0.32 then idx = plains or grass
             else idx = grass end
           end
@@ -174,8 +140,9 @@ function GenerateMap()
       end
     end
   end
-  print("[WW2 Europe Embedded] land tiles: " .. tostring(landN))
+  print("[WW2 Europe] land tiles: " .. tostring(landN))
 
+  -- Coast rings
   if coast then
     for y = 0, H - 1 do
       for x = 0, W - 1 do
@@ -208,32 +175,38 @@ function GenerateMap()
     ResourceGenerator.Create({ resources = MapConfiguration.GetValue("resources") or 2 })
   end)
 
-  -- Africa oil / strategic
+  -- Oil in N. Africa / Caucasus-ish
   pcall(function()
     local oil = GameInfo.Resources["RESOURCE_OIL"]
     if not oil then return end
     for y = 0, H - 1 do
       for x = 0, W - 1 do
-        if y / math.max(H - 1, 1) < 0.13 then
-          local plot = Map.GetPlot(x, y)
-          if plot and not plot:IsWater() and not plot:IsMountain() and ((x * 11 + y) % 5) == 0 then
-            if plot:GetResourceType() < 0 then ResourceBuilder.SetResourceType(plot, oil.Index, 1) end
+        local ny = y / math.max(H - 1, 1)
+        local nx = x / math.max(W - 1, 1)
+        local plot = Map.GetPlot(x, y)
+        if plot and not plot:IsWater() and not plot:IsMountain() then
+          if (ny < 0.16 and ((x * 13 + y) % 6) == 0)
+              or (nx > 0.72 and ny > 0.35 and ny < 0.48 and ((x + y) % 7) == 0) then
+            if plot:GetResourceType() < 0 then
+              ResourceBuilder.SetResourceType(plot, oil.Index, 1)
+            end
           end
         end
       end
     end
   end)
 
+  -- Let base game place starts; our Lua TSL will move everyone after load
   pcall(function()
     AssignStartingPlots.Create({
-      MIN_MAJOR_CIV_FERTILITY = 40,
-      MIN_MINOR_CIV_FERTILITY = 8,
+      MIN_MAJOR_CIV_FERTILITY = 25,
+      MIN_MINOR_CIV_FERTILITY = 5,
       MIN_BARBARIAN_FERTILITY = 1,
-      START_MIN_Y = 3, START_MAX_Y = 3,
+      START_MIN_Y = 2, START_MAX_Y = 2,
       IGNORE_LANDMASS = true,
       START_CONFIG = MapConfiguration.GetValue("start") or 2,
     })
   end)
   pcall(function() AddGoodies(W, H) end)
-  print("[WW2 Europe Embedded] done — map is inside the mod (Epic OK)")
+  print("[WW2 Europe] GenerateMap done")
 end

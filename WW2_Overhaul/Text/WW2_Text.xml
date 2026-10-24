@@ -2,14 +2,14 @@
 <GameData>
   <BaseGameText>
     <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 ruleset: Domination only, Industrial start, oil, doctrines, strong alliances. For a real Europe map install YnAMP and pick Play Europe Again or Greatest Earth."/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 ruleset with built-in Huge Europe map + TSL. Domination only, Industrial start, tanks, oil, strong alliances. No extra mods required."/>
     <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 locks start era to Industrial/Modern."/>
 
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Huge Europe (legacy / broken — do not use)"/>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Old experimental map. Use YnAMP Play Europe Again instead."/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Huge Europe"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Built-in Europe map (Britain, Iberia, France, Italy, Balkans, Scandinavia, Germany/Poland, Russia, Anatolia, N. Africa). TSL for major civs. No YnAMP needed."/>
 
     <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="WW2 Starting Territory"/>
-    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Your country. AI auto-picks theirs (England→Britain, France→France, …). AUTO = from your leader. Best with YnAMP Europe maps."/>
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Your country. AI auto-picks theirs. AUTO = from your leader."/>
     <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader)"/>
     <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected."/>
     <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
