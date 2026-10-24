@@ -20,9 +20,7 @@
   <DomainValues>
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
-
     <Row Domain="WW2Maps" Value="WW2_Europe.lua" Name="LOC_MAP_WW2_EUROPE_NAME" Description="LOC_MAP_WW2_EUROPE_DESCRIPTION" SortIndex="10"/>
-
     <Row Domain="WW2Territories" Value="TERRITORY_AUTO" Name="LOC_WW2_TERR_AUTO" Description="LOC_WW2_TERR_AUTO_DESC" SortIndex="1"/>
     <Row Domain="WW2Territories" Value="TERRITORY_GERMANY" Name="LOC_WW2_TERR_GERMANY" Description="LOC_WW2_TERR_GERMANY_DESC" SortIndex="10"/>
     <Row Domain="WW2Territories" Value="TERRITORY_BRITAIN" Name="LOC_WW2_TERR_BRITAIN" Description="LOC_WW2_TERR_BRITAIN_DESC" SortIndex="20"/>
@@ -47,8 +45,6 @@
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="WW2_Europe.lua" Hash="0"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
-         TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_HUGE" Hash="1"/>
-    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_NO_GOODY_HUTS" TargetValue="1" Hash="0"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="VICTORY_DOMINATION" TargetValue="1" Hash="0"/>
@@ -66,22 +62,12 @@
 
   <Parameters>
     <Row Key1="Ruleset" Key2="RULESET_WW2"
-         ParameterId="GameStartEra"
-         Name="LOC_GAME_START_ERA"
-         Description="LOC_WW2_START_ERA_LOCKED_DESC"
-         Domain="WW2Eras"
-         DefaultValue="ERA_INDUSTRIAL"
-         ConfigurationGroup="Game"
-         ConfigurationId="GAME_START_ERA"
+         ParameterId="GameStartEra" Name="LOC_GAME_START_ERA" Description="LOC_WW2_START_ERA_LOCKED_DESC"
+         Domain="WW2Eras" DefaultValue="ERA_INDUSTRIAL" ConfigurationGroup="Game" ConfigurationId="GAME_START_ERA"
          Hash="1" GroupId="GameOptions" ReadOnly="1" SortIndex="60"/>
     <Row Key1="Ruleset" Key2="RULESET_WW2"
-         ParameterId="WW2_Territory"
-         Name="LOC_WW2_TERRITORY_NAME"
-         Description="LOC_WW2_TERRITORY_DESC"
-         Domain="WW2Territories"
-         DefaultValue="TERRITORY_AUTO"
-         ConfigurationGroup="Game"
-         ConfigurationId="WW2_TERRITORY"
+         ParameterId="WW2_Territory" Name="LOC_WW2_TERRITORY_NAME" Description="LOC_WW2_TERRITORY_DESC"
+         Domain="WW2Territories" DefaultValue="TERRITORY_AUTO" ConfigurationGroup="Game" ConfigurationId="WW2_TERRITORY"
          GroupId="GameOptions" SortIndex="55"/>
   </Parameters>
 </GameInfo>
