@@ -14,13 +14,15 @@
   <RulesetDomainOverrides>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
     <Row Ruleset="RULESET_WW2" ParameterId="WW2_Territory" Domain="WW2Territories"/>
+    <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="WW2Maps"/>
   </RulesetDomainOverrides>
 
   <DomainValues>
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
 
-    <!-- Pre-game territory picker (pick nation → predefined cities seeded at start) -->
+    <Row Domain="WW2Maps" Value="WW2_Europe.lua" Name="LOC_MAP_WW2_EUROPE_NAME" Description="LOC_MAP_WW2_EUROPE_DESCRIPTION" SortIndex="10"/>
+
     <Row Domain="WW2Territories" Value="TERRITORY_AUTO" Name="LOC_WW2_TERR_AUTO" Description="LOC_WW2_TERR_AUTO_DESC" SortIndex="1"/>
     <Row Domain="WW2Territories" Value="TERRITORY_GERMANY" Name="LOC_WW2_TERR_GERMANY" Description="LOC_WW2_TERR_GERMANY_DESC" SortIndex="10"/>
     <Row Domain="WW2Territories" Value="TERRITORY_BRITAIN" Name="LOC_WW2_TERR_BRITAIN" Description="LOC_WW2_TERR_BRITAIN_DESC" SortIndex="20"/>
@@ -42,7 +44,9 @@
   <ConfigurationUpdates>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
-    <!-- Huge size for TSL Huge Europe (106x66). Do NOT force our broken custom map. -->
+    <!-- Embedded map inside mod — no Workshop / Steam required (Epic OK) -->
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Map" TargetId="MAP_SCRIPT" TargetValue="WW2_Europe.lua" Hash="0"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_HUGE" Hash="1"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
@@ -70,12 +74,7 @@
          DefaultValue="ERA_INDUSTRIAL"
          ConfigurationGroup="Game"
          ConfigurationId="GAME_START_ERA"
-         ValueNameConfigurationId="GAME_START_ERA_NAME"
-         Hash="1"
-         GroupId="GameOptions"
-         ReadOnly="1"
-         SortIndex="60"/>
-
+         Hash="1" GroupId="GameOptions" ReadOnly="1" SortIndex="60"/>
     <Row Key1="Ruleset" Key2="RULESET_WW2"
          ParameterId="WW2_Territory"
          Name="LOC_WW2_TERRITORY_NAME"
@@ -84,7 +83,6 @@
          DefaultValue="TERRITORY_AUTO"
          ConfigurationGroup="Game"
          ConfigurationId="WW2_TERRITORY"
-         GroupId="GameOptions"
-         SortIndex="55"/>
+         GroupId="GameOptions" SortIndex="55"/>
   </Parameters>
 </GameInfo>

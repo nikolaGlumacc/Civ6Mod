@@ -1,23 +1,15 @@
-WW2 Overhaul — MAP SETUP (read this)
-====================================
+WW2 Overhaul map (Epic Games)
+=============================
 
-Our custom Europe script was removed. It never looked like Europe.
+The Europe map is INSIDE this mod:
+  WW2_Overhaul/Maps/WW2_Europe.lua
 
-USE THIS WORKSHOP MAP INSTEAD (the one you linked):
+No Steam Workshop download needed.
+Ruleset locks MAP_SCRIPT to WW2_Europe.lua and MAP_SIZE to HUGE (106x66).
 
-  TSL Huge Europe — Fidel Casserole
-  https://steamcommunity.com/sharedfiles/filedetails/?id=2784475643
-  Size: 106 x 66 (Huge)
-  Real Europe coasts + true start locations
+Why not the Workshop "TSL Huge Europe"?
+  That map belongs to another author. It cannot be legally copied into this repo.
+  This file is an original embedded map for offline / Epic installs.
 
-HOW TO PLAY
-1. Subscribe to TSL Huge Europe in Steam Workshop.
-2. Enable: WW2 Overhaul + Serbia pack + TSL Huge Europe.
-3. Create Game → Ruleset: WW2 Overhaul.
-4. Map: TSL Huge Europe (NOT the deprecated WW2 Europe script).
-5. Advanced Setup → "WW2 Starting Territory" → pick Germany / Britain / Serbia / etc.
-6. Pick the matching leader (Serbia leaders for Serbia, Trajan for Italy, ...).
-7. Start. Cities for that territory are seeded after load; map is fully revealed.
-
-We cannot legally copy someone else's Workshop map into this GitHub repo.
-Subscribe to it — that is the correct, realistic Europe map.
+Also available in-game without mods: Firaxis "Europe" / "True Start Location Europe"
+(Rise & Fall) — smaller standard size, European leaders only.

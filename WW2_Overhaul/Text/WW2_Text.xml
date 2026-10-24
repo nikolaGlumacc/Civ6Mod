@@ -2,46 +2,45 @@
 <GameData>
   <BaseGameText>
     <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="Simplified HOI4-style WW2 ruleset. Use with a real Europe map (subscribe: TSL Huge Europe by Fidel Casserole — Workshop). Domination only, Industrial start, oil, doctrines, stubbornness, predefined territories."/>
-    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 ruleset locks start to Industrial (or Modern)."/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 ruleset with embedded Huge Europe map (works on Epic — no Steam Workshop). Domination only, Industrial start, territories, oil, doctrines."/>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 locks start era to Industrial/Modern."/>
+
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Huge Europe (Embedded)"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Huge Europe map bundled inside WW2 Overhaul. No Workshop download. For Epic Games and offline installs."/>
 
     <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="WW2 Starting Territory"/>
-    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Choose your predefined country. Cities are seeded after load on a real Europe TSL map. Pick the matching leader in the civ list (e.g. Serbia leaders for Serbia). AUTO = seed from the leader you picked."/>
-
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Your country. AI auto-picks theirs (England→Britain, France→France, …). AUTO = from your leader."/>
     <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader)"/>
     <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected."/>
     <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
-    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin + core German cities. Play as Germany."/>
+    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin region."/>
     <Replace Tag="LOC_WW2_TERR_BRITAIN" Text="Britain"/>
-    <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London + British Isles. Play as England / Scotland."/>
+    <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London / British Isles."/>
     <Replace Tag="LOC_WW2_TERR_FRANCE" Text="France"/>
-    <Replace Tag="LOC_WW2_TERR_FRANCE_DESC" Text="Paris + French cities. Play as France."/>
+    <Replace Tag="LOC_WW2_TERR_FRANCE_DESC" Text="Paris region."/>
     <Replace Tag="LOC_WW2_TERR_ITALY" Text="Italy"/>
-    <Replace Tag="LOC_WW2_TERR_ITALY_DESC" Text="Rome + Italian cities. Play as Trajan / Rome."/>
+    <Replace Tag="LOC_WW2_TERR_ITALY_DESC" Text="Rome — use Trajan."/>
     <Replace Tag="LOC_WW2_TERR_SPAIN" Text="Spain"/>
-    <Replace Tag="LOC_WW2_TERR_SPAIN_DESC" Text="Madrid + Iberian cities. Play as Spain."/>
-    <Replace Tag="LOC_WW2_TERR_RUSSIA" Text="Soviet Union / Russia"/>
-    <Replace Tag="LOC_WW2_TERR_RUSSIA_DESC" Text="Moscow + western Russia. Play as Russia."/>
+    <Replace Tag="LOC_WW2_TERR_SPAIN_DESC" Text="Madrid region."/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA" Text="Russia / USSR"/>
+    <Replace Tag="LOC_WW2_TERR_RUSSIA_DESC" Text="Moscow region."/>
     <Replace Tag="LOC_WW2_TERR_POLAND" Text="Poland"/>
-    <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw + Polish cities. Play as Poland."/>
+    <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw region."/>
     <Replace Tag="LOC_WW2_TERR_HUNGARY" Text="Hungary"/>
-    <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest. Play as Hungary."/>
+    <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest region."/>
     <Replace Tag="LOC_WW2_TERR_SERBIA" Text="Serbia / Yugoslavia"/>
-    <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade + Serbian cities. Play as Serbia pack leaders."/>
+    <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade — Serbia pack leaders."/>
     <Replace Tag="LOC_WW2_TERR_GREECE" Text="Greece"/>
-    <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens area. Play as Greece / Macedon."/>
+    <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens region."/>
     <Replace Tag="LOC_WW2_TERR_NETHERLANDS" Text="Netherlands"/>
-    <Replace Tag="LOC_WW2_TERR_NETHERLANDS_DESC" Text="Amsterdam area. Play as Netherlands."/>
+    <Replace Tag="LOC_WW2_TERR_NETHERLANDS_DESC" Text="Low Countries."/>
     <Replace Tag="LOC_WW2_TERR_NORWAY" Text="Norway"/>
-    <Replace Tag="LOC_WW2_TERR_NORWAY_DESC" Text="Norwegian coast. Play as Norway."/>
+    <Replace Tag="LOC_WW2_TERR_NORWAY_DESC" Text="Norwegian coast."/>
     <Replace Tag="LOC_WW2_TERR_SWEDEN" Text="Sweden"/>
-    <Replace Tag="LOC_WW2_TERR_SWEDEN_DESC" Text="Stockholm area. Play as Sweden."/>
+    <Replace Tag="LOC_WW2_TERR_SWEDEN_DESC" Text="Stockholm region."/>
     <Replace Tag="LOC_WW2_TERR_PORTUGAL" Text="Portugal"/>
-    <Replace Tag="LOC_WW2_TERR_PORTUGAL_DESC" Text="Lisbon. Play as Portugal."/>
-    <Replace Tag="LOC_WW2_TERR_EGYPT" Text="Egypt (North Africa)"/>
-    <Replace Tag="LOC_WW2_TERR_EGYPT_DESC" Text="Nile / North Africa. Play as Egypt."/>
-
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="(Deprecated) WW2 Europe Script"/>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Deprecated. Subscribe to Workshop: TSL Huge Europe by Fidel Casserole and select that map instead."/>
+    <Replace Tag="LOC_WW2_TERR_PORTUGAL_DESC" Text="Lisbon."/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT" Text="Egypt / N. Africa"/>
+    <Replace Tag="LOC_WW2_TERR_EGYPT_DESC" Text="Nile / North Africa."/>
   </BaseGameText>
 </GameData>
