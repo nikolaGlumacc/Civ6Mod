@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.9">
+<Mod id="WW2_Overhaul" version="4.0">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.9 • Europe + TSL Europe on WW2 ruleset</Teaser>
-    <Description>WW2 ruleset includes built-in Europe and True Start Location Europe maps. Industrial start, army, Serbia Belgrade TSL.</Description>
+    <Teaser>v4.0 • 1930 interwar • capitals • gold fix • Serbia</Teaser>
+    <Description>1930 Europe start: historical capitals, Industrial tech, army, heavy gold income so you are not in debt. Use True Start Location Europe. Enable Serbia pack for Belgrade.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -78,6 +78,7 @@
     <AddGameplayScripts id="WW2_Gameplay_Scripts">
       <File>Lua/WW2_Config.lua</File>
       <File>Lua/WW2_OilMaintenance.lua</File>
+      <File>Lua/WW2_1930Nations.lua</File>
       <File>Lua/WW2_StartLogic.lua</File>
       <File>Lua/WW2_QuietStart.lua</File>
       <File>Lua/WW2_TSL.lua</File>
@@ -123,6 +124,7 @@
     <File>Maps/WW2_Europe.lua</File>
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>
+    <File>Lua/WW2_1930Nations.lua</File>
     <File>Lua/WW2_StartLogic.lua</File>
     <File>Lua/WW2_QuietStart.lua</File>
     <File>Lua/WW2_TSL.lua</File>
