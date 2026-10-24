@@ -11,7 +11,6 @@
     </Row>
   </RuleSets>
 
-  <!-- Map domain = StandardMaps so copied Europe maps + scripts show up -->
   <RulesetDomainOverrides>
     <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="StandardMaps"/>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
@@ -44,6 +43,8 @@
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
+         TargetGroup="Map" TargetId="MAP_SIZE" TargetValue="MAPSIZE_LARGE" Hash="0"/>
+    <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_NO_GOODY_HUTS" TargetValue="1" Hash="0"/>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="VICTORY_DOMINATION" TargetValue="1" Hash="0"/>
@@ -64,7 +65,6 @@
          ParameterId="GameStartEra" Name="LOC_GAME_START_ERA" Description="LOC_WW2_START_ERA_LOCKED_DESC"
          Domain="WW2Eras" DefaultValue="ERA_INDUSTRIAL" ConfigurationGroup="Game" ConfigurationId="GAME_START_ERA"
          Hash="1" GroupId="GameOptions" ReadOnly="1" SortIndex="60"/>
-    <!-- Renamed in text to Start Position -->
     <Row Key1="Ruleset" Key2="RULESET_WW2"
          ParameterId="WW2_Territory" Name="LOC_WW2_START_POSITION_NAME" Description="LOC_WW2_START_POSITION_DESC"
          Domain="WW2Territories" DefaultValue="TERRITORY_AUTO" ConfigurationGroup="Game" ConfigurationId="WW2_TERRITORY"

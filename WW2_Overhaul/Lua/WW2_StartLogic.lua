@@ -1,4 +1,4 @@
--- WW2: massive gold fix + single army + Industrial Revolution bonus
+-- 1930 interwar start: gold flood so army never bankrupts you
 local ALREADY_RAN = false
 
 local TECHS_EXTRA = {
@@ -17,11 +17,12 @@ local CIVICS_EXTRA = {
   "CIVIC_TOTALITARIANISM", "CIVIC_CLASS_STRUGGLE", "CIVIC_CAPITALISM",
 }
 
+-- Leaner army = less maintenance; still WW2 flavor
 local STARTER_ARMY = {
   { unit = "UNIT_TANK", count = 2 },
   { unit = "UNIT_INFANTRY", count = 3 },
   { unit = "UNIT_ARTILLERY", count = 2 },
-  { unit = "UNIT_SETTLER", count = 2 },
+  { unit = "UNIT_SETTLER", count = 1 },
 }
 
 local function GrantTech(player, techType)
@@ -48,12 +49,13 @@ local function ForceGold(player)
     local tre = player:GetTreasury()
     if tre then
       local bal = tre:GetGoldBalance() or 0
-      if bal < 500 then tre:ChangeGoldBalance(500 - bal) end
+      if bal < 2500 then tre:ChangeGoldBalance(2500 - bal) end
     end
   end)
   pcall(function() player:AttachModifierByID("WW2_START_GOLD_PER_TURN") end)
   pcall(function() player:AttachModifierByID("WW2_CITY_GOLD") end)
   pcall(function() player:AttachModifierByID("WW2_INDUSTRIAL_REVOLUTION") end)
+  pcall(function() player:AttachModifierByID("WW2_UNIT_MAINTENANCE_DISCOUNT") end)
 end
 
 local function CountUnitType(player, unitType)
@@ -137,7 +139,7 @@ local function KillJunk(player)
       local info = GameInfo.Units[u:GetType()]
       if info then
         local t = info.UnitType
-        if t == "UNIT_SCOUT" or t == "UNIT_SKIRMISHER" or t == "UNIT_WARRIOR" or t == "UNIT_SLINGER" or t == "UNIT_BUILDER" or t == "UNIT_RANGER" then
+        if t == "UNIT_SCOUT" or t == "UNIT_SKIRMISHER" or t == "UNIT_WARRIOR" or t == "UNIT_SLINGER" or t == "UNIT_BUILDER" or t == "UNIT_RANGER" or t == "UNIT_CROSSBOWMAN" then
           if UnitManager and UnitManager.Kill then UnitManager.Kill(u) else u:Kill() end
         end
       end
@@ -180,7 +182,7 @@ local function OnStart()
       ForceGold(p)
     end
   end
-  print("[WW2] Start: gold forced + techs")
+  print("[WW2] 1930 start: gold + techs")
 end
 
 Events.LoadScreenClose.Add(OnStart)
@@ -192,9 +194,9 @@ local function OnPlayerTurn(playerID, isFirst)
   pcall(function()
     local tre = p:GetTreasury()
     if tre then
-      tre:ChangeGoldBalance(70)
+      tre:ChangeGoldBalance(120)
       local bal = tre:GetGoldBalance() or 0
-      if bal < 0 then tre:ChangeGoldBalance(-bal + 100) end
+      if bal < 200 then tre:ChangeGoldBalance(500 - bal) end
     end
   end)
 end
@@ -204,7 +206,7 @@ if Events.GameCoreEventPublishComplete then
   local n = 0
   local function later()
     n = n + 1
-    if n == 8 then
+    if n == 10 then
       for i = 0, 63 do
         local p = Players[i]
         if p and p:IsMajor() and p:IsAlive() then ForceGold(p) GiveStarterArmy(p) KillJunk(p) end
@@ -215,4 +217,4 @@ if Events.GameCoreEventPublishComplete then
   Events.GameCoreEventPublishComplete.Add(later)
 end
 
-print("[WW2] Start v2.5 — +70 GPT Industrial Revolution, debt bailout")
+print("[WW2] Start — 2500 gold, +120/turn bailout, 50% unit maint discount")
