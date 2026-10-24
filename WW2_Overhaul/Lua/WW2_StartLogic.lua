@@ -1,5 +1,5 @@
--- WW2 Overhaul: Industrial / early-Modern start grants + starting army
--- Works even if no cities exist yet (spawns near settler / first unit).
+-- WW2 Overhaul: Industrial grants + starter army
+-- NEVER kill the last settler / leave player with zero cities.
 
 local ALREADY_RAN = false
 
@@ -51,45 +51,19 @@ local function ClearUnlockSpam()
       NotificationManager.DismissAllNotifications()
     end
   end)
-  pcall(function()
-    local iLocal = Game.GetLocalPlayer()
-    if iLocal == nil or iLocal < 0 then return end
-    if NotificationManager.GetList then
-      local list = NotificationManager.GetList(iLocal)
-      if list then
-        for _, id in ipairs(list) do
-          NotificationManager.Dismiss(iLocal, id)
-        end
-      end
-    end
-  end)
-end
-
-local function PlotIsBadStart(plot)
-  if plot == nil then return true end
-  if plot:IsWater() or plot:IsImpassable() then return true end
-  local t = plot:GetTerrainType()
-  local terrain = GameInfo.Terrains[t]
-  if terrain == nil then return false end
-  local n = terrain.TerrainType
-  if n == "TERRAIN_SNOW" or n == "TERRAIN_SNOW_HILLS"
-      or n == "TERRAIN_TUNDRA" or n == "TERRAIN_TUNDRA_HILLS" then
-    return true
-  end
-  local f = plot:GetFeatureType()
-  if f ~= -1 then
-    local feat = GameInfo.Features[f]
-    if feat and feat.FeatureType == "FEATURE_ICE" then return true end
-  end
-  return false
 end
 
 local function GetAnchorPlot(player)
-  local capital = player:GetCities() and player:GetCities():GetCapitalCity()
-  if capital then
-    return Map.GetPlot(capital:GetX(), capital:GetY()), true
+  local cities = player:GetCities()
+  if cities then
+    local capital = cities:GetCapitalCity()
+    if capital then
+      return Map.GetPlot(capital:GetX(), capital:GetY()), true
+    end
+    for _, city in cities:Members() do
+      return Map.GetPlot(city:GetX(), city:GetY()), true
+    end
   end
-  -- fallback: first unit (settler / warrior / whatever)
   for _, unit in player:GetUnits():Members() do
     return Map.GetPlot(unit:GetX(), unit:GetY()), false
   end
@@ -146,10 +120,7 @@ end
 
 local function SpawnUnit(playerID, unitType, x, y)
   local unitInfo = GameInfo.Units[unitType]
-  if not unitInfo then
-    print("[WW2] Unknown unit: " .. tostring(unitType))
-    return nil
-  end
+  if not unitInfo then return nil end
   local unit = nil
   pcall(function()
     if UnitManager and UnitManager.InitUnit then
@@ -163,7 +134,6 @@ local function SpawnUnit(playerID, unitType, x, y)
     end
   end)
   if unit then return unit end
-  -- last resort via player units create
   pcall(function()
     local p = Players[playerID]
     if p and p:GetUnits() and p:GetUnits().Create then
@@ -174,12 +144,15 @@ local function SpawnUnit(playerID, unitType, x, y)
 end
 
 local function TryFoundCapital(player)
-  local anchor, hasCity = GetAnchorPlot(player)
-  if hasCity or not anchor then return hasCity end
+  local cities = player:GetCities()
+  if cities and cities:GetCount() > 0 then return true end
+
+  local anchor = GetAnchorPlot(player)
+  if not anchor then return false end
   local playerID = player:GetID()
-  local x, y = anchor:GetX(), anchor:GetY()
-  local plot = FindNearbyLandPlot(x, y, 2)
+  local plot = FindNearbyLandPlot(anchor:GetX(), anchor:GetY(), 3)
   if not plot then return false end
+
   local city = nil
   pcall(function()
     if CityManager and CityManager.CreateCity then
@@ -193,9 +166,10 @@ local function TryFoundCapital(player)
       end
     end)
   end
+
   if city then
-    print("[WW2] Founded emergency capital for P" .. playerID .. " at " .. plot:GetX() .. "," .. plot:GetY())
-    -- kill settlers so they don't found extra cities
+    print("[WW2] Founded emergency capital for P" .. playerID)
+    -- only kill settlers AFTER successful city
     pcall(function()
       for _, u in player:GetUnits():Members() do
         local info = GameInfo.Units[u:GetType()]
@@ -206,19 +180,22 @@ local function TryFoundCapital(player)
     end)
     return true
   end
+  print("[WW2] Could not found capital for P" .. playerID .. " — settlers kept")
   return false
 end
 
 local function GiveStarterArmy(player)
   if not player or not player:IsAlive() or not player:IsMajor() then return end
   local playerID = player:GetID()
-  local anchor = GetAnchorPlot(player)
+  local cities = player:GetCities()
+  -- only spawn army if player has a city (or at least units to anchor)
+  local anchor, hasCity = GetAnchorPlot(player)
   if not anchor then
-    print("[WW2] No anchor plot for P" .. playerID .. " — cannot spawn army")
+    print("[WW2] No anchor for P" .. playerID)
     return
   end
   local cx, cy = anchor:GetX(), anchor:GetY()
-  print("[WW2] Spawning starter army for P" .. playerID .. " near " .. cx .. "," .. cy)
+  print("[WW2] Starter army P" .. playerID .. " near " .. cx .. "," .. cy .. " (hasCity=" .. tostring(hasCity) .. ")")
 
   local spawned = 0
   for _, entry in ipairs(STARTER_ARMY) do
@@ -237,18 +214,17 @@ local function GiveStarterArmy(player)
       if not GameInfo.Units[navy] then navy = "UNIT_IRONCLAD" end
       if SpawnUnit(playerID, navy, water:GetX(), water:GetY()) then
         spawned = spawned + 1
-        print("[WW2] Coastal — granted " .. navy)
       end
     end
   end
-  print("[WW2] Starter army spawned units: " .. tostring(spawned))
+  print("[WW2] Army spawned: " .. tostring(spawned))
 end
 
 local function OnStart()
   if ALREADY_RAN then return end
   ALREADY_RAN = true
 
-  print("[WW2] Applying Industrial+ grants + starter armies...")
+  print("[WW2] Start grants + army...")
   for i = 0, 63 do
     local p = Players[i]
     if p and p:IsMajor() and p:IsAlive() then
@@ -258,39 +234,23 @@ local function OnStart()
       GiveStarterArmy(p)
     end
   end
-
-  if Events.GameCoreEventPublishComplete then
-    local fires = 0
-    local function clearOnce()
-      fires = fires + 1
-      if fires >= 3 then
-        ClearUnlockSpam()
-        Events.GameCoreEventPublishComplete.Remove(clearOnce)
-      end
-    end
-    Events.GameCoreEventPublishComplete.Add(clearOnce)
-  else
-    ClearUnlockSpam()
-  end
-
+  ClearUnlockSpam()
   print("[WW2] Start logic complete.")
 end
 
--- Run after load screen, and also a bit later in case cities appear from TSL script
 Events.LoadScreenClose.Add(OnStart)
 
--- Second pass a few turns of events later so TSL cities exist first
+-- Second pass after TSL has had time to found cities
 if Events.GameCoreEventPublishComplete then
   local n = 0
   local function secondPass()
     n = n + 1
-    if n == 5 then
+    if n == 6 then
       for i = 0, 63 do
         local p = Players[i]
         if p and p:IsMajor() and p:IsAlive() then
           local cities = p:GetCities()
           if cities and cities:GetCount() > 0 then
-            -- re-check army if somehow missing
             local hasTank = false
             for _, u in p:GetUnits():Members() do
               local info = GameInfo.Units[u:GetType()]
@@ -309,4 +269,4 @@ if Events.GameCoreEventPublishComplete then
   Events.GameCoreEventPublishComplete.Add(secondPass)
 end
 
-print("[WW2] Start logic v2.1 loaded (robust army + capital)")
+print("[WW2] Start logic v2.2 — safe (no elimination)")

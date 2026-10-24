@@ -1,9 +1,9 @@
 -- WW2 Overhaul: Hard TSL for self-contained Europe map (100x64)
 -- Places every major European civ on the correct region and founds cities.
+-- CRITICAL: never kill settlers unless at least one city was successfully founded.
 
 local RAN = false
 
--- Coordinates as fractions of map width/height (match WW2_Europe.lua shapes)
 local TERRITORIES = {
   TERRITORY_BRITAIN     = {{0.22,0.62},{0.20,0.58},{0.24,0.66}},
   TERRITORY_SCOTLAND    = {{0.20,0.70},{0.18,0.68}},
@@ -15,8 +15,8 @@ local TERRITORIES = {
   TERRITORY_ITALY       = {{0.40,0.38},{0.38,0.42},{0.42,0.32},{0.42,0.26}},
   TERRITORY_SPAIN       = {{0.18,0.38},{0.16,0.34},{0.22,0.40},{0.14,0.36}},
   TERRITORY_PORTUGAL    = {{0.12,0.34},{0.12,0.30}},
-  TERRITORY_SERBIA      = {{0.50,0.40},{0.48,0.38},{0.52,0.42}},
-  TERRITORY_GREECE      = {{0.52,0.30},{0.50,0.28},{0.54,0.32}},
+  TERRITORY_SERBIA      = {{0.50,0.40},{0.48,0.38},{0.52,0.42},{0.50,0.36}},
+  TERRITORY_GREECE      = {{0.54,0.28},{0.52,0.26},{0.56,0.30}},
   TERRITORY_RUSSIA      = {{0.70,0.60},{0.66,0.56},{0.74,0.62},{0.68,0.52}},
   TERRITORY_NORWAY      = {{0.40,0.80},{0.38,0.76}},
   TERRITORY_SWEDEN      = {{0.48,0.80},{0.50,0.76}},
@@ -25,6 +25,7 @@ local TERRITORIES = {
   TERRITORY_EGYPT       = {{0.62,0.12},{0.60,0.10},{0.64,0.14}},
 }
 
+-- Macedonia (Alexander) in WW2 context = Yugoslavia / Serbia region, not ancient Greece
 local CIV_TO_TERR = {
   CIVILIZATION_GERMANY      = "TERRITORY_GERMANY",
   CIVILIZATION_ENGLAND      = "TERRITORY_BRITAIN",
@@ -41,8 +42,8 @@ local CIV_TO_TERR = {
   CIVILIZATION_SERBIA       = "TERRITORY_SERBIA",
   CIVILIZATION_STR_SERBIA   = "TERRITORY_SERBIA",
   CIVILIZATION_WW2_YUGOSLAVIA = "TERRITORY_SERBIA",
+  CIVILIZATION_MACEDON      = "TERRITORY_SERBIA",  -- WW2: part of Yugoslavia
   CIVILIZATION_GREECE       = "TERRITORY_GREECE",
-  CIVILIZATION_MACEDON      = "TERRITORY_GREECE",
   CIVILIZATION_BYZANTIUM    = "TERRITORY_TURKEY",
   CIVILIZATION_OTTOMAN      = "TERRITORY_TURKEY",
   CIVILIZATION_NETHERLANDS  = "TERRITORY_NETHERLANDS",
@@ -73,7 +74,7 @@ local function IsGood(plot)
 end
 
 local function FindNear(tx, ty, radius)
-  radius = radius or 16
+  radius = radius or 18
   local best, bestD = nil, 99999
   local w, h = Map.GetGridSize()
   for r = 0, radius do
@@ -140,15 +141,22 @@ local function SpawnNear(playerID, unitType, x, y)
   end)
 end
 
+local function PlayerHasCity(player)
+  local cities = player:GetCities()
+  return cities and cities:GetCount() > 0
+end
+
 local function BuildTerritory(player, terrKey)
   local sites = TERRITORIES[terrKey]
   if not sites then return end
   local founded, capitalPlot = 0, nil
+  local pid = player:GetID()
+
   for _, pair in ipairs(sites) do
     local tx, ty = GridXY(pair[1], pair[2])
-    local plot = FindNear(tx, ty, 14)
+    local plot = FindNear(tx, ty, 16)
     if plot then
-      local city = TryCreateCity(player:GetID(), plot:GetX(), plot:GetY())
+      local city = TryCreateCity(pid, plot:GetX(), plot:GetY())
       if city then
         founded = founded + 1
         if not capitalPlot then capitalPlot = plot end
@@ -157,16 +165,31 @@ local function BuildTerritory(player, terrKey)
       end
     end
   end
+
+  -- Fallback: if no city founded, try one more time on the best plot
+  if founded == 0 and capitalPlot then
+    local city = TryCreateCity(pid, capitalPlot:GetX(), capitalPlot:GetY())
+    if city then founded = 1 end
+  end
+
   if capitalPlot then
     MoveUnits(player, capitalPlot)
-    KillSettlers(player)
-    local pid, x, y = player:GetID(), capitalPlot:GetX(), capitalPlot:GetY()
-    -- Ensure at least a small army if StartLogic hasn't run yet
-    SpawnNear(pid, "UNIT_TANK", x, y)
-    SpawnNear(pid, "UNIT_INFANTRY", x, y)
-    SpawnNear(pid, "UNIT_INFANTRY", x, y)
   end
-  print(string.format("[WW2 Terr] %s → P%d (%d cities)", terrKey, player:GetID(), founded))
+
+  -- ONLY kill settlers if we actually have a city. Otherwise player is eliminated = instant defeat.
+  if founded > 0 or PlayerHasCity(player) then
+    KillSettlers(player)
+    if capitalPlot then
+      local x, y = capitalPlot:GetX(), capitalPlot:GetY()
+      SpawnNear(pid, "UNIT_TANK", x, y)
+      SpawnNear(pid, "UNIT_INFANTRY", x, y)
+      SpawnNear(pid, "UNIT_INFANTRY", x, y)
+    end
+  else
+    print(string.format("[WW2 Terr] WARNING P%d %s — 0 cities founded, KEEPING settlers", pid, terrKey))
+  end
+
+  print(string.format("[WW2 Terr] %s → P%d (%d cities)", terrKey, pid, founded))
 end
 
 local function CivOf(p)
@@ -214,15 +237,16 @@ function WW2_ApplyAllTSL()
     local terr = PreferredTerritory(p)
     local civ = CivOf(p) or "?"
     if not terr then
-      print(string.format("[WW2 Terr] P%d %s — no mapping", p:GetID(), civ))
+      print(string.format("[WW2 Terr] P%d %s — no mapping (keeping default start)", p:GetID(), civ))
     elseif claimed[terr] then
-      print(string.format("[WW2 Terr] P%d %s wanted %s (taken)", p:GetID(), civ, terr))
+      print(string.format("[WW2 Terr] P%d %s wanted %s (taken) — move only, keep settlers", p:GetID(), civ, terr))
       local sites = TERRITORIES[terr]
       if sites and sites[1] then
         local tx, ty = GridXY(sites[1][1], sites[1][2])
         local plot = FindNear(tx, ty, 18)
         if plot then MoveUnits(p, plot) end
       end
+      -- do NOT kill settlers when territory was taken
     else
       claimed[terr] = p:GetID()
       print(string.format("[WW2 Terr] P%d %s → %s", p:GetID(), civ, terr))
@@ -240,7 +264,7 @@ local function OnLoad()
     local n = 0
     local function once()
       n = n + 1
-      if n >= 2 then
+      if n >= 3 then
         WW2_ApplyAllTSL()
         Events.GameCoreEventPublishComplete.Remove(once)
       end
@@ -252,4 +276,4 @@ local function OnLoad()
 end
 
 Events.LoadScreenClose.Add(OnLoad)
-print("[WW2 Terr] loaded — self-contained Europe TSL")
+print("[WW2 Terr] loaded — safe TSL (no settler wipe without city)")
