@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.2">
+<Mod id="WW2_Overhaul" version="3.3">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.2 • Embedded Huge Europe map (Epic OK, no Workshop)</Teaser>
-    <Description>Europe map is inside the mod folder. Works on Epic Games without Steam Workshop. AI territories + Serbia compatible.</Description>
+    <Teaser>v3.3 • Every civ→territory • Historical AI (Axis, GER→POL)</Teaser>
+    <Description>AI England gets Britain, Trajan gets Italy, Serbia gets Belgrade, etc. Germany+Italy friendly; AI Germany declares on Poland early.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -73,6 +73,7 @@
       <File>Lua/WW2_StartLogic.lua</File>
       <File>Lua/WW2_QuietStart.lua</File>
       <File>Lua/WW2_TSL.lua</File>
+      <File>Lua/WW2_HistoricalAI.lua</File>
       <File>Lua/WW2_ArmyDoctrine.lua</File>
       <File>Lua/WW2_Stubbornness.lua</File>
       <File>Lua/WW2_WarWeariness.lua</File>
@@ -109,6 +110,7 @@
     <File>Lua/WW2_StartLogic.lua</File>
     <File>Lua/WW2_QuietStart.lua</File>
     <File>Lua/WW2_TSL.lua</File>
+    <File>Lua/WW2_HistoricalAI.lua</File>
     <File>Lua/WW2_ArmyDoctrine.lua</File>
     <File>Lua/WW2_Stubbornness.lua</File>
     <File>Lua/WW2_WarWeariness.lua</File>
