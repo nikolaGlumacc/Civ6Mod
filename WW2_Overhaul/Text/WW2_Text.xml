@@ -2,16 +2,16 @@
 <GameData>
   <BaseGameText>
     <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 ruleset with built-in Huge Europe map + TSL. Domination only, Industrial start, tanks, oil, strong alliances. No extra mods required."/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="WW2 rules: Industrial start, starter army, +70 GPT Industrial Revolution, OP alliances. Use with Workshop map: TSL Huge Europe (Fidel Casserole)."/>
     <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 locks start era to Industrial/Modern."/>
 
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Huge Europe"/>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Built-in Europe map (Britain, Iberia, France, Italy, Balkans, Scandinavia, Germany/Poland, Russia, Anatolia, N. Africa). TSL for major civs. No YnAMP needed."/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Europe (fallback)"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Fallback only. Prefer Steam Workshop: TSL Huge Europe by Fidel Casserole."/>
 
     <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="WW2 Starting Territory"/>
-    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Your country. AI auto-picks theirs. AUTO = from your leader."/>
-    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader)"/>
-    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected."/>
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Optional. On TSL Huge Europe the map already places you correctly — leave AUTO."/>
+    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (from leader / map TSL)"/>
+    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Uses the civilization you selected / Workshop TSL."/>
     <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
     <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin region."/>
     <Replace Tag="LOC_WW2_TERR_BRITAIN" Text="Britain"/>
