@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="3.3">
+<Mod id="WW2_Overhaul" version="3.4">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v3.3 • Every civ→territory • Historical AI (Axis, GER→POL)</Teaser>
-    <Description>AI England gets Britain, Trajan gets Italy, Serbia gets Belgrade, etc. Germany+Italy friendly; AI Germany declares on Poland early.</Description>
+    <Teaser>v3.4 • Starter army • OP Research Agreements • Stronger alliances</Teaser>
+    <Description>AI England gets Britain, Trajan gets Italy, Serbia gets Belgrade, etc. Germany+Italy friendly; AI Germany declares on Poland early. Starting army (2 tanks / 4 infantry / 2 artillery + coastal navy). Research Agreements fully unlock techs. Open Borders / Alliances / Friendship give real bonuses.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
@@ -60,6 +60,7 @@
       <File>Data/WW2_Stubbornness.sql</File>
       <File>Data/WW2_JoinPower.sql</File>
       <File>Data/WW2_EuropeGuide.sql</File>
+      <File>Data/WW2_Cooperation.sql</File>
     </UpdateDatabase>
     <UpdateText id="WW2_Gameplay_Text">
       <File>Text/WW2_Text.xml</File>
@@ -79,6 +80,7 @@
       <File>Lua/WW2_WarWeariness.lua</File>
       <File>Lua/WW2_JoinPower.lua</File>
       <File>Lua/WW2_JoinDiplomacy.lua</File>
+      <File>Lua/WW2_Cooperation.lua</File>
       <File>Lua/WW2_Debug.lua</File>
     </AddGameplayScripts>
   </InGameActions>
@@ -104,6 +106,7 @@
     <File>Data/WW2_Stubbornness.sql</File>
     <File>Data/WW2_JoinPower.sql</File>
     <File>Data/WW2_EuropeGuide.sql</File>
+    <File>Data/WW2_Cooperation.sql</File>
     <File>Maps/WW2_Europe.lua</File>
     <File>Lua/WW2_Config.lua</File>
     <File>Lua/WW2_OilMaintenance.lua</File>
@@ -116,6 +119,7 @@
     <File>Lua/WW2_WarWeariness.lua</File>
     <File>Lua/WW2_JoinPower.lua</File>
     <File>Lua/WW2_JoinDiplomacy.lua</File>
+    <File>Lua/WW2_Cooperation.lua</File>
     <File>Lua/WW2_Debug.lua</File>
     <File>Text/WW2_Text.xml</File>
   </Files>

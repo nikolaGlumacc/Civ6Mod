@@ -1,11 +1,11 @@
-# WW2 Overhaul v2 — HOI4-style Civ 6 ruleset
+# WW2 Overhaul v3.4 — HOI4-style Civ 6 ruleset
 
 **Requires:** Rise & Fall + Gathering Storm  
 **Compatible with:** Serbia Civilization Pack (does **not** break or redefine Serbia leaders)
 
 ## Goal
 
-A stable, playable WW2 ruleset: Domination-only, deep Industrial start, hard science, oil, supply, army doctrine, stubbornness when losing land, and diplomacy Join (keep land / no army vs absorb).
+A stable, playable WW2 ruleset: Domination-only, deep Industrial start, hard science, oil, supply, army doctrine, stubbornness when losing land, diplomacy Join (keep land / no army vs absorb), and strong cooperation between friends.
 
 ## How to start
 
@@ -30,6 +30,7 @@ Stock game has no Europe TSL. Use **Continents Large**, or **YnAMP** Europe / Gr
 | Victory | Domination only |
 | Loyalty | Foreign city pressure disabled; ages remain |
 | Start | Industrial era + extra late Industrial / early Modern tech (nukes not granted) |
+| **Starter army** | **2 Tanks + 4 Infantry + 2 Artillery**. Coastal capital also gets a **Battleship** |
 | Science | Low pop science, weaker campuses, nuclear 3×, late military 2× |
 | Oil | 0 Oil → modern armor/ships/air drop to 1 movement (no extra unit cost) |
 | Production | Stronger IZ + global military production |
@@ -40,12 +41,16 @@ Stock game has no Europe TSL. Use **Continents Large**, or **YnAMP** Europe / Gr
 | Supply | Supply Depot building (regional heal/CS/prod); Supply Station builder improvement |
 | Join | `WW2_TryJoinLocal(id)` keep land no army; `WW2_TryAbsorbLocal(id)` transfer/subordinate; Axis Align / Comintern soft coop |
 | Ideology | Extra bonuses on Democracy / Fascism / Communism |
+| **Research Agreements** | **Fully unlock the tech** for both parties (not just a boost) |
+| **Open Borders** | +4 CS, +1 Movement, +3 loyalty |
+| **Alliance** | +10% Science, +10% Production, +6 CS |
+| **Declaration of Friendship** | +8% Gold, +5% Science |
 
 ## Serbia pack
 
 No Serbia-specific WW2 bonuses. Serbia leaders load under the same ruleset. Unit upgrades are FK-safe if intermediate units are missing.
 
-## Not in v2 (by design)
+## Not in v3.4 (by design)
 
 - Full Europe country picker on main menu
 - Custom oil/supply lens
