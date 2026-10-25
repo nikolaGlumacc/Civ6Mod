@@ -2,36 +2,28 @@
 <GameData>
   <BaseGameText>
     <Replace Tag="LOC_RULESET_WW2_NAME" Text="WW2 Overhaul"/>
-    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="Industrial start, starter army, +70 GPT. Use True Start Location Europe map."/>
-    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="WW2 locks start era to Industrial."/>
+    <Replace Tag="LOC_RULESET_WW2_DESCRIPTION" Text="1930 interwar Europe. Enable Serbia pack. Use WW2 Europe map or TSL Europe. Serbia (Dušan) is unlocked on all maps."/>
+    <Replace Tag="LOC_WW2_START_ERA_LOCKED_DESC" Text="Industrial start."/>
 
-    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Europe (fallback)"/>
-    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Fallback only. Prefer True Start Location Europe."/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_NAME" Text="WW2 Europe (Serbia OK)"/>
+    <Replace Tag="LOC_MAP_WW2_EUROPE_DESCRIPTION" Text="Custom Europe map with no leader lock — Serbia always selectable. Capitals placed by 1930 script (Belgrade, Berlin, Paris…)."/>
 
-    <!-- Map name fallbacks if game LOCs missing -->
     <Replace Tag="LOC_EUROPE_MAP_NAME" Text="Europe"/>
-    <Replace Tag="LOC_EUROPE_MAP_DESCRIPTION" Text="A map of Europe."/>
+    <Replace Tag="LOC_EUROPE_MAP_DESCRIPTION" Text="Europe."/>
     <Replace Tag="LOC_TSL_EUROPE_NAME" Text="True Start Location Europe"/>
-    <Replace Tag="LOC_TSL_EUROPE_DESCRIPTION" Text="Europe with true starting locations."/>
-    <Replace Tag="LOC_TSL_MEDITERRANEAN_LARGE_NAME" Text="True Start Location Mediterranean"/>
-    <Replace Tag="LOC_TSL_MEDITERRANEAN_LARGE_DESCRIPTION" Text="Mediterranean with true starting locations."/>
-    <Replace Tag="LOC_MEDITERRANEAN_LARGE_NAME" Text="Mediterranean"/>
-    <Replace Tag="LOC_MEDITERRANEAN_LARGE_DESCRIPTION" Text="A map of the Mediterranean."/>
+    <Replace Tag="LOC_TSL_EUROPE_DESCRIPTION" Text="Europe with TSL. Serbia (Dušan) unlocked by WW2 Overhaul."/>
 
-    <!-- Era labels -->
     <Replace Tag="LOC_ERA_NAME_INDUSTRIAL" Text="Industrial Era"/>
     <Replace Tag="LOC_ERA_NAME_MODERN" Text="Modern Era"/>
 
-    <!-- User asked: Starting Territory → Start Position -->
     <Replace Tag="LOC_WW2_START_POSITION_NAME" Text="Start Position"/>
-    <Replace Tag="LOC_WW2_START_POSITION_DESC" Text="Where you spawn if the map has no TSL for your civ. AUTO = map TSL / leader."/>
+    <Replace Tag="LOC_WW2_START_POSITION_DESC" Text="Override spawn. AUTO uses map TSL / Belgrade for Serbia."/>
     <Replace Tag="LOC_WW2_TERRITORY_NAME" Text="Start Position"/>
-    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Where you spawn if the map has no TSL for your civ."/>
-
-    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto (map TSL)"/>
-    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Use the map true start if it has one."/>
+    <Replace Tag="LOC_WW2_TERRITORY_DESC" Text="Override spawn region."/>
+    <Replace Tag="LOC_WW2_TERR_AUTO" Text="Auto"/>
+    <Replace Tag="LOC_WW2_TERR_AUTO_DESC" Text="Map TSL or script."/>
     <Replace Tag="LOC_WW2_TERR_GERMANY" Text="Germany"/>
-    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin region."/>
+    <Replace Tag="LOC_WW2_TERR_GERMANY_DESC" Text="Berlin."/>
     <Replace Tag="LOC_WW2_TERR_BRITAIN" Text="Britain"/>
     <Replace Tag="LOC_WW2_TERR_BRITAIN_DESC" Text="London."/>
     <Replace Tag="LOC_WW2_TERR_FRANCE" Text="France"/>
@@ -46,7 +38,7 @@
     <Replace Tag="LOC_WW2_TERR_POLAND_DESC" Text="Warsaw."/>
     <Replace Tag="LOC_WW2_TERR_HUNGARY" Text="Hungary"/>
     <Replace Tag="LOC_WW2_TERR_HUNGARY_DESC" Text="Budapest."/>
-    <Replace Tag="LOC_WW2_TERR_SERBIA" Text="Serbia / Yugoslavia"/>
+    <Replace Tag="LOC_WW2_TERR_SERBIA" Text="Serbia"/>
     <Replace Tag="LOC_WW2_TERR_SERBIA_DESC" Text="Belgrade."/>
     <Replace Tag="LOC_WW2_TERR_GREECE" Text="Greece"/>
     <Replace Tag="LOC_WW2_TERR_GREECE_DESC" Text="Athens."/>
