@@ -11,6 +11,136 @@
 		<Element>
 			<m_CollectionName text="Leaders"/>
 			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+
+			<!-- TITO -->
+			<Element>
+				<m_Fields>
+					<m_Values/>
+				</m_Fields>
+				<m_ChildCollections>
+					<Element>
+						<m_CollectionName text="Animations"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_TITO"/>
+										<m_XLPClass text="LeaderFallback"/>
+										<m_XLPPath text="leaderfallbacks.xlp"/>
+										<m_BLPPackage text="LeaderFallbacks"/>
+										<m_LibraryName text="LeaderFallback"/>
+										<m_ParamName text="BLP Entry"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="DEFAULT"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+				</m_ChildCollections>
+				<m_Name text="LEADER_TITO"/>
+				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+			</Element>
+
+			<!-- DRAZA -->
+			<Element>
+				<m_Fields>
+					<m_Values/>
+				</m_Fields>
+				<m_ChildCollections>
+					<Element>
+						<m_CollectionName text="Animations"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_DRAZA"/>
+										<m_XLPClass text="LeaderFallback"/>
+										<m_XLPPath text="leaderfallbacks.xlp"/>
+										<m_BLPPackage text="LeaderFallbacks"/>
+										<m_LibraryName text="LeaderFallback"/>
+										<m_ParamName text="BLP Entry"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="DEFAULT"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+				</m_ChildCollections>
+				<m_Name text="LEADER_DRAZA"/>
+				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+			</Element>
+
+			<!-- MILOSEVIC -->
+			<Element>
+				<m_Fields>
+					<m_Values/>
+				</m_Fields>
+				<m_ChildCollections>
+					<Element>
+						<m_CollectionName text="Animations"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_MILOSEVIC"/>
+										<m_XLPClass text="LeaderFallback"/>
+										<m_XLPPath text="leaderfallbacks.xlp"/>
+										<m_BLPPackage text="LeaderFallbacks"/>
+										<m_LibraryName text="LeaderFallback"/>
+										<m_ParamName text="BLP Entry"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="DEFAULT"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+				</m_ChildCollections>
+				<m_Name text="LEADER_MILOSEVIC"/>
+				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+			</Element>
+
+			<!-- DUSAN (STR Serbia) -->
+			<Element>
+				<m_Fields>
+					<m_Values/>
+				</m_Fields>
+				<m_ChildCollections>
+					<Element>
+						<m_CollectionName text="Animations"/>
+						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+						<Element>
+							<m_Fields>
+								<m_Values>
+									<Element class="AssetObjects..BLPEntryValue">
+										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE"/>
+										<m_XLPClass text="LeaderFallback"/>
+										<m_XLPPath text="leaderfallbacks.xlp"/>
+										<m_BLPPackage text="LeaderFallbacks"/>
+										<m_LibraryName text="LeaderFallback"/>
+										<m_ParamName text="BLP Entry"/>
+									</Element>
+								</m_Values>
+							</m_Fields>
+							<m_ChildCollections/>
+							<m_Name text="DEFAULT"/>
+							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+						</Element>
+					</Element>
+				</m_ChildCollections>
+				<m_Name text="LEADER_DUSAN"/>
+				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+			</Element>
+
+			<!-- Keep old STR names for compatibility -->
 			<Element>
 				<m_Fields>
 					<m_Values/>
@@ -41,67 +171,7 @@
 				<m_Name text="LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
-			<Element>
-				<m_Fields>
-					<m_Values/>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Animations"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE"/>
-										<m_XLPClass text="LeaderFallback"/>
-										<m_XLPPath text="leaderfallbacks.xlp"/>
-										<m_BLPPackage text="LeaderFallbacks"/>
-										<m_LibraryName text="LeaderFallback"/>
-										<m_ParamName text="BLP Entry"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="DEFAULT"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
-			<Element>
-				<m_Fields>
-					<m_Values/>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Animations"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC_IMAGE2IMAGE"/>
-										<m_XLPClass text="LeaderFallback"/>
-										<m_XLPPath text="leaderfallbacks.xlp"/>
-										<m_BLPPackage text="LeaderFallbacks"/>
-										<m_LibraryName text="LeaderFallback"/>
-										<m_ParamName text="BLP Entry"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="DEFAULT"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="LEADER_STR_BYZANTIUM_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
+
 		</Element>
 	</m_RootCollections>
 </AssetObjects..ArtDefSet>
-
