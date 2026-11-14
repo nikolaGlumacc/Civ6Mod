@@ -5,6 +5,7 @@
       <RuleSetType>RULESET_WW2</RuleSetType>
       <Name>LOC_RULESET_WW2_NAME</Name>
       <Description>LOC_RULESET_WW2_DESCRIPTION</Description>
+      <GameCore>Expansion2</GameCore>
       <SupportsSinglePlayer>1</SupportsSinglePlayer>
       <SupportsMultiPlayer>1</SupportsMultiPlayer>
       <SortIndex>25</SortIndex>
@@ -12,7 +13,7 @@
   </RuleSets>
 
   <RulesetDomainOverrides>
-    <!-- CRITICAL: Without this the civilization selection list is empty / broken -->
+    <!-- These three are the critical ones for civ select + maps + era -->
     <Row Ruleset="RULESET_WW2" ParameterId="PlayerLeader" Domain="Players:Expansion2_Players"/>
     <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="StandardMaps"/>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
