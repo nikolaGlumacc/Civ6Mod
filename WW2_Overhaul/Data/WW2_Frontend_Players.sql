@@ -1,4 +1,4 @@
--- Soft Europe filter — never deletes Serbia
+-- Soft Europe filter — never deletes Serbia (new or legacy)
 DELETE FROM Players
 WHERE CivilizationType IN (
   'CIVILIZATION_AMERICA','CIVILIZATION_AZTEC','CIVILIZATION_BRAZIL',
@@ -13,9 +13,28 @@ WHERE CivilizationType IN (
 DELETE FROM Players WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
 
 -- ============================================================
--- Unlock Serbia Dušan on EVERY map (fixes TSL Europe selection)
--- MapLeaders is what TSL maps use to build the civ list
+-- Unlock Serbia leaders on EVERY map (MapLeaders drives TSL civ list)
+-- Support both new clean IDs and legacy STR_ IDs
 -- ============================================================
+
+-- New leaders from Serbia_Civ_Pack
+INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
+SELECT DISTINCT File, 'LEADER_TITO'
+FROM Maps WHERE File IS NOT NULL AND File != '';
+
+INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
+SELECT DISTINCT File, 'LEADER_DRAZA'
+FROM Maps WHERE File IS NOT NULL AND File != '';
+
+INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
+SELECT DISTINCT File, 'LEADER_MILOSEVIC'
+FROM Maps WHERE File IS NOT NULL AND File != '';
+
+INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
+SELECT DISTINCT File, 'LEADER_DUSAN'
+FROM Maps WHERE File IS NOT NULL AND File != '';
+
+-- Legacy STR_ Dusan (and variants)
 INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
 SELECT DISTINCT File, 'LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC'
 FROM Maps WHERE File IS NOT NULL AND File != '';
@@ -28,8 +47,21 @@ INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
 SELECT DISTINCT File, 'LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC'
 FROM Maps WHERE File IS NOT NULL AND File != '';
 
+-- Also place them next to common European leaders on maps that already have those
 INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
-SELECT DISTINCT Map, 'LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC'
+SELECT DISTINCT Map, 'LEADER_DUSAN'
+FROM MapLeaders
+WHERE LeaderType IN (
+  'LEADER_ALEXANDER',
+  'LEADER_MATTHIAS_CORVINUS',
+  'LEADER_PERICLES',
+  'LEADER_GORGO',
+  'LEADER_TRAJAN',
+  'LEADER_BARBAROSSA'
+);
+
+INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
+SELECT DISTINCT Map, 'LEADER_TITO'
 FROM MapLeaders
 WHERE LeaderType IN (
   'LEADER_ALEXANDER',
