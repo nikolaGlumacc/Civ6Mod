@@ -12,6 +12,8 @@
   </RuleSets>
 
   <RulesetDomainOverrides>
+    <!-- CRITICAL: Without this the civilization selection list is empty / broken -->
+    <Row Ruleset="RULESET_WW2" ParameterId="PlayerLeader" Domain="Players:Expansion2_Players"/>
     <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="StandardMaps"/>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
     <Row Ruleset="RULESET_WW2" ParameterId="WW2_Territory" Domain="WW2Territories"/>
