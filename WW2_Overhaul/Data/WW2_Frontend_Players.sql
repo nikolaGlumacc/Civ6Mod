@@ -1,27 +1,12 @@
 -- ============================================================
--- WW2 Frontend Players
+-- WW2 Frontend — Serbia unlock only
 -- ============================================================
--- NOTE: The old aggressive DELETE of non-European civs has been
--- disabled for now. It was causing the civilization list to break
--- (only Serbia showed up). Once the ruleset is stable we can
--- re-introduce a safer Europe filter.
-
--- DELETE FROM Players
--- WHERE CivilizationType IN (
---   'CIVILIZATION_AMERICA','CIVILIZATION_AZTEC','CIVILIZATION_BRAZIL',
---   'CIVILIZATION_CANADA','CIVILIZATION_CREE','CIVILIZATION_GRAN_COLOMBIA',
---   'CIVILIZATION_INCA','CIVILIZATION_MAPUCHE','CIVILIZATION_MAYA',
---   'CIVILIZATION_AUSTRALIA','CIVILIZATION_MAORI','CIVILIZATION_JAPAN',
---   'CIVILIZATION_CHINA','CIVILIZATION_KOREA','CIVILIZATION_MONGOLIA',
---   'CIVILIZATION_KHMER','CIVILIZATION_INDONESIA','CIVILIZATION_VIETNAM',
---   'CIVILIZATION_INDIA','CIVILIZATION_KONGO','CIVILIZATION_ZULU'
--- );
-
--- DELETE FROM Players WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
-
--- ============================================================
--- Unlock Serbia leaders on EVERY map (MapLeaders drives TSL civ list)
--- Support both new clean IDs and legacy STR_ IDs
+-- CRITICAL RULES:
+--   1. NEVER DELETE FROM Players. That was the main reason only
+--      Serbia appeared in the civ list.
+--   2. Only INSERT OR IGNORE into MapLeaders so Serbia leaders
+--      are selectable on every map (including TSL Europe).
+--   3. Do not touch any other table.
 -- ============================================================
 
 -- New leaders from Serbia_Civ_Pack
@@ -41,7 +26,7 @@ INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
 SELECT DISTINCT File, 'LEADER_DUSAN'
 FROM Maps WHERE File IS NOT NULL AND File != '';
 
--- Legacy STR_ Dusan (and variants)
+-- Legacy STR_ names (compatibility with older map packs / YnAMP)
 INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
 SELECT DISTINCT File, 'LEADER_STR_SERBIA_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC'
 FROM Maps WHERE File IS NOT NULL AND File != '';
@@ -53,28 +38,3 @@ FROM Maps WHERE File IS NOT NULL AND File != '';
 INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
 SELECT DISTINCT File, 'LEADER_STR_GREECE_STEFAN_UROS_IV_DUSAN_THE_MIGHTY_NEMANJIC'
 FROM Maps WHERE File IS NOT NULL AND File != '';
-
--- Also place them next to common European leaders on maps that already have those
-INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
-SELECT DISTINCT Map, 'LEADER_DUSAN'
-FROM MapLeaders
-WHERE LeaderType IN (
-  'LEADER_ALEXANDER',
-  'LEADER_MATTHIAS_CORVINUS',
-  'LEADER_PERICLES',
-  'LEADER_GORGO',
-  'LEADER_TRAJAN',
-  'LEADER_BARBAROSSA'
-);
-
-INSERT OR IGNORE INTO MapLeaders (Map, LeaderType)
-SELECT DISTINCT Map, 'LEADER_TITO'
-FROM MapLeaders
-WHERE LeaderType IN (
-  'LEADER_ALEXANDER',
-  'LEADER_MATTHIAS_CORVINUS',
-  'LEADER_PERICLES',
-  'LEADER_GORGO',
-  'LEADER_TRAJAN',
-  'LEADER_BARBAROSSA'
-);
