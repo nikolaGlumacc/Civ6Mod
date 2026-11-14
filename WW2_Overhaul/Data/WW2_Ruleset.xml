@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  WW2 Overhaul Ruleset
+  Must behave like a Gathering Storm ruleset so the full civ list appears.
+  Key requirements:
+    - GameCore = Expansion2
+    - PlayerLeader domain = Players:Expansion2_Players
+-->
 <GameInfo>
+
   <RuleSets>
     <Row>
       <RuleSetType>RULESET_WW2</RuleSetType>
@@ -12,8 +20,11 @@
     </Row>
   </RuleSets>
 
+  <!--
+    Domain overrides — these tell the Advanced Setup screen which lists to use.
+    PlayerLeader MUST point at Players:Expansion2_Players or the civ list breaks.
+  -->
   <RulesetDomainOverrides>
-    <!-- These three are the critical ones for civ select + maps + era -->
     <Row Ruleset="RULESET_WW2" ParameterId="PlayerLeader" Domain="Players:Expansion2_Players"/>
     <Row Ruleset="RULESET_WW2" ParameterId="Map" Domain="StandardMaps"/>
     <Row Ruleset="RULESET_WW2" ParameterId="GameStartEra" Domain="WW2Eras"/>
@@ -21,9 +32,11 @@
   </RulesetDomainOverrides>
 
   <DomainValues>
+    <!-- Start Era choices -->
     <Row Domain="WW2Eras" Value="ERA_INDUSTRIAL" Name="LOC_ERA_NAME_INDUSTRIAL" Description="LOC_ERA_INDUSTRIAL_DESCRIPTION" SortIndex="10"/>
     <Row Domain="WW2Eras" Value="ERA_MODERN" Name="LOC_ERA_NAME_MODERN" Description="LOC_ERA_MODERN_DESCRIPTION" SortIndex="20"/>
 
+    <!-- Optional territory override -->
     <Row Domain="WW2Territories" Value="TERRITORY_AUTO" Name="LOC_WW2_TERR_AUTO" Description="LOC_WW2_TERR_AUTO_DESC" SortIndex="1"/>
     <Row Domain="WW2Territories" Value="TERRITORY_GERMANY" Name="LOC_WW2_TERR_GERMANY" Description="LOC_WW2_TERR_GERMANY_DESC" SortIndex="10"/>
     <Row Domain="WW2Territories" Value="TERRITORY_BRITAIN" Name="LOC_WW2_TERR_BRITAIN" Description="LOC_WW2_TERR_BRITAIN_DESC" SortIndex="20"/>
@@ -42,6 +55,7 @@
     <Row Domain="WW2Territories" Value="TERRITORY_EGYPT" Name="LOC_WW2_TERR_EGYPT" Description="LOC_WW2_TERR_EGYPT_DESC" SortIndex="150"/>
   </DomainValues>
 
+  <!-- Default values when the ruleset is selected -->
   <ConfigurationUpdates>
     <Row SourceGroup="Game" SourceId="RULESET" SourceValue="RULESET_WW2"
          TargetGroup="Game" TargetId="GAME_START_ERA" TargetValue="ERA_INDUSTRIAL" Hash="1"/>
@@ -63,6 +77,7 @@
          TargetGroup="Game" TargetId="VICTORY_SCORE" TargetValue="0" Hash="0"/>
   </ConfigurationUpdates>
 
+  <!-- Extra options that only appear under this ruleset -->
   <Parameters>
     <Row Key1="Ruleset" Key2="RULESET_WW2"
          ParameterId="GameStartEra" Name="LOC_GAME_START_ERA" Description="LOC_WW2_START_ERA_LOCKED_DESC"
@@ -73,4 +88,5 @@
          Domain="WW2Territories" DefaultValue="TERRITORY_AUTO" ConfigurationGroup="Game" ConfigurationId="WW2_TERRITORY"
          GroupId="GameOptions" SortIndex="55"/>
   </Parameters>
+
 </GameInfo>
