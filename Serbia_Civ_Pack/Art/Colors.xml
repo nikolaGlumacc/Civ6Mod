@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Only define Serbia's unique player colors.
+  Do NOT insert COLOR_UNKNOWN or any base-game color — that causes
+  UNIQUE constraint failures and breaks the civilization select screen.
+-->
 <GameInfo>
   <Colors>
     <Replace Type="COLOR_PLAYER_SERBIA_PRIMARY" Color="199,30,40,255"/>
