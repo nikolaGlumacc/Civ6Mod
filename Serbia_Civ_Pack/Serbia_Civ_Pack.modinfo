@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="25">
+<Mod id="33b5f544-eb68-48d3-9919-0a827e907785" version="26">
   <Properties>
     <Name>Serbia Civilization Pack</Name>
-    <Description>Serbia with Tito, Draza, Milosevic, Dusan. v25: LoadingInfo in gameplay DB, WW2-safe UnitUpgrades (no Cuirassier), Replace colors.</Description>
+    <Description>Serbia with Tito, Draza, Milosevic, Dusan. v26: Removed leftover Config/LoadingInfo.xml (was causing Configuration 'no such table: LoadingInfo'). LoadingInfo only via Core/LoadingInfo.sql in Gameplay DB. WW2-safe UnitUpgrades, Replace colors.</Description>
     <Teaser>Serbia with four unique leaders — WW2 compatible</Teaser>
     <Authors>Nikola</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
@@ -146,7 +146,6 @@
 
   <Files>
     <File>Config/Leader_Config.sql</File>
-    <File>Config/LoadingInfo.xml</File>
     <File>Core/Civilization.xml</File>
     <File>Core/Leaders.sql</File>
     <File>Core/Units.xml</File>
