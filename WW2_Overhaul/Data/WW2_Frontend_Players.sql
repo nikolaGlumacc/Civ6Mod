@@ -1,16 +1,23 @@
--- Soft Europe filter — never deletes Serbia (new or legacy)
-DELETE FROM Players
-WHERE CivilizationType IN (
-  'CIVILIZATION_AMERICA','CIVILIZATION_AZTEC','CIVILIZATION_BRAZIL',
-  'CIVILIZATION_CANADA','CIVILIZATION_CREE','CIVILIZATION_GRAN_COLOMBIA',
-  'CIVILIZATION_INCA','CIVILIZATION_MAPUCHE','CIVILIZATION_MAYA',
-  'CIVILIZATION_AUSTRALIA','CIVILIZATION_MAORI','CIVILIZATION_JAPAN',
-  'CIVILIZATION_CHINA','CIVILIZATION_KOREA','CIVILIZATION_MONGOLIA',
-  'CIVILIZATION_KHMER','CIVILIZATION_INDONESIA','CIVILIZATION_VIETNAM',
-  'CIVILIZATION_INDIA','CIVILIZATION_KONGO','CIVILIZATION_ZULU'
-);
+-- ============================================================
+-- WW2 Frontend Players
+-- ============================================================
+-- NOTE: The old aggressive DELETE of non-European civs has been
+-- disabled for now. It was causing the civilization list to break
+-- (only Serbia showed up). Once the ruleset is stable we can
+-- re-introduce a safer Europe filter.
 
-DELETE FROM Players WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
+-- DELETE FROM Players
+-- WHERE CivilizationType IN (
+--   'CIVILIZATION_AMERICA','CIVILIZATION_AZTEC','CIVILIZATION_BRAZIL',
+--   'CIVILIZATION_CANADA','CIVILIZATION_CREE','CIVILIZATION_GRAN_COLOMBIA',
+--   'CIVILIZATION_INCA','CIVILIZATION_MAPUCHE','CIVILIZATION_MAYA',
+--   'CIVILIZATION_AUSTRALIA','CIVILIZATION_MAORI','CIVILIZATION_JAPAN',
+--   'CIVILIZATION_CHINA','CIVILIZATION_KOREA','CIVILIZATION_MONGOLIA',
+--   'CIVILIZATION_KHMER','CIVILIZATION_INDONESIA','CIVILIZATION_VIETNAM',
+--   'CIVILIZATION_INDIA','CIVILIZATION_KONGO','CIVILIZATION_ZULU'
+-- );
+
+-- DELETE FROM Players WHERE LeaderType = 'LEADER_JULIUS_CAESAR';
 
 -- ============================================================
 -- Unlock Serbia leaders on EVERY map (MapLeaders drives TSL civ list)
