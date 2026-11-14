@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Mod id="WW2_Overhaul" version="4.0">
+<Mod id="WW2_Overhaul" version="5.0">
   <Properties>
     <Name>WW2 Overhaul</Name>
-    <Teaser>v4.0 • 1930 interwar • capitals • gold fix • Serbia</Teaser>
-    <Description>1930 Europe start: historical capitals, Industrial tech, army, heavy gold income so you are not in debt. Use True Start Location Europe. Enable Serbia pack for Belgrade.</Description>
+    <Teaser>v5.0 • Full civ list fixed • 1930 interwar • Serbia</Teaser>
+    <Description>1930 Europe start. Full civilization list restored. Enable Serbia pack for Tito/Draza/Milosevic/Dusan. Use True Start Location Europe or WW2 Europe map.</Description>
     <Authors>nikolaGlumacc</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
